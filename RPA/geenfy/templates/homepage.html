@@ -10,15 +10,25 @@ homepage
 
 
 <body>
-    <h1>Homepage Data</h1>
+  <main>
+    <div class="containerHome">
+      <div class="contentHome">
+
+        <h1>{{ dados_homepage.0.titulo }}</h1>
+      </div >
+      <p>{{ dados_homepage.0.texto }}</p>
+      <img src="{{ dados_homepage.0.imagem.url }}" alt="testeimagem">
+
+    </div>
+  </main>
+
     
-        <h2>{{ dados_homepage.0.titulo }}</h2>
-        <p>{{ dados_homepage.0.texto }}</p>
-        <img src="{{ dados_homepage.0.imagem.url }}" alt="testeimagem">
+
 
 
     
 </body>
+
 
 
 {% endblock %}
