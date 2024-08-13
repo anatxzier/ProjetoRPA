@@ -1,0 +1,24 @@
+
+
+{% block title%}
+homepage
+{% endblock %}
+
+
+{% block body %}
+
+
+
+<body>
+    <h1>Homepage Data</h1>
+    
+        <h2>{{ dados_homepage.0.titulo }}</h2>
+        <p>{{ dados_homepage.0.texto }}</p>
+        <img src="{{ dados_homepage.0.imagem.url }}" alt="testeimagem">
+
+
+    
+</body>
+
+
+{% endblock %}
