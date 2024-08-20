@@ -1,58 +1,80 @@
 .containerLogin {
+    margin:0;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     background-color: #C4D1D0;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-
-}
-
-.contentLogin{
     position: relative;
-    width: 100vw;
-    height: 100vh;
     overflow: hidden;
 }
 
 .triangle {
     position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
 }
 
-/* Triângulo superior esquerdo */
+/* Estilo para os triângulos */
 .triangle1 {
-    border-width: 0 0 300px 500px;
-    border-color: transparent transparent #10403B transparent;
-    top: 10%;
-    left: 0;
-    transform: rotate(-200deg);
+    bottom: 60%;
+    left: 2%;
+    transform: rotate(30deg);
 }
 
-/* Triângulo inferior esquerdo */
 .triangle2 {
-    border-width: 0 500px 300px 0;
-    border-color: transparent #d5e2e4 transparent transparent;
     bottom: 15%;
-    left: 0;
-    transform: rotate(-10deg);
+    left: 5%;
+    transform: rotate(150deg);
 }
 
-/* Triângulo superior direito */
+.triangle5 {
+    bottom: 5%;
+    left: 5%;
+    transform: rotate(100deg);
+}
+
 .triangle3 {
-    border-width: 500px 300px 0 0;
-    border-color: #d5e2e4 transparent transparent transparent;
     top: 20%;
-    right: 0;
-    transform: rotate(-15deg);
+    left: 80%;
+    transform: rotate(100deg);
 }
 
-/* Triângulo inferior direito */
 .triangle4 {
-    border-width: 300px 0 0 500px;
-    border-color: transparent transparent transparent #d5e2e4;
-    bottom: 10%;
-    right: 0;
-    transform: rotate(15deg);
+    bottom: 5%;
+    left: 72%;
+    transform: rotate(30deg);
+}
+
+/* Ajustes de responsividade */
+@media (max-width: 768px) {
+    .triangle1, .triangle2, .triangle3, .triangle4 {
+        border-width: 0 100px 100px 0;
+    }
+
+    .triangle1::before, .triangle2::before, .triangle3::before, .triangle4::before {
+        border-width: 0 102px 102px 0;
+    }
+}
+
+.rectangle {
+    width: 80%; /* Largura do retângulo */
+    height: 70%; /* Altura do retângulo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding-top: 20px;
+}
+
+.half {
+    flex: 1;
+    height: 100%;
+}
+
+.left {
+    background-color: #10403B; /* Cor da metade esquerda */
+}
+
+.right {
+    background-color: #8AA6A3; /* Cor da metade direita */
 }

@@ -4,7 +4,7 @@
     background-color: #C4D1D0;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: 100vh;
     padding: 4rem;
     box-sizing: border-box; 
 
@@ -16,30 +16,31 @@
     flex-direction: column;
     align-items: center;
     text-align:start;
-    gap: 25px;
+    gap: 2rem;
 
 }
 
 
 .contentHome h1 {
-    max-width: 30rem;
-    font-size: 3.5rem;
+    max-width: 50%;
+    font-size: 4vw;
     margin: 0;
     font-family: "Poppins";
     font-weight: bold;
 }
 .contentHome p {
-    font-size: 0.9rem;
+    font-size: 2.5vh;
     margin: 0;
     font-family: "Merriweather Sans";
     font-weight: 400;
-    max-width: 30rem;
+    max-width: 50%;
+
 }
 
 .imagemHome {
-    max-width: 45%;
-    height: auto;
-    margin-top: 9%;
+    max-width: 75vh;
+
+  
 
 }
 
@@ -48,14 +49,14 @@ button {
     outline: none;
     cursor: pointer;
     border: none;
-    padding: 0.9rem 4rem;
+    padding: 2vh 10vh;
     margin: 0;
     font-family: "Merriweather Sans";
     position: relative;
     display: inline-block;
     letter-spacing: 0.05rem;
     font-weight: 700;
-    font-size: 17px;
+    font-size: 3.4vh;
     border-radius: 15px;
     overflow: hidden;
     background: #ffffff;

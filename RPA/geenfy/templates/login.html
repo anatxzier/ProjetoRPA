@@ -8,42 +8,69 @@
 
 <main>
     <div class="containerLogin">
-        <div class="contentLogin">
-            <div class="triangle triangle1"></div>
-            <div class="triangle triangle2"></div>
-            <div class="triangle triangle3"></div>
-            <div class="triangle triangle4"></div>
-            <!-- Título de boas-vindas
-            <h1>Bem-vindo!</h1> -->
-            
-            <!-- Subtítulo -->
-            <!-- <h1>Digite seu email e senha para começarmos</h1> -->
-            
-            <!-- Formulário de login -->
-            <form action="login" method="post">
-                {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
-                
-                <!-- Campo para o usuário -->
-                <div class="input-group">
-                    <label for="{{ form.user.id_for_label }}">{{ form.user.label }}</label>
-                    {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
-                </div>
-                
-                <!-- Campo para a senha -->
-                <div class="input-group">
-                    <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
-                    {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
-                </div>
-                
-                <!-- Botão de submissão do formulário -->
-                <!-- <button type="submit" class="btn btn-primary">Entrar</button> -->
-            </form>
-            
-            <!-- Exibe mensagem de erro, se houver -->
-            {% if error %}
-                <p>{{ error }}</p>
-            {% endif %}
+        <div>
+            <div class="triangle triangle1">
+                <svg width="500" height="500" viewBox="0 0 100 100">
+                    <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+                </svg>
+            </div>
+            <div class="triangle triangle2">
+                <svg width="400" height="400" viewBox="0 0 100 100">
+                    <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+                </svg>
+            </div>
+            <div class="triangle triangle5">
+                <svg width="300" height="300" viewBox="0 0 100 100">
+                    <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+                </svg>
+            </div>
+            <div class="triangle triangle3">
+                <svg width="300" height="300" viewBox="0 0 100 100">
+                    <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+                </svg>
+            </div>
+            <div class="triangle triangle4">
+                <svg width="450" height="450" viewBox="0 0 100 100">
+                    <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+                </svg>
+            </div>
         </div>
+        <div class="rectangle">
+            <div class="half left"></div>
+            <div class="half right">
+                <img class="imagemLogin" src="{{ dados_homepage.0.imagem.url }}" alt="testeimagem">
+            </div>
+        </div>
+        <!-- Título de boas-vindas
+        <h1>Bem-vindo!</h1> -->
+        
+        <!-- Subtítulo -->
+        <!-- <h1>Digite seu email e senha para começarmos</h1> -->
+        
+        <!-- Formulário de login -->
+        <form action="login" method="post">
+            {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
+            
+            <!-- Campo para o usuário -->
+            <div class="input-group">
+                <label for="{{ form.user.id_for_label }}">{{ form.user.label }}</label>
+                {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
+            </div>
+            
+            <!-- Campo para a senha -->
+            <div class="input-group">
+                <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+                {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
+            </div>
+            
+            <!-- Botão de submissão do formulário -->
+            <!-- <button type="submit" class="btn btn-primary">Entrar</button> -->
+        </form>
+        
+        <!-- Exibe mensagem de erro, se houver -->
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
     </div>
 </main>
 {% endblock %}

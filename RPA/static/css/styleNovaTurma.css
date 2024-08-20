@@ -1,0 +1,55 @@
+/* Estilização geral do formulário */
+form.nova-turma-form {
+    max-width: 60vh;
+    margin: 20vh auto; 
+    padding: 2rem; 
+    background-color: #10403B; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.nova-turma-form div {
+    margin-bottom: 1rem;
+    position: relative; 
+}
+
+
+.nova-turma-form input[type="text"],
+.nova-turma-form input[type="password"] {
+    width: 100%; 
+    padding: 0.5rem 0; 
+    border: none; 
+    border-bottom: 1px solid #ccc; 
+    border-radius: 0; 
+    font-size: 1rem; 
+    box-sizing: border-box; 
+    background-color: transparent; 
+}
+
+/* Estilização dos placeholders */
+.nova-turma-form input::placeholder {
+    color: #D9E0DF; 
+    opacity: 1;
+    font-family: "Poppins";
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.nova-turma-form input[type="file"] {
+    width: 100%; 
+    padding: 1rem; 
+    border: none; 
+    border-bottom: 1px solid #ccc; 
+    border-radius: 0; 
+    background-color: transparent; 
+    color: #fff;
+}
+
+
+/* Estilização dos erros
+.nova-turma-form .error {
+    color: red; 
+    font-size: 0.9rem; 
+    margin-top: 0.5rem; 
+} */
+
+

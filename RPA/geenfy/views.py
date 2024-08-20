@@ -22,5 +22,5 @@ def NovaTurma_View(request):
         'dados_NovaTurma': NovaTurma.objects.all(),
         'form': form
     }
-
+#configurar upload de arquivos
     return render(request, "novaTurma.html", context )

@@ -6,6 +6,7 @@ class FormLogin(forms.Form):
 
 class FormNovaTurma(forms.Form):
     LoginCAF = forms.CharField(label="Login CAF", max_length=100)
-    senhaCAF = forms.CharField(label="Senha CAF", widget=forms.PasswordInput)
-    LoginIHX = forms.CharField(label="Email IHX", max_length=100)
-    senhaCAF = forms.CharField(label="Senha IHX", widget=forms.PasswordInput)
+    SenhaCAF = forms.CharField(label="Senha CAF", widget=forms.PasswordInput)
+    LoginIHX = forms.CharField(label="Login IHX", max_length=100)
+    SenhaIHX = forms.CharField(label="Senha IHX", widget=forms.PasswordInput)
+    arquivo = forms.FileField(label="Arquivo")
