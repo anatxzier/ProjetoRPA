@@ -6,39 +6,40 @@
 
 {% block body %}
 
-<div class="geralcont">
-    <div class="login-container">
-        <!-- Título de boas-vindas -->
-        <h1>Bem-vindo!</h1>
-        
-        <!-- Subtítulo -->
-        <h1>Digite seu email e senha para começarmos</h1>
-        
-        <!-- Formulário de login -->
-        <form action="login" method="post">
-            {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
+<main>
+    <div class="containerLogin">
+        <div class="contentLogin">
+            <!-- Título de boas-vindas -->
+            <h1>Bem-vindo!</h1>
             
-            <!-- Campo para o usuário -->
-            <div class="input-group">
-                <label for="{{ form.user.id_for_label }}">{{ form.user.label }}</label>
-                {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
-            </div>
+            <!-- Subtítulo -->
+            <h1>Digite seu email e senha para começarmos</h1>
             
-            <!-- Campo para a senha -->
-            <div class="input-group">
-                <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
-                {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
-            </div>
+            <!-- Formulário de login -->
+            <form action="login" method="post">
+                {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
+                
+                <!-- Campo para o usuário -->
+                <div class="input-group">
+                    <label for="{{ form.user.id_for_label }}">{{ form.user.label }}</label>
+                    {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
+                </div>
+                
+                <!-- Campo para a senha -->
+                <div class="input-group">
+                    <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+                    {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
+                </div>
+                
+                <!-- Botão de submissão do formulário -->
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
             
-            <!-- Botão de submissão do formulário -->
-            <button type="submit" class="btn btn-primary">Entrar</button>
-        </form>
-        
-        <!-- Exibe mensagem de erro, se houver -->
-        {% if error %}
-            <p>{{ error }}</p>
-        {% endif %}
+            <!-- Exibe mensagem de erro, se houver -->
+            {% if error %}
+                <p>{{ error }}</p>
+            {% endif %}
+        </div>
     </div>
-</div>
-
+</main>
 {% endblock %}

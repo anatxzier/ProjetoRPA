@@ -7,7 +7,10 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.Homepage_View, name="homepage")
+    path('', views.Homepage_View, name="homepage"),
+    path('login', views.Login_View, name="login"),
+    path('novaturma', views.NovaTurma_View, name="novaturma"),
+
 
 
 
