@@ -1,34 +1,20 @@
+{% extends 'index.html' %}
 
-
-{% block title%}
-homepage
+{% block title %}
+<!-- homepage -->
 {% endblock %}
-
 
 {% block body %}
 
-
-
-<body>
-  <main>
-    <div class="containerHome">
-      <div class="contentHome">
-
-        <h1>{{ dados_homepage.0.titulo }}</h1>
-      </div >
+<main>
+  <div class="containerHome">
+    <div class="contentHome">
+      <h1>{{ dados_homepage.0.titulo }}</h1>
       <p>{{ dados_homepage.0.texto }}</p>
-      <img src="{{ dados_homepage.0.imagem.url }}" alt="testeimagem">
-
+      <button> <span>Começar Agora</span></button>
     </div>
-  </main>
-
-    
-
-
-
-    
-</body>
-
-
+    <img class="imagemHome" src="{{ dados_homepage.0.imagem.url }}" alt="testeimagem">
+  </div>
+</main>
 
 {% endblock %}
