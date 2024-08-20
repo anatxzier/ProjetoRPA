@@ -1,21 +1,58 @@
 .containerLogin {
     display: flex;
-    flex-direction: row;
     background-color: #C4D1D0;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    padding: 4rem;
-    box-sizing: border-box; 
+    height: 100vh;
 
 }
 
-.contentLogin {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align:start;
-    gap: 25px;
+.contentLogin{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
 
+.triangle {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+/* Triângulo superior esquerdo */
+.triangle1 {
+    border-width: 0 0 300px 500px;
+    border-color: transparent transparent #10403B transparent;
+    top: 10%;
+    left: 0;
+    transform: rotate(-200deg);
+}
+
+/* Triângulo inferior esquerdo */
+.triangle2 {
+    border-width: 0 500px 300px 0;
+    border-color: transparent #d5e2e4 transparent transparent;
+    bottom: 15%;
+    left: 0;
+    transform: rotate(-10deg);
+}
+
+/* Triângulo superior direito */
+.triangle3 {
+    border-width: 500px 300px 0 0;
+    border-color: #d5e2e4 transparent transparent transparent;
+    top: 20%;
+    right: 0;
+    transform: rotate(-15deg);
+}
+
+/* Triângulo inferior direito */
+.triangle4 {
+    border-width: 300px 0 0 500px;
+    border-color: transparent transparent transparent #d5e2e4;
+    bottom: 10%;
+    right: 0;
+    transform: rotate(15deg);
 }

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Homepage, Login, NovaTurma
-from .forms import FormLogin
+from .forms import FormLogin, FormNovaTurma
 
 def Homepage_View (request):
     context = {}
@@ -17,8 +17,10 @@ def Login_View(request):
     return render(request, "login.html", context)
 
 def NovaTurma_View(request):
-    context = {}
-    dados_NovaTurma = NovaTurma.objects.all()
-    context["dados_NovaTurma"] = dados_NovaTurma
+    form = FormNovaTurma()
+    context = {
+        'dados_NovaTurma': NovaTurma.objects.all(),
+        'form': form
+    }
 
-    return render(request, "NovaTurma.html", context)
+    return render(request, "novaTurma.html", context )

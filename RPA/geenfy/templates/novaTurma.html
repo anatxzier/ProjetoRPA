@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends 'index.html' %}
 
 {% block title %}
     Nova Turma
@@ -6,6 +6,26 @@
 
 
 {% block body %}
-<h1>oi</h1>
+
+    <div>
+        <label for="{{ form.LoginCAF.id_for_label }}">{{ form.LoginCAF.label }}</label>
+        {{ form.LoginCAF }}
+        {% if form.LoginCAF.errors %}
+            <div class="error">{{ form.LoginCAF.errors }}</div>
+        {% endif %}
+    </div>
+
+    <div>
+        <label for="{{ form.SenhaCAF.id_for_label }}">{{ form.SenhaCaf.label }}</label>
+        {{ form.SenhaCAF }}
+        {% if form.SenhaCAF.errors %}
+            <div class="error">{{ form.SenhaCAF.errors }}</div>
+        {% endif %}
+    </div>
+
+
+
+
+
 
 {% endblock %}
