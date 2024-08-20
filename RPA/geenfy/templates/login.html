@@ -36,41 +36,42 @@
             </div>
         </div>
         <div class="rectangle">
-            <div class="half left"></div>
-            <div class="half right">
-                <img class="imagemLogin" src="{{ dados_homepage.0.imagem.url }}" alt="testeimagem">
+            <div class="half left">
+                <span class="material-symbols-outlined iconeLogin">
+                    account_circle
+                </span>
+                <h1 class="titulo">{{ dados_login.0.titulo }}</h1>
+                <form action="login" method="post">
+                    {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
+                    
+                    <!-- Campo para o usuário -->
+                    <div class="input-group">
+                        <label for="{{ form.user.id_for_label }}">{{ form.user.label }}</label>
+                        {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
+                    </div>
+                    
+                    <!-- Campo para a senha -->
+                    <div class="input-group">
+                        <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
+                        {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
+                    </div>
+                    
+                    <!-- Botão de submissão do formulário -->
+                    <!-- <button type="submit" class="btn btn-primary">Entrar</button> -->
+                </form>
+                
+                <!-- Exibe mensagem de erro, se houver -->
+                {% if error %}
+                    <p>{{ error }}</p>
+                {% endif %}
+
+                <button class="botãoLogin"> <span>LOGIN</span></button>
+            </div>
+            <div class="half right">s
+                <img class="imagemLogin" src="{{ dados_login.0.imgLogin.url }}" alt="imagemLogin">
             </div>
         </div>
-        <!-- Título de boas-vindas
-        <h1>Bem-vindo!</h1> -->
         
-        <!-- Subtítulo -->
-        <!-- <h1>Digite seu email e senha para começarmos</h1> -->
-        
-        <!-- Formulário de login -->
-        <form action="login" method="post">
-            {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
-            
-            <!-- Campo para o usuário -->
-            <div class="input-group">
-                <label for="{{ form.user.id_for_label }}">{{ form.user.label }}</label>
-                {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
-            </div>
-            
-            <!-- Campo para a senha -->
-            <div class="input-group">
-                <label for="{{ form.password.id_for_label }}">{{ form.password.label }}</label>
-                {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
-            </div>
-            
-            <!-- Botão de submissão do formulário -->
-            <!-- <button type="submit" class="btn btn-primary">Entrar</button> -->
-        </form>
-        
-        <!-- Exibe mensagem de erro, se houver -->
-        {% if error %}
-            <p>{{ error }}</p>
-        {% endif %}
     </div>
 </main>
 {% endblock %}

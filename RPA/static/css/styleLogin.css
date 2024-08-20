@@ -73,8 +73,24 @@
 
 .left {
     background-color: #10403B; /* Cor da metade esquerda */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .right {
     background-color: #8AA6A3; /* Cor da metade direita */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.imagemLogin{
+    max-width: 65%;
+}
+
+.iconeLogin{
+    color: #8AA6A3;
+}
+

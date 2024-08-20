@@ -47,6 +47,14 @@
             {% endif %}
         </div>
 
+        <div style="position: relative;">
+            <input type="file" name="arquivo" id="{{ form.arquivo.id_for_label }}" />
+            <label for="{{ form.arquivo.id_for_label }}" class="file-label">Insira o arquivo .xlsx</label>
+            {% if form.arquivo.errors %}
+                <div class="error">{{ form.arquivo.errors }}</div>
+            {% endif %}
+        </div>
+
 
         <button type="submit">Enviar</button>
     </form>
