@@ -57,8 +57,8 @@
 }
 
 .rectangle {
-    width: 80%; /* Largura do retângulo */
-    height: 70%; /* Altura do retângulo */
+    width: 70vw;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,10 +87,18 @@
 }
 
 .imagemLogin{
-    max-width: 65%;
+    max-width: 70%;
 }
 
-.iconeLogin{
+.material-symbols-outlined.iconeLogin{
     color: #8AA6A3;
+    font-size: 14vh;
+}
+
+.titulo{
+    text-transform: uppercase;
+    color: #8AA6A3;
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 

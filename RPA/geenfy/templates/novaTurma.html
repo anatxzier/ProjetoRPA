@@ -43,24 +43,17 @@
                     <div class="error">{{ form.SenhaIHX.errors }}</div>
                 {% endif %}
             </div>
-    
-            <div>
-                <input type="file" name="arquivo" id="{{ form.arquivo.id_for_label }}" />
-                {% if form.arquivo.errors %}
-                    <div class="error">{{ form.arquivo.errors }}</div>
-                {% endif %}
+
+            <div class="botoesTurma">
+                <label for="arquivos" class="file-label">
+                    Insira o arquivo .xlsx
+                </label>
+                <input type="file" id="arquivos"> 
+                <button class="btnTurma"><span>Iniciar</span></button>
             </div>
+            
+
     
-            <div style="position: relative;">
-                <input type="file" name="arquivo" id="{{ form.arquivo.id_for_label }}" />
-                <label for="{{ form.arquivo.id_for_label }}" class="file-label">Insira o arquivo .xlsx</label>
-                {% if form.arquivo.errors %}
-                    <div class="error">{{ form.arquivo.errors }}</div>
-                {% endif %}
-            </div>
-    
-    
-            <button class="turmabtn" type="submit"><span>Iniciar</span></button>
         </form>
         
         <div class="content2">

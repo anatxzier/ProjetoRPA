@@ -46,8 +46,15 @@
                     
                     <!-- Campo para o usuário -->
                     <div class="input-group">
-                        <label for="{{ form.user.id_for_label }}">{{ form.user.label }}</label>
+                        <input type="text" name="Usuário" for="{{ form.user.id_for_label }}">{{ form.user.label }}</input>
                         {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
+                    </div>
+
+                    <div>
+                        <input type="text" name="LoginCAF" id="{{ form.LoginCAF.id_for_label }}" placeholder="{{ form.LoginCAF.label }}">
+                        {% if form.LoginCAF.errors %}
+                            <div class="error">{{ form.LoginCAF.errors }}</div>
+                        {% endif %}
                     </div>
                     
                     <!-- Campo para a senha -->
@@ -67,7 +74,7 @@
 
                 <button class="botãoLogin"> <span>LOGIN</span></button>
             </div>
-            <div class="half right">s
+            <div class="half right">
                 <img class="imagemLogin" src="{{ dados_login.0.imgLogin.url }}" alt="imagemLogin">
             </div>
         </div>

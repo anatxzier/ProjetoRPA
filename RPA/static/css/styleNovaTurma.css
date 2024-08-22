@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     background-color: #C4D1D0;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     align-items: center;
     justify-content: center;
@@ -12,6 +12,8 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
     justify-content: center;
     gap: 0; 
 
@@ -20,7 +22,7 @@
 .content2 {
     background-color: #8AA6A3;
     width: 30vw;
-    height: 65vh;
+    height: 80vh;
     color: #ffffff;
     font-size: 1.8vh;
     font-family: "Poppins";
@@ -53,8 +55,8 @@
 }
 
 form.nova-turma-form {
-    width: 30vw;
-    height: 65vh;
+    width: 35vw;
+    height: 80vh;
     padding: 3vw;
     background-color: #10403B;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -73,11 +75,12 @@ form.nova-turma-form {
     display: flex;
     flex-direction: column;
     align-items: center; 
+    
 }
 
 .nova-turma-form input[type="text"],
 .nova-turma-form input[type="password"] {
-    width: 20vw; 
+    width: 25vw; 
     padding: 0.5rem 0; 
     border: none; 
     border-bottom: 1px solid #D9E0DF; 
@@ -94,76 +97,75 @@ form.nova-turma-form {
     font-family: "Poppins";
     font-weight: bold;
     font-size: 1.5vh;
+
+
 }
 
 /* Estilização do campo de upload de arquivos */
 .nova-turma-form input[type="file"] {
-    width: 100%; 
+    width: 90%;
     padding: 1rem; 
     border: 1px solid #D9E0DF;
     border-radius: 0; 
     background-color: transparent; 
     color: #fff;
-    opacity: 0; 
-    position: absolute; 
-    z-index: -1; 
+    display: none;
+
 }
 
-/* Estilização do botão personalizado */
-.nova-turma-form .file-label {
-    display: inline-block;
-    width: 80%;
-    padding: 0.8rem 2rem; 
-    font-size: 1rem; 
-    color: #fff; 
-    background-color: transparent; 
-    border: 1px solid #D9E0DF; 
-    cursor: pointer; 
-    transition: background-color 0.3s; 
-    text-align: center;
-    margin-top: 1rem; 
+.botoesTurma {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Alinha verticalmente os itens ao centro */
+    gap: 1rem; /* Espaço entre os itens, ajuste conforme necessário */
 }
 
-.nova-turma-form .file-label:hover {
-    background-color: #ffffff; 
-    color: #10403B;
+.botoesTurma label {
+    font-family: "Poppins";
+    color: #ffffff; /* Ajuste a cor do texto da label conforme necessário */
+    font-size: 1.5vh; /* Ajuste o tamanho da fonte da label conforme necessário */
+    background-color: #10403B; /* Cor de fundo para contraste, ajuste conforme necessário */
+    padding: 0.5rem 1rem; /* Espaço interno na label */
+    border-radius: 5px; /* Adiciona bordas arredondadas na label */
+    cursor: pointer; /* Adiciona cursor pointer para a label */
 }
 
-/* Estilização do Botão*/ 
-.turmabtn {
+.botoesTurma input[type="file"] {
+    display: none; /* Oculta o input de tipo file */
+}
+
+.botoesTurma .btnTurma {
     outline: none;
     cursor: pointer;
     border: none;
-    padding: 1vh 9vh;
-    margin: 0;
+    padding: 1vh 1vh;
     font-family: "Merriweather Sans";
     position: relative;
     display: inline-block;
     letter-spacing: 0.05rem;
     font-weight: 700;
-    font-size: 2.5vh;
+    font-size: 3.4vh;
     border-radius: 15px;
     overflow: hidden;
     background: #ffffff;
-    color: #ffffff; 
+    color: #10403B; /* Ajuste a cor do texto do botão conforme necessário */
     border-bottom: 2px solid #5B5B5B;
     border-right: 2px solid #5B5B5B;
-    margin-top: 2rem; 
-
+    transition: background-color 0.3s, color 0.3s; /* Adiciona transições suaves */
 }
 
-.turmabtn span {
+.btnTurma span {
     position: relative;
     z-index: 10;
     transition: color 0.4s;
 }
 
-.turmabtn:hover span {
+.btnTurma:hover span {
     color: #8AA6A3;
 }
 
-.turmabtn::before,
-.turmabtn::after {
+.btnTurma::before,
+.btnTurma::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -172,23 +174,26 @@ form.nova-turma-form {
     z-index: 0;
 }
 
-.turmabtn::before {
+.btnTurma::before {
     content: "";
     background: #8AA6A3;
     width: 120%;
     left: -10%;
-
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
-.turmabtn:hover::before {
+.btnTurma:hover::before {
     transform: translate3d(100%, 0, 0);
 }
-/* button {
+
+
+
+
+/* .btnTurma {
     outline: none;
     cursor: pointer;
     border: none;
-    padding: 2vh 10vh;
+    padding: 1vh 1vh;
     margin: 0;
     font-family: "Merriweather Sans";
     position: relative;
@@ -205,18 +210,18 @@ form.nova-turma-form {
 
 }
 
-button span {
+.btnTurma span {
     position: relative;
     z-index: 10;
     transition: color 0.4s;
 }
 
-button:hover span {
+.btnTurma:hover span {
     color: #8AA6A3;
 }
 
-button::before,
-button::after {
+.btnTurma::before,
+.btnTurma::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -225,7 +230,7 @@ button::after {
     z-index: 0;
 }
 
-button::before {
+.btnTurma::before {
     content: "";
     background: #8AA6A3;
     width: 120%;
@@ -234,10 +239,14 @@ button::before {
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
-button:hover::before {
+.btnTurma:hover::before {
     transform: translate3d(100%, 0, 0);
-} */
+}
 
+.botoesTurma{
+    display: flex;
+    flex-direction: row;
+}
 
 
 /* Estilização dos erros
