@@ -66,6 +66,10 @@
     padding-top: 20px;
 }
 
+.alinhamento{
+    justify-content: center;
+}
+
 .half {
     flex: 1;
     height: 100%;
@@ -74,9 +78,19 @@
 .left {
     background-color: #10403B; /* Cor da metade esquerda */
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
+    align-self: center;
+    overflow: hidden;
+}
+
+.left form{
+    justify-content: center;
+}
+
+.left span{
+    justify-content: center;
 }
 
 .right {
@@ -100,5 +114,128 @@
     color: #8AA6A3;
     font-size: 1.5rem;
     font-weight: 600;
+    justify-content: center;
 }
 
+.login-form {
+    width: 35vw;
+    background-color: #10403B;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    position: relative; /* Para posicionar o botão no final */
+    overflow: hidden; /* Oculta a barra de rolagem */
+    padding-top: 1vh;
+}
+
+.login-form::-webkit-scrollbar-track {
+    display: none;
+    border: none;
+}
+
+.login-form::-webkit-scrollbar{
+    width: 3px;
+    border: 1px solid #8AA6A3;
+}
+
+.login-form::-webkit-scrollbar-thumb{
+    background-color: #8AA6A3;
+    border-radius: 10px;
+}
+
+
+/* Estilização dos campos de entrada */
+.login-form div {
+    margin-bottom: 1rem;
+    width: 100%; 
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 25vw; 
+    padding: 0.5rem 0; 
+    border: none; 
+    border-bottom: 1px solid #D9E0DF; 
+    border-radius: 0; 
+    font-size: 1rem; 
+    box-sizing: border-box; 
+    background-color: transparent;
+    color: #D9E0DF;
+    outline: none;
+}
+
+/* Estilização dos placeholders */
+.login-form input::placeholder {
+    color: #D9E0DF; 
+    opacity: 1;
+    font-family: "Poppins";
+    font-size: 1.5vh;
+}
+
+.btnTurma {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 2% 13%;
+    font-family: "Merriweather Sans";
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 2.4vh;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #ffffff;
+    color: #10403B; /* Ajuste a cor do texto do botão conforme necessário */
+    border-bottom: 2px solid #5B5B5B;
+    border-right: 2px solid #5B5B5B;
+    transition: background-color 0.3s, color 0.3s; /* Adiciona transições suaves */
+}
+
+.btnTurma label {
+    font-family: "Poppins";
+    color: #ffffff; 
+    font-size: 2.3vh; 
+    background-color: #10403B; 
+    padding: 2vh 6vh; 
+    cursor: pointer; 
+    border: 1px solid #D9E0DF;
+}
+
+.btnTurma span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+}
+
+.btnTurma:hover span {
+    color: #8AA6A3;
+}
+
+.btnTurma::before,
+.btnTurma::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.btnTurma::before {
+    content: "";
+    background: #8AA6A3;
+    width: 120%;
+    left: -10%;
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.btnTurma:hover::before {
+    transform: translate3d(100%, 0, 0);
+}

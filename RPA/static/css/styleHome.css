@@ -15,7 +15,7 @@
     flex-direction: column;
     align-items: center;
     text-align:start;
-    gap: 2rem;
+    gap: 1rem;
     margin: 0px;
     max-width: 50%;
     
@@ -24,23 +24,23 @@
 
 
 .contentHome h1 {
-    max-width: 50%;
-    font-size: 3vw;
+    max-width: 60%;
+    font-size: 4vw;
     margin: 0;
     font-family: "Poppins";
     font-weight: bold;
 }
 .contentHome p {
-    font-size: 1.9vh;
+    font-size: 2vh;
     margin: 0;
     font-family: "Merriweather Sans";
     font-weight: 400;
-    max-width: 50%;
+    max-width: 60%;
 
 }
 
 .imagemHome {
-    max-width: 70vh;
+    max-width: 73vh;
 
   
 
@@ -51,7 +51,7 @@
     outline: none;
     cursor: pointer;
     border: none;
-    padding: 1vh 9vh;
+    padding: 3% 9%;
     margin: 0;
     font-family: "Merriweather Sans";
     position: relative;
@@ -59,7 +59,7 @@
     letter-spacing: 0.05rem;
     font-weight: 700;
     font-size: 3vh;
-    border-radius: 15px;
+    border-radius: 5px;
     overflow: hidden;
     background: #ffffff;
     color: #ffffff; 
@@ -93,7 +93,6 @@
     background: #8AA6A3;
     width: 120%;
     left: -10%;
-
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
