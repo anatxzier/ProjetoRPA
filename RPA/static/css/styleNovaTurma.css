@@ -1,15 +1,69 @@
-/* Estilização geral do formulário */
+.containerNovaTurma {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #C4D1D0;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentTurma {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0; 
+
+}
+
+.content2 {
+    background-color: #8AA6A3;
+    width: 30vw;
+    height: 65vh;
+    color: #ffffff;
+    font-size: 1.8vh;
+    font-family: "Poppins";
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    gap: 2rem;
+}
+
+.content2 p{
+    max-width: 90%;
+}
+
+.content2 img {
+    width: 90%;
+    max-height: 100%; 
+    object-fit: contain; 
+}
+
+.nova-turma-form p{
+    color: #ffffff;
+    font-size: 2.7vh;
+    font-family: "Poppins";
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 2rem ;
+
+}
+
 form.nova-turma-form {
-    max-width: 40%; 
-    margin: 20vh auto; 
-    padding: 2rem; 
-    background-color: #10403B; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    border-radius: 8px; 
+    width: 30vw;
+    height: 65vh;
+    padding: 3vw;
+    background-color: #10403B;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
 }
+
 
 /* Estilização dos campos de entrada */
 .nova-turma-form div {
@@ -18,12 +72,12 @@ form.nova-turma-form {
     position: relative; 
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza os itens no eixo transversal */
+    align-items: center; 
 }
 
 .nova-turma-form input[type="text"],
 .nova-turma-form input[type="password"] {
-    width: 80%; 
+    width: 20vw; 
     padding: 0.5rem 0; 
     border: none; 
     border-bottom: 1px solid #D9E0DF; 
@@ -39,7 +93,7 @@ form.nova-turma-form {
     opacity: 1;
     font-family: "Poppins";
     font-weight: bold;
-    font-size: 0.8rem;
+    font-size: 1.5vh;
 }
 
 /* Estilização do campo de upload de arquivos */
@@ -67,7 +121,7 @@ form.nova-turma-form {
     cursor: pointer; 
     transition: background-color 0.3s; 
     text-align: center;
-    margin-top: 0.5rem; 
+    margin-top: 1rem; 
 }
 
 .nova-turma-form .file-label:hover {
@@ -75,7 +129,62 @@ form.nova-turma-form {
     color: #10403B;
 }
 
-button {
+/* Estilização do Botão*/ 
+.turmabtn {
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 1vh 9vh;
+    margin: 0;
+    font-family: "Merriweather Sans";
+    position: relative;
+    display: inline-block;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    font-size: 2.5vh;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #ffffff;
+    color: #ffffff; 
+    border-bottom: 2px solid #5B5B5B;
+    border-right: 2px solid #5B5B5B;
+    margin-top: 2rem; 
+
+}
+
+.turmabtn span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+}
+
+.turmabtn:hover span {
+    color: #8AA6A3;
+}
+
+.turmabtn::before,
+.turmabtn::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.turmabtn::before {
+    content: "";
+    background: #8AA6A3;
+    width: 120%;
+    left: -10%;
+
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.turmabtn:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+/* button {
     outline: none;
     cursor: pointer;
     border: none;
@@ -127,7 +236,7 @@ button::before {
 
 button:hover::before {
     transform: translate3d(100%, 0, 0);
-}
+} */
 
 
 
