@@ -10,3 +10,8 @@ class FormNovaTurma(forms.Form):
     LoginIHX = forms.CharField(label="Login IHX", max_length=100)
     SenhaIHX = forms.CharField(label="Senha IHX", widget=forms.PasswordInput)
     arquivo = forms.FileField(label="Arquivo")
+
+class FormCadastro(forms.Form):
+    email = forms.EmailField(label="Email", max_length=60)
+    nome = forms.CharField (label='Nome', max_length=80)
+    password = forms.CharField(label='Senha', widget=forms.PasswordInput)

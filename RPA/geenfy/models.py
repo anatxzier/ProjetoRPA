@@ -23,3 +23,7 @@ class NovaTurma(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+class Cadastro(models.Model):
+    titulo = models.CharField(max_length=55)
+    imgCadastro = models.ImageField(upload_to="imgCadastro/")

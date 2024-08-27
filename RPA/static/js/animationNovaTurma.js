@@ -1,13 +1,24 @@
 
-    // document.addEventListener("DOMContentLoaded", function() {
-    //     const scrollButton = document.querySelector('.scroll-to-bottom-btn');
-    //     const formContainer = document.querySelector('.nova-turma-form');
-        
-    //     scrollButton.addEventListener('click', function() {
-    //         formContainer.scrollTo({
-    //             top: formContainer.scrollHeight,
-    //             behavior: 'smooth'
-    //         });
-    //     });
-    // });
+    // Obter os elementos necessários
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("buttonModal");
+    var span = document.getElementsByClassName("close")[0];
+
+    // Quando o botão for clicado, mostra a modal
+    btn.onclick = function(event) {
+        event.preventDefault(); // Previne o envio do formulário
+        modal.style.display = "block";
+    }
+
+    // Quando o usuário clicar no "x", esconde a modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Quando o usuário clicar fora da modal, esconde a modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 

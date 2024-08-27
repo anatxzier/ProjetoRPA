@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Homepage, Login, NovaTurma
+from .models import Homepage, Login, NovaTurma, Cadastro
 from .forms import FormLogin, FormNovaTurma
 
 def Homepage_View (request):
@@ -24,3 +24,11 @@ def NovaTurma_View(request):
     }
 #configurar upload de arquivos
     return render(request, "novaTurma.html", context )
+
+def Cadastro_View(request):
+    context = {}
+    dados_cadastro = Cadastro.objects.all()
+    context["dados_cadastro"] = dados_cadastro
+
+    return render(request, "cadastro.html", context)
+

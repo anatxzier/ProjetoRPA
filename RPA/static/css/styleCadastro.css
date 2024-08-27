@@ -1,4 +1,4 @@
-.containerLogin {
+.containerCadastro {
     margin:0;
     height: 100vh;
     width: 100vw;
@@ -10,53 +10,7 @@
     overflow: hidden;
 }
 
-.triangle {
-    position: absolute;
-}
-
-/* Estilo para os triângulos */
-.triangle1 {
-    bottom: 60%;
-    left: 2%;
-    transform: rotate(30deg);
-}
-
-.triangle2 {
-    bottom: 15%;
-    left: 5%;
-    transform: rotate(150deg);
-}
-
-.triangle5 {
-    bottom: 5%;
-    left: 5%;
-    transform: rotate(100deg);
-}
-
-.triangle3 {
-    top: 20%;
-    left: 80%;
-    transform: rotate(100deg);
-}
-
-.triangle4 {
-    bottom: 5%;
-    left: 72%;
-    transform: rotate(30deg);
-}
-
-/* Ajustes de responsividade */
-@media (max-width: 768px) {
-    .triangle1, .triangle2, .triangle3, .triangle4 {
-        border-width: 0 100px 100px 0;
-    }
-
-    .triangle1::before, .triangle2::before, .triangle3::before, .triangle4::before {
-        border-width: 0 102px 102px 0;
-    }
-}
-
-.rectangleLogin {
+.rectangleCadastro {
     width: 70vw;
     height: 70vh;
     display: flex;
@@ -66,13 +20,14 @@
     padding-top: 20px;
 }
 
-.halfLogin {
+
+.halfCadastro {
     flex: 1;
     height: 100%;
 }
 
-.leftLogin {
-    background-color: #10403B; /* Cor da metade esquerda */
+.rightCadastro {
+    background-color: #8AA6A3; /* Cor da metade esquerda */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -81,42 +36,41 @@
     overflow: hidden;
 }
 
-.leftLogin form{
+.rightCadastro form{
     justify-content: center;
 }
 
-.leftLogin span{
+.rightCadastro span{
     justify-content: center;
 }
 
-.rightLogin {
-    background-color: #8AA6A3; /* Cor da metade direita */
+.leftCadastro {
+    background-color: #10403B; /* Cor da metade direita */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.imagemLogin{
+.imagemCadastro{
     max-width: 70%;
 }
 
-.material-symbols-outlined.iconeLogin{
-    color: #8AA6A3;
+.material-symbols-outlined.iconeCadastro{
+    color: #10403B;
     font-size: 500%;
 }
 
-.tituloLogin{
+.tituloCadastro{
     text-transform: uppercase;
-    color: #8AA6A3;
-    font-size: 1.5rem;
+    color: #10403B;
+    font-size: 1rem;
     font-weight: 600;
     display: flex;
     justify-content: center;
 }
 
-.login-form {
+.cadastro-form {
     width: 35vw;
-    background-color: #10403B;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,24 +80,24 @@
     padding-top: 1vh;
 }
 
-.login-form::-webkit-scrollbar-track {
+.cadastro-form::-webkit-scrollbar-track {
     display: none;
     border: none;
 }
 
-.login-form::-webkit-scrollbar{
+.cadastro-form::-webkit-scrollbar{
     width: 3px;
     border: 1px solid #8AA6A3;
 }
 
-.login-form::-webkit-scrollbar-thumb{
+.cadastro-form::-webkit-scrollbar-thumb{
     background-color: #8AA6A3;
     border-radius: 10px;
 }
 
 
 /* Estilização dos campos de entrada */
-.login-form div {
+.cadastro-form div {
     margin-bottom: 1rem;
     width: 100%; 
     position: relative; 
@@ -152,29 +106,29 @@
     align-items: center; 
 }
 
-.login-form input[type="text"],
-.login-form input[type="password"] {
+.cadastro-form input[type="text"],
+.cadastro-form input[type="password"] {
     width: 25vw; 
     padding: 0.5rem 0; 
     border: none; 
-    border-bottom: 1px solid #D9E0DF; 
+    border-bottom: 1px solid #10403B; 
     border-radius: 0; 
     font-size: 1rem; 
     box-sizing: border-box; 
     background-color: transparent;
-    color: #D9E0DF;
+    color: #10403B;
     outline: none;
 }
 
 /* Estilização dos placeholders */
-.login-form input::placeholder {
-    color: #D9E0DF; 
+.cadastro-form input::placeholder {
+    color: #10403B; 
     opacity: 1;
     font-family: "Poppins";
     font-size: 1.5vh;
 }
 
-.btnLogin {
+.btnCadastro {
     outline: none;
     cursor: pointer;
     border: none;
@@ -188,13 +142,13 @@
     border-radius: 15px;
     overflow: hidden;
     background: #ffffff;
-    color: #10403B; /* Ajuste a cor do texto do botão conforme necessário */
+    color: #D9E0DF; /* Ajuste a cor do texto do botão conforme necessário */
     border-bottom: 2px solid #5B5B5B;
     border-right: 2px solid #5B5B5B;
     transition: background-color 0.3s, color 0.3s; /* Adiciona transições suaves */
 }
 
-.btnLogin label {
+.btnCadastro label {
     font-family: "Poppins";
     color: #ffffff; 
     font-size: 2.3vh; 
@@ -204,18 +158,18 @@
     border: 1px solid #D9E0DF;
 }
 
-.btnLogin span {
+.btnCadastro span {
     position: relative;
     z-index: 10;
     transition: color 0.4s;
 }
 
-.btnLogin:hover span {
+.btnCadastro:hover span {
     color: #8AA6A3;
 }
 
-.btnLogin::before,
-.btnLogin::after {
+.btnCadastro::before,
+.btnCadastro::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -224,14 +178,14 @@
     z-index: 0;
 }
 
-.btnLogin::before {
+.btnCadastro::before {
     content: "";
-    background: #8AA6A3;
+    background: #10403B;
     width: 120%;
     left: -10%;
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
-.btnLogin:hover::before {
+.btnCadastro:hover::before {
     transform: translate3d(100%, 0, 0);
 }

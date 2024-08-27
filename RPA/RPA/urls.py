@@ -10,6 +10,7 @@ urlpatterns = [
     path('', views.Homepage_View, name="homepage"),
     path('login', views.Login_View, name="login"),
     path('novaturma', views.NovaTurma_View, name="novaturma"),
+    path('cadastro', views.Cadastro_View, name="cadastro"),
 
 
 

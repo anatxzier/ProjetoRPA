@@ -1,13 +1,14 @@
 {% extends 'index.html' %}
 
+
 {% block title %}
-    <!-- Login -->
+<!-- Cadastro -->
 {% endblock %}
 
-{% block body %}
+{% block body%}
 
 <main>
-    <div class="containerLogin">
+    <div class="containerCadastro">
         <div>
             <div class="triangle triangle1">
                 <svg width="500" height="500" viewBox="0 0 100 100">
@@ -35,30 +36,37 @@
                 </svg>
             </div>
         </div>
-        <div class="rectangleLogin">
-            <div class="halfLogin leftLogin">
+        <div class="rectangleCadastro">
+            <div class="halfCadastro leftCadastro">
+                <img class="imagemCadastro" src="{{ dados_cadastro.0.imgCadastro.url }}" alt="imagemCadastro">
+            </div>
+            <div class="halfCadastro rightCadastro">
                 <div>
-                    <span class="material-symbols-outlined iconeLogin">
-                        account_circle
+                    <span class="material-symbols-outlined iconeCadastro">
+                        person_add
                     </span>
-                    <h1 class="tituloLogin">{{ dados_login.0.titulo }}</h1>
+                    <h1 class="tituloCadastro">{{ dados_cadastro.0.titulo }}</h1>
                 </div>
-                <form class="login-form" action="login" method="post">
+                <form class="cadastro-form" action="cadastro" method="post">
                     {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
                     
                     <!-- Campo para o usuário -->
                     <div class="input-group">
-                        <input type="text" name="Usuário" for="{{ form.user.id_for_label }}" placeholder="Digite seu usuário">{{ form.user.label }}</label>
+                        <input type="text" name="Usuário" for="{{ form.user.id_for_label }}" placeholder="Digite o nome do usuário">{{ form.user.label }}</label>
                         {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
                     </div>
-                    
+                    <!-- Campo para o email -->       
+                    <div class="input-group">
+                        <input type="text" name="Email" for="{{ form.email.id_for_label }}" placeholder="Digite o email do usuário">{{ form.email.label }}</label>
+                        {{ form.email }} <!-- Renderiza o campo de entrada do usuário -->
+                    </div>
                     <!-- Campo para a senha -->
                     <div class="input-group">
-                        <input type="password" name="Senha" for="{{ form.password.id_for_label }}" placeholder="Digite sua senha">{{ form.password.label }}</label>
+                        <input type="password" name="Senha" for="{{ form.password.id_for_label }}" placeholder="Digite a senha">{{ form.password.label }}</label>
                         {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
                     </div>
                     <!-- Botão de submissão do formulário -->
-                    <button type="submit" class="btnLogin"><span>ENTRAR</span></button>
+                    <button type="submit" class="btnCadastro"><span>CADASTRAR</span></button>
                 </form>
                 
                 <!-- Exibe mensagem de erro, se houver -->
@@ -67,11 +75,10 @@
                 {% endif %}
 
             </div>
-            <div class="halfLogin rightLogin">
-                <img class="imagemLogin" src="{{ dados_login.0.imgLogin.url }}" alt="imagemLogin">
-            </div>
         </div>
         
     </div>
 </main>
-{% endblock %}
+
+{% endblock%}
+

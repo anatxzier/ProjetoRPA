@@ -1,4 +1,7 @@
+
 {% extends 'index.html' %}
+
+{% load static %}
 
 {% block title %}
     <!-- Nova Turma -->
@@ -85,10 +88,9 @@
                     Insira o arquivo .xlsx
                 </label>
                 <input type="file" id="arquivos"> 
-                <button class="btnTurma"><span>Iniciar</span></button>
-            </div>
+                <button id="buttonModal" class="btnTurma"><span>Iniciar</span></button>
 
-           
+            </div>
             
         </form>
         
@@ -98,10 +100,35 @@
     
         </div>
 
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Deseja adicionar mais um arquivo?</h3>
+                <br>
+                <p>Aviso: Após iniciar a automatização, arquivos poderão ser adicionados, porém serão inicializados apenas quando os arquivos em processo forem concluídos. Os arquivos, possuem prazo de 2 dias para serem finalizados.</p>
+                <div class="botoesModal">
+                    <button>Voltar</button>
+                    <button>Iniciar</button>
+                </div>
+
+                
+            </div>
+        </div>
+        
+
+        
+
+        
+
     </div>
 
 
 
 </main>
 
+
+
 {% endblock %}
+
+
+<script src="{% static 'js/animationNovaTurma.js' %}"></script>
