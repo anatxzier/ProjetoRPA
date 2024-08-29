@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+<!-- Lixeira -->
+{% endblock %}
+
+{% block body%}
+<main class="containerLixeira">
+    <div class="navbarLixeira-custom">
+        <div class="navbarLixeira-brand">
+            <h2>{{ dados_lixeira.0.titulo }}</h2>
+            <span class="material-symbols-outlined iconeLixeira">
+                delete
+            </span>
+        <div>
+    </div>
+    <div>
+        <p>Cart.Dev Sistemas<p>
+        <span class="material-symbols-outlined">
+            delete
+        </span>
+        <span class="material-symbols-outlined">
+            restore_from_trash
+        </span>
+    </div>
+</main>
+{% endblock %}

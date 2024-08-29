@@ -1,0 +1,36 @@
+{% extends "index.html" %}
+
+{% load static %}
+
+{% block title %}
+<!-- Processo -->
+{% endblock %}
+
+{% block body %}
+<div class="containerProcesso">
+    <div class="contentProcesso">
+        <div class="navProcesso">
+            <div class="navProcesso-content">
+                <div class="navCampo">
+                    <img src="{% static 'img/Ellipse.png' %}">
+                    <p class="navCampo">Itens Pendentes</p>
+                </div>
+                <div class="navCampo">
+                    <img src="{% static 'img/Ellipse.png' %}">
+                    <p class="navCampo">Em Processo</p>
+                </div>
+                <div class="navCampo">
+                    <img src="{% static 'img/Ellipse.png' %}">
+                    <p class="navCampo">Finalizado</p>
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

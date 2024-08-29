@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Homepage, Login, NovaTurma, Cadastro
+from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo
 from .forms import FormLogin, FormNovaTurma
 
 def Homepage_View (request):
@@ -32,3 +32,26 @@ def Cadastro_View(request):
 
     return render(request, "cadastro.html", context)
 
+def Lixeira_View(request):
+    context = {}
+    dados_lixeira = Lixeira.objects.all()
+    form = FormNovaTurma()
+    context = {
+        'dados_NovaTurma': NovaTurma.objects.all(),
+        'form': form
+    }
+    context["dados_lixeira"] = dados_lixeira
+
+    return render(request, "lixeira.html", context)
+
+def Processo_View(request):
+    context = {}
+    dados_processo = Processo.objects.all(),
+    context ["dados_processo"] = dados_processo
+    form = FormNovaTurma()
+    context = {
+        'dados_NovaTurma': NovaTurma.objects.all(),
+        'form': form
+    }
+
+    return render(request, "processo.html", context)

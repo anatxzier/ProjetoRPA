@@ -65,14 +65,15 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4); /* Cor de fundo */
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
 .modal-content {
     background-color: #B0C2C0;
     color: #4C5958;
     margin: 15% auto;
-    padding: 20px;
+    padding: 3%;
+    padding-top:1%;
     border: 1px solid #888;
     width: 50%;
     align-items: center;
@@ -84,14 +85,18 @@
 }
 
 .modal-content span{
-    align-self: start;
+    align-self: end;
 }
-.modal-content h3{
-    margin-bottom: 0.1rem; 
-    padding-bottom: 0.1rem;
+.modal-content hr{
     width: 80%;
-    border-bottom: #4C5958 2px solid ;
+    background-color: #4C5958;
 
+}
+
+.modal-content h3{
+    margin: 0;
+    padding: 0;
+    font-size: 4vh;
 }
 
 .close {
@@ -109,10 +114,13 @@
 }
 
 .botoesModal{
-    width: 60%;
-    height: 60%;
+    width: 100%;
+    height: 80%;
     display: flex;
-    gap: 10px
+    gap: 20%;
+    justify-content: space-between;
+
+    
 
 }
 
@@ -121,6 +129,7 @@
     height: 40%;
     background-color: #8AA6A3;
     border: none;
+    padding: 0.4rem;
 }
 
 /* Ajustes de responsividade */
@@ -184,9 +193,6 @@
     overflow-y: scroll;
     overflow-x: hidden; 
 }
-
-
-
 
 
 .nova-turma-form::-webkit-scrollbar{
@@ -259,6 +265,7 @@ form.nova-turma-form {
     flex-direction: row;
     align-items: start;
     gap: 1rem;
+    
 }
 
 .botoesTurma label {
@@ -269,10 +276,11 @@ form.nova-turma-form {
     padding: 2vh 6vh; 
     cursor: pointer; 
     border: 1px solid #D9E0DF;
+
 }
 
 .botoesTurma input[type="file"] {
-    display: none; /* Oculta o input de tipo file */
+    display: none; 
 }
 
 .botoesTurma .btnTurma {
@@ -289,7 +297,7 @@ form.nova-turma-form {
     border-radius: 15px;
     overflow: hidden;
     background: #ffffff;
-    color: #10403B; /* Ajuste a cor do texto do botão conforme necessário */
+    color: #10403B; 
     border-bottom: 2px solid #5B5B5B;
     border-right: 2px solid #5B5B5B;
     transition: background-color 0.3s, color 0.3s; /* Adiciona transições suaves */

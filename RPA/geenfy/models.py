@@ -27,3 +27,10 @@ class NovaTurma(models.Model):
 class Cadastro(models.Model):
     titulo = models.CharField(max_length=55)
     imgCadastro = models.ImageField(upload_to="imgCadastro/")
+
+class Lixeira(models.Model):
+    titulo = models.CharField(max_length=55)
+
+class Processo(models.Model):
+    titulo = models.CharField(max_length=55)
+    
