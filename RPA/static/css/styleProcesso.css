@@ -64,8 +64,87 @@ p{
 }
 
 .navCampo img {
-    width: 1rem; /* Define um tamanho pequeno para a imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-right: 0.5rem; /* Espaçamento entre a imagem e o texto */
-    object-fit: contain; /* Evita deformação */
+    width: 1rem; 
+    height: auto; 
+    margin-right: 0.5rem; 
+    object-fit: contain;
 }
+
+.tabela{
+    width: 100vw;
+    height: 80vh;
+    margin-top: 20%;
+    background-color: #8AA6A3;
+   
+}
+
+.tabelaContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.tabelaContent p{
+    display: flex;
+    margin-left: 15%;
+    color: #4C5958;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.tabelaContent hr{
+    display: flex;
+    align-self: center;
+    border: 1px #10403B solid;
+    width: 70%;
+}
+
+.tarefa{
+    width: 15vw;
+    height: 8vh;
+    background-color: #8AA6A3;
+    border: 1px solid #C4D1D0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.kanban {
+    display: flex;
+    justify-content: center;
+    height: 50vh;
+    gap: 12%;
+    padding: 4%;
+    padding-top: 5%;
+    width: 100vw;
+    
+  }
+
+  .kanban hr{
+    width: 5px;
+    background-color: #000;
+  }
+  
+  
+  .column {
+    width: 15vw;
+    height: 50vh;
+    border: 1px solid #C4D1D0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .item {
+    background-color: #8AA6A3;
+    padding: 5%;
+    border-radius: 5px;
+    margin: 5%;
+  }
+  
+  .dragging {
+    opacity: 0.5;
+  }
+
+  .colunacontent{
+    display: flex;
+    flex-direction: row;
+  }

@@ -7,22 +7,60 @@
 
 {% block body%}
 <main class="containerLixeira">
-    <div class="navbarLixeira-custom">
-        <div class="navbarLixeira-brand">
-            <h2>{{ dados_lixeira.0.titulo }}</h2>
-            <span class="material-symbols-outlined iconeLixeira">
+    <div>
+        <div class="navbarLixeira-custom">
+            <div class="navbarLixeira-brand">
+                <h2>{{ dados_lixeira.0.titulo }}</h2>
+                <span class="material-symbols-outlined iconeLixeira">
+                    delete
+                </span>
+            </div>
+        </div>
+        <div class="salaApagada">
+            <p class="nomeSalaApagada">Cart.Dev Sistemas<p>
+            <span id="buttonModalDelete" class="material-symbols-outlined iconeSala">
                 delete
             </span>
-        <div>
-    </div>
-    <div>
-        <p>Cart.Dev Sistemas<p>
-        <span class="material-symbols-outlined">
-            delete
-        </span>
-        <span class="material-symbols-outlined">
-            restore_from_trash
-        </span>
+            <span id="buttonModalRestore" class="material-symbols-outlined iconeSala">
+                restore_from_trash
+            </span>
+        </div>
+        <div class="linha-wrapper">
+            <hr class="linha">
+            <div class="alinhamentoTexto">
+                <span class="material-symbols-outlined iconeSala">
+                    warning
+                </span>
+                <p class="info">Os itens desta lista serão excluídos após 7 dias e não poderão mais ser restaurados.<p>
+            </div>
+        </div>
+
+        <div id="modalDelete" class="modalDeleteRestore">
+            <div class="modal-contentDeleteRestore">
+                <span class="closeDeleteRestore">&times;</span>
+                <h3 class="pergunta">Deseja excluir permanentemente esse item?</h3>
+                <hr>
+                <div class="botoesModaldeleterestore">
+                    <button class="voltarDeleteRestore">Cancelar</button>
+                    <button>Confirmar</button>
+                </div>
+
+                
+            </div>
+        </div>
+        <div id="modalRestore" class="modalDeleteRestore">
+            <div class="modal-contentDeleteRestore">
+                <span class="closeDeleteRestore">&times;</span>
+                <h3 class="pergunta">Deseja restaurar esse item?</h3>
+                <hr>
+                <div class="botoesModaldeleterestore">
+                    <button class="voltarDeleteRestore">Cancelar</button>
+                    <button>Confirmar</button>
+                </div>
+
+                
+            </div>
+        </div>
     </div>
 </main>
 {% endblock %}
