@@ -1,5 +1,7 @@
 {% extends 'index.html' %}
 
+{% load static %}
+
 {% block title %}
     <!-- Login -->
 {% endblock %}
@@ -43,22 +45,23 @@
                     </span>
                     <h1 class="tituloLogin">{{ dados_login.0.titulo }}</h1>
                 </div>
-                <form class="login-form" action="login" method="post">
+                <form class="login-form" action="/novaturma" method="post">
                     {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
                     
                     <!-- Campo para o usuário -->
                     <div class="input-group">
-                        <input type="text" name="Usuário" for="{{ form.user.id_for_label }}" placeholder="Digite seu usuário">{{ form.user.label }}</label>
+                        <input id="input-nome" type="text" name="Usuário" for="{{ form.user.id_for_label }}" placeholder="Digite seu usuário">{{ form.user.label }}</label>
                         {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
                     </div>
                     
                     <!-- Campo para a senha -->
                     <div class="input-group">
-                        <input type="password" name="Senha" for="{{ form.password.id_for_label }}" placeholder="Digite sua senha">{{ form.password.label }}</label>
+                        <input id="input-senha" type="password" name="Senha" for="{{ form.password.id_for_label }}" placeholder="Digite sua senha">{{ form.password.label }}</label>
                         {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
                     </div>
                     <!-- Botão de submissão do formulário -->
-                    <button type="submit" class="btnLogin"><span>ENTRAR</span></button>
+                     <button id="btn-sublogin" type="submit" class="btnLogin"><span>ENTRAR</span></button>
+                    
                 </form>
                 
                 <!-- Exibe mensagem de erro, se houver -->

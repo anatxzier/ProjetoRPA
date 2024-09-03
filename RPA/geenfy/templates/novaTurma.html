@@ -48,7 +48,7 @@
         
                 <!-- Campo LoginCAF -->
                 <div>
-                    <input type="text" name="LoginCAF" id="{{ form.LoginCAF.id_for_label }}" placeholder="{{ form.LoginCAF.label }}">
+                    <input id="userCAF" type="text" name="LoginCAF" id="{{ form.LoginCAF.id_for_label }}" placeholder="{{ form.LoginCAF.label }}">
                     {% if form.LoginCAF.errors %}
                         <div class="error">{{ form.LoginCAF.errors }}</div>
                     {% endif %}
@@ -56,7 +56,7 @@
         
                 <!-- Campo senhaCAF -->
                 <div>
-                    <input type="password" name="SenhaCAF" id="{{ form.SenhaCAF.id_for_label }}" placeholder="{{ form.SenhaCAF.label }}">
+                    <input id="passCAF" type="password" name="SenhaCAF" id="{{ form.SenhaCAF.id_for_label }}" placeholder="{{ form.SenhaCAF.label }}">
                     {% if form.SenhaCAF.errors %}
                         <div class="error">{{ form.SenhaCAF.errors }}</div>
                     {% endif %}
@@ -89,6 +89,14 @@
                 </label>
                 <input type="file" id="arquivos"> 
                 <button id="buttonModal" class="btnTurma"><span>Iniciar</span></button>
+
+                {% if form.arquivo.errors %}
+                    <div class="error">
+                        {% for error in form.arquivo.errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
 
             </div>
             
