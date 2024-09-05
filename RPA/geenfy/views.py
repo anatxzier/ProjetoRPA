@@ -1,7 +1,11 @@
-from django.shortcuts import render, redirect
-from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo
-from .forms import FormLogin, FormNovaTurma
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User
+from .forms import FormLogin, FormNovaTurma, FormCadastro
+from django.contrib.auth.models import User, Group
+
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login as auth_login,logout as auth_logout
+from django.core.cache import cache
 
 def Homepage_View (request):
     context = {}
@@ -17,21 +21,21 @@ def Login_View(request):
 
     if request.method == "POST":
         form = FormLogin(request.POST)
-    if form.is_valid():
-            var_email = form.cleaned_data['email']
-            var_password = form.cleaned_data['password']
+        if form.is_valid():
+                var_email = form.cleaned_data['email']
+                var_senha = form.cleaned_data['senha']
 
-            user = authenticate(email=var_email, password=var_password)
-            
-            if user is not None:
-                auth_login(request, user)
+                user = authenticate(email=var_email, senha=var_senha)
                 
-                return redirect('homepage')
-            else:
-                form = FormLogin()
-                context['form'] = form
-                context['error'] = "Usuário ou senha incorretas"
-                return render(request, "login.html", context)
+                if user is not None:
+                    auth_login(request, user)
+                    
+                    return redirect('homepage')
+                else:
+                    form = FormLogin()
+                    context['form'] = form
+                    context['error'] = "Usuário ou senha incorretas"
+                    return render(request, "login.html", context)
 
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -57,12 +61,57 @@ def NovaTurma_View(request):
 #configurar upload de arquivos
     return render(request, "novaTurma.html", context )
 
+#
+#@group_required('Coordenador')
 def Cadastro_View(request):
+    cache.clear()
     context = {}
     dados_cadastro = Cadastro.objects.all()
     context["dados_cadastro"] = dados_cadastro
 
-    return render(request, "cadastro.html", context)
+    if request.method == 'POST':
+        form = FormCadastro(request.POST)
+        if form.is_valid():
+            
+            try:
+            
+                var_first_name = form.cleaned_data['first_name']
+                var_user = form.cleaned_data['user']
+                var_email = form.cleaned_data['email']
+                var_password = form.cleaned_data['password']
+                
+
+                if  User.objects.filter(username=var_user).exists():
+                    context['error_message'] = 'Nome de usuario já existe, por favor tente novamente'
+                    form = FormCadastro()
+                    context['form'] = form
+                    return render(request, "cadastro.html", context)
+                else:
+                    
+                    user = User.objects.create_user(username=var_user, email=var_email, password=var_password)
+                    user.first_name = var_first_name
+                    user.save()
+                    group = Group.objects.get(name='funcionario')
+                    user.groups.add(group)
+                    
+                    return redirect('cadastro')
+            except Exception as error:
+                
+                context['error_message'] = 'Ocorreu um erro durante o processamento do formulário.'
+
+                form = FormCadastro()
+                context['form'] = form
+                
+                return redirect("cadastro")
+        else:
+            form = FormCadastro()
+            context['form'] = form
+            return render(request, "cadastro.html", context)
+    else:
+        form = FormCadastro()
+        context['form'] = form
+        return render(request, "cadastro.html", context)
+
 
 def Lixeira_View(request):
     context = {}

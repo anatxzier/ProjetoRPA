@@ -141,6 +141,12 @@
     border-radius: 10px;
 }
 
+.login-form input:-webkit-autofill {
+    background-color: transparent !important; 
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important; 
+    
+    transition: background-color 5000s ease-in-out 0s;
+}
 
 /* Estilização dos campos de entrada */
 .login-form div {
@@ -152,7 +158,7 @@
     align-items: center; 
 }
 
-.login-form input[type="text"],
+.login-form input[type="email"],
 .login-form input[type="password"] {
     width: 25vw; 
     padding: 0.5rem 0; 
@@ -171,7 +177,7 @@
     color: #D9E0DF; 
     opacity: 1;
     font-family: "Poppins";
-    font-size: 1.5vh;
+    font-size: 1.8vh;
 }
 
 .btnLogin {

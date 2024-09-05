@@ -33,7 +33,6 @@
     flex-direction: column;
     align-items: center;
     align-self: center;
-    overflow: hidden;
 }
 
 .rightCadastro form{
@@ -80,21 +79,6 @@
     padding-top: 1vh;
 }
 
-.cadastro-form::-webkit-scrollbar-track {
-    display: none;
-    border: none;
-}
-
-.cadastro-form::-webkit-scrollbar{
-    width: 3px;
-    border: 1px solid #8AA6A3;
-}
-
-.cadastro-form::-webkit-scrollbar-thumb{
-    background-color: #8AA6A3;
-    border-radius: 10px;
-}
-
 
 /* Estilização dos campos de entrada */
 .cadastro-form div {
@@ -111,6 +95,8 @@
     width: 25vw; 
     padding: 0.5rem 0; 
     border: none; 
+    padding-bottom: 2px;
+    padding-top: 2;
     border-bottom: 1px solid #10403B; 
     border-radius: 0; 
     font-size: 1rem; 
@@ -119,6 +105,28 @@
     color: #10403B;
     outline: none;
 }
+.cadastro-form input[type="email"]{
+    width: 25vw;  
+    border: none; 
+    border-bottom: 1px solid #10403B; 
+    border-radius: 0; 
+    font-size: 1rem; 
+    box-sizing: border-box; 
+    background-color: transparent;
+    color: #10403B;
+    outline: none;
+}
+.cadastro-form input:-webkit-autofill {
+    background-color: transparent !important; 
+    color: #10403B !important; 
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important; 
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.cadastro-form input:-webkit-autofill::first-line {
+    color: #10403B !important;
+}
+
 
 /* Estilização dos placeholders */
 .cadastro-form input::placeholder {

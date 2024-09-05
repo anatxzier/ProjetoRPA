@@ -78,8 +78,6 @@
                     {% endif %}
                 </div>
 
-
-
             </div>
 
 
@@ -88,15 +86,7 @@
                     Insira o arquivo .xlsx
                 </label>
                 <input type="file" id="arquivos"> 
-                <button id="buttonModal" class="btnTurma"><span>Iniciar</span></button>
-
-                {% if form.arquivo.errors %}
-                    <div class="error">
-                        {% for error in form.arquivo.errors %}
-                            <p>{{ error }}</p>
-                        {% endfor %}
-                    </div>
-                {% endif %}
+                <button id="buttonModal" class="btnTurma" type="submit"><span>Iniciar</span></button>
 
             </div>
             

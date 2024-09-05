@@ -52,17 +52,19 @@
                     
                     <!-- Campo para o usuário -->
                     <div class="input-group">
-                        <input type="text" name="Usuário" for="{{ form.user.id_for_label }}" placeholder="Digite o nome do usuário">{{ form.user.label }}</label>
+
+                        {{ form.first_name }} <!-- Renderiza o campo de entrada do usuário -->
+                    </div>
+
+                    <div class="input-group">
                         {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
                     </div>
                     <!-- Campo para o email -->       
                     <div class="input-group">
-                        <input type="text" name="Email" for="{{ form.email.id_for_label }}" placeholder="Digite o email do usuário">{{ form.email.label }}</label>
-                        {{ form.email }} <!-- Renderiza o campo de entrada do usuário -->
+                        {{ form.email }} 
                     </div>
                     <!-- Campo para a senha -->
                     <div class="input-group">
-                        <input type="password" name="Senha" for="{{ form.password.id_for_label }}" placeholder="Digite a senha">{{ form.password.label }}</label>
                         {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
                     </div>
                     <!-- Botão de submissão do formulário -->

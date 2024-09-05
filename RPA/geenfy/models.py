@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Homepage(models.Model):
     titulo = models.CharField(max_length=55)
@@ -28,10 +29,15 @@ class Cadastro(models.Model):
     titulo = models.CharField(max_length=55)
     imgCadastro = models.ImageField(upload_to="imgCadastro/")
     
-
 class Lixeira(models.Model):
     titulo = models.CharField(max_length=55)
 
 class Processo(models.Model):
     titulo = models.CharField(max_length=55)
     
+class usuario(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    login_IHX = models.CharField(max_length=30)
+    senha_IHX = models.CharField(max_length=20)
+    login_CAF = models.CharField(max_length=30)
+    senha_CAF = models.CharField(max_length=20)
