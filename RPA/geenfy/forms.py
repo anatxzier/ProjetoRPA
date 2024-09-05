@@ -2,7 +2,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 
 class FormLogin(forms.Form):
-    email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder':'Informe seu email'}), max_length=60)
+    user = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Informe seu nome de usuário'}), max_length=60)
     password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Informe sua senha'}), min_length=8)
 
 class FormNovaTurma(forms.Form):

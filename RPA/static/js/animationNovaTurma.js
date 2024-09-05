@@ -28,3 +28,17 @@
         }
     }
 
+    document.addEventListener('DOMContentLoaded', function () {
+        const inputFile = document.getElementById('arquivos');
+        const fileNameDisplay = document.getElementById('file-name');
+
+        inputFile.addEventListener('change', function(event) {
+            if (event.target.files.length > 0) {
+                const fileName = event.target.files[0].name;
+                fileNameDisplay.textContent = `Arquivo selecionado: ${fileName}`;
+            } else {
+                fileNameDisplay.textContent = 'Nenhum arquivo selecionado';
+            }
+        });
+    });
+

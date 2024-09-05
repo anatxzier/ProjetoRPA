@@ -2,10 +2,17 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User
 from .forms import FormLogin, FormNovaTurma, FormCadastro
 from django.contrib.auth.models import User, Group
-
+from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login as auth_login,logout as auth_logout
 from django.core.cache import cache
+
+def group_required(group_name):
+     def in_group(user):
+         if user.is_authenticated:
+             return user.groups.filter(name=group_name).exists()
+         return False
+     return user_passes_test(in_group)
 
 def Homepage_View (request):
     context = {}
@@ -22,28 +29,23 @@ def Login_View(request):
     if request.method == "POST":
         form = FormLogin(request.POST)
         if form.is_valid():
-                var_email = form.cleaned_data['email']
-                var_senha = form.cleaned_data['senha']
+            var_user = form.cleaned_data['user']  
+            var_password = form.cleaned_data['password']
 
-                user = authenticate(email=var_email, senha=var_senha)
-                
-                if user is not None:
-                    auth_login(request, user)
-                    
-                    return redirect('homepage')
-                else:
-                    form = FormLogin()
-                    context['form'] = form
-                    context['error'] = "Usuário ou senha incorretas"
-                    return render(request, "login.html", context)
+            user = authenticate(request, username=var_user, password=var_password)
 
-    # if a GET (or any other method) we'll create a blank form
+            if user is not None:
+                auth_login(request, user)
+                return redirect('homepage')
+            else:
+                context['error'] = "Usuário ou senha incorretos"
+                context['form'] = form
+                return render(request, "login.html", context)
+
     else:
         form = FormLogin()
         context['form'] = form
-        # Vou redenrizar o que foi criado no arquivo forms
         return render(request, "login.html", context)
-
 
 def NovaTurma_View(request):
     form = FormNovaTurma()

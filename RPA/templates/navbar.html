@@ -3,7 +3,7 @@
       <a class="navbar-brand" href="#">
           <h2>Geenfy</h2>
         </a>
-        <span class="material-symbols-outlined">
+        <span class="material-symbols-outlined icone">
           person
           </span>
 
@@ -41,7 +41,11 @@
       color: #000; 
       font-family: "Poppins";
       font-size: 3.3vh;
+      transition: transform 0.3s ease;
+  }
 
+  .navbar-brand h2:hover {
+    transform: scale(1.2);
   }
 
   .contentNav {
@@ -53,5 +57,11 @@
     font-size: 4vh;
   }
 
+  .icone{
+    transition: transform 0.3s ease;
+  }
 
+  .icone:hover {
+    transform: scale(1.2);
+  }
 </style>
