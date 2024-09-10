@@ -85,9 +85,9 @@
                 <label for="arquivos" class="file-label">
                     Insira o arquivo .xlsx
                 </label>
-                <input type="file" id="arquivos"> 
+                <input type="file" id="arquivos">
+                <p class="" id="file-names"></p>
                 <button id="buttonModal" class="btnTurma" type="submit"><span>Iniciar</span></button>
-
             </div>
             
         </form>
@@ -124,7 +124,26 @@
 
 </main>
 
+<script>let selectedFiles = [];
 
+    document.getElementById('arquivos').addEventListener('change', function() {
+        var fileInput = this;
+        var fileNames = document.getElementById('file-names');
+    
+        // Adiciona o novo arquivo à lista de arquivos selecionados
+        selectedFiles.push(fileInput.files[0]);
+    
+        // Limpa a exibição dos nomes dos arquivos
+        fileNames.innerHTML = '';
+    
+        // Exibe todos os nomes dos arquivos selecionados até o momento
+        selectedFiles.forEach(function(file) {
+            fileNames.innerHTML += file.name + '<br>';
+        });
+    
+        // Limpa o campo de seleção de arquivos para permitir adicionar outro arquivo
+        fileInput.value = '';
+    });</script>
 
 {% endblock %}
 

@@ -35,9 +35,13 @@ class Lixeira(models.Model):
 class Processo(models.Model):
     titulo = models.CharField(max_length=55)
     
-class usuario(models.Model):
+class Usuario(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     login_IHX = models.CharField(max_length=30)
     senha_IHX = models.CharField(max_length=20)
     login_CAF = models.CharField(max_length=30)
     senha_CAF = models.CharField(max_length=20)
+
+class Funcionario(models.Model):
+    titulo = models.CharField(max_length=55)
+    imgFuncionarios = models.ImageField(upload_to="imgFuncionarios/")

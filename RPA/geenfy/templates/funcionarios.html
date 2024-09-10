@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+
+
+{% block title %}
+<!-- Funcionários -->
+{% endblock %}
+
+{% block body%}
+<main class="containerFuncionarios">
+    <div class="colunaFuncionarios">
+        <h1 class="tituloFunc">{{ dados_funcionario.0.titulo }}</h1>
+        <img class="imgFuncionarios" src="{{ dados_funcionario.0.imgFuncionarios.url }}" alt="imagemFuncionarios">
+    </div>
+    <div class="user-card">
+        <div class="user-header" onclick="toggleDetails()">
+            <div class="user-icon">
+                <span>D</span>
+            </div>
+            <div class="user-info">
+                <h2>Juliana Ana dos Santos</h2>
+                <p>JulianaSantos@gmail.com</p>
+            </div>
+            <div class="dropdown-icon">
+                <span>&#9660;</span>
+            </div>
+        </div>
+        <div class="user-details" id="user-details">
+            <div class="details">
+                <div>
+                    <strong>Nome</strong>
+                    <p>Juliana Ana dos Santos</p>
+                </div>
+                <div>
+                    <strong>User CAF</strong>
+                    <p>Juliana Ana dos Santos</p>
+                </div>
+                <div>
+                    <strong>E-mail</strong>
+                    <p>JulianaSantos@gmail.com</p>
+                </div>
+                <div>
+                    <strong>User IHX</strong>
+                    <p>JulianaSantos@gmail.com</p>
+                </div>
+            </div>
+            <button class="edit-button">
+                <img src="edit-icon.png" alt="Edit icon"> Editar usuário
+            </button>
+        </div>
+    </div>
+</main>
+{% endblock %}

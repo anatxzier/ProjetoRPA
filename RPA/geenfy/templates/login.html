@@ -45,7 +45,7 @@
                     </span>
                     <h1 class="tituloLogin">{{ dados_login.0.titulo }}</h1>
                 </div>
-                <form class="login-form" action="/novaturma" method="post">
+                <form class="login-form" method="post">
                     {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
                     
                     <!-- Campo para o usuário -->
@@ -67,7 +67,7 @@
                 
                 <!-- Exibe mensagem de erro, se houver -->
                 {% if error %}
-                    <p>{{ error }}</p>
+                    <div id="alert-container" class="mensagemErro">{{ error }}</div>
                 {% endif %}
 
             </div>

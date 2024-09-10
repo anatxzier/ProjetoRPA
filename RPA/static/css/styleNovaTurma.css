@@ -266,7 +266,7 @@ form.nova-turma-form {
     display: flex;
     flex-direction: row;
     align-items: start;
-    gap: 1rem;
+    gap:0rem;
     
 }
 
@@ -285,7 +285,11 @@ form.nova-turma-form {
     display: none; 
 }
 
+p#filenames{
+    margin-bottom: 0px;
+}
 .botoesTurma .btnTurma {
+    margin-top: 0px;
     outline: none;
     cursor: pointer;
     border: none;
@@ -302,9 +306,8 @@ form.nova-turma-form {
     color: #10403B; 
     border-bottom: 2px solid #5B5B5B;
     border-right: 2px solid #5B5B5B;
-    transition: background-color 0.3s, color 0.3s; /* Adiciona transições suaves */
+    transition: background-color 0.3s, color 0.3s; 
 }
-
 .btnTurma span {
     position: relative;
     transition: color 0.4s;
@@ -335,7 +338,6 @@ form.nova-turma-form {
 .btnTurma:hover::before {
     transform: translate3d(100%, 0, 0);
 }
-
 
 /* 
 @media (max-height: 463px) {

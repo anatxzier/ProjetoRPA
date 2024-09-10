@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User
+from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User, Funcionario, Usuario
 from .forms import FormLogin, FormNovaTurma, FormCadastro
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import user_passes_test
@@ -31,7 +31,7 @@ def Login_View(request):
         if form.is_valid():
             var_user = form.cleaned_data['user']  
             var_password = form.cleaned_data['password']
-
+        
             user = authenticate(request, username=var_user, password=var_password)
 
             if user is not None:
@@ -138,3 +138,12 @@ def Processo_View(request):
     }
 
     return render(request, "processo.html", context)
+
+def Funcionario_View(request):
+    context = {}
+    dados_usuario = Usuario.objects.all()
+    context ["dados_usuario"] = dados_usuario
+    dados_funcionario = Funcionario.objects.all()
+    context ["dados_funcionario"] = dados_funcionario
+
+    return render(request, "funcionarios.html", context)
