@@ -3,9 +3,23 @@
       <a class="navbar-brand" href="/">
           <h2>Geenfy</h2>
         </a>
-        <a class="icon-login"href="/login"><span class="material-symbols-outlined icone">
-          person
-          </span></a>
+        <!-- IF para mudar a nav conforme a autenticação, caso não esteja autenticado aparecerá "Entrar" -->
+        <div class="icn-group">
+        {% if user.is_authenticated %}
+        <!-- Se estiver autenticado como coordenador aparecerá botão para a pág instrutores e agenda, e ao lado o seu perfil -->
+            {% if user_is_Coordenador %}
+              <a class="icn" href="/"><span class="material-symbols-outlined icone">home</span></a>
+              <a class="icn" href="/cadastro"><span class="material-symbols-outlined icone">person_add</span></a>
+              <a class="icn" href="/funcionarios"><span class="material-symbols-outlined icone">group</span></a>
+              <a class="icn" href="/logout"><span class="material-symbols-outlined icone">logout</span></a>
+              {% else %}
+              <a class="icn" href="/"><span class="material-symbols-outlined icone">home</span></a>
+              <a class="icn" href="/logout"><span class="material-symbols-outlined icone">logout</span></a>
+            {% endif %}
+        {% else %}
+          <a class="icn" href="/login"><span class="material-symbols-outlined icone">person</span></a>
+        </div>
+        {% endif %}
 
   </div>
 </nav>
@@ -64,8 +78,16 @@
   .icone:hover {
     transform: scale(1.2);
   }
-  .icon-login{
+  .icn{
     text-decoration: none;
     color: black;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
   }
+  .icn-group {
+    display: flex;
+    gap: 20px; /* Controla o espaço entre os ícones */
+    align-items: center;
+}
 </style>

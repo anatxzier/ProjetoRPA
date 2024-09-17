@@ -285,8 +285,14 @@ form.nova-turma-form {
     display: none; 
 }
 
-p#filenames{
-    margin-bottom: 0px;
+.botoesTurma p{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    display: flex;
+    justify-self: start;
+
+
 }
 .botoesTurma .btnTurma {
     margin-top: 0px;

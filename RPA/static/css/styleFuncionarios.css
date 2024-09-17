@@ -1,13 +1,13 @@
 .containerFuncionarios {
-    margin:0;
+    margin: 0;
     height: 100vh;
     width: 100vw;
     display: flex;
     background-color: #C4D1D0;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between; /* Mantém espaçamento entre a coluna e o user-card */
     position: relative;
     overflow: hidden;
+    padding: 0 5vh;
 }
 
 .colunaFuncionarios{
@@ -34,78 +34,105 @@
     font-size: 230%;
 }
 
+.container2{
+    width: 70vw;
+    margin: 0 auto; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    padding-top: 2rem; 
+}
+
+.iconeFunc{
+    top: calc(15vh + 1rem);
+    position: fixed;
+    margin: auto;
+    color: #0B6A60;
+    width: 70vw;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5vh;
+}
+
+.material-symbols-outlined.iconFunc{
+    font-size: 30px;
+    color: #0B6A60;
+    padding-right: 0.5rem;
+}
+
+.user-cards-wrapper {
+    display: flex;
+    flex-direction: column; /* Empilha os cards verticalmente */
+    gap: 1rem; /* Espaçamento entre os cards */
+    margin-top: 8rem; /* Espaço entre o ícone e o primeiro card */
+}
+
 .user-card {
-    width: 350px;
-    border-radius: 15px;
-    background-color: #a5dee4;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    height: 4.5rem;
+    background: linear-gradient( to right, #CDE1DF, #0B6A60);
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
+    z-index: 1000;
+    margin: 0 0 0 auto;
 }
 
 .user-header {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 15px;
     cursor: pointer;
-    border-bottom: 1px solid #ffffff;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
 }
 
 .user-icon {
     width: 40px;
     height: 40px;
-    background-color: #8fd5e0;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    color: white;
+    margin-right: 10px;
 }
 
-.user-info {
-    flex-grow: 1;
-    padding-left: 10px;
+.user-details h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #0B6A60;
 }
 
-.user-info h2 {
-    font-size: 16px;
-    color: white;
-}
-
-.user-info p {
+.user-details p {
     font-size: 14px;
-    color: white;
+    color: #0b6a6195;
 }
 
-.dropdown-icon {
-    font-size: 16px;
-    color: white;
+.user-details-content.show {
+    display: block; /* Mostrar quando a classe 'show' for adicionada */
 }
 
-.user-details {
+.user-details-content {
     display: none;
-    background-color: white;
-    border-radius: 0 0 15px 15px;
     padding: 15px;
-    animation: fadeIn 0.3s ease;
 }
 
-.details {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+.user-attribute {
+    margin-bottom: 10px;
 }
 
-.details div {
-    display: flex;
-    flex-direction: column;
-}
-
-.details strong {
+.user-attribute strong {
+    display: block;
     font-size: 14px;
-    color: #4a4a4a;
+    color: #333;
 }
 
-.details p {
+.user-attribute p {
     font-size: 14px;
     color: #666;
 }
@@ -113,26 +140,21 @@
 .edit-button {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #a5dee4;
+    background-color: #00a8a8;
     color: white;
     border: none;
     padding: 10px;
-    width: 100%;
-    border-radius: 15px;
+    border-radius: 8px;
     cursor: pointer;
-    margin-top: 15px;
+    font-size: 14px;
 }
 
 .edit-button img {
-    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
 }
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+.accordion{
+    background-color: transparent;
+    border: none;
 }

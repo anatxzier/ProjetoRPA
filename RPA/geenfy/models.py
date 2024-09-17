@@ -42,6 +42,12 @@ class Usuario(models.Model):
     login_CAF = models.CharField(max_length=30)
     senha_CAF = models.CharField(max_length=20)
 
+class In_progress_file(models.Model):
+    arquivo_inprogress = models.FileField(upload_to='in_progress_files/')
+
+class Finished_file(models.Model):
+    arquino_fineshed = models.FileField(upload_to='finished_files/')
+
 class Funcionario(models.Model):
     titulo = models.CharField(max_length=55)
     imgFuncionarios = models.ImageField(upload_to="imgFuncionarios/")
