@@ -2,12 +2,20 @@ function toggleDetails(contentId, arrowId) {
     var content = document.getElementById(contentId);
     var arrow = document.getElementById(arrowId);
 
-    // Verifique o estado atual de exibição do conteúdo e altere-o corretamente
-    if (content.style.display === "none" || content.style.display === "") {
+    console.log('Toggling:', contentId, arrowId);
+    console.log('Content:', content);
+    console.log('Arrow:', arrow);
+
+    // Em vez de verificar o estilo diretamente, podemos usar getComputedStyle para obter o valor atual
+    var isHidden = window.getComputedStyle(content).display === "none";
+
+    if (isHidden) {
+        // Se estiver escondido, mostra o conteúdo
         content.style.display = "block";
-        arrow.textContent = "▲"; // Muda a seta para cima
+        arrow.textContent = "▲"; 
     } else {
+        // Se estiver visível, esconde o conteúdo
         content.style.display = "none";
-        arrow.textContent = "▼"; // Muda a seta para baixo
+        arrow.textContent = "▼"; 
     }
 }

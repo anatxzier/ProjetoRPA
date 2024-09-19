@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block body%}
+
 <main class="containerFuncionarios">
     <div class="colunaFuncionarios">
         <h1 class="tituloFunc">{{ dados_funcionario.0.titulo }}</h1>
@@ -13,51 +14,83 @@
     </div>
     <div class="container2">
         <div class="iconeFunc">
+            <!-- Caixa de pesquisa -->
+            <!-- <div class="search-box">
+                <input type="text" class="search-text" id="searchInput" placeholder="Pesquisar funcionário">
+                <a class="search-btn" id="searchBtn">
+                    <span type="submit" class="material-symbols-outlined icon-search">search</span>
+                </a>
+            </div> -->
+            <div class="search-container">
+                <div>
+                <a class="navbar-brand back-arrow" id="backArrow">
+                    <span class="material-symbols-outlined backarrow-icn">arrow_back</span>
+                </a>
+            </div>
+                <!-- Caixa de pesquisa -->
+                <div class="search-box">
+                    <input type="text" class="search-text" id="searchInput" placeholder="Pesquisar sala">
+                    <a class="search-btn" id="searchBtn">
+                        <span type="submit" style="color: #4d4c4cc5" class="material-symbols-outlined">search</span>
+                    </a>
+                </div>
+            </div>
             <span class="material-symbols-outlined">
                 person_add
             </span>
         </div>
         <div class="user-cards-wrapper">
+            {% for funcionario in dados_usuario %}
             <div class="user-card">
-                <div class="user-header" onclick="toggleDetails('details-content-1', 'dropdown-arrow-1')">
+                {% csrf_token %}
+
+                <div class="user-header"
+                    onclick="toggleDetails('details-content-{{ forloop.counter }}', 'dropdown-arrow-{{ forloop.counter }}')">
                     <div class="user-info">
                         <span class="material-symbols-outlined iconFunc">
                             person
                         </span>
                         <div class="user-details">
-                            <h3>Juliana Ana dos Santos</h3>
-                            <p>JulianaSantos@gmail.com</p>
+                            <h3>{{ funcionario.user.first_name }}</h3>
+                            <p>{{ funcionario.user.email }}</p>
                         </div>
                     </div>
-                    <button class="accordion"><span id="dropdown-arrow-1" class="arrow">▼</span></button>
+                    <button class="accordion"><span id="dropdown-arrow-{{ forloop.counter }}"
+                            class="arrow">▼</span></button>
                 </div>
-                <div class="user-details-content" id="details-content-1" style="display: none;">
-                    <div class="user-attribute">
-                        <strong>Nome</strong>
-                        <p>Juliana Ana dos Santos</p>
+                <div class="user-details-content" id="details-content-{{ forloop.counter }}" style="display: none;">
+                    <div class="parAtributo">
+                        <div class="user-attribute">
+                            <strong>User</strong>
+                            <p>{{ funcionario.user}} </p>
+                        </div>
+                        <div class="user-attribute">
+                            <strong>E-mail</strong>
+                            <p>{{ funcionario.user.email }}</p>
+                        </div>
                     </div>
-                    <div class="user-attribute">
-                        <strong>User CAF</strong>
-                        <p>Juliana Ana dos Santos</p>
+                    <div class="parAtributo">
+                        <div class="user-attribute">
+                            <strong>User CAF</strong>
+                            <p>{{funcionario.login_CAF}}</p>
+                        </div>
+                        <div class="user-attribute">
+                            <strong>User IHX</strong>
+                            <p>{{funcionario.login_IHX}}</p>
+                        </div>
                     </div>
-                    <div class="user-attribute">
-                        <strong>E-mail</strong>
-                        <p>JulianaSantos@gmail.com</p>
+                    <div class="button-divv">
+                        <button class="edit-button">Editar usuário <span
+                                class="material-symbols-outlined">person_edit</span></button>
                     </div>
-                    <div class="user-attribute">
-                        <strong>User IHX</strong>
-                        <p>JulianaSantos@gmail.com</p>
-                    </div>
-                    <button class="edit-button">Editar usuário <img src="edit-icon.png" alt="Edit Icon"></button>
                 </div>
             </div>
+            {% endfor %}
         </div>
-        
+
     </div>
 
 </main>
 
 
 {% endblock %}
-
-

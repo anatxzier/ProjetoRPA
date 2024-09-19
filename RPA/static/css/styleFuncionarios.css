@@ -2,7 +2,6 @@
     margin: 0;
     height: 100vh;
     width: 100vw;
-    display: flex;
     background-color: #C4D1D0;
     justify-content: space-between; /* Mantém espaçamento entre a coluna e o user-card */
     position: relative;
@@ -73,12 +72,11 @@
 
 .user-card {
     width: 60%;
-    height: 4.5rem;
-    background: linear-gradient( to right, #CDE1DF, #0B6A60);
+    height: 100%;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 0 1rem;
+    padding: 0;
     z-index: 1000;
     margin: 0 0 0 auto;
 }
@@ -89,6 +87,7 @@
     align-items: center;
     padding: 15px;
     cursor: pointer;
+    background: linear-gradient( to right, #CDE1DF, #0B6A60);
 }
 
 .user-info {
@@ -119,11 +118,15 @@
 
 .user-details-content {
     display: none;
-    padding: 15px;
+    padding: 15px 15px 0px 15px;
+    background-color: #e6e0e0;
+    
 }
 
 .user-attribute {
     margin-bottom: 10px;
+    padding-right: 30px;
+    gap:30px
 }
 
 .user-attribute strong {
@@ -140,8 +143,8 @@
 .edit-button {
     display: flex;
     align-items: center;
-    background-color: #00a8a8;
-    color: white;
+    background-color: transparent;
+    color: #127369;
     border: none;
     padding: 10px;
     border-radius: 8px;
@@ -149,12 +152,70 @@
     font-size: 14px;
 }
 
-.edit-button img {
-    width: 16px;
-    height: 16px;
-    margin-left: 8px;
+.button-divv{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    border-top: rgba(111, 110, 110, 0.982) solid 1px;
+    align-self: center;
+
+
 }
+
 .accordion{
     background-color: transparent;
     border: none;
+}
+.parAtributo{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    height: 2rem;
+    padding: 0.5rem;
+    margin-right: 1.2rem;
+}
+
+.search-text {
+    align-items: center;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 16px;
+    width: 0;
+    transition: 0.4s;
+}
+
+.icon-search{
+    color: #127369b3;
+}
+
+.search-btn {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    align-self: center;
+}
+
+.search-box:hover>.search-text {
+    width: 320px;
+    padding-left: 20px;
+}
+
+.backarrow-icn{
+    color: #127369b3;
+    padding-right: 10%;
 }

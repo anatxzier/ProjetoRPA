@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User, Funcionario, Usuario
-from .forms import FormLogin, FormNovaTurma, FormCadastro
+from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User, Funcionario, Usuario, Perfil
+from .forms import FormLogin, FormNovaTurma, FormCadastro, FormCadastro_Info
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import user_passes_test
 from django.contrib.auth.decorators import login_required
@@ -10,7 +10,7 @@ import subprocess
 import threading
 from django.http import HttpResponse
 from django.contrib import messages
-
+from django.contrib.auth import update_session_auth_hash
 
 def group_required(group_name):
      def in_group(user):
@@ -28,6 +28,8 @@ def Homepage_View (request):
     return render(request, 'homepage.html', context)
 
 def Login_View(request):
+
+
     context = {}
     dados_login = Login.objects.all()
     context["dados_login"] = dados_login
@@ -55,6 +57,7 @@ def Login_View(request):
 
 @login_required
 def NovaTurma_View(request):
+
     context = {}
     form = FormNovaTurma()
     context["form"] = form
@@ -86,7 +89,6 @@ def Cadastro_View(request):
     if request.method == 'POST':
         form = FormCadastro(request.POST)
         if form.is_valid():
-            
             try:
             
                 var_first_name = form.cleaned_data['first_name']
@@ -94,38 +96,44 @@ def Cadastro_View(request):
                 var_email = form.cleaned_data['email']
                 var_password = form.cleaned_data['password']
                 
+                print(var_user)
+                
 
                 if  User.objects.filter(username=var_user).exists():
+                    print("Esse04")
                     context['error_message'] = 'Nome de usuário já existe, por favor tente novamente'
                     form = FormCadastro()
                     context['form'] = form
                     return render(request, "cadastro.html", context)
+                
                 else:
                     
                     user = User.objects.create_user(username=var_user, email=var_email, password=var_password)
                     user.first_name = var_first_name
                     user.save()
                     group = Group.objects.get(name='funcionario')
-                    user.groups.add(group)
-                    
-                    messages.success(request,"Cadastro feito com sucesso!")
-                    
+                    user.groups.add(group)                    
+                    messages.success(request,"Cadastro feito com sucesso!")                    
                     return redirect('cadastro')
+                
             except Exception as error:
                 
                 context['error_message'] = 'Ocorreu um erro durante o processamento do formulário.'
-
+                print("Esse03")
                 form = FormCadastro()
-                context['form'] = form
-                
+                context['form'] = form                
                 return redirect("cadastro")
+            
         else:
             form = FormCadastro()
             context['form'] = form
+            print("Esse01")
             return render(request, "cadastro.html", context)
+        
     else:
         form = FormCadastro()
         context['form'] = form
+        print("Esse02")
         return render(request, "cadastro.html", context)
 
 @login_required
@@ -168,6 +176,108 @@ def Funcionario_View(request):
     context["user_is_Coordenador"] = user_is_Coordenador   
 
     return render(request, "funcionarios.html", context)
+
+
+
+
+@login_required
+def Perfil_View(request):
+    context = {}
+    dados_Perfil = Perfil.objects.all()
+    context ['dados_Perfil'] = dados_Perfil
+    
+    user = request.user
+    
+    # Definir o formulário independentemente de o perfil existir ou não
+    form = FormNovaTurma(initial={
+        'email': user.email,
+        'user': user.username,
+        'first_name': user.first_name,
+        'password': '',  # Deixe a senha vazia no formulário
+    })
+
+    try:
+        # Tentar obter o perfil do usuário autenticado
+        usuario = Usuario.objects.get(user=request.user)
+        context['usuario'] = usuario
+    except Usuario.DoesNotExist:
+        # Se o perfil não existir, passar uma mensagem de erro
+        context['error'] = "O perfil do usuário não foi encontrado."
+    
+    # Adicionar o formulário ao contexto, independentemente do perfil existir ou não
+    context['form'] = form
+    return render(request, 'perfil.html', context)
+
+
+
+
+
+# @login_required
+# def Editar_Perfil_View(request):
+#     context = {}
+#     user = request.user
+#     try:
+
+#         usuario = Usuario.objects.get(user=request.user)
+#         context['usuario'] = usuario
+#     except Usuario.DoesNotExist:
+#         context['error'] = "O perfil do usuário não foi encontrado."
+
+#     if request.method == "POST":
+#         form = FormCadastro(request.POST)
+        
+#         if form.is_valid():
+#             user.email = form.cleaned_data['email']
+#             user.username = form.cleaned_data['user']
+#             user.first_name = form.cleaned_data['first_name']
+            
+#             # Atualiza a senha se for alterada
+#             password = form.cleaned_data['password']
+#             if password:
+#                 user.set_password(password)
+            
+#             user.save()
+            
+#             # Atualiza a sessão para manter o usuário logado após mudança de senha
+#             update_session_auth_hash(request, user)
+
+#             messages.success(request, "Perfil atualizado com sucesso!")
+#             return redirect('perfil')  # Redireciona para a página de perfil após a atualização
+#         else:
+#             messages.error(request, "Erro ao atualizar o perfil. Verifique os dados.")
+    
+#     else:
+#         # Pré-preenche o formulário com os dados do usuário
+#         form = FormCadastro(initial={
+#             'email': user.email,
+#             'user': user.username,
+#             'first_name': user.first_name,
+#             'password': '',  # Deixe a senha vazia no formulário
+#         })
+
+#     context['form'] = form
+#     context['usuario'] = usuario
+#     return render(request, 'editar_perfil.html', context)
+
+@login_required
+def Cadastro_Info_View(request):
+    if request.method == 'POST':
+        form = FormCadastro_Info(request.POST, Usuario)
+        if form.is_valid():
+            form.save()
+            return redirect('novaturma')  # Redireciona para a página principal
+    else:
+        form = FormCadastro_Info(Usuario)
+
+    return render(request, 'cad_info.html', {'form': form})
+
+
+
+
+
+
+
+
 
 
 def logout(request):

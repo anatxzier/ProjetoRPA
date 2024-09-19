@@ -47,7 +47,7 @@
                     </span>
                     <h1 class="tituloCadastro">{{ dados_cadastro.0.titulo }}</h1>
                 </div>
-                <form class="cadastro-form" action="cadastro" method="post">
+                <form id="FormsCadastro" class="cadastro-form" action="cadastro" method="post">
                     {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
 
                     <!-- Campo para o usuário -->
@@ -64,8 +64,11 @@
                         {{ form.email }}
                     </div>
                     <!-- Campo para a senha -->
-                    <div class="input-group">
+                    <div class="input-group senha">
                         {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
+                        <span class="material-symbols-outlined" id="togglePassword" style="cursor: pointer;">
+                            visibility
+                        </span>
                     </div>
 
                     <!-- Botão de submissão do formulário -->
@@ -73,14 +76,25 @@
 
                     {% if messages %}
                     {% for message in messages %}
-                    <div id="alert-containerCadastro" class="alert alert-successCadastro">
-                        {{ message }}
-                    </div>
+                        <div id="alert-containerCadastro-success" class="alert alert-successCadastro">
+                        </div>
+                        <!-- <script type="text/javascript">
+                            window.onload = function() {
+                            swal("", "Usuário cadastrado com sucesso!", "success");
+                            };
+                            
+                            </script> -->
                     {% endfor %}
                     {% endif %}
 
                     {% if error_message %}
-                    <p id="alert-containerCadastro" class="alert alert-errorCadastro">{{ error }}</p>
+                    <div id="alert-containerCadastro-error" class="alert alert-errorCadastro"></div>
+                    <!-- <script type="text/javascript">
+                        window.onload = function() {
+                        swal("", "Erro ao cadastrar usuário!", "error");
+                        };
+                        
+                        </script> -->
                     {% endif %}
             </form>
 

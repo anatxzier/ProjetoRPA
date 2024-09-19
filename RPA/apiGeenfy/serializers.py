@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from geenfy.models import Usuario, In_progress_file
+from geenfy.models import Usuario, In_progress_file, Finished_file
 
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,3 +10,8 @@ class In_progress_fileSerializer(serializers.ModelSerializer):
     class Meta:
         model = In_progress_file
         fields = ['id', 'arquivo_inprogress']
+
+class Finished_fileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Finished_file
+        fields = ['id', 'arquivo_finished']

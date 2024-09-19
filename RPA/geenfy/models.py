@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 
 class Homepage(models.Model):
     titulo = models.CharField(max_length=55)
@@ -42,12 +43,25 @@ class Usuario(models.Model):
     login_CAF = models.CharField(max_length=30)
     senha_CAF = models.CharField(max_length=20)
 
+
 class In_progress_file(models.Model):
+    turma =  models.CharField(max_length=20)
     arquivo_inprogress = models.FileField(upload_to='in_progress_files/')
+    upload_time = models.DateTimeField(auto_now_add=True)
 
 class Finished_file(models.Model):
-    arquino_fineshed = models.FileField(upload_to='finished_files/')
+    turma =  models.CharField(max_length=20)
+    arquivo_fineshed = models.FileField(upload_to='finished_files/')
+    upload_time = models.DateTimeField(auto_now_add=True)
 
 class Funcionario(models.Model):
     titulo = models.CharField(max_length=55)
     imgFuncionarios = models.ImageField(upload_to="imgFuncionarios/")
+
+class Perfil(models.Model):
+    titulo = models.CharField(max_length=55)
+    imgPerfil = models.ImageField(upload_to="imgPerfil/")
+
+class PerfilEditar(models.Model):
+    titulo = models.CharField(max_length=55)
+    imgPerfil = models.ImageField(upload_to="imgPerfilEditar/")
