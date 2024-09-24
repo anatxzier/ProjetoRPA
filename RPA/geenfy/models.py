@@ -38,10 +38,10 @@ class Processo(models.Model):
     
 class Usuario(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    login_IHX = models.CharField(max_length=30)
-    senha_IHX = models.CharField(max_length=20)
-    login_CAF = models.CharField(max_length=30)
-    senha_CAF = models.CharField(max_length=20)
+    login_IHX = models.CharField(max_length=30, blank=True, null=True)
+    senha_IHX = models.CharField(max_length=20, blank=True, null=True)
+    login_CAF = models.CharField(max_length=30, blank=True, null=True)
+    senha_CAF = models.CharField(max_length=20, blank=True, null=True)
 
 
 class In_progress_file(models.Model):

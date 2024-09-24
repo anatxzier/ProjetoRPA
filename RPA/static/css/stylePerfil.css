@@ -84,3 +84,7 @@
     font-weight: bold; /* Deixa o texto do label em negrito */
 
 }
+.info-container {
+    padding: 10px;
+
+}

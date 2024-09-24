@@ -72,10 +72,7 @@ def Login_View(request):
 
 @login_required
 def NovaTurma_View(request):
-
     context = {}
-    form = FormNovaTurma()
-    context["form"] = form
     dados_NovaTurma = NovaTurma.objects.all()
     context["dados_NovaTurma"] = dados_NovaTurma
     user_is_Coordenador = request.user.groups.filter(name="Coordenador").exists() if request.user.is_authenticated else False
@@ -84,11 +81,11 @@ def NovaTurma_View(request):
     if request.method == 'POST':
         form = FormNovaTurma(request.POST, request.FILES)
         if form.is_valid():
-            # Processa o arquivo (por exemplo, salvar ou manipular)
-            pass
+            print("oiii")
+           
     else:
         form = FormNovaTurma()
-#configurar upload de arquivos
+        context["form"] = form
     return render(request, "novaTurma.html", context )
 
 @login_required
@@ -111,8 +108,6 @@ def Cadastro_View(request):
                 var_email = form.cleaned_data['email']
                 var_password = form.cleaned_data['password']
                 
-                print(var_user)
-                
 
                 if  User.objects.filter(username=var_user).exists():
                     print("Esse04")
@@ -122,19 +117,18 @@ def Cadastro_View(request):
                     return render(request, "cadastro.html", context)
                 
                 else:
-                    
                     user = User.objects.create_user(username=var_user, email=var_email, password=var_password)
                     user.first_name = var_first_name
                     user.save()
                     group = Group.objects.get(name='funcionario')
-                    user.groups.add(group)                    
+                    user.groups.add(group) 
+                    usuario = Usuario(user=user) 
+                                
                     messages.success(request,"Cadastro feito com sucesso!")                    
                     return redirect('cadastro')
                 
             except Exception as error:
-                
                 context['error_message'] = 'Ocorreu um erro durante o processamento do formulário.'
-                print("Esse03")
                 form = FormCadastro()
                 context['form'] = form                
                 return redirect("cadastro")
@@ -142,13 +136,11 @@ def Cadastro_View(request):
         else:
             form = FormCadastro()
             context['form'] = form
-            print("Esse01")
             return render(request, "cadastro.html", context)
         
     else:
         form = FormCadastro()
         context['form'] = form
-        print("Esse02")
         return render(request, "cadastro.html", context)
 
 @login_required
@@ -285,14 +277,14 @@ def Cadastro_Info_View(request):
     if request.method == 'POST':
         form = FormCadastro_Info(request.POST)
         if form.is_valid():
-            cadastro_info = Usuario(
-                user=request.user,
-                login_CAF=form.cleaned_data['LoginCAF'],
-                senha_CAF=form.cleaned_data['SenhaCAF'],
-                login_IHX=form.cleaned_data['LoginIHX'],
-                senha_IHX=form.cleaned_data['SenhaIHX']
-            )
-            cadastro_info.save() 
+            if request.user.is_authenticated:
+                user = request.user
+            usuario = get_object_or_404(Usuario, nome=user)    
+            usuario.login_CAF=form.cleaned_data['LoginCAF']
+            usuario.senha_CAF=form.cleaned_data['SenhaCAF']
+            usuario.login_IHX=form.cleaned_data['LoginIHX']
+            usuario.senha_IHX=form.cleaned_data['SenhaIHX']
+            usuario.save() 
             return redirect('novaturma')  
     else:
         form = FormCadastro_Info()  

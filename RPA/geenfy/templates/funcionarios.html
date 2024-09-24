@@ -23,21 +23,27 @@
             </div> -->
             <div class="search-container">
                 <div>
-                <a class="navbar-brand back-arrow" id="backArrow">
-                    <span class="material-symbols-outlined backarrow-icn">arrow_back</span>
-                </a>
-            </div>
+                    <a class="navbar-brand back-arrow" id="backArrow">
+                        <span class="material-symbols-outlined backarrow-icn">arrow_back</span>
+                    </a>
+                </div>
                 <!-- Caixa de pesquisa -->
                 <div class="search-box">
-                    <input type="text" class="search-text" id="searchInput" placeholder="Pesquisar sala">
+                    <input type="text" class="search-text" id="searchInput" placeholder="Pesquisar funcionários">
                     <a class="search-btn" id="searchBtn">
-                        <span type="submit" style="color: #4d4c4cc5" class="material-symbols-outlined">search</span>
+                        <span type="submit" class="material-symbols-outlined icon-search">search</span>
                     </a>
                 </div>
             </div>
-            <span class="material-symbols-outlined">
-                person_add
-            </span>
+            <div class="mouse">
+                <span class="material-symbols-outlined">
+                    person_add
+                </span>
+                <div class="mouse-scroll">
+                    <div class="bar"></div>
+
+                </div>
+            </div>
         </div>
         <div class="user-cards-wrapper">
             {% for funcionario in dados_usuario %}
@@ -87,7 +93,6 @@
             </div>
             {% endfor %}
         </div>
-
     </div>
 
 </main>
