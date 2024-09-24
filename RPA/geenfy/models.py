@@ -65,3 +65,7 @@ class Perfil(models.Model):
 class PerfilEditar(models.Model):
     titulo = models.CharField(max_length=55)
     imgPerfil = models.ImageField(upload_to="imgPerfilEditar/")
+
+class Cadastro_Info(models.Model):
+    titulo = models.CharField(max_length=55)
+    imgInfo = models.ImageField(upload_to="imgInfo/")

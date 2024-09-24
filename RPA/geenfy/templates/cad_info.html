@@ -1,11 +1,109 @@
+
 {% extends 'index.html' %}
 
+{% load static %}
+
 {% block title %}
-<!-- Cadastro -->
+    <!-- Nova Turma -->
 {% endblock %}
 
 {% block body %}
-<div>
-    <h1>TESTE</h1>
-</div>
+<main class="containerCadinfo">
+    <div>
+        <div class="triangle triangle1">
+            <svg width="500" height="500" viewBox="0 0 100 100">
+                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+            </svg>
+        </div>
+        <div class="triangle triangle2">
+            <svg width="400" height="400" viewBox="0 0 100 100">
+                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+            </svg>
+        </div>
+        <div class="triangle triangle5">
+            <svg width="300" height="300" viewBox="0 0 100 100">
+                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+            </svg>
+        </div>
+        <div class="triangle triangle3">
+            <svg width="300" height="300" viewBox="0 0 100 100">
+                <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+            </svg>
+        </div>
+        <div class="triangle triangle4">
+            <svg width="450" height="450" viewBox="0 0 100 100">
+                <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+            </svg>
+        </div>
+    </div>
+
+
+    <div class="contentCadinfo" >
+
+        <form class="cad-info-form" method="post">
+            <div class="formularioCad">
+
+                <p>{{ dados_CadInfo.0.titulo }}</p>
+                {% csrf_token %}
+        
+                <!-- Campo LoginCAF -->
+                <div>
+                    <input id="userCAF" type="text" name="LoginCAF" id="{{ form.LoginCAF.id_for_label }}" placeholder="{{ form.LoginCAF.label }}">
+                    {% if form.LoginCAF.errors %}
+                        <div class="error">{{ form.LoginCAF.errors }}</div>
+                    {% endif %}
+                </div>
+        
+                <!-- Campo senhaCAF -->
+                <div>
+                    <input id="passCAF" type="password" name="SenhaCAF" id="{{ form.SenhaCAF.id_for_label }}" placeholder="{{ form.SenhaCAF.label }}">
+                    {% if form.SenhaCAF.errors %}
+                        <div class="error">{{ form.SenhaCAF.errors }}</div>
+                    {% endif %}
+                </div>
+        
+                <!-- Campo LoginIHX -->
+                <div>
+                    <input type="text" name="LoginIHX" id="{{ form.LoginIHX.id_for_label }}" placeholder="{{ form.LoginIHX.label }}">
+                    {% if form.LoginIHX.errors %}
+                        <div class="error">{{ form.LoginIHX.errors }}</div>
+                    {% endif %}
+                </div>
+        
+                <!-- Campo senhaIHX -->
+                <div>
+                    <input type="password" name="SenhaIHX" id="{{ form.SenhaIHX.id_for_label }}" placeholder="{{ form.SenhaIHX.label }}">
+                    {% if form.SenhaIHX.errors %}
+                        <div class="error">{{ form.SenhaIHX.errors }}</div>
+                    {% endif %}
+                </div>
+
+            </div>
+                <button id="btnCadInfo" class="btnCad" type="submit">
+                    <span>Registrar</span>
+                </button>
+            
+        </form>
+
+        <div class="contentCad2">
+            <img src="{{ dados_CadInfo.0.imgInfo.url }}">
+    
+        </div>
+        
+
+        
+
+        
+
+        
+
+    </div>
+
+
+
+</main>
+
 {% endblock %}
+
+
+

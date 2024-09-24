@@ -1,5 +1,5 @@
-from django.shortcuts import render, redirect
-from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User, Funcionario, Usuario, Perfil
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User, Funcionario, Usuario, Perfil, Cadastro_Info
 from .forms import FormLogin, FormNovaTurma, FormCadastro, FormCadastro_Info
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import user_passes_test
@@ -11,6 +11,7 @@ import threading
 from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
+
 
 def group_required(group_name):
      def in_group(user):
@@ -44,7 +45,21 @@ def Login_View(request):
 
             if user is not None:
                 auth_login(request, user)
-                return redirect('home')
+
+#logica apara redirecionamento 
+                try:
+                    usuario = Usuario.objects.get(user=user)
+                    if usuario.login_CAF and usuario.login_IHX:  # Verifica se ambos os campos estão preenchidos
+                        return redirect('novaturma')  # Redireciona se ambos estiverem preenchidos
+                    else:
+                        return redirect('cadinfo')  # Redireciona para cadinfo se algum campo estiver vazio
+                except Usuario.DoesNotExist:
+                    return redirect('cadinfo')  # Redireciona se o usuário não existir na tabela Usuario
+
+#//
+
+
+
             else:
                 context['error'] = "Usuário ou senha incorretos"
                 context['form'] = form
@@ -261,17 +276,29 @@ def Perfil_View(request):
 
 @login_required
 def Cadastro_Info_View(request):
+    context = {}
+    dados_CadInfo = Cadastro_Info.objects.all()
+    context["dados_CadInfo"] = dados_CadInfo
+
+    #tratar erro de o msm user inserir info 2 vezes
+
     if request.method == 'POST':
-        form = FormCadastro_Info(request.POST, Usuario)
+        form = FormCadastro_Info(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('novaturma')  # Redireciona para a página principal
+            cadastro_info = Usuario(
+                user=request.user,
+                login_CAF=form.cleaned_data['LoginCAF'],
+                senha_CAF=form.cleaned_data['SenhaCAF'],
+                login_IHX=form.cleaned_data['LoginIHX'],
+                senha_IHX=form.cleaned_data['SenhaIHX']
+            )
+            cadastro_info.save() 
+            return redirect('novaturma')  
     else:
-        form = FormCadastro_Info(Usuario)
+        form = FormCadastro_Info()  
 
-    return render(request, 'cad_info.html', {'form': form})
-
-
+    context["form"] = form  
+    return render(request, "cad_info.html", context)
 
 
 
