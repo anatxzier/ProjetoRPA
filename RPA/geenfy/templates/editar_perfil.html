@@ -1,0 +1,78 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+<!-- editar perfil -->
+{% endblock %}
+
+{% block body%}
+
+<main class="containerEditar">
+    <div>
+        <div class="triangle triangle1">
+            <svg width="500" height="500" viewBox="0 0 100 100">
+                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
+            </svg>
+        </div>
+        <div class="triangle triangle2">
+            <svg width="400" height="400" viewBox="0 0 100 100">
+                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
+            </svg>
+        </div>
+        <div class="triangle triangle5">
+            <svg width="300" height="300" viewBox="0 0 100 100">
+                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
+            </svg>
+        </div>
+        <div class="triangle triangle3">
+            <svg width="300" height="300" viewBox="0 0 100 100">
+                <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
+            </svg>
+        </div>
+        <div class="triangle triangle4">
+            <svg width="450" height="450" viewBox="0 0 100 100">
+                <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
+            </svg>
+        </div>
+    </div>
+
+    
+    <div class="contentEditar">
+        <div class="lado1">
+            <img src="{{dados_EditarPerfil.0.imgPerfil.url}}">
+
+            <form method="POST" class="form-container">
+                {% csrf_token %}
+            
+                {% for field in form_user %}
+                    <div class="form-group">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                        <div class="form-field">
+                            {{ field }} <!-- Renderiza o campo -->
+                        </div>
+                    </div>
+                {% endfor %}
+            
+                {% for field in form_info %}
+                    <div class="form-group">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                        <div class="form-field">
+                            {{ field }} <!-- Renderiza o campo -->
+                        </div>
+                    </div>
+                {% endfor %}
+            
+                <button type="submit" class="submit-button">Salvar Alterações</button>
+            </form>
+
+        </div>
+        <div class="lado2">
+            <h1>teste2</h1>
+        </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

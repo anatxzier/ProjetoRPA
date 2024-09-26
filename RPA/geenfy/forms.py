@@ -3,11 +3,13 @@ from django.core.exceptions import ValidationError
 
 class FormLogin(forms.Form):
     user = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Informe seu nome de usuário'}), max_length=60)
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Informe sua senha'}), min_length=8)
+    password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Informe sua senha', 'id': 'id_passwordLogin'}), min_length=8)
 
 class FormNovaTurma(forms.Form):
     nome_da_turma = forms.CharField(widget=forms.TextInput(attrs={'placeholder':'Nome da Turma'}), max_length=60)
-    arquivo = forms.FileField(label="Arquivo")
+    arquivo = forms.FileField(
+        widget=forms.FileInput(attrs={'class': 'custom-file-label', 'id': 'file-upload'})
+    )
 
     def clean_arquivo(self):
         arquivo = self.cleaned_data.get('arquivo')
@@ -22,7 +24,7 @@ class FormCadastro(forms.Form):
     email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder':'Email'}), max_length=60)
     user = forms.CharField( max_length=50, widget=forms.TextInput(attrs={'placeholder':'User'}))
     first_name = forms.CharField ( max_length=80, widget=forms.TextInput(attrs={'placeholder':'Nome'}))
-    password = forms.CharField( widget=forms.PasswordInput(attrs={'placeholder':'Senha', 'id': 'id_password'}), min_length=8)    
+    password = forms.CharField( widget=forms.PasswordInput(attrs={'placeholder':'Senha', 'id': 'id_passwordCadastro'}), min_length=8)    
 
 class FormCadastro_Info(forms.Form):
     LoginCAF = forms.CharField(label="Login CAF", max_length=100)

@@ -14,27 +14,29 @@
     <div class="contentPerfil">
         <div class="contentPerfil2"> 
             <div class="profile">
-            <img src="{{ dados_Perfil.0.imgPerfil.url }}">
+                <img src="{{ dados_Perfil.0.imgPerfil.url }}">
 
-            <h2>{{ dados_Perfil.0.titulo}}</h2>
+                <h2>{{ dados_Perfil.0.titulo}}</h2>
             </div>
-                {% csrf_token %}
-                <div class="info-container">
-                    <div class="info-column">
-                        <label for="instrutor">Nome de Usuário</label>
-                        <p>{{ usuario.user }}</p>
-                        <label for="Email">Email</label>
-                        <p>{{ usuario.user.email}}</p>
-                    </div>
-                    <div class="info-column">
-                        <label for="CPF">User CAF</label>
-                        <p>{{usuario.login_CAF}}</p>
-                        <label for="CPF">User IHX</label>
-                        <p>{{usuario.login_IHX}}</p>
-                    </div>
+            {% csrf_token %}
+            <div class="info-container">
+                <div class="info-column">
+                    <label for="instrutor">Nome de Usuário</label>
+                    <p>{{ usuario.user }}</p>
+                    <label for="Email">Email</label>
+                    <p>{{ usuario.user.email}}</p>
                 </div>
+                <div class="info-column2">
+                    <label for="CPF">User CAF</label>
+                    <p>{{usuario.login_CAF}}</p>
+                    <label for="CPF">User IHX</label>
+                    <p>{{usuario.login_IHX}}</p>
+                </div>
+            </div>
+            <div class="div-editar">
+                <a href="/editarperfil">Editar Perfil</a>
+            </div>
         </div>
-
 
     </div>
 

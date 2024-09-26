@@ -1,4 +1,4 @@
-.containerCadinfo {
+.containerCadinfo { 
     display: flex;
     flex-wrap: wrap;
     background-color: #C4D1D0;
@@ -8,6 +8,7 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+    margin-bottom: 3rem;
 }
 
 .contentCadinfo {
@@ -16,8 +17,10 @@
     align-items: center;
     justify-content: center;
     width: 60vw; 
-    margin-top: 9%;
-    margin-bottom: 8%;
+    margin-top: 9vh;
+    margin-bottom: 8vh;
+    
+    
 }
 
 .triangle {
@@ -26,32 +29,32 @@
 
 /* Estilo para os triângulos */
 .triangle1 {
-    bottom: 60%;
-    left: 2%;
+    bottom: 60vh;
+    left: 2vw;
     transform: rotate(30deg);
 }
 
 .triangle2 {
-    bottom: 15%;
-    left: 5%;
+    bottom: 15vh;
+    left: 5vw;
     transform: rotate(150deg);
 }
 
 .triangle5 {
-    bottom: 5%;
-    left: 5%;
+    bottom: 5vh;
+    left: 5vw;
     transform: rotate(100deg);
 }
 
 .triangle3 {
-    top: 20%;
-    left: 80%;
+    top: 20vh;
+    left: 80vw;
     transform: rotate(100deg);
 }
 
 .triangle4 {
-    bottom: 5%;
-    left: 72%;
+    bottom: 5vh;
+    left: 72vw;
     transform: rotate(30deg);
 }
 
@@ -60,12 +63,11 @@
     height: 70vh;
     padding: 3vw;
     background-color: #10403B;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
-
 }
 
 .cad-info-form p {
@@ -92,7 +94,7 @@
     width: 20vw; 
     padding: 0.5rem 0; 
     border: none; 
-    border-bottom: 1px solid #D9E0DF; 
+    border-bottom: 0.1rem solid #D9E0DF; 
     border-radius: 0; 
     font-size: 1rem; 
     box-sizing: border-box; 
@@ -115,19 +117,19 @@
     outline: none;
     cursor: pointer;
     border: none;
-    padding: 2% 5%;
+    padding: 2vh 5vw;
     font-family: "Merriweather Sans";
     position: relative;
     display: inline-block;
     letter-spacing: 0.05rem;
     font-weight: 700;
     font-size: 2vh;
-    border-radius: 15px;
+    border-radius: 1.5rem;
     overflow: hidden;
     background: #ffffff;
     color: #10403B; 
-    border-bottom: 2px solid #5B5B5B;
-    border-right: 2px solid #5B5B5B;
+    border-bottom: 0.2rem solid #5B5B5B;
+    border-right: 0.2rem solid #5B5B5B;
     transition: background-color 0.3s, color 0.3s; 
 }
 
@@ -184,21 +186,23 @@
     position: relative;
 }
 
-
 .contentCad2 img {
     width: 90%;
     max-height: 100%; 
     object-fit: contain; 
 }
-
+.info-forms {
+    margin-top: 1rem;
+    padding-top: 3rem;
+}
 
 /* Ajustes de responsividade */
 @media (max-width: 768px) {
     .triangle1, .triangle2, .triangle3, .triangle4 {
-        border-width: 0 100px 100px 0;
+        border-width: 0 10vw 10vw 0;
     }
 
     .triangle1::before, .triangle2::before, .triangle3::before, .triangle4::before {
-        border-width: 0 102px 102px 0;
+        border-width: 0 10.2vw 10.2vw 0;
     }
 }

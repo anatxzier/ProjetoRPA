@@ -2,6 +2,8 @@ function toggleDetails(contentId, arrowId) {
     var content = document.getElementById(contentId);
     var arrow = document.getElementById(arrowId);
 
+
+
     console.log('Toggling:', contentId, arrowId);
     console.log('Content:', content);
     console.log('Arrow:', arrow);

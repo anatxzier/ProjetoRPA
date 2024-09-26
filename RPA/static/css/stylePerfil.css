@@ -1,4 +1,4 @@
-.containerPerfil{
+.containerPerfil {
     display: flex;
     background-color: #C4D1D0;
     width: 100vw;
@@ -6,9 +6,11 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 2rem;
+    
 }
 
-.contentPerfil{
+.contentPerfil {
     display: flex;
     width: 55vw;
     height: 73vh;
@@ -18,73 +20,398 @@
     align-items: center;
     justify-content: center;
     border-radius: 1rem;
-    margin-top: 5%;
+    margin-top: 13vh;
+
+
 }
 
-.contentPerfil2{
+.contentPerfil2 {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 50vw;
     height: 63vh;
     background-color: #ABCEC7;
     position: absolute;
     z-index: 2;
     border-radius: 1rem;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
 }
 
 .profile {
-    position: absolute; 
-    top: 0; 
+    position: absolute;
+    top: -15%;
     left: 50%;
     transform: translateX(-50%);
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    text-align: center; 
+    text-align: center;
+    z-index: 3;
 }
 
 .profile img {
-    width: 30%; 
-    height: auto; 
+    width: 45%;
+    height: auto;
     border-radius: 50%;
+    border: 0.35rem solid #127369;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
 }
 
 .profile h2 {
-    margin: 10px 0 0;
-    font-size: 1rem; 
+    margin: 1rem 0 0;
+    font-size: 2.5vw;
+    z-index: 3;
+    color: #127369;
 }
 
-.form-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-height: 30vh;
-    flex-direction: column; 
-    gap: 5%
-}
-
-.form-field input[type=text],
-.form-field input[type=email],
-.form-field input[type=password] {
-    border: none; 
-    background-color: none;
-    border-bottom: 2px solid #000; 
-    padding: 8px 0;
-    outline: none; 
-    font-size: 1rem; 
-    background-color: transparent;
-    pointer-events: none; 
-}
-
-
-
-
-.form-label {
-    margin-bottom: 5px; /* Espaçamento entre o label e o campo */
-    font-weight: bold; /* Deixa o texto do label em negrito */
-
-}
 .info-container {
-    padding: 10px;
-
+    display: flex;
+    flex-direction: row;
+    width: 50vw;
+    margin: 23vh 3vw 3vw 3vw;
+    justify-content: space-between;
 }
+
+.info-column {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    position: relative;
+    right: -3%;
+}
+
+.info-column2 {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    position: relative;
+    left: 8%;
+}
+
+.info-column p,
+.info-column2 p {
+    width: 80%;
+    font-size: 1.1vw;
+    border-bottom: solid 0.01rem #8AA6A3;
+    color: #507974;
+}
+
+.info-column label,
+.info-column2 label {
+    font-weight: 600;
+    font-size: 1.3vw;
+    padding: 1rem 0;
+    color: #127369;
+}
+
+.div-editar a {
+    color: #4C978F;
+    font-size: 1.3vw;
+}
+
+/* @media(max-width: 1550px) {
+    .contentPerfil {
+        width: 60vw;
+        height: 65vh;
+        margin-top: 5vh;
+    }
+
+    .contentPerfil2 {
+        width: 58vw;
+        height: 60vh;
+        padding: 1.25rem;
+    }
+
+    .profile {
+        top: -15%;
+    }
+
+    .profile img {
+        width: 40%;
+    }
+
+    .profile h2 {
+        font-size: 2rem;
+    }
+
+    .info-container {
+        flex-direction: row;
+        width: 100%;
+        margin: 10vh 0;
+        height: 30%;
+    }
+
+    .info-column {
+        width: 100%;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        right: -2%;
+    }
+
+    .info-column2 {
+        width: 100%;
+        margin-top: 2.5rem;
+        margin-bottom: 0.625rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 4%;
+    }
+
+    .info-column p,
+    .info-column2 p {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .info-column label,
+    .info-column2 label {
+        font-size: 1.5rem;
+    }
+} */
+
+/* @media(max-width: 1280px) {
+    .contentPerfil {
+        width: 75vw;
+        height: 75vh;
+        margin-top: 5vh;
+    }
+
+    .contentPerfil2 {
+        width: 70vw;
+        height: 70vh;
+        padding: 1.25rem;
+    }
+
+    .profile {
+        top: -8%;
+    }
+
+    .profile img {
+        width: 35%;
+    }
+
+    .profile h2 {
+        font-size: 2rem;
+    }
+
+    .info-container {
+        flex-direction: row;
+        width: 100%;
+        margin: 8vh 0;
+        height: 30%;
+    }
+
+    .info-column {
+        width: 100%;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        right: -2%;
+    }
+
+    .info-column2 {
+        width: 100%;
+        margin-top: 2.5rem;
+        margin-bottom: 0.625rem;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        left: 4%;
+    }
+
+    .info-column p,
+    .info-column2 p {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .info-column label,
+    .info-column2 label {
+        font-size: 1.5rem;
+    }
+} */
+
+/* @media(max-width: 960px) {
+    .contentPerfil {
+        width: 65vw;
+        height: 65vh;
+        margin-top: 5vh;
+    }
+
+    .contentPerfil2 {
+        width: 60vw;
+        height: 60vh;
+        padding: 1.25rem;
+    }
+
+    .profile {
+        top: -13%;
+    }
+
+    .profile h2 {
+        font-size: 1.9rem;
+    }
+
+    .profile img {
+        width: 48%;
+    }
+
+    .info-container {
+        margin: 7vh 0;
+        height: 40%;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .info-column,
+    .info-column2 {
+        width: 100%;
+        margin: 2rem 0;
+    }
+
+    .info-column p,
+    .info-column2 p {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .info-column label,
+    .info-column2 label {
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width: 700px) {
+    .contentPerfil {
+        width: 65vw;
+        height: 65vh;
+        margin-top: 5vh;
+    }
+
+    .contentPerfil2 {
+        width: 60vw;
+        height: 60vh;
+        padding: 1.25rem;
+    }
+
+    .profile {
+        top: -17%;
+    }
+
+    .profile h2 {
+        font-size: 1.9rem;
+    }
+
+    .profile img {
+        width: 48%;
+    }
+
+    .info-container {
+        display: flex;
+        height: 45%;
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-column {
+        padding: 0;
+        gap: 0;
+        margin: 1rem 0 0 0;
+    }
+
+    .info-column2 {
+        padding: 0;
+        gap: 0;
+        margin: 0 0.625rem 0 0;
+    }
+
+    .info-column p,
+    .info-column2 p {
+        width: 90%;
+        font-size: 1.1rem;
+    }
+
+    .info-column label,
+    .info-column2 label {
+        font-size: 1.5rem;
+    }
+
+    .div-editar a {
+        color: #4C978F;
+        font-size: 1.4rem;
+    }
+} */
+
+/* @media(max-width: 450px) {
+    .contentPerfil {
+        width: 90vw;
+        height: 75vh;
+        margin-top: 5vh;
+    }
+
+    .contentPerfil2 {
+        width: 75vw;
+        height: 70vh;
+        padding: 1.25rem;
+    }
+
+    .profile {
+        top: -12%;
+    }
+
+    .profile h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile img {
+        width: 50%;
+    }
+
+    .info-container {
+        display: flex;
+        height: 40%;
+        width: 100%;
+        flex-direction: column;
+        padding: 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-column {
+        padding: 0;
+        gap: 0;
+        margin: 1rem 0 0 0;
+    }
+
+    .info-column2 {
+        padding: 0;
+        gap: 0;
+        margin: 0 0.625rem 0 0;
+    }
+
+    .info-column p,
+    .info-column2 p {
+        width: 90%;
+        font-size: 1rem;
+    }
+
+    .info-column label,
+    .info-column2 label {
+        font-size: 1.2rem;
+    }
+
+    .div-editar a {
+        color: #4C978F;
+        font-size: 1.2rem;
+    }
+} */

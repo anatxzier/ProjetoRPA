@@ -67,7 +67,7 @@
                     <div class="input-group senha">
                         {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
                         <span class="material-symbols-outlined" id="togglePassword" style="cursor: pointer;">
-                            visibility
+                            visibility_off
                         </span>
                     </div>
 
@@ -78,23 +78,11 @@
                     {% for message in messages %}
                         <div id="alert-containerCadastro-success" class="alert alert-successCadastro">
                         </div>
-                        <!-- <script type="text/javascript">
-                            window.onload = function() {
-                            swal("", "Usuário cadastrado com sucesso!", "success");
-                            };
-                            
-                            </script> -->
                     {% endfor %}
                     {% endif %}
 
                     {% if error_message %}
                     <div id="alert-containerCadastro-error" class="alert alert-errorCadastro"></div>
-                    <!-- <script type="text/javascript">
-                        window.onload = function() {
-                        swal("", "Erro ao cadastrar usuário!", "error");
-                        };
-                        
-                        </script> -->
                     {% endif %}
             </form>
 

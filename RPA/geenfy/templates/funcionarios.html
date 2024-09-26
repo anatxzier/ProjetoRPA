@@ -1,11 +1,10 @@
 {% extends 'index.html' %}
 
-
 {% block title %}
 <!-- Funcionários -->
 {% endblock %}
 
-{% block body%}
+{% block body %}
 
 <main class="containerFuncionarios">
     <div class="colunaFuncionarios">
@@ -14,20 +13,12 @@
     </div>
     <div class="container2">
         <div class="iconeFunc">
-            <!-- Caixa de pesquisa -->
-            <!-- <div class="search-box">
-                <input type="text" class="search-text" id="searchInput" placeholder="Pesquisar funcionário">
-                <a class="search-btn" id="searchBtn">
-                    <span type="submit" class="material-symbols-outlined icon-search">search</span>
-                </a>
-            </div> -->
             <div class="search-container">
                 <div>
                     <a class="navbar-brand back-arrow" id="backArrow">
                         <span class="material-symbols-outlined backarrow-icn">arrow_back</span>
                     </a>
                 </div>
-                <!-- Caixa de pesquisa -->
                 <div class="search-box">
                     <input type="text" class="search-text" id="searchInput" placeholder="Pesquisar funcionários">
                     <a class="search-btn" id="searchBtn">
@@ -35,14 +26,10 @@
                     </a>
                 </div>
             </div>
-            <div class="mouse">
+            <div>
                 <span class="material-symbols-outlined">
                     person_add
                 </span>
-                <div class="mouse-scroll">
-                    <div class="bar"></div>
-
-                </div>
             </div>
         </div>
         <div class="user-cards-wrapper">
@@ -78,24 +65,49 @@
                     <div class="parAtributo">
                         <div class="user-attribute">
                             <strong>User CAF</strong>
-                            <p>{{funcionario.login_CAF}}</p>
+                            <p>{{ funcionario.login_CAF }}</p>
                         </div>
                         <div class="user-attribute">
                             <strong>User IHX</strong>
-                            <p>{{funcionario.login_IHX}}</p>
+                            <p>{{ funcionario.login_IHX }}</p>
                         </div>
-                    </div>
-                    <div class="button-divv">
-                        <button class="edit-button">Editar usuário <span
-                                class="material-symbols-outlined">person_edit</span></button>
+                        <!-- Botão que aciona o modal -->
+                        <button class="edit-button" data-bs-toggle="modal" data-bs-target="#modalExcluir{{ forloop.counter }}">
+                            Excluir usuário 
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
                     </div>
                 </div>
             </div>
+
+            <div class="modal fade" id="modalExcluir{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ forloop.counter }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-content2">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel{{ forloop.counter }}">
+                                Excluir funcionário {{ funcionario.user.first_name }}
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="deleteForm{{ forloop.counter }}" method="POST" action="{% url 'excluir_funcionario' %}">
+                                {% csrf_token %}
+                                <input type="hidden" name="funcionario_id" value="{{ funcionario.user.id }}">
+                                <p>Tem certeza de que deseja excluir este funcionário?</p>
+                                <div class="d-flex justify-content-end">
+                                    <button type="submit" class="btn btn-danger me-2">Confirmar exclusão</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             {% endfor %}
         </div>
     </div>
 
 </main>
-
 
 {% endblock %}

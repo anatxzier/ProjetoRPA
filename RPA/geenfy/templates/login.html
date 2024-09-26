@@ -55,9 +55,11 @@
                     </div>
                     
                     <!-- Campo para a senha -->
-                    <div>
-                        <!-- <label  for="{{ form.password.id_for_label }}">{{ form.password.label }}</label> -->
+                    <div class="input-groupLogin senhaLogin">
                         {{ form.password }}
+                        <span class="material-symbols-outlined" id="togglePasswordLogin" style="cursor: pointer;">
+                            visibility_off
+                        </span>
                     </div>
 
                     <!-- Botão de submissão do formulário -->

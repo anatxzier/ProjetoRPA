@@ -1,95 +1,214 @@
 <nav class="navbar-custom">
   <div class="containerNav">
-      <a class="navbar-brand" href="/">
-          <h2>Geenfy</h2>
-        </a>
-        <!-- IF para mudar a nav conforme a autenticação, caso não esteja autenticado aparecerá "Entrar" -->
-        <div class="icn-group">
-        {% if user.is_authenticated %}
-        <!-- Se estiver autenticado como coordenador aparecerá botão para a pág instrutores e agenda, e ao lado o seu perfil -->
-            {% if user_is_Coordenador %}
-              <a class="icn" href="/"><span class="material-symbols-outlined icone">home</span></a>
-              <a class="icn" href="/cadastro"><span class="material-symbols-outlined icone">person_add</span></a>
-              <a class="icn" href="/funcionarios"><span class="material-symbols-outlined icone">group</span></a>
-              <a class="icn" href="/perfil"><span class="material-symbols-outlined icone">account_circle</span></a>
-              <a class="icn" href="/logout"><span class="material-symbols-outlined icone">logout</span></a>
-              {% else %}
-              <a class="icn" href="/"><span class="material-symbols-outlined icone">home</span></a>
-              <a class="icn" href="/perfil"><span class="material-symbols-outlined icone">account_circle</span></a>
-              <a class="icn" href="/logout"><span class="material-symbols-outlined icone">logout</span></a>
-            {% endif %}
-        {% else %}
-          <a class="icn" href="/login"><span class="material-symbols-outlined icone">person</span></a>
-        </div>
-        {% endif %}
+    <a class="navbar-brand" href="/">
+      <h2>Geenfy</h2>
+    </a>
+    <div class="icn-group">
+      <input type="checkbox" id="toggle" />
+      <label class="button icn" for="toggle">
+        <span class="material-symbols-outlined" id="menu-icon">menu</span>
+        <span class="menu-text" id="menu-text">Menu</span>
+      </label>
 
+      <div class="nav">
+        {% if user.is_authenticated %}
+        {% if request.path != '/' %}
+        <a class="icn" href="/"><span class="material-symbols-outlined icone">home</span><span class="link-text">Home</span></a>
+        {% endif %}
+        {% if request.path != '/perfil' %}
+        <a class="icn" href="/perfil"><span class="material-symbols-outlined icone">account_circle</span><span class="link-text">Perfil</span></a>
+        {% endif %}
+        {% if request.path != '/processo' %}
+        <a class="icn" href="/processo"><span class="material-symbols-outlined icone">folder_open</span><span class="link-text">Processo</span></a>
+        {% endif %}
+        {% if request.path != '/storage' %}
+        <a class="icn" href="/storage"><span class="material-symbols-outlined icone">inventory_2</span><span class="link-text">Armazenamento</span></a>
+        {% endif %}
+        {% if user_is_Coordenador %}
+        {% if request.path != '/cadastro' %}
+        <a class="icn" href="/cadastro"><span class="material-symbols-outlined icone">person_add</span><span class="link-text">Cadastro</span></a>
+        {% endif %}
+        {% if request.path != '/funcionarios' %}
+        <a class="icn" href="/funcionarios"><span class="material-symbols-outlined icone">group</span><span class="link-text">Funcionários</span></a>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+      </div>
+
+      {% if user.is_authenticated %}
+      <a class="icn logout" href="/logout"><span class="material-symbols-outlined icone">logout</span><span class="link-text">Sair</span></a>
+      {% else %}
+      <a class="icn" href="/"><span class="material-symbols-outlined icone">home</span><span class="link-text">Home</span></a>
+      {% endif %}
+    </div>
   </div>
 </nav>
 
 <style>
-  .navbar-custom {
-      background-color: #8AA6A3;
-      border-radius: 10px;
-      width: 70vw;
-      height: 9vh; 
-      margin: 2% auto; 
-      position: fixed; 
-      top: 0; 
-      left: 0; 
-      right: 0; 
-      z-index: 1000; 
-      display: flex;
-      align-items: center; 
-      padding: 0 5vh; 
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+.navbar-custom {
+  background-color: #8aa6a3;
+  border-radius: 10px;
+  width: 70vw;
+  height: 9vh;
+  margin: 2% auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0 5vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .containerNav {
-      width: 100%; 
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+.containerNav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
-  }
+.navbar-brand h2 {
+  margin: 0;
+  color: #000;
+  font-family: "Poppins";
+  font-size: 3.3vh;
+  transition: transform 0.3s ease;
+}
 
-  .navbar-brand h2 {
-      margin: 0; 
-      color: #000; 
-      font-family: "Poppins";
-      font-size: 3.3vh;
-      transition: transform 0.3s ease;
-  }
+.navbar-brand h2:hover {
+  transform: scale(1.2);
+}
 
-  .navbar-brand h2:hover {
-    transform: scale(1.2);
-  }
+.icn-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: margin-left 0.3s ease; /* Transição ao abrir o menu */
+}
 
-  .contentNav {
-      padding-top: 80px;
-  }
+.icn {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
 
-  
-  .containerNav span{
-    font-size: 4vh;
-  }
+.icn span {
+  font-size: 4vh;
+}
 
-  .icone{
-    transition: transform 0.3s ease;
-  }
+.icone {
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
 
-  .icone:hover {
-    transform: scale(1.2);
+.icone:hover {
+  transform: scale(1.2);
+}
+
+#toggle {
+  display: none;
+}
+
+.button {
+  cursor: pointer;
+  display: flex; /* Alinha verticalmente o ícone do menu com os outros ícones */
+  align-items: center;
+}
+
+.nav {
+  display: none;
+  transition: all 0.5s ease-in-out;
+}
+
+#toggle:checked ~ .icn-group {
+  margin-left: -150px; /* Ajuste a distância aqui para mover para o lado esquerdo */
+}
+
+#toggle:checked ~ .nav {
+  display: flex;
+  gap: 20px; /* Espaço entre os ícones */
+  animation: fadeIn 0.8s forwards; /* Animação de entrada */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px); /* Mova para a esquerda */
   }
-  .icn{
-    text-decoration: none;
-    color: black;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  .icn-group {
-    display: flex;
-    gap: 20px; /* Controla o espaço entre os ícones */
-    align-items: center;
+}
+
+.logout {
+  margin-left: 20px; /* Distância do ícone de logout */
+}
+
+.link-text {
+  position: absolute;
+  top: 100%; /* Posiciona o texto à direita do ícone */
+  transform: translate(-10px, 0); /* Move o texto para fora do ícone */
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transições para suavizar a entrada */
+  background: #10403B; /* Fundo branco para o texto */
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap; /* Para evitar quebra de linha */
+  color: #fff; /* Cor do texto */
+}
+
+.icn:hover .link-text {
+  opacity: 1; /* Torna visível ao passar o mouse */
+  transform: translate(0, 0); /* Move o texto para a posição original */
+}
+
+.icn span.link-text{
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.menu-text {
+  position: absolute;
+  top: 100%; /* Posiciona o texto à direita do ícone */
+  transform: translate(-10px, 0); /* Move o texto para fora do ícone */
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Transições para suavizar a entrada */
+  background: #10403B; /* Fundo branco para o texto */
+  padding: 5px;
+  border-radius: 5px;
+  white-space: nowrap; /* Para evitar quebra de linha */
+  color: #fff; /* Cor do texto */
+}
+
+
+.icn span.menu-text{
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+
+.button:hover .menu-text {
+  opacity: 1; /* Torna visível ao passar o mouse */
+  transform: translateY(0); /* Move o texto para a posição original */
 }
 </style>
+
+<script>
+document.getElementById('toggle').addEventListener('change', function() {
+  const menuIcon = document.getElementById('menu-icon');
+  const menuText = document.getElementById('menu-text');
+
+  if (this.checked) {
+    menuIcon.textContent = 'close'; // Muda para "X"
+    menuText.textContent = 'Fechar'; // Muda para "Fechar"
+  } else {
+    menuIcon.textContent = 'menu'; // Retorna para menu
+    menuText.textContent = 'Menu'; // Retorna para "Menu"
+  }
+});
+</script>

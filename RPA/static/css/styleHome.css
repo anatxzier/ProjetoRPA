@@ -4,74 +4,68 @@
     background-color: #C4D1D0;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    padding: 4rem;
+    height: 100vh; /* mantido em vh pois é apropriado */
+    padding: 4rem; /* mantido em rem */
     box-sizing: border-box; 
-
 }
 
 .contentHome {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align:start;
-    gap: 1rem;
-    margin: 0px;
+    text-align: start;
+    gap: 1rem; /* mantido em rem */
+    margin: 0;
     max-width: 50%;
-    
-
 }
-
 
 .contentHome h1 {
     max-width: 60%;
-    font-size: 4vw;
+    font-size: 4vw; /* mantido em vw pois é apropriado */
     margin: 0;
     font-family: "Poppins";
     font-weight: bold;
+    text-align: justify;
 }
+
 .contentHome p {
-    font-size: 2vh;
+    font-size: 2vh; /* mantido em vh pois é apropriado */
     margin: 0;
     font-family: "Merriweather Sans";
     font-weight: 400;
     max-width: 60%;
+    text-align: justify;
 }
 
 .imagemHome {
-    max-width: 73vh;
+    max-width: 73vh; /* mantido em vh pois é apropriado */
 }
-
-
 
 /* Estilização do Botão - Homepage */ 
 .homebtn {
     outline: none;
     cursor: pointer;
     border: none;
-    padding: 3% 9%;
+    padding: 3% 9%; /* mantido em % */
     margin: 0;
     font-family: "Merriweather Sans";
     position: relative;
     display: inline-block;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.05rem; /* mantido em rem */
     font-weight: 700;
-    font-size: 3vh;
-    border-radius: 5px;
+    font-size: 3vh; /* mantido em vh pois é apropriado */
+    border-radius: 0.3125rem; /* 5px convertido para rem (5px / 16px = 0.3125rem) */
     overflow: hidden;
     background: #ffffff;
     color: #ffffff; 
-    border-bottom: 2px solid #5B5B5B;
-    border-right: 2px solid #5B5B5B;
-
-
+    border-bottom: 0.125rem solid #5B5B5B; /* 2px convertido para rem */
+    border-right: 0.125rem solid #5B5B5B; /* 2px convertido para rem */
 }
 
 .homebtn span {
     position: relative;
     z-index: 10;
     transition: color 0.4s;
-    
 }
 
 .homebtn:hover span {
@@ -91,8 +85,8 @@
 .homebtn::before {
     content: "";
     background: #8AA6A3;
-    width: 120%;
-    left: -10%;
+    width: 120%; /* mantido em % */
+    left: -10%; /* mantido em % */
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
@@ -100,10 +94,48 @@ button:hover::before {
     transform: translate3d(100%, 0, 0);
 }
 
-.contentHome a{
+.contentHome a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: 100%; /* mantido em % */
     text-decoration: none;
+}
+
+
+/* Media Queries para responsividade */
+@media (max-width: 1320px) {
+    .imagemHome {
+        max-width: 60vh; /* Reduzir o tamanho da imagem */
+    }
+}
+
+@media (max-width: 1120px) {
+    .imagemHome {
+        max-width: 50vh; /* Reduzir o tamanho da imagem */
+    }
+}
+
+/* Media Queries para responsividade */
+@media (max-width: 1000px) {
+    .imagemHome {
+        display: none; /* Remover a imagem */
+    }
+
+    .contentHome {
+        align-items: center; /* Centralizar o texto */
+        text-align: center; /* Centralizar o texto */
+        max-width: 100%;
+    }
+
+    .contentHome h1 {
+        font-size: 5vw; /* Diminuir o tamanho do título */
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+
+    .contentHome p {
+        font-size: 2vh; /* Diminuir o tamanho do texto */
+        padding-bottom: 1rem;
+    }
 }

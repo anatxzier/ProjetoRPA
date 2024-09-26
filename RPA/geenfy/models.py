@@ -2,6 +2,14 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser
 
+PENDING = 'Pendente'
+IN_PROGRESS = 'Em Progresso'
+    
+STATUS_CHOICES = [
+    (PENDING, 'Pendente'), 
+   (IN_PROGRESS, 'Em Progresso'),    
+]
+
 class Homepage(models.Model):
     titulo = models.CharField(max_length=55)
     texto = models.CharField(max_length=200)
@@ -38,15 +46,16 @@ class Processo(models.Model):
     
 class Usuario(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    login_IHX = models.CharField(max_length=30, blank=True, null=True)
-    senha_IHX = models.CharField(max_length=20, blank=True, null=True)
-    login_CAF = models.CharField(max_length=30, blank=True, null=True)
-    senha_CAF = models.CharField(max_length=20, blank=True, null=True)
+    login_IHX = models.CharField(max_length=30)
+    senha_IHX = models.CharField(max_length=30)
+    login_CAF = models.CharField(max_length=30)
+    senha_CAF = models.CharField(max_length=20)
 
 
 class In_progress_file(models.Model):
     turma =  models.CharField(max_length=20)
     arquivo_inprogress = models.FileField(upload_to='in_progress_files/')
+    status = models.CharField(max_length=15, choices=STATUS_CHOICES, default=PENDING)
     upload_time = models.DateTimeField(auto_now_add=True)
 
 class Finished_file(models.Model):

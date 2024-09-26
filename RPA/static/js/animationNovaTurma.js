@@ -2,33 +2,55 @@
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("buttonModal");
 var span = document.getElementsByClassName("close")[0];
-var button = document.getElementsByClassName("voltar")[0];
+var buttonVoltar = document.getElementsByClassName("voltar")[0];
+var buttonSub = document.getElementsByClassName("iniciar")[0];
+var formulario = document.getElementById("formNova");
 
-// Quando o botão for clicado, mostra a modal
+
+document.addEventListener('DOMContentLoaded', function() {
+    const successMessages = document.getElementById('alert-containerNovaTurma-success');
+    const errorMessage = document.getElementById('alert-containerNovaTurma-error');
+
+    if (successMessages) {
+        swal("", "O registro iniciou!", "success");
+    }
+
+    if (errorMessage) {
+        swal("", "Erro ao cadastrar usuário!", "error");
+    }
+});
+
+// Quando o botão "Iniciar" for clicado, exibe a modal
 btn.onclick = function(event) {
-    event.preventDefault(); // Previne o envio do formulário
+    event.preventDefault(); // Previne o envio imediato do formulário
     modal.style.display = "block";
 }
 
-// Quando o usuário clicar no "x", esconde a modal
+// Fecha a modal ao clicar no "x"
 span.onclick = function() {
     modal.style.display = "none";
 }
 
-// Quando clicar em "voltar" a modal fecha
-button.onclick = function(){
+// Fecha a modal ao clicar no botão "Voltar"
+buttonVoltar.onclick = function() {
     modal.style.display = "none";
 }
 
-// Quando o usuário clicar fora da modal, esconde a modal
+// Fecha a modal ao clicar fora dela
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
 
+
+buttonSub.onclick = function() {
+    formulario.submit(); 
+}
+//////////////////////////////////////////////////////////////////////////////
+
 document.addEventListener('DOMContentLoaded', function () {
-    const inputFile = document.getElementById('arquivos');
+    const inputFile = document.getElementById('file-upload');
     const fileNameDisplay = document.getElementById('file-names');
 
     // Limitar a seleção para um único arquivo
@@ -41,3 +63,4 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+

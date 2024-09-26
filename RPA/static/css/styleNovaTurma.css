@@ -240,6 +240,33 @@
     outline: none;
 }
 
+/* .nova-turma-form input[type="file"] {
+    opacity: 0;
+}
+
+
+.hidden-input {
+    display: none; /* Esconder o input padrão }*/
+
+
+.nova-turma-form input[type="file"]{
+    display: none;
+}
+
+.custom-file-label{
+    background-color: #10403B; 
+    color: #ffffff;
+    font-size: 75%;
+    border: 1px solid #ccc; 
+    padding: 3%; 
+    width: 80%;
+    border-radius: 5px; 
+    cursor: pointer; 
+    display: flex;
+    flex-direction: column;
+}
+    
+
 /* Estilização dos placeholders */
 .nova-turma-form input::placeholder {
     color: #D9E0DF; 

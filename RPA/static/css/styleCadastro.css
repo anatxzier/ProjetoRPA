@@ -1,5 +1,5 @@
 .containerCadastro {
-    margin:0;
+    margin: 0;
     height: 100vh;
     width: 100vw;
     display: flex;
@@ -17,9 +17,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    padding-top: 20px;
+    padding-top: 2vh;
 }
-
 
 .halfCadastro {
     flex: 1;
@@ -27,7 +26,7 @@
 }
 
 .rightCadastro {
-    background-color: #8AA6A3; /* Cor da metade esquerda */
+    background-color: #8AA6A3;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -35,31 +34,31 @@
     align-self: center;
 }
 
-.rightCadastro form{
+.rightCadastro form {
     justify-content: center;
 }
 
-.rightCadastro span{
+.rightCadastro span {
     justify-content: center;
 }
 
 .leftCadastro {
-    background-color: #10403B; /* Cor da metade direita */
+    background-color: #10403B;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.imagemCadastro{
+.imagemCadastro {
     max-width: 70%;
 }
 
-.material-symbols-outlined.iconeCadastro{
+.material-symbols-outlined.iconeCadastro {
     color: #10403B;
-    font-size: 500%;
+    font-size: 5rem;
 }
 
-.tituloCadastro{
+.tituloCadastro {
     text-transform: uppercase;
     color: #10403B;
     font-size: 1rem;
@@ -74,62 +73,48 @@
     flex-direction: column;
     align-items: center;
     margin: 0;
-    position: relative; /* Para posicionar o botão no final */
-    overflow: hidden; /* Oculta a barra de rolagem */
+    position: relative;
+    overflow: hidden;
     padding-top: 1vh;
 }
 
-
-/* Estilização dos campos de entrada */
 .cadastro-form div {
     margin-bottom: 1rem;
-    position: relative; 
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
 }
 
 .cadastro-form input[type="text"],
-.cadastro-form input[type="password"] {
-    width: 25vw; 
-    padding: 0.5rem 0; 
-    border: none; 
-    padding-bottom: 2px;
-    padding-top: 2;
-    border-bottom: 1px solid #10403B; 
-    border-radius: 0; 
-    font-size: 1rem; 
-    box-sizing: border-box; 
+.cadastro-form input[type="password"],
+.cadastro-form input[type="email"] {
+    width: 25vw;
+    padding: 0.5rem 0;
+    border: none;
+    border-bottom: 0.1rem solid #10403B;
+    border-radius: 0;
+    font-size: 1rem;
+    box-sizing: border-box;
     background-color: transparent;
     color: #10403B;
     outline: none;
 }
-.cadastro-form input[type="email"]{
-    width: 25vw;  
-    border: none; 
-    border-bottom: 1px solid #10403B; 
-    border-radius: 0; 
-    font-size: 1rem; 
-    box-sizing: border-box; 
-    background-color: transparent;
-    color: #10403B;
-    outline: none;
-}
+
 .cadastro-form input:-webkit-autofill {
-    background-color: transparent !important; 
-    color: #10403B !important; 
-    -webkit-box-shadow: 0 0 0px 1000px transparent inset !important; 
+    background-color: transparent !important;
+    color: #10403B !important;
+    -webkit-box-shadow: 0 0 0rem 100rem transparent inset !important; /* Convertido de px para rem */
     transition: background-color 5000s ease-in-out 0s;
 }
+
 
 .cadastro-form input:-webkit-autofill::first-line {
     color: #10403B !important;
 }
 
-
-/* Estilização dos placeholders */
 .cadastro-form input::placeholder {
-    color: #10403B; 
+    color: #10403B;
     opacity: 1;
     font-family: "Poppins";
     font-size: 1.5vh;
@@ -139,30 +124,30 @@
     outline: none;
     cursor: pointer;
     border: none;
-    padding: 10px 20px 7px;
+    padding: 1rem 2rem 0.7rem;
     font-family: "Merriweather Sans";
     position: relative;
     display: inline-block;
     letter-spacing: 0.05rem;
     font-weight: 700;
     font-size: 2.4vh;
-    border-radius: 15px;
+    border-radius: 1.5rem;
     overflow: hidden;
     background: #ffffff;
-    color: #D9E0DF; /* Ajuste a cor do texto do botão conforme necessário */
-    border-bottom: 2px solid #5B5B5B;
-    border-right: 2px solid #5B5B5B;
-    transition: background-color 0.3s, color 0.3s; /* Adiciona transições suaves */
+    color: #D9E0DF;
+    border-bottom: 0.2rem solid #5B5B5B;
+    border-right: 0.2rem solid #5B5B5B;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .btnCadastro label {
     font-family: "Poppins";
-    color: #ffffff; 
-    font-size: 2.3vh; 
-    background-color: #10403B; 
-    padding: 2vh 6vh; 
-    cursor: pointer; 
-    border: 1px solid #D9E0DF;
+    color: #ffffff;
+    font-size: 2.3vh;
+    background-color: #10403B;
+    padding: 2vh 6vh;
+    cursor: pointer;
+    border: 0.1rem solid #D9E0DF;
 }
 
 .btnCadastro span {
@@ -200,7 +185,6 @@
 .input-group.senha {
     position: relative;
 }
-
 
 .input-group.senha span {
     position: absolute;
