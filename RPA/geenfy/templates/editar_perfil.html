@@ -36,39 +36,42 @@
             </svg>
         </div>
     </div>
+</div>
 
     
     <div class="contentEditar">
         <div class="lado1">
-            <img src="{{dados_EditarPerfil.0.imgPerfil.url}}">
+            <div class="imagem-editar">
+                <img src="{{dados_PerfilEditar.0.imgPerfil.url}}">
+                <h3>{{dados_PerfilEditar.0.titulo}}</h3></div>
+            <form method="POST" class="form-containerEditar">
 
-            <form method="POST" class="form-container">
                 {% csrf_token %}
-            
+                
                 {% for field in form_user %}
-                    <div class="form-group">
+                    <div class="form-group-editar">
                         <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
                         <div class="form-field">
                             {{ field }} <!-- Renderiza o campo -->
                         </div>
                     </div>
                 {% endfor %}
-            
-                {% for field in form_info %}
-                    <div class="form-group">
-                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                        <div class="form-field">
-                            {{ field }} <!-- Renderiza o campo -->
-                        </div>
-                    </div>
-                {% endfor %}
-            
-                <button type="submit" class="submit-button">Salvar Alterações</button>
             </form>
 
         </div>
         <div class="lado2">
-            <h1>teste2</h1>
+            <form method="POST" class="form-containerEditar">
+                {% for field in form_info %}
+                <div class="form-group-editar">
+                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                    <div class="form-field">
+                        {{ field }} <!-- Renderiza o campo -->
+                    </div>
+                </div>
+            {% endfor %}
+
+            <button type="submit" class="submit-button">Salvar Alterações</button>
+            </form>
         </div>
     </div>
 

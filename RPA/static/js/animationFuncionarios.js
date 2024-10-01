@@ -1,29 +1,45 @@
+// Funções de abertura e fechamento do modal
+function openModal(modalId) {
+    console.log('Abrindo modal:', modalId);
+    document.getElementById(modalId).style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Desabilita o scroll do fundo
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+    document.body.style.overflow = ''; // Habilita o scroll do fundo
+}
+
+// Fecha o modal ao clicar fora dele
+window.onclick = function(event) {
+    const modals = document.getElementsByClassName('modal');
+    for (let i = 0; i < modals.length; i++) {
+        if (event.target === modals[i]) {
+            closeModal(modals[i].id);
+        }
+    }
+}
+
+// Função para alternar detalhes do usuário
 function toggleDetails(contentId, arrowId) {
     var content = document.getElementById(contentId);
     var arrow = document.getElementById(arrowId);
-
-
-
-    console.log('Toggling:', contentId, arrowId);
-    console.log('Content:', content);
-    console.log('Arrow:', arrow);
-
-    // Em vez de verificar o estilo diretamente, podemos usar getComputedStyle para obter o valor atual
+    
+    // Verifica se o conteúdo está escondido
     var isHidden = window.getComputedStyle(content).display === "none";
 
     if (isHidden) {
         // Se estiver escondido, mostra o conteúdo
         content.style.display = "block";
-        arrow.textContent = "▲";
+        arrow.textContent = "▲"; // Altera o símbolo da seta
     } else {
         // Se estiver visível, esconde o conteúdo
         content.style.display = "none";
-        arrow.textContent = "▼";
+        arrow.textContent = "▼"; // Altera o símbolo da seta
     }
 }
 
-
-
+// Código a ser executado quando o DOM estiver completamente carregado
 document.addEventListener('DOMContentLoaded', function () {
     // Função para exibir a seta de voltar (a seta sempre estará visível)
     function showBackArrow() {
@@ -87,4 +103,5 @@ document.addEventListener('DOMContentLoaded', function () {
     // Exibe a seta de voltar ao carregar a página
     showBackArrow();
 });
+
 

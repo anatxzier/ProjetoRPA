@@ -10,7 +10,6 @@
     overflow: hidden;
 }
 
-
 .contentTurma {
     display: flex;
     flex-direction: row; 
@@ -24,7 +23,10 @@
 .triangle {
     position: absolute;
 }
-
+.nova-turma-form{
+    align-items:center;
+    justify-content: center;
+}
 
 /* Estilo para os triângulos */
 .triangle1 {
@@ -224,6 +226,7 @@
     display: flex;
     flex-direction: column;
     align-items: center; 
+    justify-content: center;
 }
 
 .nova-turma-form input[type="text"],

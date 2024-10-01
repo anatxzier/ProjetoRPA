@@ -227,6 +227,8 @@ def Perfil_View(request):
 def Editar_Perfil_View(request):
     user = request.user
     context = {}
+    dados_PerfilEditar = PerfilEditar.objects.all()
+    context ['dados_PerfilEditar'] = dados_PerfilEditar
 
     try:
         # Buscando o objeto Usuario associado ao usuário logado

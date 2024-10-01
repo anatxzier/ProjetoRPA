@@ -27,52 +27,35 @@
                 </div>
             </div>
             <div>
-                <span class="material-symbols-outlined">
-                    person_add
-                </span>
+                <a href="/cadastro"><span class="material-symbols-outlined icone">person_add</span></a>
             </div>
         </div>
         <div class="user-cards-wrapper">
             {% for funcionario in dados_usuario %}
             <div class="user-card">
                 {% csrf_token %}
-
-                <div class="user-header"
-                    onclick="toggleDetails('details-content-{{ forloop.counter }}', 'dropdown-arrow-{{ forloop.counter }}')">
+                <div class="user-header" onclick="toggleDetails('details-content-{{ forloop.counter }}', 'dropdown-arrow-{{ forloop.counter }}')">
                     <div class="user-info">
-                        <span class="material-symbols-outlined iconFunc">
-                            person
-                        </span>
+                        <span class="material-symbols-outlined iconFunc">person</span>
                         <div class="user-details">
                             <h3>{{ funcionario.user.first_name }}</h3>
                             <p>{{ funcionario.user.email }}</p>
                         </div>
                     </div>
-                    <button class="accordion"><span id="dropdown-arrow-{{ forloop.counter }}"
-                            class="arrow">▼</span></button>
+                    <button class="accordion"><span id="dropdown-arrow-{{ forloop.counter }}" class="arrow">▼</span></button>
                 </div>
                 <div class="user-details-content" id="details-content-{{ forloop.counter }}" style="display: none;">
                     <div class="parAtributo">
-                        <div class="user-attribute">
-                            <strong>User</strong>
-                            <p>{{ funcionario.user}} </p>
-                        </div>
-                        <div class="user-attribute">
-                            <strong>E-mail</strong>
-                            <p>{{ funcionario.user.email }}</p>
-                        </div>
+                        <div class="user-attribute"><strong>User</strong><p>{{ funcionario.user}}</p></div>
+                        <div class="user-attribute"><strong>E-mail</strong><p>{{ funcionario.user.email}}</p></div>
                     </div>
                     <div class="parAtributo">
-                        <div class="user-attribute">
-                            <strong>User CAF</strong>
-                            <p>{{ funcionario.login_CAF }}</p>
-                        </div>
-                        <div class="user-attribute">
-                            <strong>User IHX</strong>
-                            <p>{{ funcionario.login_IHX }}</p>
-                        </div>
-                        <!-- Botão que aciona o modal -->
-                        <button class="edit-button" data-bs-toggle="modal" data-bs-target="#modalExcluir{{ forloop.counter }}">
+                        <div class="user-attribute"><strong>User CAF</strong><p>{{ funcionario.login_CAF }}</p></div>
+                        <div class="user-attribute"><strong>User IHX</strong><p>{{ funcionario.login_IHX }}</p></div>
+                    </div>
+                    <!-- Botão que aciona o modal -->
+                    <div class="button-divv">
+                        <button class="edit-button" onclick="openModal('modalExcluir{{ forloop.counter }}')">
                             Excluir usuário 
                             <span class="material-symbols-outlined">delete</span>
                         </button>
@@ -80,14 +63,13 @@
                 </div>
             </div>
 
-            <div class="modal fade" id="modalExcluir{{ forloop.counter }}" tabindex="-1" aria-labelledby="exampleModalLabel{{ forloop.counter }}" aria-hidden="true">
+            <!-- Modal -->
+            <div class="modal" id="modalExcluir{{ forloop.counter }}" style="display: none;">
                 <div class="modal-dialog">
                     <div class="modal-content modal-content2">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel{{ forloop.counter }}">
-                                Excluir funcionário {{ funcionario.user.first_name }}
-                            </h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h1 class="modal-title fs-5">Excluir funcionário {{ funcionario.user.first_name }}</h1>
+                            <button type="button" class="close" onclick="closeModal('modalExcluir{{ forloop.counter }}')">&times;</button>
                         </div>
                         <div class="modal-body">
                             <form id="deleteForm{{ forloop.counter }}" method="POST" action="{% url 'excluir_funcionario' %}">
@@ -96,18 +78,17 @@
                                 <p>Tem certeza de que deseja excluir este funcionário?</p>
                                 <div class="d-flex justify-content-end">
                                     <button type="submit" class="btn btn-danger me-2">Confirmar exclusão</button>
-                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    <button type="button" class="btn btn-secondary" onclick="closeModal('modalExcluir{{ forloop.counter }}')">Cancelar</button>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            
             {% endfor %}
         </div>
     </div>
-
 </main>
+
 
 {% endblock %}

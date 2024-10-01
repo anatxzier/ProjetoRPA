@@ -7,7 +7,7 @@
     justify-content: center;
     position: relative;
     padding: 2rem;
-    
+    overflow: hidden;
 }
 
 .contentPerfil {
@@ -40,7 +40,7 @@
 
 .profile {
     position: absolute;
-    top: -15%;
+    top: -18%;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -109,136 +109,42 @@
     color: #4C978F;
     font-size: 1.3vw;
 }
+.triangle {
+    position: absolute;
+}
 
-/* @media(max-width: 1550px) {
-    .contentPerfil {
-        width: 60vw;
-        height: 65vh;
-        margin-top: 5vh;
-    }
+/* Estilo para os triângulos */
+.triangle1 {
+    bottom: 60%;
+    left: 2%;
+    transform: rotate(30deg);
+}
 
-    .contentPerfil2 {
-        width: 58vw;
-        height: 60vh;
-        padding: 1.25rem;
-    }
+.triangle2 {
+    bottom: 15%;
+    left: 5%;
+    transform: rotate(150deg);
+}
 
-    .profile {
-        top: -15%;
-    }
+.triangle5 {
+    bottom: 5%;
+    left: 5%;
+    transform: rotate(100deg);
+}
 
-    .profile img {
-        width: 40%;
-    }
+.triangle3 {
+    top: 20%;
+    left: 80%;
+    transform: rotate(100deg);
+}
 
-    .profile h2 {
-        font-size: 2rem;
-    }
+.triangle4 {
+    bottom: 5%;
+    left: 72%;
+    transform: rotate(30deg);
+}
 
-    .info-container {
-        flex-direction: row;
-        width: 100%;
-        margin: 10vh 0;
-        height: 30%;
-    }
-
-    .info-column {
-        width: 100%;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        right: -2%;
-    }
-
-    .info-column2 {
-        width: 100%;
-        margin-top: 2.5rem;
-        margin-bottom: 0.625rem;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        left: 4%;
-    }
-
-    .info-column p,
-    .info-column2 p {
-        width: 90%;
-        font-size: 1.2rem;
-    }
-
-    .info-column label,
-    .info-column2 label {
-        font-size: 1.5rem;
-    }
-} */
-
-/* @media(max-width: 1280px) {
-    .contentPerfil {
-        width: 75vw;
-        height: 75vh;
-        margin-top: 5vh;
-    }
-
-    .contentPerfil2 {
-        width: 70vw;
-        height: 70vh;
-        padding: 1.25rem;
-    }
-
-    .profile {
-        top: -8%;
-    }
-
-    .profile img {
-        width: 35%;
-    }
-
-    .profile h2 {
-        font-size: 2rem;
-    }
-
-    .info-container {
-        flex-direction: row;
-        width: 100%;
-        margin: 8vh 0;
-        height: 30%;
-    }
-
-    .info-column {
-        width: 100%;
-        margin-top: 2.5rem;
-        margin-bottom: 1rem;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        right: -2%;
-    }
-
-    .info-column2 {
-        width: 100%;
-        margin-top: 2.5rem;
-        margin-bottom: 0.625rem;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        left: 4%;
-    }
-
-    .info-column p,
-    .info-column2 p {
-        width: 90%;
-        font-size: 1.2rem;
-    }
-
-    .info-column label,
-    .info-column2 label {
-        font-size: 1.5rem;
-    }
-} */
-
-/* @media(max-width: 960px) {
+@media(max-width: 960px) {
     .contentPerfil {
         width: 65vw;
         height: 65vh;
@@ -286,31 +192,38 @@
     .info-column2 label {
         font-size: 1.2rem;
     }
+    .div-editar a {
+        color: #4C978F;
+        font-size: 1.3rem;
+    }
+    .div-editar{
+        margin-top: 5rem;
+    }
 }
 
 @media(max-width: 700px) {
     .contentPerfil {
         width: 65vw;
-        height: 65vh;
-        margin-top: 5vh;
+        height: 75vh;
+        margin-top: 15vh;
     }
 
     .contentPerfil2 {
         width: 60vw;
-        height: 60vh;
+        height: 70vh;
         padding: 1.25rem;
     }
 
     .profile {
-        top: -17%;
+        top: -15%;
     }
 
     .profile h2 {
-        font-size: 1.9rem;
+        font-size: 1.5rem;
     }
 
     .profile img {
-        width: 48%;
+        width: 60%;
     }
 
     .info-container {
@@ -318,73 +231,9 @@
         height: 45%;
         width: 100%;
         flex-direction: column;
-        padding: 0;
+        padding: 10vh 0 0 0;
         justify-content: center;
         align-items: center;
-    }
-
-    .info-column {
-        padding: 0;
-        gap: 0;
-        margin: 1rem 0 0 0;
-    }
-
-    .info-column2 {
-        padding: 0;
-        gap: 0;
-        margin: 0 0.625rem 0 0;
-    }
-
-    .info-column p,
-    .info-column2 p {
-        width: 90%;
-        font-size: 1.1rem;
-    }
-
-    .info-column label,
-    .info-column2 label {
-        font-size: 1.5rem;
-    }
-
-    .div-editar a {
-        color: #4C978F;
-        font-size: 1.4rem;
-    }
-} */
-
-/* @media(max-width: 450px) {
-    .contentPerfil {
-        width: 90vw;
-        height: 75vh;
-        margin-top: 5vh;
-    }
-
-    .contentPerfil2 {
-        width: 75vw;
-        height: 70vh;
-        padding: 1.25rem;
-    }
-
-    .profile {
-        top: -12%;
-    }
-
-    .profile h2 {
-        font-size: 1.5rem;
-    }
-
-    .profile img {
-        width: 50%;
-    }
-
-    .info-container {
-        display: flex;
-        height: 40%;
-        width: 100%;
-        flex-direction: column;
-        padding: 0;
-        align-items: center;
-        justify-content: center;
     }
 
     .info-column {
@@ -407,11 +256,82 @@
 
     .info-column label,
     .info-column2 label {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
 
     .div-editar a {
         color: #4C978F;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
-} */
+    .div-editar{
+        margin-top: 6rem;
+    }
+} 
+
+@media(max-width: 450px) {
+    .contentPerfil {
+        width: 65vw;
+        height: 75vh;
+        margin-top: 15vh;
+    }
+
+    .contentPerfil2 {
+        width: 60vw;
+        height: 70vh;
+        padding: 1.25rem;
+    }
+
+    .profile {
+        top: -15%;
+    }
+
+    .profile h2 {
+        font-size: 1.5rem;
+    }
+
+    .profile img {
+        width: 65%;
+    }
+
+    .info-container {
+        display: flex;
+        height: 45%;
+        width: 100%;
+        flex-direction: column;
+        padding: 10vh 0 0 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-column {
+        padding: 0;
+        gap: 0;
+        margin: 1rem 0 0 0;
+    }
+
+    .info-column2 {
+        padding: 0;
+        gap: 0;
+        margin: 0 0.625rem 0 0;
+    }
+
+    .info-column p,
+    .info-column2 p {
+        width: 90%;
+        font-size: 0.9rem;
+        word-break: break-word;
+    }
+
+    .info-column label,
+    .info-column2 label {
+        font-size: 1rem;
+    }
+
+    .div-editar a {
+        color: #4C978F;
+        font-size: 1rem;
+    }
+    .div-editar{
+        margin-top: 6rem;
+    }
+} 
