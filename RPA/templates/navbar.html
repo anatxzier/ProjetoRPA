@@ -14,7 +14,7 @@
 
       <div class="nav" id="nav-menu">
         <!-- Adiciona o ícone de fechar aqui -->
-        <span class="material-symbols-outlined close-icon" id="close-icon" style="display: none;">close</span>
+        <span class="material-symbols-outlined close-icon icone" id="close-icon" style="display: none;">close</span>
         {% if user.is_authenticated %}
         {% if request.path != '/' %}
         <a class="icn" href="/"><span class="material-symbols-outlined icone">home</span><span
@@ -45,6 +45,7 @@
         <a class="icn" href="/logout"><span class="material-symbols-outlined icone">logout</span><span
             class="link-text">Sair</span></a>
         {% endif %}
+        <span class="material-symbols-outlined iconeCloseMenu" style="display: none;">close</span>
       </div>
 
       {% if not user.is_authenticated %}
@@ -236,8 +237,20 @@
     /* Move o texto para a posição original */
   }
 
+  .close-icon {
+    display: none;
+    /* Esconde o ícone inicialmente */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 2em;
+    color: #000;
+  }
+
   /* Media query para telas menores que 900px (menu lateral) */
-  @media (max-width: 900px) {
+  @media (max-width: 990px) {
+
     .icn-group {
       display: flex;
       align-items: center;
@@ -249,13 +262,14 @@
       position: fixed;
       top: 0;
       right: 0;
-      width: 250px;
+      width: 30%;
       height: 100%;
       background-color: #8aa6a3;
       padding: 20px;
       box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
       gap: 20px;
       z-index: 1500;
+      padding-top: 15%;
     }
 
     #toggle {
@@ -266,8 +280,9 @@
       display: flex;
     }
 
-    #toggle:checked+#nav-menu .close-icon {
-      display: block; /* Mostra o ícone de fechar quando o menu está aberto */
+    #toggle:checked+.button+#nav-menu .close-icon {
+      display: block;
+      /* Mostra o ícone de fechar quando o menu está aberto */
     }
 
     .button {
@@ -275,8 +290,19 @@
       cursor: pointer;
     }
 
+    #nav-menu {
+      padding-top: 50px;
+      /* Espaçamento para evitar sobreposição com o ícone de fechar */
+    }
+
     .logout {
       margin-left: 0;
+    }
+    .close-icon {
+      display: none;
+    }
+    .iconeCloseMenu{
+      display: block;
     }
   }
 </style>
@@ -294,5 +320,6 @@
       menuText.textContent = 'Menu'; // Retorna para "Menu"
     }
   });
-  
+
 </script>
+

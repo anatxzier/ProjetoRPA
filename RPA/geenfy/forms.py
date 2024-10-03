@@ -21,10 +21,10 @@ class FormNovaTurma(forms.Form):
         return arquivo
 
 class FormCadastro(forms.Form):
-    email = forms.CharField(widget=forms.EmailInput(attrs={'placeholder':'Email', 'class': 'form-control'}), max_length=60)
-    user = forms.CharField( max_length=50, widget=forms.TextInput(attrs={'placeholder':'User', 'class': 'form-control'}))
-    first_name = forms.CharField ( max_length=80, widget=forms.TextInput(attrs={'placeholder':'Nome', 'class': 'form-control'}))
-    password = forms.CharField( widget=forms.PasswordInput(attrs={'placeholder':'Senha', 'id': 'id_passwordCadastro', 'class': 'form-control'}), min_length=8)    
+    email = forms.CharField(label="E-mail", widget=forms.EmailInput(attrs={'placeholder':'Email', 'class': 'form-control'}), max_length=60)
+    user = forms.CharField(label="Nome de Usuário", max_length=50, widget=forms.TextInput(attrs={'placeholder':'User', 'class': 'form-control'}))
+    first_name = forms.CharField(label="Nome", max_length=80, widget=forms.TextInput(attrs={'placeholder':'Nome', 'class': 'form-control'}))
+    password = forms.CharField(label="Senha Geenfy", widget=forms.PasswordInput(attrs={'placeholder':'Senha', 'id': 'id_passwordCadastro', 'class': 'form-control'}), min_length=8)
 
 class FormCadastro_Info(forms.Form):
     LoginCAF = forms.CharField(label="Login CAF", max_length=100, widget=forms.TextInput(attrs = {'class': 'form-control'}))

@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User, Funcionario, Usuario, Perfil, Cadastro_Info, PerfilEditar
+from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User, Funcionario, Usuario, Perfil, Cadastro_Info, PerfilEditar, In_progress_file, Finished_file
 from .forms import FormLogin, FormNovaTurma, FormCadastro, FormCadastro_Info
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import user_passes_test
@@ -81,8 +81,17 @@ def NovaTurma_View(request):
     if request.method == 'POST':
         form = FormNovaTurma(request.POST, request.FILES)
         if form.is_valid():
-            messages.success(request,"oioi")
-           
+            print("esse aqui 2")
+            var_turma = form.cleaned_data['nome_da_turma']
+            var_arquivo = form.cleaned_data['arquivo']
+            arquivo_in_progress = In_progress_file(turma=var_turma,arquivo_inprogress=var_arquivo)
+            arquivo_in_progress.save()
+            return redirect('processo')
+        else:
+            context['error_message'] = 'Ocorreu um erro durante o processamento do formulário.'
+            form = FormNovaTurma()
+            context['form'] = form 
+            return render(request, "novaTurma.html", context ) 
     else:
         form = FormNovaTurma()
         context["form"] = form
@@ -244,33 +253,35 @@ def Editar_Perfil_View(request):
         form_user = FormCadastro(request.POST)
 
         if form_info.is_valid() and form_user.is_valid():
-            # Atualiza os dados do usuário padrão
+            # Salva os dados do User (mas sem confirmar no banco ainda)
             user.username = form_user.cleaned_data['user']
             user.email = form_user.cleaned_data['email']
-            password = form_user.cleaned_data.get('password')
             first_name = form_user.cleaned_data.get('first_name')
-            if password:
+            password = form_user.cleaned_data.get('password')
+
+            if password:  # Se a senha foi preenchida, atualiza
                 user.set_password(password)
 
-            # Atualiza os dados adicionais no objeto Usuario
+            # Atualiza os campos do modelo Usuario
             usuario.login_CAF = form_info.cleaned_data['LoginCAF']
             usuario.senha_CAF = form_info.cleaned_data['SenhaCAF']
             usuario.login_IHX = form_info.cleaned_data['LoginIHX']
             usuario.senha_IHX = form_info.cleaned_data['SenhaIHX']
 
-            # Salva as alterações
+            # Salva os dados de Usuario e User
             user.save()
             usuario.save()
 
             # Mantém o usuário logado se a senha for alterada
-            update_session_auth_hash(request, user)
+            if password:
+                update_session_auth_hash(request, user)
 
             messages.success(request, "Perfil atualizado com sucesso!")
             return redirect('perfil')
         else:
             messages.error(request, "Erro ao atualizar o perfil. Verifique os dados.")
     else:
-        # Pré-preenche os dois formulários com os dados do objeto Usuario e User
+        # Pré-preenche os formulários com os dados atuais usando `initial`
         form_info = FormCadastro_Info(initial={
             'LoginCAF': usuario.login_CAF,
             'SenhaCAF': usuario.senha_CAF,
@@ -281,7 +292,7 @@ def Editar_Perfil_View(request):
             'user': user.username,
             'email': user.email,
             'first_name': user.first_name,
-            'password': '',  # O campo senha normalmente deve estar vazio por motivos de segurança
+            'password': '',
         })
 
     context['form_info'] = form_info

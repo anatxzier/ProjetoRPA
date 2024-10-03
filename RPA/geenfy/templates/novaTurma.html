@@ -8,6 +8,7 @@
 {% endblock %}
 
 {% block body %}
+
 <main class="containerNovaTurma">
     <div>
         <div class="triangle triangle1">
@@ -37,8 +38,11 @@
         </div>
     </div>
 
-
+          
     <div class="contentTurma">
+        {% if error_message %}
+        <div id="alert-containerNovaTurma-error" class="alert alert-errorNovaTurma"></div>
+        {% endif %}  
         <form id="formNova" class="nova-turma-form" method="post" enctype="multipart/form-data">
             <div class="formulario">
                 <p>{{ dados_NovaTurma.0.titulo }}</p>
@@ -60,14 +64,13 @@
                     {% endif %}
                 </div>
             </div>
-    
             <div class="botoesTurma">
                 <button id="buttonModal" class="btnTurma">
                     <span>Iniciar</span>
                 </button>
             </div>
         </form>
-        
+    
     <!-- Modal -->
     <div id="myModal" class="modal">
         <div class="modal-content">
@@ -100,6 +103,7 @@
             <img src="{{ dados_NovaTurma.0.imgNovaTurma.url }}">
         </div>
     </div>
+    
     
 
     

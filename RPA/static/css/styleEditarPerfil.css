@@ -7,23 +7,13 @@
     align-items: center;
     overflow: hidden;
     position: relative;
-
-
-
 }
-
-
-
 
 
 .contentEditar{
     display: flex;
     flex-direction: row;
-    margin-top: 7%;
     z-index: 1;
-    
-
-
 }
 
 
@@ -59,11 +49,23 @@
 }
 
 
+
+
 .lado1{
     background-color: #ABCEC7;
     width: 30vw;
-    height: 76vh;
+    height: 78vh;
     border-radius: 10% 0% 0% 10% ;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
+    
+}
+
+.lado1 .form-containerEditar{
+    transform: translateY(-10%);
+}
+
+.lado2 .form-containerEditar{
+    transform: translateY(10%);
 }
 
 .lado1 h3{
@@ -73,22 +75,22 @@
 }
 
 .lado1 img{
-    width: 20%;
+    width: 25%;
     height: auto;
     border-radius: 50%;
     border: 0.3rem solid #127369;
     margin: 0;
-    transform: translateX(200%) translateY(-35%);
-
-
+    transform: translateX(150%) translateY(-35%);
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
 }
 
 .lado2{
     background-color: #8AA6A3;
     width: 30vw;
-    height: 76vh;
+    height: 78vh;
     padding-top: 8%;
     border-radius: 0% 10% 10% 0%;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
 
 }
 
@@ -97,6 +99,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    
 
 
 }
@@ -106,16 +109,18 @@
     align-self: center;
     font-size: 1.5rem;
     color: #507974;
+    transform: translateY(-50%);
 }
 
 .btn-editar{
-    color: #127369;
+    color: #ffffff;
     background-color:#8AA6A3 ;
     border-radius: 0.5rem;
     border: none;
     width: 20vw;
     height: 7vh;
     transform: translateX(-70%) translateY(200%);
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
 }
 
 

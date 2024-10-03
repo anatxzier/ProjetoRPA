@@ -31,6 +31,7 @@
             </div>
         </div>
         <div class="user-cards-wrapper">
+            <h1 class="tituloResp">{{ dados_funcionario.0.titulo }}</h1>
             {% for funcionario in dados_usuario %}
             <div class="user-card">
                 {% csrf_token %}

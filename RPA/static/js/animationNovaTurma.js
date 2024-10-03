@@ -64,3 +64,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const errorMessage = document.getElementById('alert-containerNovaTurma-error');
+    if (errorMessage) {
+        swal("", "Ocorreu um erro durante o processamento do formulário!", "error");
+    }
+});

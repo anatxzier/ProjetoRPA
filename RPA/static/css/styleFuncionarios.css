@@ -57,6 +57,9 @@
     padding-right: 5vh;
 }
 
+.icone{
+    color: #0B6A60;
+}
 .material-symbols-outlined.iconFunc {
     font-size: 2rem;
     color: #0B6A60;
@@ -236,10 +239,14 @@
     transform: scale(1.2);
 }
 
+.tituloResp{
+    display: none;
+}
+
 .modal {
     z-index: 1055 !important;
-  }
-  .modal-backdrop {
+}
+.modal-backdrop {
     z-index: 1045 !important;
   }
 

@@ -114,21 +114,21 @@ p{
     padding-top: 5%;
     width: 100vw;
     
-  }
+}
 
-  .kanban hr{
+.kanban hr{
     width: 5px;
     background-color: #000;
-  }
+}
   
   
-  .column {
+.column {
     width: 15vw;
     height: 50vh;
     border-radius: 10px;
-  }
+}
   
-  .item {
+.item {
     background-color: #8AA6A3;
     padding: 5%;
     border-radius: 5px;
@@ -136,11 +136,12 @@ p{
     position: relative;
 }
   
-  .dragging {
+.dragging {
     opacity: 0.5;
-  }
+}
 
-  .colunacontent{
+.colunacontent{
     display: flex;
     flex-direction: row;
-  }
+}
+
