@@ -28,6 +28,6 @@ class FormCadastro(forms.Form):
 
 class FormCadastro_Info(forms.Form):
     LoginCAF = forms.CharField(label="Login CAF", max_length=100, widget=forms.TextInput(attrs = {'class': 'form-control'}))
-    SenhaCAF = forms.CharField(label="Senha CAF", widget=forms.PasswordInput(attrs = {'class': 'form-control'}))
+    SenhaCAF = forms.CharField(required=False, label="Senha CAF", widget=forms.PasswordInput(attrs = {'class': 'form-control'}))
     LoginIHX = forms.CharField(label="Login IHX", max_length=100, widget=forms.TextInput(attrs = {'class': 'form-control'}))
-    SenhaIHX = forms.CharField(label="Senha IHX", widget=forms.PasswordInput(attrs = {'class': 'form-control'}))
+    SenhaIHX = forms.CharField(required=False ,label="Senha IHX", widget=forms.PasswordInput(attrs = {'class': 'form-control'}))

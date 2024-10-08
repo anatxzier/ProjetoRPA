@@ -169,8 +169,12 @@ def Storage_View(request):
 @login_required
 def Processo_View(request):
     context = {}
-    dados_processo = Processo.objects.all(),
+    dados_processo = Processo.objects.all()
     context ["dados_processo"] = dados_processo
+    dados_progresso = In_progress_file.objects.all()
+    context ["dados_progresso"] = dados_progresso
+    dados_finalizados = Finished_file.objects.all()
+    context ["dados_finalizados"] = dados_finalizados
     form = FormNovaTurma()
     context["form"] = form
     dados_NovaTurma = NovaTurma.objects.all()
@@ -234,70 +238,68 @@ def Perfil_View(request):
 
 @login_required
 def Editar_Perfil_View(request):
-    user = request.user
     context = {}
-    dados_PerfilEditar = PerfilEditar.objects.all()
-    context ['dados_PerfilEditar'] = dados_PerfilEditar
+    usuario = get_object_or_404(Usuario, user=request.user)
+    user = request.user
 
-    try:
-        # Buscando o objeto Usuario associado ao usuário logado
-        usuario = Usuario.objects.get(user=user)
-        context['usuario'] = usuario
-    except Usuario.DoesNotExist:
-        messages.error(request, "O perfil do usuário não foi encontrado.")
-        return redirect('home')
+    # Inicializando os formulários com os dados do usuário
+    form1 = FormCadastro(initial={
+        'email': user.email,
+        'user': user.username,
+        'first_name': user.first_name,
+        'password': '',  # Não preencha a senha por motivos de segurança
+    })
+
+    form2 = FormCadastro_Info(initial={
+        'LoginIHX': usuario.login_IHX,
+        'SenhaIHX': usuario.senha_IHX,
+        'LoginCAF': usuario.login_CAF,
+        'SenhaCAF': usuario.senha_CAF,
+    })
 
     if request.method == "POST":
-        # Preenche os dois formulários com os dados enviados pelo POST
-        form_info = FormCadastro_Info(request.POST)
-        form_user = FormCadastro(request.POST)
+        form1 = FormCadastro(request.POST)
+        form2 = FormCadastro_Info(request.POST)
 
-        if form_info.is_valid() and form_user.is_valid():
-            # Salva os dados do User (mas sem confirmar no banco ainda)
-            user.username = form_user.cleaned_data['user']
-            user.email = form_user.cleaned_data['email']
-            first_name = form_user.cleaned_data.get('first_name')
-            password = form_user.cleaned_data.get('password')
+        print("Form1 data:", form1.data)
 
-            if password:  # Se a senha foi preenchida, atualiza
-                user.set_password(password)
+        if form1.is_valid() and form2.is_valid():
+            print("Both forms are valid")
+            
+            # Atualizando dados do User
+            user.email = form1.cleaned_data['email']
+            user.username = form1.cleaned_data['user']
+            user.first_name = form1.cleaned_data['first_name']
 
-            # Atualiza os campos do modelo Usuario
-            usuario.login_CAF = form_info.cleaned_data['LoginCAF']
-            usuario.senha_CAF = form_info.cleaned_data['SenhaCAF']
-            usuario.login_IHX = form_info.cleaned_data['LoginIHX']
-            usuario.senha_IHX = form_info.cleaned_data['SenhaIHX']
+            # Atualizando a senha apenas se fornecida
+            if form1.cleaned_data['password']:
+                user.set_password(form1.cleaned_data['password'])
 
-            # Salva os dados de Usuario e User
             user.save()
+            print("User updated:", user.email, user.username, user.first_name)
+
+            # Atualizando dados do modelo Usuario
+            usuario.login_CAF = form2.cleaned_data['LoginCAF']
+            usuario.senha_CAF = form2.cleaned_data['SenhaCAF']
+            usuario.login_IHX = form2.cleaned_data['LoginIHX']
+            usuario.senha_IHX = form2.cleaned_data['SenhaIHX']
+
             usuario.save()
+            print("Usuario updated:", usuario.login_CAF, usuario.login_IHX)
 
-            # Mantém o usuário logado se a senha for alterada
-            if password:
-                update_session_auth_hash(request, user)
-
-            messages.success(request, "Perfil atualizado com sucesso!")
             return redirect('perfil')
         else:
-            messages.error(request, "Erro ao atualizar o perfil. Verifique os dados.")
-    else:
-        # Pré-preenche os formulários com os dados atuais usando `initial`
-        form_info = FormCadastro_Info(initial={
-            'LoginCAF': usuario.login_CAF,
-            'SenhaCAF': usuario.senha_CAF,
-            'LoginIHX': usuario.login_IHX,
-            'SenhaIHX': usuario.senha_IHX
-        })
-        form_user = FormCadastro(initial={
-            'user': user.username,
-            'email': user.email,
-            'first_name': user.first_name,
-            'password': '',
-        })
+            print("Form1 errors:", form1.errors)
+            print("Form2 errors:", form2.errors)
 
-    context['form_info'] = form_info
-    context['form_user'] = form_user
+    # Renderizando com os formulários no contexto
+    context['form1'] = form1
+    context['form2'] = form2
     return render(request, 'editar_perfil.html', context)
+
+
+
+
 
 
 @login_required

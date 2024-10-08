@@ -12,6 +12,7 @@
         <img class="imgFuncionarios" src="{{ dados_funcionario.0.imgFuncionarios.url }}" alt="imagemFuncionarios">
     </div>
     <div class="container2">
+        <h1 class="tituloResp">{{ dados_funcionario.0.titulo }}</h1>
         <div class="iconeFunc">
             <div class="search-container">
                 <div>
@@ -25,13 +26,13 @@
                         <span type="submit" class="material-symbols-outlined icon-search">search</span>
                     </a>
                 </div>
+                <div>
+                    <a href="/cadastro"><span class="material-symbols-outlined icone">person_add</span></a>
+                </div>
             </div>
-            <div>
-                <a href="/cadastro"><span class="material-symbols-outlined icone">person_add</span></a>
-            </div>
+            
         </div>
         <div class="user-cards-wrapper">
-            <h1 class="tituloResp">{{ dados_funcionario.0.titulo }}</h1>
             {% for funcionario in dados_usuario %}
             <div class="user-card">
                 {% csrf_token %}

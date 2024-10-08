@@ -107,35 +107,29 @@ p{
 
 .kanban {
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Muda para espaço entre as colunas */
     height: 50vh;
-    gap: 12%;
     padding: 4%;
-    padding-top: 5%;
-    width: 100vw;
-    
+    width: 75vw; /* Ajuste para a largura da faixa de navegação */
+    margin: 0 auto; /* Centraliza o container do Kanban */
 }
 
-.kanban hr{
-    width: 5px;
-    background-color: #000;
-}
-  
-  
 .column {
-    width: 15vw;
+    width: 30%; /* Aumenta a largura para caber 3 colunas de forma mais uniforme */
     height: 50vh;
     border-radius: 10px;
+    padding: 10px; /* Espaço interno */
+    margin: 0 10px; /* Margens laterais para espaçamento entre colunas */
 }
-  
+
 .item {
     background-color: #8AA6A3;
     padding: 5%;
     border-radius: 5px;
-    margin: 5%;
+    margin: 5% 0; /* Margem vertical entre os itens */
     position: relative;
 }
-  
+
 .dragging {
     opacity: 0.5;
 }
@@ -144,4 +138,128 @@ p{
     display: flex;
     flex-direction: row;
 }
+.btn-add a {
+    text-decoration: none;
+    color: #4C5958;
+}
 
+@media (max-width: 1024px) {
+    .kanban {
+        width: 85vw;
+        padding: 2%;
+    }
+
+    .column {
+        width: 28%;
+        height: 45vh;
+        margin: 0 8px;
+    }
+
+    .item {
+        padding: 4%;
+        margin: 4% 0;
+    }
+
+    .navProcesso {
+        width: 85vw;
+        height: 10vh;
+    }
+
+    .navProcesso-content {
+        font-size: 3vh;
+    }
+
+    .navCampo {
+        width: 20vw;
+    }
+    .navCampo img {
+        width: 10%;
+    }
+    .navCampo p{
+        font-size: 1.5vh;
+    }
+    .item{
+        font-size: 1.5vh;
+    }
+    .btn-add a {
+        font-size: 1.5vh;
+    }
+}
+
+@media(max-width: 768px) {
+    .kanban {
+        width: 90vw;
+        padding: 2%;
+    }
+
+    .column {
+        width: 45%;
+        height: auto;
+        margin: 0 5px;
+    }
+
+    .item {
+        padding: 3%;
+        margin: 3% 0;
+    }
+
+    .navProcesso {
+        width: 90vw;
+        height: 8vh;
+    }
+
+    .navProcesso-content {
+        font-size: 2.5vh;
+    }
+
+    .navCampo {
+        width: 20vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .kanban {
+        width: 95vw;
+        padding: 1%;
+    }
+
+    .column {
+        width: 100%;
+        margin: 1vh 0;
+        padding: 1vh;
+    }
+
+    .item {
+        padding: 2%;
+        margin: 2% 0;
+    }
+
+    .navProcesso {
+        width: 95vw;
+        height: 9vh;
+        padding: 1vh;
+    }
+
+    .navProcesso-content {
+        font-size: 2vh;
+    }
+
+    .navCampo {
+        width: 25vw;
+        height: 6vh;
+    }
+    .navCampo img {
+        height: 15%;
+    }
+    .navCampo p{
+        font-size: 1.2vh;
+        word-break: break-word;
+    }
+    .item{
+        height: 5vh;
+        font-size: 1.5vh;
+    }
+    .btn-add a {
+        font-size: 1.5vh;
+    }
+}
