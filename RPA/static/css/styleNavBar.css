@@ -60,6 +60,6 @@
 }
 .icn-group {
   display: flex;
-  gap: 20px; /* Controla o espaço entre os ícones */
+  gap: 20px; 
   align-items: center;
 }

@@ -36,48 +36,57 @@
             </svg>
         </div>
     </div>
-</div>
+    </div>
 
+
+    <div class="containerEditar">
+        <div class="contentEditar">
+            <!-- Lado 1 -->
+            <div class="lado1">
+                <div class="imagem-editar">
+                    <img src="{{ dados_PerfilEditar.0.imgPerfil.url }}" alt="Imagem de perfil">
+                    <h3>{{ dados_PerfilEditar.0.titulo }}</h3>
+                </div>
     
-<div class="contentEditar">
-    <div class="lado1">
-        <div class="imagem-editar">
-            <img src="{{ dados_PerfilEditar.0.imgPerfil.url }}" alt="Imagem de perfil">
-            <h3>{{ dados_PerfilEditar.0.titulo }}</h3>
+                <!-- Formulário da primeira coluna - form1 -->
+                <form method="POST" class="form-containerEditar">
+                    {% csrf_token %}
+                    <div class="form-content">
+                        {% for field in form1 %}
+                            <div class="form-group-editar">
+                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                                <div class="form-field">
+                                    {{ field }} <!-- Renderiza o campo do form1 -->
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+            </div>
+    
+            <!-- Lado 2 -->
+            <div class="lado2">
+                <div class="form-content">
+                    {% for field in form2 %}
+                        <div class="form-group-editar">
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                            <div class="form-field">
+                                {{ field }} <!-- Renderiza o campo do form2 -->
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+    
+                <!-- Botão de envio -->
+                <button class="btn-editar" type="submit">Salvar Alterações</button>
+                </form>
+            </div>
         </div>
-
-        <!-- Formulário da primeira coluna - form1 -->
-        <form method="POST" class="form-containerEditar">
-            {% csrf_token %}
-            {% for field in form1 %}
-                <div class="form-group-editar">
-                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                    <div class="form-field">
-                        {{ field }} <!-- Renderiza o campo do form1 -->
-                    </div>
-                </div>
-            {% endfor %}
-        </form>
     </div>
+    
 
-    <div class="lado2">
-        <!-- Formulário da segunda coluna - form2 -->
-        <form method="POST" class="form-containerEditar">
-            {% csrf_token %}
-            {% for field in form2 %}
-                <div class="form-group-editar">
-                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                    <div class="form-field">
-                        {{ field }} <!-- Renderiza o campo do form2 -->
-                    </div>
-                </div>
-            {% endfor %}
-            <button class="btn-editar" type="submit">Salvar Alterações</button>
-        </form>
-    </div>
-</div>
 
-    <!-- <div class="lado2">
+
+        <!-- <div class="lado2">
 
         <form method="POST" class="form-containerEditar">
             {% csrf_token %}

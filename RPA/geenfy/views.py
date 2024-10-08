@@ -239,6 +239,9 @@ def Perfil_View(request):
 @login_required
 def Editar_Perfil_View(request):
     context = {}
+    dados_PerfilEditar = PerfilEditar.objects.all()
+    context['dados_PerfilEditar'] = dados_PerfilEditar
+
     usuario = get_object_or_404(Usuario, user=request.user)
     user = request.user
 
@@ -252,31 +255,25 @@ def Editar_Perfil_View(request):
 
     form2 = FormCadastro_Info(initial={
         'LoginIHX': usuario.login_IHX,
-        'SenhaIHX': usuario.senha_IHX,
+        'SenhaIHX': '',  # Não preenche a senha
         'LoginCAF': usuario.login_CAF,
-        'SenhaCAF': usuario.senha_CAF,
+        'SenhaCAF': '',  # Não preenche a senha
     })
 
     if request.method == "POST":
         form1 = FormCadastro(request.POST)
         form2 = FormCadastro_Info(request.POST)
 
-        print("Form1 data:", form1.data)
-
         if form1.is_valid() and form2.is_valid():
-            print("Both forms are valid")
-            
             # Atualizando dados do User
             user.email = form1.cleaned_data['email']
             user.username = form1.cleaned_data['user']
             user.first_name = form1.cleaned_data['first_name']
+            password = form1.cleaned_data.get('password')
 
-            # Atualizando a senha apenas se fornecida
-            if form1.cleaned_data['password']:
-                user.set_password(form1.cleaned_data['password'])
-
-            user.save()
-            print("User updated:", user.email, user.username, user.first_name)
+            # Se a senha foi preenchida, atualiza, senão mantém a senha atual
+            if password:
+                user.set_password(password)
 
             # Atualizando dados do modelo Usuario
             usuario.login_CAF = form2.cleaned_data['LoginCAF']
@@ -284,18 +281,23 @@ def Editar_Perfil_View(request):
             usuario.login_IHX = form2.cleaned_data['LoginIHX']
             usuario.senha_IHX = form2.cleaned_data['SenhaIHX']
 
+            # Salvando os dados atualizados
+            user.save()
             usuario.save()
-            print("Usuario updated:", usuario.login_CAF, usuario.login_IHX)
+
+            # Atualizar a sessão do usuário para refletir a nova senha, se ela foi alterada
+            update_session_auth_hash(request, user)
 
             return redirect('perfil')
         else:
             print("Form1 errors:", form1.errors)
             print("Form2 errors:", form2.errors)
+    else:
+        # Renderizando com os formulários no contexto
+        context['form1'] = form1
+        context['form2'] = form2
+        return render(request, 'editar_perfil.html', context)
 
-    # Renderizando com os formulários no contexto
-    context['form1'] = form1
-    context['form2'] = form2
-    return render(request, 'editar_perfil.html', context)
 
 
 

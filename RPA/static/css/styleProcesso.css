@@ -107,26 +107,26 @@ p{
 
 .kanban {
     display: flex;
-    justify-content: space-between; /* Muda para espaço entre as colunas */
+    justify-content: space-between; 
     height: 50vh;
     padding: 4%;
-    width: 75vw; /* Ajuste para a largura da faixa de navegação */
-    margin: 0 auto; /* Centraliza o container do Kanban */
+    width: 75vw; 
+    margin: 0 auto; 
 }
 
 .column {
-    width: 30%; /* Aumenta a largura para caber 3 colunas de forma mais uniforme */
+    width: 30%; 
     height: 50vh;
     border-radius: 10px;
-    padding: 10px; /* Espaço interno */
-    margin: 0 10px; /* Margens laterais para espaçamento entre colunas */
+    padding: 10px; 
+    margin: 0 10px; 
 }
 
 .item {
     background-color: #8AA6A3;
     padding: 5%;
     border-radius: 5px;
-    margin: 5% 0; /* Margem vertical entre os itens */
+    margin: 5% 0; 
     position: relative;
 }
 
@@ -181,6 +181,9 @@ p{
     .item{
         font-size: 1.5vh;
     }
+    .item span{
+        font-size: 2vh;
+    }
     .btn-add a {
         font-size: 1.5vh;
     }
@@ -201,6 +204,9 @@ p{
     .item {
         padding: 3%;
         margin: 3% 0;
+    }
+    .item span{
+        font-size: 2vh;
     }
 
     .navProcesso {
@@ -245,19 +251,22 @@ p{
     }
 
     .navCampo {
-        width: 25vw;
+        width: 28vw;
         height: 6vh;
     }
     .navCampo img {
         height: 15%;
     }
     .navCampo p{
-        font-size: 1.2vh;
+        font-size: 1.8vh;
         word-break: break-word;
     }
     .item{
         height: 5vh;
         font-size: 1.5vh;
+    }
+    .item span{
+        font-size: 2vh;
     }
     .btn-add a {
         font-size: 1.5vh;

@@ -104,7 +104,7 @@
 .cadastro-form input:-webkit-autofill {
     background-color: transparent !important;
     color: #10403B !important;
-    -webkit-box-shadow: 0 0 0rem 100rem transparent inset !important; /* Convertido de px para rem */
+    -webkit-box-shadow: 0 0 0rem 100rem transparent inset !important;
     transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -197,4 +197,34 @@
 
 .input-group.senha input {
     padding-right: 8%;
+}
+@media (max-width: 768px) {
+    .leftCadastro {
+        display: none !important; 
+    }
+
+    .rightCadastro {
+        width: 100% !important;
+    }
+
+    .rectangleCadastro {
+        width: 90vw !important;
+        height: auto !important; 
+    }
+
+    .cadastro-form {
+        width: 80vw !important;
+    }
+
+    .cadastro-form input[type="text"],
+    .cadastro-form input[type="password"],
+    .cadastro-form input[type="email"] {
+        width: 75vw !important;
+    }
+    .btnCadastro{
+        margin-bottom: 2rem;
+    }
+    .iconeCadastro{
+        margin-top: 2rem;
+    }
 }

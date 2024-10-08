@@ -14,7 +14,7 @@
     position: absolute;
 }
 
-/* Estilo para os triângulos */
+
 .triangle1 {
     bottom: 60%;
     left: 2%;
@@ -45,7 +45,6 @@
     transform: rotate(30deg);
 }
 
-/* Ajustes de responsividade */
 @media (max-width: 768px) {
     .triangle1, .triangle2, .triangle3, .triangle4 {
         border-width: 0 100px 100px 0;
@@ -72,7 +71,7 @@
 }
 
 .leftLogin {
-    background-color: #10403B; /* Cor da metade esquerda */
+    background-color: #10403B; 
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -90,7 +89,7 @@
 }
 
 .rightLogin {
-    background-color: #8AA6A3; /* Cor da metade direita */
+    background-color: #8AA6A3; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,8 +121,8 @@
     flex-direction: column;
     align-items: center;
     margin: 0;
-    position: relative; /* Para posicionar o botão no final */
-    overflow: hidden; /* Oculta a barra de rolagem */
+    position: relative; 
+    overflow: hidden; 
     padding-top: 1vh;
 }
 
@@ -162,7 +161,7 @@
     color: #D9E0DF !important;
 }
 
-/* Estilização dos campos de entrada */
+
 .login-form div {
     margin-bottom: 1rem;
     width: 100%; 
@@ -186,7 +185,7 @@
     outline: none;
 }
 
-/* Estilização dos placeholders */
+
 .login-form input::placeholder {
     color: #D9E0DF; 
     opacity: 1;
@@ -208,10 +207,10 @@
     border-radius: 15px;
     overflow: hidden;
     background: #ffffff;
-    color: #10403B; /* Ajuste a cor do texto do botão conforme necessário */
+    color: #10403B; 
     border-bottom: 2px solid #5B5B5B;
     border-right: 2px solid #5B5B5B;
-    transition: background-color 0.3s, color 0.3s; /* Adiciona transições suaves */
+    transition: background-color 0.3s, color 0.3s; 
 }
 
 .btnLogin label {
@@ -280,7 +279,7 @@
 
 @media (max-width: 920px) {
     .login-form input::placeholder {
-        font-size: 1.4vh; /* Reduzir o tamanho da imagem */
+        font-size: 1.4vh; 
     }
 }
 

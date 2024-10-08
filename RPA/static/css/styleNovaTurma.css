@@ -28,7 +28,6 @@
     justify-content: center;
 }
 
-/* Estilo para os triângulos */
 .triangle1 {
     bottom: 60%;
     left: 2%;
@@ -135,7 +134,6 @@
     padding: 0.4rem;
 }
 
-/* Ajustes de responsividade */
 @media (max-width: 768px) {
     .triangle1, .triangle2, .triangle3, .triangle4 {
         border-width: 0 100px 100px 0;
@@ -218,7 +216,6 @@
     margin-bottom: 2rem;
 }
 
-/* Estilização dos campos de entrada */
 .nova-turma-form div {
     margin-bottom: 1rem;
     width: 100%; 
@@ -243,13 +240,7 @@
     outline: none;
 }
 
-/* .nova-turma-form input[type="file"] {
-    opacity: 0;
-}
 
-
-.hidden-input {
-    display: none; /* Esconder o input padrão }*/
 
 
 .nova-turma-form input[type="file"]{
@@ -270,7 +261,7 @@
 }
     
 
-/* Estilização dos placeholders */
+
 .nova-turma-form input::placeholder {
     color: #D9E0DF; 
     opacity: 1;
@@ -279,7 +270,6 @@
     font-size: 1.5vh;
 }
 
-/* Estilização do campo de upload de arquivos */
 form.nova-turma-form {
     cursor: pointer; 
     transition: background-color 0.3s; 
@@ -373,6 +363,38 @@ form.nova-turma-form {
 
 .btnTurma:hover::before {
     transform: translate3d(100%, 0, 0);
+}
+
+.text-moved {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+    .content2 {
+        display: none; 
+    }
+
+    .text-moved {
+        display: block; 
+        color: #ffffff; 
+        font-size: 1.5vh;
+        font-family: "Poppins";
+        margin-top: 1rem;
+        text-align: center;
+    }
+
+    .nova-turma-form {
+        width: 90vw; 
+        height: auto; 
+        margin: 5% auto; 
+    }
+
+    .contentTurma {
+        flex-direction: column; 
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 }
 
 /* 

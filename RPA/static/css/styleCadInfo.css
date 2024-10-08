@@ -27,7 +27,6 @@
     position: absolute;
 }
 
-/* Estilo para os triângulos */
 .triangle1 {
     bottom: 60vh;
     left: 2vw;
@@ -79,7 +78,6 @@
     margin-bottom: 2rem;
 }
 
-/* Estilização dos campos de entrada */
 .cad-info-form div {
     margin-bottom: 1rem;
     width: 100%; 
@@ -103,7 +101,6 @@
     outline: none;
 }
 
-/* Estilização dos placeholders */
 .cad-info-form input::placeholder {
     color: #D9E0DF; 
     opacity: 1;
@@ -164,7 +161,6 @@
     transform: translate3d(100%, 0, 0);
 }
 
-/* Estilização de erros */
 .error {
     color: red;
     font-size: 0.8rem;
@@ -196,7 +192,6 @@
     padding-top: 3rem;
 }
 
-/* Ajustes de responsividade */
 @media (max-width: 768px) {
     .triangle1, .triangle2, .triangle3, .triangle4 {
         border-width: 0 10vw 10vw 0;

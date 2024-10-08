@@ -46,6 +46,9 @@
         <form id="formNova" class="nova-turma-form" method="post" enctype="multipart/form-data">
             <div class="formulario">
                 <p>{{ dados_NovaTurma.0.titulo }}</p>
+                <div class="text-moved">
+                    <p>{{ dados_NovaTurma.0.texto }}</p>
+                </div>
                 {% csrf_token %}
     
                 <div class="input-group">
