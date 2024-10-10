@@ -9,47 +9,13 @@
 {% block body%}
 
 <main class="containerEditar">
-    <div>
-        <div class="triangle triangle1">
-            <svg width="500" height="500" viewBox="0 0 100 100">
-                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
-            </svg>
-        </div>
-        <div class="triangle triangle2">
-            <svg width="400" height="400" viewBox="0 0 100 100">
-                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
-            </svg>
-        </div>
-        <div class="triangle triangle5">
-            <svg width="300" height="300" viewBox="0 0 100 100">
-                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
-            </svg>
-        </div>
-        <div class="triangle triangle3">
-            <svg width="300" height="300" viewBox="0 0 100 100">
-                <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
-            </svg>
-        </div>
-        <div class="triangle triangle4">
-            <svg width="450" height="450" viewBox="0 0 100 100">
-                <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
-            </svg>
-        </div>
-    </div>
-    </div>
-
 
     <div class="containerEditar">
         <div class="contentEditar">
             <!-- Lado 1 -->
             <div class="lado1">
-                <div class="imagem-editar">
-                    <img src="{{ dados_PerfilEditar.0.imgPerfil.url }}" alt="Imagem de perfil">
-                    <h3>{{ dados_PerfilEditar.0.titulo }}</h3>
-                </div>
-    
                 <!-- Formulário da primeira coluna - form1 -->
-                <form method="POST" class="form-containerEditar">
+                <form id="formEditar" method="POST" class="form-containerEditar">
                     {% csrf_token %}
                     <div class="form-content">
                         {% for field in form1 %}
@@ -65,10 +31,6 @@
     
             <!-- Lado 2 -->
             <div class="lado2">
-                <div class="imagem-editar">
-                    <img src="{{ dados_PerfilEditar.0.imgPerfil.url }}" alt="Imagem de perfil">
-                    <h3>{{ dados_PerfilEditar.0.titulo }}</h3>
-                </div>
                 <div class="form-content">
                     {% for field in form2 %}
                         <div class="form-group-editar">
@@ -79,11 +41,9 @@
                         </div>
                     {% endfor %}
                 </div>
-    
-                <!-- Botão de envio -->
-                <button class="btn-editar" type="submit">Salvar Alterações</button>
                 </form>
             </div>
+            <button class="btn-editar" id="submitButton">Salvar Alterações</button>
         </div>
     </div>
     

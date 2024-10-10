@@ -47,10 +47,11 @@
                 <div class="modal" id="modalIniciar{{ forloop.counter }}" style="display: none;">
                     <div class="modal-dialog">
                         <div class="modal-content modal-content2">
+                            <button type="button" class="close"
+                                    onclick="closeModal('modalIniciar{{ forloop.counter }}')">&times;</button>
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5">Iniciar arquivo da turma {{ file.turma }}</h1>
-                                <button type="button" class="close"
-                                    onclick="closeModal('modalIniciar{{ forloop.counter }}')">&times;</button>
+                                <hr>
                             </div>
                             <div class="modal-body">
                                 <form id="Iniciar{{ forloop.counter }}" method="POST"
@@ -58,10 +59,9 @@
                                     {% csrf_token %}
                                     <input type="hidden" name="file_id" value="{{ file.id }}">
                                     <p>Tem certeza de que deseja iniciar esta turma?</p>
-                                    <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-danger me-2">Confirmar a
-                                            inicialização</button>
-                                        <button type="button" class="btn btn-secondary"
+                                    <div class="d-flex botoesModal3">
+                                        <button type="submit" class="me-2">Confirmar</button>
+                                        <button type="button"
                                             onclick="closeModal('modalIniciar{{ forloop.counter }}')">Cancelar</button>
                                     </div>
                                 </form>
@@ -73,10 +73,11 @@
                 <div class="modal" id="modalExcluirPendente{{ forloop.counter }}" style="display: none;">
                     <div class="modal-dialog">
                         <div class="modal-content modal-content2">
+                            <button type="button" class="close"
+                                    onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">&times;</button>
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5">Excluir turma {{ file.turma }}</h1>
-                                <button type="button" class="close"
-                                    onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">&times;</button>
+                                
                             </div>
                             <div class="modal-body">
                                 <form id="deleteFormPendente{{ forloop.counter }}" method="POST"
@@ -85,10 +86,9 @@
                                     <input type="hidden" name="file_id" value="{{ file.id }}">
                                     <input type="hidden" name="file_status" value="{{ file.status }}">
                                     <p>Tem certeza de que deseja excluir esta turma?</p>
-                                    <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-danger me-2">Confirmar exclusão</button>
-                                        <button type="button" class="btn btn-secondary"
-                                            onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">Cancelar</button>
+                                    <div class="d-flex  botoesModal3">
+                                        <button type="submit" class="me-2">Confirmar</button>
+                                        <button type="button" onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">Cancelar</button>
                                     </div>
                                 </form>
                             </div>
@@ -124,10 +124,10 @@
                 <div class="modal" id="modalExcluirFinalizado{{ forloop.counter }}" style="display: none;">
                     <div class="modal-dialog">
                         <div class="modal-content modal-content2">
+                            <button type="button" class="close"
+                                    onclick="closeModal('modalExcluirFinalizado{{ forloop.counter }}')">&times;</button>
                             <div class="modal-header">
                                 <h1 class="modal-title fs-5">Excluir turma {{ arquivo.turma }}</h1>
-                                <button type="button" class="close"
-                                    onclick="closeModal('modalExcluirFinalizado{{ forloop.counter }}')">&times;</button>
                             </div>
                             <div class="modal-body">
                                 <form id="deleteFormFinalizado{{ forloop.counter }}" method="POST"
@@ -136,9 +136,9 @@
                                     <input type="hidden" name="file_id" value="{{ arquivo.id }}">
                                     <input type="hidden" name="file_status" value="{{ arquivo.status }}">
                                     <p>Tem certeza de que deseja excluir esta turma?</p>
-                                    <div class="d-flex justify-content-end">
-                                        <button type="submit" class="btn btn-danger me-2">Confirmar exclusão</button>
-                                        <button type="button" class="btn btn-secondary"
+                                    <div class="d-flex botoesModal3" >
+                                        <button type="submit" class=" me-2">Confirmar</button>
+                                        <button type="button"
                                             onclick="closeModal('modalExcluirFinalizado{{ forloop.counter }}')">Cancelar</button>
                                     </div>
                                 </form>

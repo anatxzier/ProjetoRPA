@@ -160,11 +160,13 @@ def Storage_View(request):
     context["form"] = form
     dados_NovaTurma = NovaTurma.objects.all()
     context["dados_NovaTurma"] = dados_NovaTurma
+    dados_finalizados = Finished_file.objects.order_by('-upload_time')
+    context ["dados_finalizados"] = dados_finalizados
     user_is_Coordenador = request.user.groups.filter(name="Coordenador").exists() if request.user.is_authenticated else False
     context["user_is_Coordenador"] = user_is_Coordenador 
     context["dados_lixeira"] = dados_lixeira
 
-    return render(request, "lixeira.html", context)
+    return render(request, "armazenamento.html", context)
 
 @login_required
 def Processo_View(request):
@@ -242,25 +244,21 @@ def Perfil_View(request):
 @login_required
 def Editar_Perfil_View(request):
     context = {}
-    dados_PerfilEditar = PerfilEditar.objects.all()
-    context['dados_PerfilEditar'] = dados_PerfilEditar
-
     usuario = get_object_or_404(Usuario, user=request.user)
     user = request.user
 
-    # Inicializando os formulários com os dados do usuário
     form1 = FormCadastro(initial={
         'email': user.email,
         'user': user.username,
         'first_name': user.first_name,
-        'password': '',  # Não preencha a senha por motivos de segurança
+        'password': '', 
     })
 
     form2 = FormCadastro_Info(initial={
         'LoginIHX': usuario.login_IHX,
-        'SenhaIHX': '',  # Não preenche a senha
+        'SenhaIHX': '',  
         'LoginCAF': usuario.login_CAF,
-        'SenhaCAF': '',  # Não preenche a senha
+        'SenhaCAF': '', 
     })
 
     if request.method == "POST":
@@ -278,28 +276,28 @@ def Editar_Perfil_View(request):
             if password:
                 user.set_password(password)
 
-            # Atualizando dados do modelo Usuario
+        
             usuario.login_CAF = form2.cleaned_data['LoginCAF']
             usuario.senha_CAF = form2.cleaned_data['SenhaCAF']
             usuario.login_IHX = form2.cleaned_data['LoginIHX']
             usuario.senha_IHX = form2.cleaned_data['SenhaIHX']
 
-            # Salvando os dados atualizados
+    
             user.save()
             usuario.save()
 
-            # Atualizar a sessão do usuário para refletir a nova senha, se ela foi alterada
             update_session_auth_hash(request, user)
 
             return redirect('perfil')
         else:
-            print("Form1 errors:", form1.errors)
-            print("Form2 errors:", form2.errors)
-    else:
-        # Renderizando com os formulários no contexto
-        context['form1'] = form1
-        context['form2'] = form2
-        return render(request, 'editar_perfil.html', context)
+            
+            print("Erros do Form1:", form1.errors)
+            print("Erros do Form2:", form2.errors)
+
+    # Sempre retornar a resposta, seja na requisição GET ou se os formulários forem inválidos
+    context['form1'] = form1
+    context['form2'] = form2
+    return render(request, 'editar_perfil.html', context)
 
 
 
@@ -369,15 +367,15 @@ def logout(request):
 
 
 
-def executar_script_async():
+def executar_script_async(login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress):
     # Caminho para o interpretador Python
     python_path = r"C:\Users\Aluno\AppData\Local\Programs\Python\Python312\python.exe"
     
     # Caminho para o script Python que você quer executar
     script_path = r"C:\Users\Aluno\Documents\Test_tcc\test_terminal.py"
-    
-    # Executa o script com o interpretador Python
-    subprocess.run([python_path, script_path])
+
+    # Executa o script com os argumentos necessários
+    subprocess.run([python_path, script_path, login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress])
 
 def executar_script(request):
     if request.method == 'POST':
@@ -385,11 +383,27 @@ def executar_script(request):
         file = get_object_or_404(In_progress_file, id=file_id)
         file.status = 'Em Progresso'
         file.save()
-        # Inicia o script em uma thread separada
-        thread = threading.Thread(target=executar_script_async)
+
+        # Obtendo os dados do usuário logado
+        usuario = get_object_or_404(Usuario, user=request.user)
+        login_IHX = usuario.login_IHX
+        senha_IHX = usuario.senha_IHX
+        login_CAF = usuario.login_CAF
+        senha_CAF = usuario.senha_CAF
+
+        # Obtendo o nome da turma associada ao arquivo em progresso
+        nome_turma = file.turma  # Assumindo que 'turma' é o campo que contém o nome da turma
+        id_arquivo = file_id
+        # Obtendo o caminho do arquivo em progresso
+        caminho_arquivo_inprogress = file.arquivo_inprogress.path
+
+        # Inicia o script em uma thread separada com os dados do usuário, nome da turma e o caminho do arquivo
+        thread = threading.Thread(target=executar_script_async, args=(login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress))
         thread.start()
+
         # Retorna uma resposta imediata ao usuário
         return redirect('processo')
     else:
         return redirect('processo')
+
 

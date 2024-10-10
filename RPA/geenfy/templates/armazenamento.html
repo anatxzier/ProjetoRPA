@@ -11,22 +11,24 @@
         <div class="navbarLixeira-custom">
             <div class="navbarLixeira-brand">
                 <h2>{{ dados_lixeira.0.titulo }}</h2>
-                <span class="material-symbols-outlined iconeLixeira">
-                    delete
-                </span>
             </div>
         </div>
-        <div class="salaApagada">
-            <p class="nomeSalaApagada">Cart.Dev Sistemas<p>
-            <span id="buttonModalDelete" class="material-symbols-outlined iconeSala">
-                delete
-            </span>
-            <span id="buttonModalRestore" class="material-symbols-outlined iconeSala">
-                restore_from_trash
-            </span>
+        <div class="listaFiles">
+            {% for arquivo in dados_finalizados %}
+            <div class="sala">
+                <p class="nomeSala">{{arquivo.turma}}<p>
+                <span id="buttonModalDelete" class="material-symbols-outlined iconeSala">
+                    delete
+                </span>
+                <span id="buttonModalRestore" class="material-symbols-outlined iconeSala">
+                    restore_from_trash
+                </span>
+            </div>
+            {% endfor %}
+
+            <hr class="linha">
         </div>
         <div class="linha-wrapper">
-            <hr class="linha">
             <div class="alinhamentoTexto">
                 <span class="material-symbols-outlined iconeSala">
                     warning

@@ -1,28 +1,25 @@
 from rest_framework import viewsets
 from rest_framework.decorators import action
-from geenfy.models import Usuario, In_progress_file, Finished_file
-from .serializers import UsuarioSerializer, In_progress_fileSerializer, Finished_fileSerializer
-from django.http import FileResponse, Http404
+from geenfy.models import In_progress_file, Finished_file
+from .serializers import In_progress_fileSerializer, Finished_fileSerializer
+from rest_framework import status
+from rest_framework.response import Response
 
-class UsuarioReadOnlyModelViewSet(viewsets.ReadOnlyModelViewSet):
-    queryset = Usuario.objects.all()
-    serializer_class = UsuarioSerializer
 
 class In_progress_fileViewSet(viewsets.ModelViewSet):
     queryset = In_progress_file.objects.all()
     serializer_class = In_progress_fileSerializer
 
-    @action(detail=True, methods=['get'])
-    def download(self, request, pk=None):
+    @action(detail=True, methods=['delete'], url_path='delete-in-progress', url_name='delete_in_progress')
+    def delete_in_progress(self, request, pk=None):
         try:
-            documento = self.get_object()
-            # Use o nome correto do campo aqui
-            return FileResponse(documento.arquivo_inprogress.open(), as_attachment=True, filename=documento.arquivo_inprogress.name)
+            # Filtrar o arquivo pelo ID e status "Em Progresso"
+            file_in_progress = In_progress_file.objects.get(id=pk, status='Em Progresso')
+            file_in_progress.delete()
+            return Response({"message": "Arquivo em progresso excluído com sucesso!"}, status=status.HTTP_204_NO_CONTENT)
         except In_progress_file.DoesNotExist:
-            raise Http404("Arquivo não encontrado")
-        except AttributeError:
-            raise Http404("Campo 'arquivo_inprogress' não encontrado no documento")
-    
+            return Response({"error": "Arquivo não encontrado ou não está em progresso."}, status=status.HTTP_404_NOT_FOUND)
+
 class Finished_FileViewSet(viewsets.ModelViewSet):
     queryset = Finished_file.objects.all()
     serializer_class = Finished_fileSerializer
