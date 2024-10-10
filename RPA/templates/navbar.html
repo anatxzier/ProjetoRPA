@@ -9,52 +9,53 @@
         {% if user.is_authenticated %}
         <span class="material-symbols-outlined" id="menu-icon">menu</span>
 
+
         {% endif %}
       </label>
 
       <div class="nav" id="nav-menu">
         <!-- Adiciona o ícone de fechar aqui -->
-        <span class="material-symbols-outlined close-icon icone" id="close-icon" style="display: none;">close</span>
+        <span class="material-symbols-outlined close-icon iconeNav" id="close-icon" style="display: none;">close</span>
         {% if user.is_authenticated %}
         {% if request.path != '/' %}
-        <a class="icn" href="/"><span class="material-symbols-outlined icone">home</span><span
+        <a class="icn" href="/"><span class="material-symbols-outlined iconeNav">home</span><span
             class="link-text">Home</span></a>
         {% endif %}
         {% if request.path != '/perfil' %}
-        <a class="icn" href="/perfil"><span class="material-symbols-outlined icone">account_circle</span><span
+        <a class="icn" href="/perfil"><span class="material-symbols-outlined iconeNav">account_circle</span><span
             class="link-text">Perfil</span></a>
         {% endif %}
         {% if request.path != '/processo' %}
-        <a class="icn" href="/processo"><span class="material-symbols-outlined icone">folder_open</span><span
+        <a class="icn" href="/processo"><span class="material-symbols-outlined iconeNav">folder_open</span><span
             class="link-text">Processo</span></a>
         {% endif %}
         {% if request.path != '/storage' %}
-        <a class="icn" href="/storage"><span class="material-symbols-outlined icone">inventory_2</span><span
+        <a class="icn" href="/storage"><span class="material-symbols-outlined iconeNav">inventory_2</span><span
             class="link-text">Armazenamento</span></a>
         {% endif %}
         {% if user_is_Coordenador %}
         {% if request.path != '/cadastro' %}
-        <a class="icn" href="/cadastro"><span class="material-symbols-outlined icone">person_add</span><span
+        <a class="icn" href="/cadastro"><span class="material-symbols-outlined iconeNav">person_add</span><span
             class="link-text">Cadastro</span></a>
         {% endif %}
         {% if request.path != '/funcionarios' %}
-        <a class="icn" href="/funcionarios"><span class="material-symbols-outlined icone">group</span><span
+        <a class="icn" href="/funcionarios"><span class="material-symbols-outlined iconeNav">group</span><span
             class="link-text">Funcionários</span></a>
         {% endif %}
         {% endif %}
-        <a class="icn" href="/logout"><span class="material-symbols-outlined icone">logout</span><span
+        <a class="icn" href="/logout"><span class="material-symbols-outlined iconeNav">logout</span><span
             class="link-text">Sair</span></a>
+        <a class="icn"><span class="material-symbols-outlined iconeCloseMenuNav" id="menu-icon">close</span></a>
         {% endif %}
-        <span class="material-symbols-outlined iconeCloseMenu" style="display: none;">close</span>
       </div>
 
       {% if not user.is_authenticated %}
       {% if request.path != '/' %}
-      <a class="icn" href="/"><span class="material-symbols-outlined icone">home</span><span
+      <a class="icn" href="/"><span class="material-symbols-outlined iconeNav">home</span><span
           class="link-text">Home</span></a>
       {% endif %}
       {% if request.path != '/login' %}
-      <a class="icn" href="/login"><span class="material-symbols-outlined icone">account_circle</span><span
+      <a class="icn" href="/login"><span class="material-symbols-outlined iconeNav">account_circle</span><span
           class="link-text">Login</span></a>
       {% endif %}
       {% endif %}
@@ -63,6 +64,10 @@
 </nav>
 
 <style>
+  .iconeCloseMenuNav {
+    display: none;
+  }
+
   .navbar-custom {
     background-color: #8aa6a3;
     border-radius: 10px;
@@ -119,12 +124,12 @@
     font-size: 4vh;
   }
 
-  .icone {
+  .iconeNav {
     line-height: 1;
     transition: transform 0.3s ease;
   }
 
-  .icone:hover {
+  .iconeNav:hover {
     transform: scale(1.2);
   }
 
@@ -249,7 +254,7 @@
   }
 
   /* Media query para telas menores que 900px (menu lateral) */
-  @media (max-width: 990px) {
+  @media (max-width: 1080px) {
 
     .icn-group {
       display: flex;
@@ -262,10 +267,10 @@
       position: fixed;
       top: 0;
       right: 0;
-      width: 30%;
+      width: 10%;
       height: 100%;
       background-color: #8aa6a3;
-      padding: 20px;
+      padding-left: 10px;
       box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
       gap: 20px;
       z-index: 1500;
@@ -298,28 +303,114 @@
     .logout {
       margin-left: 0;
     }
+
     .close-icon {
       display: none;
     }
-    .iconeCloseMenu{
+
+    .iconeCloseMenuNav {
       display: block;
+      cursor: pointer;
+      font-size: 4vh;
+    }
+
+    /* Esconde o menu quando o botão de fechar for clicado */
+    #nav-menu {
+      transition: all 0.5s ease-in-out;
+      transform: translateX(100%);
+    }
+
+    /* Quando o menu estiver aberto */
+    #toggle:checked~.nav {
+      transform: translateX(0);
+    }
+
+    .close-icon {
+      display: none;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 2em;
+      color: #000;
+    }
+
+    #toggle:checked+.button .close-icon {
+      display: block;
+    }
+
+    /* Esconde o ícone de menu quando o menu está aberto */
+    #toggle:checked+.button #menu-icon {
+      display: none;
+    }
+    .link-text {
+      display: none;
+    }
+
+  }
+
+  @media (max-width: 780px) {
+    .icn span {
+    font-size: 3.5vh;
+  }
+    .nav{
+      padding-left: 5px;
+      width: 10%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .nav{
+      padding-left: 2px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .nav{
+      padding-left: 5px;
+      width: 20%;
     }
   }
 </style>
 
 <script>
-  document.getElementById('toggle').addEventListener('change', function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleCheckbox = document.getElementById('toggle');
     const menuIcon = document.getElementById('menu-icon');
     const menuText = document.getElementById('menu-text');
+    const iconeCloseMenuNav = document.querySelector('.iconeCloseMenuNav');
+    const navMenu = document.getElementById('nav-menu');
 
-    if (this.checked) {
-      menuIcon.textContent = 'close'; // Muda para "X"
-      menuText.textContent = 'Fechar'; // Muda para "Fechar"
-    } else {
-      menuIcon.textContent = 'menu'; // Retorna para menu
-      menuText.textContent = 'Menu'; // Retorna para "Menu"
+    // Função para atualizar o ícone e o texto do menu
+    function updateMenuIcon() {
+      if (toggleCheckbox.checked) {
+        menuIcon.textContent = 'close'; // Muda para "X"
+        menuText.textContent = 'Fechar'; // Muda para "Fechar"
+      } else {
+        menuIcon.textContent = 'menu'; // Retorna para "menu"
+        menuText.textContent = 'Menu'; // Retorna para "Menu"
+      }
     }
+
+    // Adiciona evento ao checkbox (toggle) para mudar o ícone e o texto
+    toggleCheckbox.addEventListener('change', updateMenuIcon);
+
+    // Evento para clicar no ícone de fechar (iconeCloseMenuNav)
+    iconeCloseMenuNav.addEventListener('click', function () {
+      toggleCheckbox.checked = false; // Desmarca o checkbox para fechar o menu
+      navMenu.style.transform = 'translateX(100%)'; // Move o menu para fora da tela
+      updateMenuIcon(); // Atualiza o ícone e o texto
+    });
+
+    // Detectar alteração de tamanho da tela e fechar o menu se necessário
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 990) {
+        toggleCheckbox.checked = false; // Fechar o menu ao sair do modo responsivo
+        updateMenuIcon(); // Atualiza o ícone e o texto
+      }
+    });
+
+    // Inicializa o estado do ícone e do texto ao carregar a página
+    updateMenuIcon();
   });
-
 </script>
-

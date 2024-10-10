@@ -14,7 +14,6 @@ urlpatterns = [
     path('cadinfo', views.Cadastro_Info_View, name='cadinfo'),
     path('editarperfil', views.Editar_Perfil_View, name='editarperfil'),
     path('excluir_funcionario', views.excluir_funcionario, name='excluir_funcionario'),
-
-
+    path('excluir_file', views.excluir_file, name='excluir_file'),
     path('executar-script', views.executar_script, name='executar_script')
 ]

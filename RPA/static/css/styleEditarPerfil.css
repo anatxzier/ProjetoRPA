@@ -1,12 +1,13 @@
 .containerEditar {
     display: flex;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #C4D1D0;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
+    overflow-y: auto;
 }
 
 .contentEditar {
@@ -15,35 +16,37 @@
     justify-content: center;
     width: 80%;
     height: 80%;
-    margin-top: 10%;
+    margin-top: 25%;
     margin-bottom: 10%;
 }
 
 .lado1, .lado2 {
     width: 40%; 
-    height: 78vh;
-    padding: 20px; /* Adiciona espaço interno */
+    height: fit-content;
+    padding: 2%; 
 }
 
 .lado1 {
     background-color: #ABCEC7;
     border-radius: 10% 0 0 10%; 
     box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
+    
 }
 
 .lado1 .form-group-editar{
     transform: translateY(-55%);
 }
 
+.form-group-editar label{
+    color: #507974;
+}
 .lado2 {
     background-color: #8AA6A3;
     border-radius: 0 10% 10% 0; 
     box-shadow: 0.4rem 0rem 1rem rgba(0, 0, 0, 0.25);
 }
 
-.lado2 .form-group-editar{
-    transform: translateY(80%);
-}
+
 .form-containerEditar {
     width: 100%;
     display: flex;
@@ -63,8 +66,8 @@
 }
 
 .form-control {
-    width: 100%;
-    padding: 0.5rem;
+    width: 30vw;
+    padding: 0.9vh;
     border: none;
     border-bottom: 2px solid #D9E0DF;
     border-radius: 0.5rem;
@@ -72,6 +75,12 @@
     background-color: #e2f8f4;
     color: #000000;
     outline: none;
+}
+
+.form-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .lado1 h3 {
@@ -87,6 +96,38 @@
     margin: 0 auto;
     display: block;
     box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
+}
+
+.lado2 img {
+    width: 15vh;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #127369;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
+    opacity: 0; /* Define a transparência da imagem */
+}
+
+
+.lado2 .imagem-editar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transform: translateY(-35%);
+    opacity: 0
+}
+
+
+
+
+.lado1 .form-content{
+    margin: 3%;
+}
+
+.lado2 .form-content{
+    transform: translateY(-45%);
 }
 
 .imagem-editar {
@@ -109,10 +150,10 @@
     border-radius: 0.5rem;
     border: none;
     width: 100%;
-    height: 50px;
+    height: 15%;
     box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
     cursor: pointer;
-    transform: translateY(350%) translateX(-50%);
+    transform: translateY(500%) translateX(-50%);
 }
 
 .btn-editar:hover {
@@ -148,4 +189,123 @@
     bottom: 5%;
     left: 72%;
     transform: rotate(30deg);
+}
+
+@media (min-width: 2560px) {
+    .containerEditar {
+        padding: 0; 
+    }
+
+    .contentEditar {
+        width: 70%; /* Ajusta a largura para telas grandes */
+        height: 70%; /* Ajusta a altura para telas grandes */
+        margin-top: 16%;
+    }
+
+    .lado1, .lado2 {
+        width: 45%; /* Aumenta a largura para um layout mais espaçoso */
+        height: 60vh; /* Mantém a altura */
+    }
+
+    
+    .lado1 h3, .lado1 img, .imagem-editar h3 {
+        font-size: 2rem; /* Aumenta o tamanho da fonte para melhor legibilidade */
+    }
+
+    .form-control {
+        font-size: 1.2rem; /* Aumenta o tamanho da fonte do campo */
+        padding: 0.75rem; /* Aumenta o padding para campos de entrada */
+    }
+
+    .btn-editar {
+        font-size: 1.2rem; 
+        
+    }
+
+    /* Ajustes nas imagens se necessário */
+    .lado1 img {
+        width: 15vh;
+        height: auto; /* Aumenta o tamanho da imagem */
+        
+    }
+
+    .imagem-editar{
+        transform: translateY(-50%);
+    }
+
+    .imagem-editar h3{
+        font-size: 3rem;
+    }
+
+    .form-control{
+        padding: 1.5rem;
+        font-size: 1.5rem;
+        border-radius: 1.5rem;
+        border-bottom: 2px solid #D9E0DF;
+    }
+
+    .form-group-editar label{
+        font-size: 1.8rem;
+    }
+
+    .lado1 .form-group-editar{
+        transform: translateY(-100%);
+    }
+
+    .lado2 .form-group-editar{
+        transform: translateY(115%);
+    }
+
+    
+    .btn-editar {
+        transform: translateY(400%) translateX(-50%);
+        font-size: 1.9rem; 
+    }
+}
+
+
+@media (max-width: 768px) {
+
+    .containerEditar {
+        overflow-y: auto; /* Adiciona a rolagem vertical */
+    }
+
+    .contentEditar {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        width: 80%;
+        height: 80%;
+        margin-top: 60%;
+        margin-bottom: 10%;
+    }
+
+    .lado1, .lado2 {
+        width: 70%; 
+        height: 60vh;
+        padding: 2%; 
+        border-radius: 10%; 
+        background-color: #ABCEC7;
+        box-shadow: none;
+    }
+    .lado1{
+        border-radius: 10% 10% 0% 0% ;
+    }
+
+    .lado2{
+        border-radius: 0% 0% 10% 10% ;
+
+
+    }
+
+    .lado2 .form-group-editar{
+        transform: translateY(1%);
+    }
+
+    .btn-editar{
+        transform: translateY(150%);
+        height: 15%;
+    }
+
+
 }

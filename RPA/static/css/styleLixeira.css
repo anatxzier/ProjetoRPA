@@ -4,12 +4,11 @@
     width: 100vw;
     display: flex;
     background-color: #C4D1D0;
-    justify-content: center;
     position: relative;
     overflow: hidden;
     align-items: center;
     flex-direction: column;
-    padding-top: 0;
+    padding-top: 37vh;
 }
 
 .navbarLixeira-custom {
@@ -57,7 +56,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 5vh;
-    margin: 0rem;
+    
     margin-bottom: 2rem;
 }
 
@@ -190,4 +189,43 @@
     background-color: #8AA6A3;
     border: none;
     padding: 0.4rem;
+}
+@media (max-width: 768px) {
+    .containerLixeira .salaApagada {
+        margin: 0 auto
+        
+    }
+    .containerLixeira .navbarLixeira-custom {
+        height: 9vh; 
+        margin: 0 auto;
+    }
+    .containerLixeira {
+        margin-top: 0;
+        padding-top: 30vh;
+    }
+    .linha-wrapper{
+        margin-top: 1rem;
+    }
+    .alinhamentoTexto .info {
+        font-size: 1.7vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .containerLixeira .salaApagada {
+        height: 5vh
+    }
+    .containerLixeira .navbarLixeira-custom {
+        height: 7vh; 
+    }
+    .containerLixeira {
+        margin-top: 0;
+        padding-top: 26vh;
+    }
+    .linha-wrapper{
+        margin-top: 1rem;
+    }
+    .alinhamentoTexto .info {
+        font-size: 1.4vh;
+    }
 }

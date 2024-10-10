@@ -65,6 +65,10 @@
     
             <!-- Lado 2 -->
             <div class="lado2">
+                <div class="imagem-editar">
+                    <img src="{{ dados_PerfilEditar.0.imgPerfil.url }}" alt="Imagem de perfil">
+                    <h3>{{ dados_PerfilEditar.0.titulo }}</h3>
+                </div>
                 <div class="form-content">
                     {% for field in form2 %}
                         <div class="form-group-editar">

@@ -26,36 +26,131 @@
             </div>
         </div>
         <div class="kanban">
-          <div class="column">
-              {% for file in dados_progresso %}
-                  {% if file.status == "Pendente" %}
-                      <div class="item" draggable="true">{{ file.turma }}</div>
-                  {% endif %}
-              {% endfor %}
-              <div class="btn-add"><a href="/novaturma">+ Adicionar</a></div>
-          </div>
-      
-          <div class="column">
-              {% for file in dados_progresso %}
-                  {% if file.status == "Em Progresso" %}
-                      <div class="item" draggable="true">{{ file.turma }}</div>
-                  {% endif %}
-              {% endfor %}
-          </div>
-      
-          <div class="column">
-              {% for arquivo in dados_finalizados %}
-                  <div class="item" draggable="true">{{ arquivo.turma }} 
-                      <span class="material-symbols-outlined" style="float: right;">download</span>
-                      <span class="material-symbols-outlined" style="float: right; margin-left: 5px;">delete</span>
-                  </div>
-              {% endfor %}
-          </div>
-      </div>
-      
+            <div class="column">
+                {% for file in dados_progresso %}
+                {% if file.status == "Pendente" %}
+                <div class="item">{{ file.turma }}
+                    <div style="float: right;">
+                        {% if not arquivo_em_progresso %}
+                        <button class="edit-btn" onclick="openModal('modalIniciar{{ forloop.counter }}')">
+                            <span class="material-symbols-outlined">play_circle</span>
+                        </button>
+                        {% endif %}
+                    </div>
+                    <div style="float: right; margin-left: 5px;">
+                        <button class="delete-btn" onclick="openModal('modalExcluirPendente{{ forloop.counter }}')">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Modal Iniciar -->
+                <div class="modal" id="modalIniciar{{ forloop.counter }}" style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="modal-content modal-content2">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5">Iniciar arquivo da turma {{ file.turma }}</h1>
+                                <button type="button" class="close"
+                                    onclick="closeModal('modalIniciar{{ forloop.counter }}')">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="Iniciar{{ forloop.counter }}" method="POST"
+                                    action="{% url 'executar_script' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="file_id" value="{{ file.id }}">
+                                    <p>Tem certeza de que deseja iniciar esta turma?</p>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-danger me-2">Confirmar a
+                                            inicialização</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            onclick="closeModal('modalIniciar{{ forloop.counter }}')">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal Excluir-->
+                <div class="modal" id="modalExcluirPendente{{ forloop.counter }}" style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="modal-content modal-content2">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5">Excluir turma {{ file.turma }}</h1>
+                                <button type="button" class="close"
+                                    onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="deleteFormPendente{{ forloop.counter }}" method="POST"
+                                    action="{% url 'excluir_file' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="file_id" value="{{ file.id }}">
+                                    <input type="hidden" name="file_status" value="{{ file.status }}">
+                                    <p>Tem certeza de que deseja excluir esta turma?</p>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-danger me-2">Confirmar exclusão</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <div class="btn-add"><a href="/novaturma">+ Adicionar</a></div>
+            </div>
+
+            <div class="column">
+                {% for file in dados_progresso %}
+                {% if file.status == "Em Progresso" %}
+                <div class="item">{{ file.turma }}</div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="column">
+                {% for arquivo in dados_finalizados %}
+                <div class="item">{{ arquivo.turma }}
+                    <a href="{{ arquivo.arquivo_fineshed.url }}" download>
+                        <span class="material-symbols-outlined download" style="float: right;">download</span>
+                    </a>
+                    <div style="float: right; margin-left: 5px;">
+                        <button class="delete-btn" onclick="openModal('modalExcluirFinalizado{{ forloop.counter }}')">
+                            <span class="material-symbols-outlined">delete</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Modal -->
+                <div class="modal" id="modalExcluirFinalizado{{ forloop.counter }}" style="display: none;">
+                    <div class="modal-dialog">
+                        <div class="modal-content modal-content2">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5">Excluir turma {{ arquivo.turma }}</h1>
+                                <button type="button" class="close"
+                                    onclick="closeModal('modalExcluirFinalizado{{ forloop.counter }}')">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="deleteFormFinalizado{{ forloop.counter }}" method="POST"
+                                    action="{% url 'excluir_file' %}">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="file_id" value="{{ arquivo.id }}">
+                                    <input type="hidden" name="file_status" value="{{ arquivo.status }}">
+                                    <p>Tem certeza de que deseja excluir esta turma?</p>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="btn btn-danger me-2">Confirmar exclusão</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            onclick="closeModal('modalExcluirFinalizado{{ forloop.counter }}')">Cancelar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
     </div>
 </div>
-
 {% endblock %}
 
 <script src="{% static 'js/animationProcesso.js' %}"></script>

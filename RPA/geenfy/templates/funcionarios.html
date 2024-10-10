@@ -66,21 +66,22 @@
             </div>
 
             <!-- Modal -->
-            <div class="modal" id="modalExcluir{{ forloop.counter }}" style="display: none;">
+            <div class="modal modal2" id="modalExcluir{{ forloop.counter }}" style="display: none;">
                 <div class="modal-dialog">
                     <div class="modal-content modal-content2">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5">Excluir funcionário {{ funcionario.user.first_name }}</h1>
-                            <button type="button" class="close" onclick="closeModal('modalExcluir{{ forloop.counter }}')">&times;</button>
+                        <button type="button" class="close" onclick="closeModal('modalExcluir{{ forloop.counter }}')">&times;</button>
+                        <div class="modal-header modal-header2">
+                            <h1 class="modal-title">Excluir funcionário {{ funcionario.user.first_name }}</h1>
+                            <hr>
                         </div>
                         <div class="modal-body">
                             <form id="deleteForm{{ forloop.counter }}" method="POST" action="{% url 'excluir_funcionario' %}">
                                 {% csrf_token %}
                                 <input type="hidden" name="funcionario_id" value="{{ funcionario.user.id }}">
                                 <p>Tem certeza de que deseja excluir este funcionário?</p>
-                                <div class="d-flex justify-content-end">
-                                    <button type="submit" class="btn btn-danger me-2">Confirmar exclusão</button>
-                                    <button type="button" class="btn btn-secondary" onclick="closeModal('modalExcluir{{ forloop.counter }}')">Cancelar</button>
+                                <div class="d-flex justify-content-end botoesModal2">
+                                    <button type="submit" class=" me-2">Confirmar</button>
+                                    <button type="button"  onclick="closeModal('modalExcluir{{ forloop.counter }}')">Cancelar</button>
                                 </div>
                             </form>
                         </div>

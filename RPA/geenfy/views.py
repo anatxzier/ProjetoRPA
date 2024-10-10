@@ -173,7 +173,8 @@ def Processo_View(request):
     context ["dados_processo"] = dados_processo
     dados_progresso = In_progress_file.objects.all()
     context ["dados_progresso"] = dados_progresso
-    dados_finalizados = Finished_file.objects.all()
+    # Pegando todos os arquivos finalizados e ordenando do mais recente para o mais antigo
+    dados_finalizados = Finished_file.objects.order_by('-upload_time')[:5]
     context ["dados_finalizados"] = dados_finalizados
     form = FormNovaTurma()
     context["form"] = form
@@ -181,6 +182,8 @@ def Processo_View(request):
     context["dados_NovaTurma"] = dados_NovaTurma
     user_is_Coordenador = request.user.groups.filter(name="Coordenador").exists() if request.user.is_authenticated else False
     context["user_is_Coordenador"] = user_is_Coordenador 
+    arquivo_em_progresso = In_progress_file.objects.filter(status="Em Progresso").exists()
+    context["arquivo_em_progresso"] = arquivo_em_progresso
 
     return render(request, "processo.html", context)
 
@@ -343,6 +346,19 @@ def excluir_funcionario(request):
     else:
         return redirect('funcionarios')
 
+def excluir_file(request):
+    if request.method == 'POST':
+        file_status = request.POST.get('file_status')
+        file_id = request.POST.get('file_id')
+        if file_status == 'Pendente': 
+            in_progress_file = get_object_or_404(In_progress_file, id=file_id)
+            in_progress_file.delete()
+        else:
+            finished_file = get_object_or_404(Finished_file, id=file_id)
+            finished_file.delete()     
+        return redirect('processo')
+    else:
+        return redirect('processo')
 
 
 
@@ -364,10 +380,16 @@ def executar_script_async():
     subprocess.run([python_path, script_path])
 
 def executar_script(request):
-    # Inicia o script em uma thread separada
-    thread = threading.Thread(target=executar_script_async)
-    thread.start()
-
-    # Retorna uma resposta imediata ao usuário
-    return HttpResponse("O script foi iniciado e está sendo executado em segundo plano.")
+    if request.method == 'POST':
+        file_id = request.POST.get('file_id')
+        file = get_object_or_404(In_progress_file, id=file_id)
+        file.status = 'Em Progresso'
+        file.save()
+        # Inicia o script em uma thread separada
+        thread = threading.Thread(target=executar_script_async)
+        thread.start()
+        # Retorna uma resposta imediata ao usuário
+        return redirect('processo')
+    else:
+        return redirect('processo')
 
