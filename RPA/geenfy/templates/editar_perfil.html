@@ -8,49 +8,82 @@
 
 {% block body%}
 
-<main class="containerEditar">
-
+<body>
     <div class="containerEditar">
+        <div class="imagem-perfil">
+            <img src="{{dados_EditarPerfil.0.imgPerfil.url}}">
+            <h3>{{ dados_EditarPerfil.0.titulo }}</h3>
+        </div>
         <div class="contentEditar">
-            <!-- Lado 1 -->
             <div class="lado1">
                 <!-- Formulário da primeira coluna - form1 -->
                 <form id="formEditar" method="POST" class="form-containerEditar">
-                    {% csrf_token %}
                     <div class="form-content">
+                        {% csrf_token %}
                         {% for field in form1 %}
-                            <div class="form-group-editar">
-                                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                                <div class="form-field">
-                                    {{ field }} <!-- Renderiza o campo do form1 -->
-                                </div>
+                        <div class="form-group-editar">
+                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                            <div class="form-field">
+                                {{ field }} <!-- Renderiza o campo do form1 -->
                             </div>
+                        </div>
                         {% endfor %}
                     </div>
             </div>
-    
+
             <!-- Lado 2 -->
             <div class="lado2">
                 <div class="form-content">
                     {% for field in form2 %}
-                        <div class="form-group-editar">
-                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                            <div class="form-field">
-                                {{ field }} <!-- Renderiza o campo do form2 -->
-                            </div>
+                    <div class="form-group-editar">
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                        <div class="form-field">
+                            {{ field }} <!-- Renderiza o campo do form2 -->
                         </div>
+                    </div>
                     {% endfor %}
                 </div>
-                </form>
             </div>
-            <button class="btn-editar" id="submitButton">Salvar Alterações</button>
         </div>
+        <button class="btn-editar2">Confirmar Alterações</button>
     </div>
-    
+
+        <!-- Modal -->
+        <div id="myModal2" class="modal modal1">
+            <div class="modal-content modal-content1">
+                <span class="close">&times;</span>
+                <h3>Confirmar dados alterados</h3>
+                <hr>
+                <p>Aviso: Insira a sua senha atual GEENFY para confirmar a alteração das informações</p>
+                
+                <!-- Campo para a senha GEENFY -->
+                <div class="form-group-editar">
+                    <label for="senhaGeenfy">Senha GEENFY</label>
+                    <input type="password" id="senhaGeenfy" name="senha_geenfy" required>
+                </div>
+
+                <div class="botoesModal2">
+                    <button class="voltar">Voltar</button>
+                    <button class="btn-editar" id="submitButton">Confirmar</button>
+
+                    <!-- Exibe as mensagens de erro -->
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div id="alert-containerNovaTurma-success">{{ message }}</div>
+                    {% endfor %}
+                    {% endif %}
+
+                    {% if error_message %}
+                    <div id="alert-containerNovaTurma-error">{{ error_message }}</div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+</body>
 
 
 
-        <!-- <div class="lado2">
+<!-- <div class="lado2">
 
         <form method="POST" class="form-containerEditar">
             {% csrf_token %}
