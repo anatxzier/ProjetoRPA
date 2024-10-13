@@ -245,43 +245,51 @@ def Perfil_View(request):
 
 def Editar_Perfil_View(request):
     context = {}
+    dados_EditarPerfil = PerfilEditar.objects.all()
+    context['dados_EditarPerfil'] = dados_EditarPerfil
     usuario = get_object_or_404(Usuario, user=request.user)
     user = request.user
+    
 
-    # Inicializa os formulários com os dados do usuário
+    # Inicializa os formulários com o modo de edição
     form1 = FormCadastro(initial={
         'email': user.email,
         'user': user.username,
         'first_name': user.first_name,
         'password': '',  # Senha em branco
-    })
+        'new_password': ''  # Campo para nova senha
+    }, is_editing=True)
 
     form2 = FormCadastro_Info(initial={
         'LoginIHX': usuario.login_IHX,
         'SenhaIHX': '',  
         'LoginCAF': usuario.login_CAF,
         'SenhaCAF': '', 
-    })
+    }, is_editing=True)
 
     if request.method == "POST":
-        form1 = FormCadastro(request.POST)
-        form2 = FormCadastro_Info(request.POST)
+        form1 = FormCadastro(request.POST, is_editing=True)
+        form2 = FormCadastro_Info(request.POST, is_editing=True)
 
         # Valida os formulários
         if form1.is_valid() and form2.is_valid():
             senha_geenfy = form1.cleaned_data.get('password')  # Captura a senha fornecida
+            new_password = form1.cleaned_data.get('new_password')  # Captura a nova senha
 
-            # # Verifica se a senha GEENFY fornecida está correta
-            if user.check_password(senha_geenfy):
+            # Verifica se a senha GEENFY foi fornecida e se a atual está correta
+            if senha_geenfy and not user.check_password(senha_geenfy):
+                context['password_error'] = "Senha GEENFY incorreta."
+            else:
                 # Atualiza dados do User
                 user.email = form1.cleaned_data['email']
                 user.username = form1.cleaned_data['user']
                 user.first_name = form1.cleaned_data['first_name']
-                
-                # Se uma nova senha for fornecida, atualiza a senha do usuário
-                password = form1.cleaned_data.get('password')
-                if password:
-                    user.set_password(password)
+
+                # Verifica se uma nova senha foi fornecida e se é diferente da senha atual
+                if new_password and new_password == senha_geenfy:
+                    context['new_password_error'] = "A nova senha deve ser diferente da senha atual."
+                elif new_password:  # Se a nova senha for válida, atualiza a senha do usuário
+                    user.set_password(new_password)
 
                 # Atualiza os dados do modelo Usuario
                 usuario.login_CAF = form2.cleaned_data['LoginCAF']
@@ -297,8 +305,6 @@ def Editar_Perfil_View(request):
                 update_session_auth_hash(request, user)
 
                 return redirect('perfil')  # Redireciona para a tela de perfil
-            else:
-                context['password_error'] = "Senha GEENFY incorreta."
         else:
             # Se os formulários não forem válidos, capture os erros
             context['form1_errors'] = form1.errors
@@ -309,9 +315,6 @@ def Editar_Perfil_View(request):
     context['form1'] = form1
     context['form2'] = form2
     return render(request, 'editar_perfil.html', context)
-
-
-
 
 
 

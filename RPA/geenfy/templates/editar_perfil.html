@@ -20,14 +20,20 @@
                 <form id="formEditar" method="POST" class="form-containerEditar">
                     <div class="form-content">
                         {% csrf_token %}
-                        {% for field in form1 %}
+
                         <div class="form-group-editar">
-                            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
                             <div class="form-field">
-                                {{ field }} <!-- Renderiza o campo do form1 -->
+                                <label class="form-label" for="{{ form1.email.id_for_label }}">E-mail:</label>
+                                {{form1.email}}
+                                <label class="form-label" for="{{ form1.user.id_for_label }}">Nome de Usuário:</label>
+                                {{form1.user}}
+                                <label class="form-label" for="{{ form1.first_name.id_for_label }}">Nome:</label>
+                                {{form1.first_name}}
+                                <label class="form-label" for="{{ form1.new_password.id_for_label }}">Senha GEENFY:</label>
+                                {{form1.new_password}}
                             </div>
                         </div>
-                        {% endfor %}
+
                     </div>
             </div>
 
@@ -48,37 +54,37 @@
         <button class="btn-editar2">Confirmar Alterações</button>
     </div>
 
-        <!-- Modal -->
-        <div id="myModal2" class="modal modal1">
-            <div class="modal-content modal-content1">
-                <span class="close">&times;</span>
-                <h3>Confirmar dados alterados</h3>
-                <hr>
-                <p>Aviso: Insira a sua senha atual GEENFY para confirmar a alteração das informações</p>
-                
-                <!-- Campo para a senha GEENFY -->
-                <div class="form-group-editar">
-                    <label for="senhaGeenfy">Senha GEENFY</label>
-                    <input type="password" id="senhaGeenfy" name="senha_geenfy" required>
-                </div>
-
-                <div class="botoesModal2">
-                    <button class="voltar">Voltar</button>
-                    <button class="btn-editar" id="submitButton">Confirmar</button>
-
-                    <!-- Exibe as mensagens de erro -->
-                    {% if messages %}
-                    {% for message in messages %}
-                    <div id="alert-containerNovaTurma-success">{{ message }}</div>
-                    {% endfor %}
-                    {% endif %}
-
-                    {% if error_message %}
-                    <div id="alert-containerNovaTurma-error">{{ error_message }}</div>
-                    {% endif %}
-                </div>
+ <!-- Modal -->
+<div id="myModal2" class="modal modal1">
+    <div class="modal-content modal-content1">
+        <span class="close">&times;</span>
+        <h3>Confirmar dados alterados</h3>
+        <hr>
+        <p>Aviso: Insira a sua senha atual GEENFY para confirmar a alteração das informações</p>
+        
+        <!-- Campo para a senha GEENFY -->
+        <div class="form-group-editar">
+                <label for="{{ form1.password.id_for_label }}">Senha GEENFY:</label>
+                {{ form1.password }}
             </div>
+        <div class="botoesModal2">
+            <button class="voltar">Voltar</button>
+            <button class="btn-editar" id="submitButton">Confirmar</button>
+
+            <!-- Exibe as mensagens de erro -->
+            {% if messages %}
+            {% for message in messages %}
+            <div id="alert-containerNovaTurma-success">{{ message }}</div>
+            {% endfor %}
+            {% endif %}
+
+            {% if error_message %}
+            <div id="alert-containerNovaTurma-error">{{ error_message }}</div>
+            {% endif %}
         </div>
+    </div>
+</div>
+
 </body>
 
 
