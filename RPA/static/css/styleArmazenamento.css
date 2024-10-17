@@ -9,6 +9,7 @@
     align-items: center;
     flex-direction: column;
     padding-top: 37vh;
+    box-sizing: border-box;
 }
 
 .navbarArmazenamento-custom {
@@ -27,6 +28,7 @@
     align-items: center;
     justify-content: space-between; 
     margin-bottom: 2rem;
+    overflow-y: auto;
 }
 
 .navbarArmazenamento-brand {
@@ -49,7 +51,7 @@
 .sala{
     background-color: #8AA6A3;
     border-radius: 10px;
-    width: 68vw;
+    width: 66vw;
     height: 7vh; 
     display: flex;
     flex-direction: row;
@@ -196,7 +198,7 @@
     position: relative;
     padding-bottom: 1rem;
     padding-right: 0rem;
-    margin-right: 0rem;
+    margin-right: 1rem;
     width: 100%;
     margin-bottom: 1rem;
 
@@ -204,6 +206,7 @@
 
 .listaFiles::-webkit-scrollbar {
     width: 0.3rem;
+    
 }
 
 .listaFiles::-webkit-scrollbar-thumb {
@@ -215,41 +218,63 @@
 
 
 @media (max-width: 768px) {
-    .containerArmazenamento .sala {
-        margin: 0 auto
-        
-    }
-    .containerArmazenamento .navbarLixeira-custom {
-        height: 9vh; 
-        margin: 0 auto;
-    }
     .containerArmazenamento {
-        margin-top: 0;
         padding-top: 30vh;
     }
-    .linha-wrapper{
-        margin-top: 1rem;
+
+    .navbarArmazenamento-custom {
+        width: 90vw;
+        height: 10vh;
+        margin: 0 auto;
     }
+
+    .sala {
+        margin-right: 0rem;
+        margin-left:0rem;
+        width: 98%; 
+        
+    }
+
     .alinhamentoTexto .info {
-        font-size: 1.7vh;
+        font-size: 1.6vh;
+    }
+    .listaFiles{
+        height: 60vh;
+        width: 90vw;
+        margin-left: 0rem;
+        margin-right: 0.3rem;
     }
 }
 
 @media (max-width: 500px) {
-    .containerArmazenamento .sala {
-        height: 5vh
-    }
-    .containerArmazenamento .navbarArmazenamento-custom {
-        height: 7vh; 
-    }
     .containerArmazenamento {
-        margin-top: 0;
-        padding-top: 26vh;
+        padding-top: 25vh; 
     }
-    .linha-wrapper{
-        margin-top: 1rem;
+
+    .navbarArmazenamento-custom {
+        height: 8vh;
     }
+
+    .sala {
+        margin-right: 0;
+        margin-left:0;
+        width: 98%;
+
+    }
+
     .alinhamentoTexto .info {
         font-size: 1.4vh;
     }
+
+    .modal-contentDeleteRestore {
+        width: 80%;
+    }
+    .listaFiles{
+        margin-top: 4rem;
+        height: 50vh;
+        width: 90vw;
+        margin-left: 0rem;
+        margin-right: 0.3rem;
+    }
+
 }
