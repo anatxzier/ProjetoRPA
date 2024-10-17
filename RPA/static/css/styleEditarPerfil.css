@@ -31,6 +31,7 @@
 .lado1 {
     background-color: #ABCEC7;
     border-radius: 5% 0 0 5%;
+    padding-bottom: 10%;
 }
 
 .lado2{
@@ -104,6 +105,36 @@
     background-color: #718b87;
 }
 
+.btn-editar2{
+    width: 20%;
+    background-color: #839f9b;
+    border: none;
+    padding: 0.5%;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 10%;
+}
+.btn-editar2:hover {
+    background-color: #718b87;
+}
+
+.form-group-editar{
+    margin-top: 1rem;
+}
+
+.form-group-editar label{
+    margin-top: 1rem;
+}
+
+.voltar{
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+}
+
+
+
 @media (min-width: 2560px){
 
     .contentEditar {
@@ -116,6 +147,14 @@
         width: 100%;
         height: 100%;
         
+    }
+
+    .lado1{
+        padding-top: 10%;
+    }
+
+    .lado1 .form-label{
+        padding-top: 3%;
     }
     .imagem-perfil{
         transform: translateX(-14vw) translateY(14vh);
@@ -139,6 +178,9 @@
 
 @media (min-width: 1440px) and (max-width: 2559px){
 
+    .containerEditar{
+        height: 120vh;
+    }
     .contentEditar {
         width: 60%;
         height: fit-content;
@@ -150,14 +192,23 @@
         
     }
 
+    .lado1{
+        padding-top: 10%;
+    }
+
+    .lado1 .form-label{
+        padding-top: 3%;
+    }
+
     .imagem-perfil{
         transform: translateX(-14vw) translateY(10vh);
-        margin-top: 10%;
+        margin-top: 2%;
     }
 
     .imagem-perfil img{
         width: 30%;
         height: auto;
+        margin-top: 10%;
     }
 
     .imagem-perfil h3{
@@ -227,6 +278,11 @@
         
     }
 
+
+    .lado1 .form-label{
+        padding-top: 1%;
+    }
+
     .imagem-perfil{
         transform: translateX(-17vw) translateY(9vh);
     
@@ -243,6 +299,18 @@
     .form-field input {
         padding: 2%;
         font-size: 1rem;
+    }
+
+    .lado2 .form-content{
+        margin-bottom: 19%;
+    }
+
+    .lado1 .form-field label{
+        margin-top: 5%;
+    }
+
+    .lado2 .form-label{
+        margin-top: 5%;
     }
 
     .btn-editar{
@@ -267,7 +335,8 @@
     .lado1, .lado2{
         width: 100%;
         height: 100%;
-        
+        background-color: #ABCEC7;
+        box-shadow: none;
     }
     .lado1{
         border-radius: 1rem 1rem 0 0;

@@ -51,11 +51,11 @@
                 </div>
             </div>
         </div>
-        <button class="btn-editar2">Confirmar Alterações</button>
+        <button id="button1" class="btn-editar2">Confirmar Alterações</button>
     </div>
 
  <!-- Modal -->
-<div id="myModal2" class="modal modal1">
+ <div id="myModal2" class="modal modal1">
     <div class="modal-content modal-content1">
         <span class="close">&times;</span>
         <h3>Confirmar dados alterados</h3>
@@ -64,26 +64,30 @@
         
         <!-- Campo para a senha GEENFY -->
         <div class="form-group-editar">
-                <label for="{{ form1.password.id_for_label }}">Senha GEENFY:</label>
-                {{ form1.password }}
-            </div>
+            <label for="{{ form1.password.id_for_label }}">Senha GEENFY:</label>
+            {{ form1.password }}
+        </div>
+
+        <!-- Exibe as mensagens de erro relacionadas à senha como alertas -->
+        {% if password_error %}
+        <div class="alert alert-danger" role="alert">
+            {{ password_error }}
+        </div>
+        {% endif %}
+
+        {% if new_password_error %}
+        <div class="alert alert-danger" role="alert">
+            {{ new_password_error }}
+        </div>
+        {% endif %}
+
         <div class="botoesModal2">
             <button class="voltar">Voltar</button>
             <button class="btn-editar" id="submitButton">Confirmar</button>
-
-            <!-- Exibe as mensagens de erro -->
-            {% if messages %}
-            {% for message in messages %}
-            <div id="alert-containerNovaTurma-success">{{ message }}</div>
-            {% endfor %}
-            {% endif %}
-
-            {% if error_message %}
-            <div id="alert-containerNovaTurma-error">{{ error_message }}</div>
-            {% endif %}
         </div>
     </div>
 </div>
+
 
 </body>
 

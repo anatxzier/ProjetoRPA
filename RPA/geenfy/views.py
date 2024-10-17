@@ -242,14 +242,12 @@ def Perfil_View(request):
 
 
 @login_required
-
 def Editar_Perfil_View(request):
     context = {}
     dados_EditarPerfil = PerfilEditar.objects.all()
     context['dados_EditarPerfil'] = dados_EditarPerfil
     usuario = get_object_or_404(Usuario, user=request.user)
     user = request.user
-    
 
     # Inicializa os formulários com o modo de edição
     form1 = FormCadastro(initial={
@@ -278,9 +276,11 @@ def Editar_Perfil_View(request):
 
             # Verifica se a senha GEENFY foi fornecida e se a atual está correta
             if senha_geenfy and not user.check_password(senha_geenfy):
+                # Senha GEENFY incorreta, manter a modal aberta
                 context['password_error'] = "Senha GEENFY incorreta."
+                context['modal_open'] = True  # Flag para manter a modal aberta
             else:
-                # Atualiza dados do User
+                # Atualiza dados do User se a senha for correta
                 user.email = form1.cleaned_data['email']
                 user.username = form1.cleaned_data['user']
                 user.first_name = form1.cleaned_data['first_name']
@@ -288,33 +288,35 @@ def Editar_Perfil_View(request):
                 # Verifica se uma nova senha foi fornecida e se é diferente da senha atual
                 if new_password and new_password == senha_geenfy:
                     context['new_password_error'] = "A nova senha deve ser diferente da senha atual."
+                    context['modal_open'] = True  # Manter modal aberta se houver erro de nova senha
                 elif new_password:  # Se a nova senha for válida, atualiza a senha do usuário
                     user.set_password(new_password)
 
-                # Atualiza os dados do modelo Usuario
-                usuario.login_CAF = form2.cleaned_data['LoginCAF']
-                usuario.senha_CAF = form2.cleaned_data['SenhaCAF']
-                usuario.login_IHX = form2.cleaned_data['LoginIHX']
-                usuario.senha_IHX = form2.cleaned_data['SenhaIHX']
+                # Somente atualiza se não houver erros
+                if not context.get('password_error') and not context.get('new_password_error'):
+                    # Atualiza os dados do modelo Usuario
+                    usuario.login_CAF = form2.cleaned_data['LoginCAF']
+                    usuario.senha_CAF = form2.cleaned_data['SenhaCAF']
+                    usuario.login_IHX = form2.cleaned_data['LoginIHX']
+                    usuario.senha_IHX = form2.cleaned_data['SenhaIHX']
 
-                # Salva as alterações no banco de dados
-                user.save()
-                usuario.save()
+                    # Salva as alterações no banco de dados
+                    user.save()
+                    usuario.save()
 
-                # Atualiza a sessão com a nova senha
-                update_session_auth_hash(request, user)
+                    # Atualiza a sessão com a nova senha
+                    update_session_auth_hash(request, user)
 
-                return redirect('perfil')  # Redireciona para a tela de perfil
+                    return redirect('perfil')  # Redireciona para a tela de perfil
         else:
             # Se os formulários não forem válidos, capture os erros
             context['form1_errors'] = form1.errors
             context['form2_errors'] = form2.errors
-            print("Erros Form1:", form1.errors)
-            print("Erros Form2:", form2.errors)  # Para depuração
 
     context['form1'] = form1
     context['form2'] = form2
     return render(request, 'editar_perfil.html', context)
+
 
 
 

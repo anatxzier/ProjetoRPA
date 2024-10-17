@@ -1,17 +1,17 @@
-.containerLixeira {
+.containerArmazenamento {
     margin:0rem;
     height: 100vh;
     width: 100vw;
     display: flex;
     background-color: #C4D1D0;
     position: relative;
-    overflow: hidden;
+    overflow: auto;
     align-items: center;
     flex-direction: column;
     padding-top: 37vh;
 }
 
-.navbarLixeira-custom {
+.navbarArmazenamento-custom {
     background-color: #10403B;
     border-radius: 10px;
     width: 70vw;
@@ -29,27 +29,27 @@
     margin-bottom: 2rem;
 }
 
-.navbarLixeira-brand {
+.navbarArmazenamento-brand {
     width: 100%;
     display: flex;
     flex-direction: row;
     color: #bfbfbf;
 }
 
-.navbarLixeira-brand h2 {
+.navbarArmazenamento-brand h2 {
     font-size: 3vh;
     margin-right: 0.2rem;
     font-family: "Poppins";
 }
 
-.navbarLixeira-brand span {
+.navbarArmazenamento-brand span {
     font-size: 4vh;
 }
 
 .sala{
     background-color: #8AA6A3;
     border-radius: 10px;
-    width: 70vw;
+    width: 68vw;
     height: 7vh; 
     display: flex;
     flex-direction: row;
@@ -189,6 +189,19 @@
     border: none;
     padding: 0.4rem;
 }
+.listaFiles{
+    display: block;
+    max-height: 50vh;
+    overflow-y: auto;
+    position: relative;
+    padding-bottom: 1rem;
+    padding-right: 0rem;
+    margin-right: 0rem;
+    width: 100%;
+    margin-bottom: 1rem;
+
+}
+
 .listaFiles::-webkit-scrollbar {
     width: 0.3rem;
 }
@@ -197,18 +210,20 @@
     background-color: #8AA6A3;
     border-radius: 0.625rem;
     border: 0.03125rem solid #4f6865;
+    
 }
 
+
 @media (max-width: 768px) {
-    .containerLixeira .sala {
+    .containerArmazenamento .sala {
         margin: 0 auto
         
     }
-    .containerLixeira .navbarLixeira-custom {
+    .containerArmazenamento .navbarLixeira-custom {
         height: 9vh; 
         margin: 0 auto;
     }
-    .containerLixeira {
+    .containerArmazenamento {
         margin-top: 0;
         padding-top: 30vh;
     }
@@ -221,13 +236,13 @@
 }
 
 @media (max-width: 500px) {
-    .containerLixeira .sala {
+    .containerArmazenamento .sala {
         height: 5vh
     }
-    .containerLixeira .navbarLixeira-custom {
+    .containerArmazenamento .navbarArmazenamento-custom {
         height: 7vh; 
     }
-    .containerLixeira {
+    .containerArmazenamento {
         margin-top: 0;
         padding-top: 26vh;
     }

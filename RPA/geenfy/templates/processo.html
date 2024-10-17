@@ -44,13 +44,13 @@
                     </div>
                 </div>
                 <!-- Modal Iniciar -->
-                <div class="modal" id="modalIniciar{{ forloop.counter }}" style="display: none;">
+                <div class="modal modal3" id="modalIniciar{{ forloop.counter }}" style="display: none;">
                     <div class="modal-dialog">
-                        <div class="modal-content modal-content2">
+                        <div class="modal-content modal-content3">
                             <button type="button" class="close"
                                     onclick="closeModal('modalIniciar{{ forloop.counter }}')">&times;</button>
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5">Iniciar arquivo da turma {{ file.turma }}</h1>
+                            <div class="modal-header modal-header3">
+                                <h1 class="modal-title">Iniciar arquivo da turma {{ file.turma }}</h1>
                                 <hr>
                             </div>
                             <div class="modal-body">
@@ -70,14 +70,14 @@
                     </div>
                 </div>
                 <!-- Modal Excluir-->
-                <div class="modal" id="modalExcluirPendente{{ forloop.counter }}" style="display: none;">
+                <div class="modal modal3" id="modalExcluirPendente{{ forloop.counter }}" style="display: none;">
                     <div class="modal-dialog">
-                        <div class="modal-content modal-content2">
+                        <div class="modal-content modal-content3">
                             <button type="button" class="close"
                                     onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">&times;</button>
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5">Excluir turma {{ file.turma }}</h1>
-                                
+                            <div class="modal-header modal-header3">
+                                <h1 class="modal-title">Excluir turma {{ file.turma }}</h1>
+                                <hr>
                             </div>
                             <div class="modal-body">
                                 <form id="deleteFormPendente{{ forloop.counter }}" method="POST"
@@ -121,13 +121,14 @@
                     </div>
                 </div>
                 <!-- Modal -->
-                <div class="modal" id="modalExcluirFinalizado{{ forloop.counter }}" style="display: none;">
+                <div class="modal modal3" id="modalExcluirFinalizado{{ forloop.counter }}" style="display: none;">
                     <div class="modal-dialog">
-                        <div class="modal-content modal-content2">
+                        <div class="modal-content modal-content3">
                             <button type="button" class="close"
                                     onclick="closeModal('modalExcluirFinalizado{{ forloop.counter }}')">&times;</button>
-                            <div class="modal-header">
-                                <h1 class="modal-title fs-5">Excluir turma {{ arquivo.turma }}</h1>
+                            <div class="modal-header modal-header3">
+                                <h1 class="modal-title">Excluir turma {{ arquivo.turma }}</h1>
+                                <hr>
                             </div>
                             <div class="modal-body">
                                 <form id="deleteFormFinalizado{{ forloop.counter }}" method="POST"
