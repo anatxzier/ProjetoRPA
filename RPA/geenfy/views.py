@@ -385,14 +385,21 @@ def logout(request):
 
 
 def executar_script_async(login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress):
-    # Caminho para o interpretador Python
-    python_path = r"C:\Users\Aluno\AppData\Local\Programs\Python\Python312\python.exe"
-    
-    # Caminho para o script Python que você quer executar
-    script_path = r"C:\Users\Aluno\Documents\Test_tcc\test_terminal.py"
+    try:
+        # Caminho para o interpretador Python
+        python_path = r"C:\Users\Aluno\AppData\Local\Programs\Python\Python312\python.exe"
+        
+        # Caminho para o script Python que você quer executar
+        script_path = r"C:\Users\Aluno\Documents\Test_tcc\test_terminal.py"
 
-    # Executa o script com os argumentos necessários
-    subprocess.run([python_path, script_path, login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress])
+        # Executa o script com os argumentos necessários
+        resultado = subprocess.run([python_path, script_path, login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+        print(f"Saída do script: {resultado.stdout.decode()}")
+        print(f"Erros do script: {resultado.stderr.decode()}")
+
+    except subprocess.CalledProcessError as e:
+        print(f"Erro ao executar o script: {e.stderr.decode()}")
 
 def executar_script(request):
     if request.method == 'POST':

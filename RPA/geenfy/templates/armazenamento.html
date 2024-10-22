@@ -17,6 +17,9 @@
             {% for arquivo in dados_finalizados %}
             <div class="sala">
                 <p class="nomeSala">{{arquivo.turma}}<p>
+                <a href="{{ arquivo.arquivo_fineshed.url }}" download>
+                        <span class="material-symbols-outlined download" style="float: right;">download</span>
+                </a>
                 <span id="buttonModalDelete" class="material-symbols-outlined iconeSala">
                     delete
                 </span>

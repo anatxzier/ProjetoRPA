@@ -9,4 +9,4 @@ class In_progress_fileSerializer(serializers.ModelSerializer):
 class Finished_fileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Finished_file
-        fields = ['id', 'turma', 'arquivo_finished', 'upload_time']
+        fields = ['id', 'turma', 'arquivo_fineshed', 'upload_time']
