@@ -38,7 +38,7 @@ class Cadastro(models.Model):
     titulo = models.CharField(max_length=55)
     imgCadastro = models.ImageField(upload_to="imgCadastro/")
     
-class Lixeira(models.Model):
+class Storage(models.Model):
     titulo = models.CharField(max_length=55)
 
 class Processo(models.Model):
@@ -49,7 +49,7 @@ class Usuario(models.Model):
     login_IHX = models.CharField(max_length=30)
     senha_IHX = models.CharField(max_length=30)
     login_CAF = models.CharField(max_length=30)
-    senha_CAF = models.CharField(max_length=20)
+    senha_CAF = models.CharField(max_length=30)
 
 
 class In_progress_file(models.Model):

@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, Funcionario, Usuario, In_progress_file, Finished_file, Perfil, Cadastro_Info,PerfilEditar
+from .models import Homepage, Login, NovaTurma, Cadastro, Storage, Processo, Funcionario, Usuario, In_progress_file, Finished_file, Perfil, Cadastro_Info,PerfilEditar
 
 admin.site.register(Homepage)
 admin.site.register(Login)
 admin.site.register(NovaTurma)
 admin.site.register(Cadastro)
-admin.site.register(Lixeira)
+admin.site.register(Storage)
 admin.site.register(Processo)
 admin.site.register(Usuario)
 admin.site.register(Funcionario)

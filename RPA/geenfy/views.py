@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Homepage, Login, NovaTurma, Cadastro, Lixeira, Processo, User, Funcionario, Usuario, Perfil, Cadastro_Info, PerfilEditar, In_progress_file, Finished_file
+from .models import Homepage, Login, NovaTurma, Cadastro, Storage, Processo, User, Funcionario, Usuario, Perfil, Cadastro_Info, PerfilEditar, In_progress_file, Finished_file
 from .forms import FormLogin, FormNovaTurma, FormCadastro, FormCadastro_Info
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import user_passes_test
@@ -29,7 +29,6 @@ def Homepage_View (request):
     return render(request, 'homepage.html', context)
 
 def Login_View(request):
-
 
     context = {}
     dados_login = Login.objects.all()
@@ -155,7 +154,7 @@ def Cadastro_View(request):
 @login_required
 def Storage_View(request):
     context = {}
-    dados_lixeira = Lixeira.objects.all()
+    dados_storage = Storage.objects.all()
     form = FormNovaTurma()
     context["form"] = form
     dados_NovaTurma = NovaTurma.objects.all()
@@ -164,7 +163,7 @@ def Storage_View(request):
     context ["dados_finalizados"] = dados_finalizados
     user_is_Coordenador = request.user.groups.filter(name="Coordenador").exists() if request.user.is_authenticated else False
     context["user_is_Coordenador"] = user_is_Coordenador 
-    context["dados_lixeira"] = dados_lixeira
+    context["dados_lixeira"] = dados_storage
 
     return render(request, "armazenamento.html", context)
 
@@ -247,6 +246,8 @@ def Editar_Perfil_View(request):
     dados_EditarPerfil = PerfilEditar.objects.all()
     context['dados_EditarPerfil'] = dados_EditarPerfil
     usuario = get_object_or_404(Usuario, user=request.user)
+    user_is_Coordenador = request.user.groups.filter(name="Coordenador").exists() if request.user.is_authenticated else False
+    context["user_is_Coordenador"] = user_is_Coordenador 
     user = request.user
 
     # Inicializa os formulários com o modo de edição
@@ -365,13 +366,17 @@ def excluir_file(request):
     if request.method == 'POST':
         file_status = request.POST.get('file_status')
         file_id = request.POST.get('file_id')
+        rota = request.POST.get('rota')
         if file_status == 'Pendente': 
             in_progress_file = get_object_or_404(In_progress_file, id=file_id)
             in_progress_file.delete()
         else:
             finished_file = get_object_or_404(Finished_file, id=file_id)
-            finished_file.delete()     
-        return redirect('processo')
+            finished_file.delete()
+        if rota == 'processo':     
+            return redirect('processo')
+        else:
+            return redirect('storage')
     else:
         return redirect('processo')
 

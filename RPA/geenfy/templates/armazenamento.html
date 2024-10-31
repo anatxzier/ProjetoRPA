@@ -16,47 +16,50 @@
         <div class="listaFiles">
             {% for arquivo in dados_finalizados %}
             <div class="sala">
-                <p class="nomeSala">{{arquivo.turma}}<p>
-                <a href="{{ arquivo.arquivo_fineshed.url }}" download>
+                <p class="nomeSala">{{arquivo.turma}}
+                <p>
+                    <a href="{{ arquivo.arquivo_fineshed.url }}" download>
                         <span class="material-symbols-outlined download" style="float: right;">download</span>
-                </a>
-                <span id="buttonModalDelete" class="material-symbols-outlined iconeSala">
-                    delete
-                </span>
-                <!-- <span id="buttonModalRestore" class="material-symbols-outlined iconeSala">
-                    restore_from_trash
-                </span> -->
+                    </a>
+
+                    <button class="delete-btn" onclick="openModal('modalExcluirPendente{{ forloop.counter }}')">
+                        <span class="material-symbols-outlined">delete</span>
+                    </button>
+            </div>
+
+            <!-- Modal Excluir-->
+            <div class="modal modal4" id="modalExcluirPendente{{ forloop.counter }}" style="display: none;">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-content4">
+                        <button type="button" class="close"
+                            onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">&times;</button>
+                        <div class="modal-header modal-header4">
+                            <h1 class="modal-title">Excluir turma {{ arquivo.turma }}</h1>
+                            <hr>
+                        </div>
+                        <div class="modal-body">
+                            <form id="deleteFormPendente{{ forloop.counter }}" method="POST"
+                                action="{% url 'excluir_file' %}">
+                                {% csrf_token %}
+                                <p>Data de upload: {{ arquivo.upload_time|date:"d/m/Y H:i" }}</p> <!-- Aqui exibe a data -->
+                                <input type="hidden" name="rota" value="storage">
+                                <input type="hidden" name="file_id" value="{{ arquivo.id }}">
+                                <input type="hidden" name="file_status" value="{{ arquivo.status }}">
+                                <p>Tem certeza de que deseja excluir esta turma?</p>
+                                <div class="d-flex  botoesModal4">
+                                    <button type="submit" class="me-2">Confirmar</button>
+                                    <button type="button"
+                                        onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
             {% endfor %}
         </div>
         <hr class="linha">
-
-        <div id="modalDelete" class="modalDeleteRestore">
-            <div class="modal-contentDeleteRestore">
-                <span class="closeDeleteRestore">&times;</span>
-                <h3 class="pergunta">Deseja excluir permanentemente esse item?</h3>
-                <hr>
-                <div class="botoesModaldeleterestore">
-                    <button class="voltarDeleteRestore">Cancelar</button>
-                    <button>Confirmar</button>
-                </div>
-
-                
-            </div>
-        </div>
-        <!-- <div id="modalRestore" class="modalDeleteRestore">
-            <div class="modal-contentDeleteRestore">
-                <span class="closeDeleteRestore">&times;</span>
-                <h3 class="pergunta">Deseja restaurar esse item?</h3>
-                <hr>
-                <div class="botoesModaldeleterestore">
-                    <button class="voltarDeleteRestore">Cancelar</button>
-                    <button>Confirmar</button>
-                </div>
-
-                
-            </div> -->
-        </div>
+    </div>
     </div>
 </main>
 {% endblock %}

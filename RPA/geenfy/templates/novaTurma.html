@@ -1,10 +1,9 @@
-
 {% extends 'index.html' %}
 
 {% load static %}
 
 {% block title %}
-    <!-- Nova Turma -->
+<!-- Nova Turma -->
 {% endblock %}
 
 {% block body %}
@@ -13,36 +12,36 @@
     <div>
         <div class="triangle triangle1">
             <svg width="500" height="500" viewBox="0 0 100 100">
-                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
             </svg>
         </div>
         <div class="triangle triangle2">
             <svg width="400" height="400" viewBox="0 0 100 100">
-                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
             </svg>
         </div>
         <div class="triangle triangle5">
             <svg width="300" height="300" viewBox="0 0 100 100">
-                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+                <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
             </svg>
         </div>
         <div class="triangle triangle3">
             <svg width="300" height="300" viewBox="0 0 100 100">
-                <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+                <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
             </svg>
         </div>
         <div class="triangle triangle4">
             <svg width="450" height="450" viewBox="0 0 100 100">
-                <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
+                <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
             </svg>
         </div>
     </div>
 
-          
+
     <div class="contentTurma">
         {% if error_message %}
         <div id="alert-containerNovaTurma-error" class="alert alert-errorNovaTurma"></div>
-        {% endif %}  
+        {% endif %}
         <form id="formNova" class="nova-turma-form" method="post" enctype="multipart/form-data">
             <div class="formulario">
                 <p>{{ dados_NovaTurma.0.titulo }}</p>
@@ -50,68 +49,60 @@
                     <p class="text-moved">{{ dados_NovaTurma.0.texto }}</p>
                 </div>
                 {% csrf_token %}
-    
+                <input type="hidden" name="user_choice" id="userChoice" value="">
                 <div class="input-group">
-                    {{ form.nome_da_turma }} 
+                    {{ form.nome_da_turma }}
                 </div>
                 <div class="input-group">
-                    <label id="file-upload" class="custom-file-label" >
+                    <label id="file-upload" class="custom-file-label">
                         Escolher arquivo
                         {{ form.arquivo }}
                         <span id="file-names">Nenhum arquivo selecionado</span>
                     </label>
                     {% if form.arquivo.errors %}
-                        <div class="error">
-                            {{ form.arquivo.errors }}
-                        </div>
+                    <div class="error">
+                        {{ form.arquivo.errors }}
+                    </div>
                     {% endif %}
                 </div>
             </div>
             <div class="botoesTurma">
                 <button id="buttonModal" class="btnTurma">
-                    <span>Iniciar</span>
+                    <span>Adicionar</span>
                 </button>
             </div>
         </form>
-    
-    <!-- Modal -->
-    <div id="myModal" class="modal modal1">
-        <div class="modal-content modal-content1">
-            <span class="close">&times;</span>
-            <h3>Deseja adicionar mais um arquivo?</h3>
-            <hr>
-            <p>Aviso: Após iniciar a automatização, arquivos poderão ser adicionados, porém serão inicializados apenas
-                quando os arquivos em processo forem concluídos. Os arquivos possuem prazo de 2 dias para serem finalizados.
-            </p>
-            <div class="botoesModal">
-                <button class="voltar">Voltar</button>
-                <button class="iniciar" type="submit">Iniciar</button>
 
+        <!-- Modal -->
+        <div id="myModal" class="modal modal1">
+            <div class="modal-content modal-content1">
+                <span class="close">&times;</span>
+                <h3>Deseja adicionar mais um arquivo?</h3>
+                <hr>
+                <div class="botoesModal">
+                    <button class="nao">Não</button>
+                    <button class="sim">Sim</button>
+                </div>
                 {% if messages %}
                 {% for message in messages %}
-                    <div id="alert-containerNovaTurma-success" ></div>
+                <div id="alert-containerNovaTurma-success"></div>
                 {% endfor %}
                 {% endif %}
 
                 {% if error_message %}
                 <div id="alert-containerNovaTurma-error"></div>
                 {% endif %}
-
             </div>
         </div>
-    </div>
 
         <div class="content2">
             <p>{{ dados_NovaTurma.0.texto }}</p>
             <img src="{{ dados_NovaTurma.0.imgNovaTurma.url }}">
         </div>
     </div>
-    
-    
-
-    
-
-{% endblock %}
 
 
 
+
+
+    {% endblock %}

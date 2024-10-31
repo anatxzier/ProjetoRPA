@@ -42,6 +42,10 @@
         <a class="icn" href="/funcionarios"><span class="material-symbols-outlined iconeNav">group</span><span
             class="link-text">Funcionários</span></a>
         {% endif %}
+        {% if request.path != '/novaturma' %}
+        <a class="icn" href="/novaturma"><span class="material-symbols-outlined iconeNav">add_circle</span><span
+            class="link-text">Adicionar turma</span></a>
+        {% endif %}
         {% endif %}
         <a class="icn" href="/logout"><span class="material-symbols-outlined iconeNav">logout</span><span
             class="link-text">Sair</span></a>
@@ -253,8 +257,7 @@
     color: #000;
   }
 
-  /* Media query para telas menores que 900px (menu lateral) */
-  @media (max-width: 1080px) {
+  @media (max-width: 1020px) {
 
     .icn-group {
       display: flex;

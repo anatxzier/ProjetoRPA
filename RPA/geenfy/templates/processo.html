@@ -83,6 +83,7 @@
                                 <form id="deleteFormPendente{{ forloop.counter }}" method="POST"
                                     action="{% url 'excluir_file' %}">
                                     {% csrf_token %}
+                                    <input type="hidden" name="rota" value="processo">
                                     <input type="hidden" name="file_id" value="{{ file.id }}">
                                     <input type="hidden" name="file_status" value="{{ file.status }}">
                                     <p>Tem certeza de que deseja excluir esta turma?</p>
@@ -134,6 +135,7 @@
                                 <form id="deleteFormFinalizado{{ forloop.counter }}" method="POST"
                                     action="{% url 'excluir_file' %}">
                                     {% csrf_token %}
+                                    <input type="hidden" name="rota" value="processo">
                                     <input type="hidden" name="file_id" value="{{ arquivo.id }}">
                                     <input type="hidden" name="file_status" value="{{ arquivo.status }}">
                                     <p>Tem certeza de que deseja excluir esta turma?</p>

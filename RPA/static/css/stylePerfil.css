@@ -143,6 +143,37 @@
     transform: rotate(30deg);
 }
 
+.editarPerfilbutton {
+    background-color: #10403B; /* Cor de fundo */
+    color: #ffffff; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Cantos arredondados */
+    padding: 1rem 1.5rem; /* Espaçamento interno */
+    font-size: 1.2rem; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para mãozinha */
+    transition: background-color 0.3s ease, transform 0.2s; /* Animações */
+    display: flex; /* Para alinhar o texto e o ícone */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%;
+}
+
+.editarPerfilbutton:hover {
+    background-color: #0c2d26; /* Cor de fundo ao passar o mouse */
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+}
+
+.editarPerfilbutton span {
+    padding: 0.5rem; /* Espaçamento entre o texto e o ícone */
+}
+
+.material-symbols-outlined {
+    font-size: 1rem; /* Tamanho do ícone */
+}
+
+.div-editar a {
+    text-decoration: none; /* Remove o sublinhado do link */
+}
+
 @media(max-width: 960px) {
     .contentPerfil {
         width: 65vw;

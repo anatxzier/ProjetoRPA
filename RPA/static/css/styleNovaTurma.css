@@ -139,6 +139,7 @@
     padding: 0.4rem;
 }
 
+
 @media (max-width: 768px) {
     .triangle1, .triangle2, .triangle3, .triangle4 {
         border-width: 0 100px 100px 0;
