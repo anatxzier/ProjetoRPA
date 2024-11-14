@@ -400,8 +400,8 @@ def executar_script_async(login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma
         # Executa o script com os argumentos necessários
         resultado = subprocess.run([python_path, script_path, login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-        print(f"Saída do script: {resultado.stdout.decode()}")
-        print(f"Erros do script: {resultado.stderr.decode()}")
+        # print(f"Saída do script: {resultado.stdout.decode()}")
+        # print(f"Erros do script: {resultado.stderr.decode()}")
 
     except subprocess.CalledProcessError as e:
         print(f"Erro ao executar o script: {e.stderr.decode()}")
