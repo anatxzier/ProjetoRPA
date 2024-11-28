@@ -1,0 +1,917 @@
+1732643071849	geckodriver	INFO	Listening on 127.0.0.1:48421
+1732643072357	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "56535" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileH5HVl6"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732643074200	Marionette	INFO	Marionette enabled
+1732643074779	Marionette	INFO	Listening on port 33743
+WebDriver BiDi listening on ws://127.0.0.1:56535
+Read port: 33743
+1732643075395	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+1732643083334	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+1732643099553	Marionette	INFO	Stopped listening on port 33743
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732645096942	geckodriver	INFO	Listening on 127.0.0.1:55393
+1732645097449	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "57457" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile0SP21m"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732645099135	Marionette	INFO	Marionette enabled
+1732645099726	Marionette	INFO	Listening on port 39329
+Read port: 39329
+WebDriver BiDi listening on ws://127.0.0.1:57457
+1732645100421	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1732645120230	Marionette	INFO	Stopped listening on port 39329
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732645801231	geckodriver	INFO	Listening on 127.0.0.1:46057
+1732645801740	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "58437" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileG14yA5"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732645803426	Marionette	INFO	Marionette enabled
+1732645803921	Marionette	INFO	Listening on port 39729
+Read port: 39729
+WebDriver BiDi listening on ws://127.0.0.1:58437
+1732645804200	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1732645820623	Marionette	INFO	Stopped listening on port 39729
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+console.error: (new TypeError("domWindow is null", "jar:file:///usr/lib/firefox/browser/features/formautofill@mozilla.org.xpi!/api.js", 28))
+1732646278426	geckodriver	INFO	Listening on 127.0.0.1:49533
+1732646278934	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "46895" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilemtKFP3"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732646280823	Marionette	INFO	Marionette enabled
+1732646281320	Marionette	INFO	Listening on port 42497
+Read port: 42497
+WebDriver BiDi listening on ws://127.0.0.1:46895
+1732646281601	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+console.error: services.settings: 
+  Message: NetworkError: Network error: TypeError: NetworkError: Network request failed
+  Stack:
+    APIError@resource://services-settings/RemoteSettingsClient.sys.mjs:107:1
+NetworkError@resource://services-settings/RemoteSettingsClient.sys.mjs:111:5
+_adjustedError@resource://services-settings/RemoteSettingsClient.sys.mjs:919:14
+maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:824:38
+
+1732646562443	Marionette	INFO	Stopped listening on port 42497
+console.error: services.settings: 
+  Message: NetworkError: Network error: TypeError: NetworkError: Network request failed
+  Stack:
+    APIError@resource://services-settings/RemoteSettingsClient.sys.mjs:107:1
+NetworkError@resource://services-settings/RemoteSettingsClient.sys.mjs:111:5
+_adjustedError@resource://services-settings/RemoteSettingsClient.sys.mjs:919:14
+maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:824:38
+
+console.warn: services.settings: main/search-config-overrides-v2 sync interrupted by shutdown
+console.error: (new AbortError("IndexedDB: main/search-config getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1732646661824	geckodriver	INFO	Listening on 127.0.0.1:49323
+1732646662396	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "45685" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile3ZMUeQ"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732646664734	Marionette	INFO	Marionette enabled
+1732646665286	Marionette	INFO	Listening on port 41799
+Read port: 41799
+WebDriver BiDi listening on ws://127.0.0.1:45685
+1732646665663	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1732646856710	Marionette	INFO	Stopped listening on port 41799
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+1732647198785	geckodriver	INFO	Listening on 127.0.0.1:51263
+1732647198827	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "54353" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileOPoTrA"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732647200974	Marionette	INFO	Marionette enabled
+1732647201530	Marionette	INFO	Listening on port 43209
+Read port: 43209
+WebDriver BiDi listening on ws://127.0.0.1:54353
+1732647201788	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+[GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown
+Exiting due to channel error.
+Exiting due to channel error.
+1732648114997	geckodriver	INFO	Listening on 127.0.0.1:38419
+1732648115504	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "35773" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilexLoPyF"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732648117202	Marionette	INFO	Marionette enabled
+1732648117715	Marionette	INFO	Listening on port 42863
+WebDriver BiDi listening on ws://127.0.0.1:35773
+Read port: 42863
+1732648118308	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1732648616639	geckodriver	INFO	Listening on 127.0.0.1:38075
+1732648617146	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "56209" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilec88oBj"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732648618832	Marionette	INFO	Marionette enabled
+1732648619329	Marionette	INFO	Listening on port 44411
+Read port: 44411
+WebDriver BiDi listening on ws://127.0.0.1:56209
+1732648619607	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1732790923194	geckodriver	INFO	Listening on 127.0.0.1:41937
+1732790923666	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "36613" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileKsD9GY"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732790925566	Marionette	INFO	Marionette enabled
+1732790926103	Marionette	INFO	Listening on port 33195
+WebDriver BiDi listening on ws://127.0.0.1:36613
+Read port: 33195
+1732790926420	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+1732790997477	Marionette	INFO	Stopped listening on port 33195
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732791463403	geckodriver	INFO	Listening on 127.0.0.1:52135
+1732791463910	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "57419" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilehMrQbg"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732791465587	Marionette	INFO	Marionette enabled
+1732791466096	Marionette	INFO	Listening on port 40759
+Read port: 40759
+WebDriver BiDi listening on ws://127.0.0.1:57419
+1732791466384	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+1732791580027	Marionette	INFO	Stopped listening on port 40759
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732791913815	geckodriver	INFO	Listening on 127.0.0.1:44439
+1732791914327	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "40413" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile12Tgwg"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732791916258	Marionette	INFO	Marionette enabled
+1732791916769	Marionette	INFO	Listening on port 39495
+WebDriver BiDi listening on ws://127.0.0.1:40413
+Read port: 39495
+1732791917111	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+1732792029370	Marionette	INFO	Stopped listening on port 39495
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732792490526	geckodriver	INFO	Listening on 127.0.0.1:40679
+1732792491035	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "46507" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileZlU6jZ"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732792493062	Marionette	INFO	Marionette enabled
+1732792493574	Marionette	INFO	Listening on port 34203
+WebDriver BiDi listening on ws://127.0.0.1:46507
+Read port: 34203
+1732792493872	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvhr3OEjBELadCZp2JMGjWWM4ngzX1MNpz3eDolQ2LgS5NXS0-i5Xz1bN8EU8H6B_FIV2sxCeNvT4JrDrunIGcR8V-UAVOQtq-e6q0Beh9zZ4cf-XYjuH5glkU_6U8jitHxgdpOyB5AKGinGhcvKy15w1&t=7a0cc936, line 5: Script terminated by timeout at:
+Sys._indexOf@https://caf.sesisenaisp.org.br/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvhr3OEjBELadCZp2JMGjWWM4ngzX1MNpz3eDolQ2LgS5NXS0-i5Xz1bN8EU8H6B_FIV2sxCeNvT4JrDrunIGcR8V-UAVOQtq-e6q0Beh9zZ4cf-XYjuH5glkU_6U8jitHxgdpOyB5AKGinGhcvKy15w1&t=7a0cc936:5:12596
+Array.remove@https://caf.sesisenaisp.org.br/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvhr3OEjBELadCZp2JMGjWWM4ngzX1MNpz3eDolQ2LgS5NXS0-i5Xz1bN8EU8H6B_FIV2sxCeNvT4JrDrunIGcR8V-UAVOQtq-e6q0Beh9zZ4cf-XYjuH5glkU_6U8jitHxgdpOyB5AKGinGhcvKy15w1&t=7a0cc936:5:12471
+_removeHandler@https://caf.sesisenaisp.org.br/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvhr3OEjBELadCZp2JMGjWWM4ngzX1MNpz3eDolQ2LgS5NXS0-i5Xz1bN8EU8H6B_FIV2sxCeNvT4JrDrunIGcR8V-UAVOQtq-e6q0Beh9zZ4cf-XYjuH5glkU_6U8jitHxgdpOyB5AKGinGhcvKy15w1&t=7a0cc936:5:51151
+removeHandler@https://caf.sesisenaisp.org.br/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvhr3OEjBELadCZp2JMGjWWM4ngzX1MNpz3eDolQ2LgS5NXS0-i5Xz1bN8EU8H6B_FIV2sxCeNvT4JrDrunIGcR8V-UAVOQtq-e6q0Beh9zZ4cf-XYjuH5glkU_6U8jitHxgdpOyB5AKGinGhcvKy15w1&t=7a0cc936:5:51197
+remove_endRequest@https://caf.sesisenaisp.org.br/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8OIXiYdO5uY1LUxzz1eeBgG7LRWUMs9zGBUMn34eBDb6c6WzBVGqxHTWGyJs3TNemlmDft85ey4zzvh-zoFh7ZL7OhGsh1VpWNV3htTMHxej191kFNjTWswcpADr3fyBWPHsNyKl4eo6tyTOsJCw9Vrs1&t=7a0cc936:5:8873
+dispose@https://caf.sesisenaisp.org.br/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvhr3OEjBELadCZp2JMGjWWM4ngzX1MNpz3eDolQ2LgS5NXS0-i5Xz1bN8EU8H6B_FIV2sxCeNvT4JrDrunIGcR8V-UAVOQtq-e6q0Beh9zZ4cf-XYjuH5glkU_6U8jitHxgdpOyB5AKGinGhcvKy15w1&t=7a0cc936:5:67771
+_unloadHandler@https://caf.sesisenaisp.org.br/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvhr3OEjBELadCZp2JMGjWWM4ngzX1MNpz3eDolQ2LgS5NXS0-i5Xz1bN8EU8H6B_FIV2sxCeNvT4JrDrunIGcR8V-UAVOQtq-e6q0Beh9zZ4cf-XYjuH5glkU_6U8jitHxgdpOyB5AKGinGhcvKy15w1&t=7a0cc936:5:72364
+Function.createDelegate/<@https://caf.sesisenaisp.org.br/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvhr3OEjBELadCZp2JMGjWWM4ngzX1MNpz3eDolQ2LgS5NXS0-i5Xz1bN8EU8H6B_FIV2sxCeNvT4JrDrunIGcR8V-UAVOQtq-e6q0Beh9zZ4cf-XYjuH5glkU_6U8jitHxgdpOyB5AKGinGhcvKy15w1&t=7a0cc936:5:307
+b@https://caf.sesisenaisp.org.br/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvhr3OEjBELadCZp2JMGjWWM4ngzX1MNpz3eDolQ2LgS5NXS0-i5Xz1bN8EU8H6B_FIV2sxCeNvT4JrDrunIGcR8V-UAVOQtq-e6q0Beh9zZ4cf-XYjuH5glkU_6U8jitHxgdpOyB5AKGinGhcvKy15w1&t=7a0cc936:5:57482
+
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+1732792609744	Marionette	INFO	Stopped listening on port 34203
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732792940155	geckodriver	INFO	Listening on 127.0.0.1:55609
+1732792940175	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "37537" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilemC8URf"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732792942241	Marionette	INFO	Marionette enabled
+1732792942792	Marionette	INFO	Listening on port 42749
+WebDriver BiDi listening on ws://127.0.0.1:37537
+Read port: 42749
+1732792943417	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+1732793043791	Marionette	INFO	Stopped listening on port 42749
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732793256482	geckodriver	INFO	Listening on 127.0.0.1:34565
+1732793256992	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "51625" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilebcCjQD"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732793258903	Marionette	INFO	Marionette enabled
+1732793259403	Marionette	INFO	Listening on port 33781
+WebDriver BiDi listening on ws://127.0.0.1:51625
+Read port: 33781
+1732793259996	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+JavaScript error: http://sn502actrcp1:8000/admin/, line 2: SyntaxError: missing ) after argument list
+1732793427327	Marionette	INFO	Stopped listening on port 33781
+1732793428764	geckodriver::marionette	ERROR	Failed to close browser connection: unknown error
+1732793775507	geckodriver	INFO	Listening on 127.0.0.1:48501
+1732793776021	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "35627" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileASV4Ct"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732793778030	Marionette	INFO	Marionette enabled
+1732793778830	Marionette	INFO	Listening on port 37103
+WebDriver BiDi listening on ws://127.0.0.1:35627
+Read port: 37103
+1732793779422	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+JavaScript error: http://sn502actrcp1:8000/admin/, line 2: SyntaxError: missing ) after argument list
+1732794148468	Marionette	INFO	Stopped listening on port 37103
+1732794149966	geckodriver::marionette	ERROR	Failed to close browser connection: unknown error
+1732794241711	geckodriver	INFO	Listening on 127.0.0.1:54627
+1732794242218	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "41677" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile7heTPa"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732794243928	Marionette	INFO	Marionette enabled
+1732794244723	Marionette	INFO	Listening on port 33701
+WebDriver BiDi listening on ws://127.0.0.1:41677
+Read port: 33701
+1732794245302	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+1732794417973	Marionette	INFO	Stopped listening on port 33701
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+1732794419225	geckodriver::marionette	ERROR	Failed to close browser connection: unknown error
+1732794464567	geckodriver	INFO	Listening on 127.0.0.1:37933
+1732794465074	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "56745" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileo8sf49"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732794466788	Marionette	INFO	Marionette enabled
+1732794467304	Marionette	INFO	Listening on port 43289
+WebDriver BiDi listening on ws://127.0.0.1:56745
+Read port: 43289
+1732794467886	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+JavaScript error: http://sn502actrcp1:8000/admin/, line 2: SyntaxError: missing ) after argument list
+1732794978662	Marionette	INFO	Stopped listening on port 43289
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732795216171	geckodriver	INFO	Listening on 127.0.0.1:56879
+1732795216678	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "46025" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilei21NcB"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732795218385	Marionette	INFO	Marionette enabled
+1732795218887	Marionette	INFO	Listening on port 36437
+WebDriver BiDi listening on ws://127.0.0.1:46025
+Read port: 36437
+1732795219487	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+1732795369830	Marionette	INFO	Stopped listening on port 36437
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: services.settings: blocklists/gfx sync interrupted by shutdown
+console.warn: services.settings: main/normandy-recipes-capabilities sync interrupted by shutdown
+console.error: (new AbortError("IndexedDB: main/nimbus-mobile-experiments getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1732795473110	geckodriver	INFO	Listening on 127.0.0.1:41571
+1732795473617	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "51235" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofile1CNbC8"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732795475292	Marionette	INFO	Marionette enabled
+1732795475802	Marionette	INFO	Listening on port 34571
+Read port: 34571
+WebDriver BiDi listening on ws://127.0.0.1:51235
+1732795476076	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+JavaScript error: http://sn502actrcp1:8000/admin/, line 2: SyntaxError: missing ) after argument list
+1732795688224	Marionette	INFO	Stopped listening on port 34571
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: services.settings: 
+  Message: NetworkError: Network error: TypeError: NetworkError: Network request failed
+  Stack:
+    APIError@resource://services-settings/RemoteSettingsClient.sys.mjs:107:1
+NetworkError@resource://services-settings/RemoteSettingsClient.sys.mjs:111:5
+_adjustedError@resource://services-settings/RemoteSettingsClient.sys.mjs:919:14
+maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:824:38
+
+console.warn: services.settings: main/search-telemetry-v2 sync interrupted by shutdown
+console.warn: services.settings: main/password-rules sync interrupted by shutdown
+console.warn: services.settings: main/search-categorization sync interrupted by shutdown
+console.warn: services.settings: main/tracking-protection-lists sync interrupted by shutdown
+console.error: (new AbortError("IndexedDB: main/devtools-compatibility-browsers getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1732795790822	geckodriver	INFO	Listening on 127.0.0.1:42159
+1732795791330	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "46143" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileqhbu6J"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732795793020	Marionette	INFO	Marionette enabled
+1732795793516	Marionette	INFO	Listening on port 42157
+Read port: 42157
+WebDriver BiDi listening on ws://127.0.0.1:46143
+1732795793805	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+1732795956511	Marionette	INFO	Stopped listening on port 42157
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+console.error: "Could not download new icon" ({})
+1732795989733	geckodriver	INFO	Listening on 127.0.0.1:60243
+1732795990240	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "46371" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileO1L4VV"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732795991944	Marionette	INFO	Marionette enabled
+1732795992459	Marionette	INFO	Listening on port 39393
+WebDriver BiDi listening on ws://127.0.0.1:46371
+Read port: 39393
+1732795993124	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+1732796388230	Marionette	INFO	Stopped listening on port 39393
+1732796389609	geckodriver::marionette	ERROR	Failed to close browser connection: unknown error
+1732796705765	geckodriver	INFO	Listening on 127.0.0.1:51557
+1732796706272	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "49205" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileko3z6h"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732796707965	Marionette	INFO	Marionette enabled
+1732796708668	Marionette	INFO	Listening on port 39799
+Read port: 39799
+WebDriver BiDi listening on ws://127.0.0.1:49205
+1732796708951	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+1732796869565	Marionette	INFO	Stopped listening on port 39799
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: services.settings: blocklists/gfx sync interrupted by shutdown
+console.warn: services.settings: main/normandy-recipes-capabilities sync interrupted by shutdown
+console.error: (new AbortError("IndexedDB: main/nimbus-mobile-experiments getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1732797853543	geckodriver	INFO	Listening on 127.0.0.1:41663
+1732797854050	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "54603" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileWbc1mq"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732797855693	Marionette	INFO	Marionette enabled
+1732797856478	Marionette	INFO	Listening on port 36785
+WebDriver BiDi listening on ws://127.0.0.1:54603
+Read port: 36785
+1732797857048	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.error: services.settings: 
+  main/query-stripping Signature failed  TypeError: NetworkError: Network request failed
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+1732797974562	Marionette	INFO	Stopped listening on port 36785
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1732798023740	geckodriver	INFO	Listening on 127.0.0.1:54259
+1732798024247	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "47659" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileAxzwOP"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732798026516	Marionette	INFO	Marionette enabled
+1732798027109	Marionette	INFO	Listening on port 42817
+Read port: 42817
+WebDriver BiDi listening on ws://127.0.0.1:47659
+1732798027479	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+console.error: services.settings: 
+  main/query-stripping Signature failed  TypeError: NetworkError: Network request failed
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: services.settings: 
+  main/fingerprinting-protection-overrides Signature failed  TypeError: NetworkError: Network request failed
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+1732798194990	Marionette	INFO	Stopped listening on port 42817
+1732798301827	geckodriver	INFO	Listening on 127.0.0.1:56335
+1732798302334	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "34603" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileWDnnAs"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732798304009	Marionette	INFO	Marionette enabled
+1732798304529	Marionette	INFO	Listening on port 46089
+Read port: 46089
+WebDriver BiDi listening on ws://127.0.0.1:34603
+1732798304798	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+1732798349583	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'uninitialized'.
+console.error: (new TypeError("NetworkError: Network request failed", "resource://services-settings/Utils.sys.mjs", 238))
+console.error: (new TypeError("NetworkError: Network request failed", "resource://services-settings/Utils.sys.mjs", 238))
+console.error: (new Error("Polling for changes failed: NetworkError: Network request failed.", "resource://services-settings/remote-settings.sys.mjs", 324))
+console.error: (new TypeError("NetworkError: Network request failed", "resource://services-settings/Utils.sys.mjs", 238))
+console.error: (new TypeError("NetworkError: Network request failed", "resource://services-settings/Utils.sys.mjs", 238))
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732798381560	Marionette	INFO	Stopped listening on port 46089
+1732798411026	geckodriver	INFO	Listening on 127.0.0.1:35821
+1732798411533	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "46099" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileVWdBU0"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732798413234	Marionette	INFO	Marionette enabled
+1732798413789	Marionette	INFO	Listening on port 43689
+Read port: 43689
+WebDriver BiDi listening on ws://127.0.0.1:46099
+1732798414089	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+console.error: services.settings: 
+  main/query-stripping Signature failed  TypeError: NetworkError: Network request failed
+console.error: services.settings: 
+  main/fingerprinting-protection-overrides Signature failed  TypeError: NetworkError: Network request failed
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 107))
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.error: ({})
+1732798617468	Marionette	INFO	Stopped listening on port 43689
+console.warn: services.settings: blocklists/gfx sync interrupted by shutdown
+console.warn: services.settings: main/normandy-recipes-capabilities sync interrupted by shutdown
+console.warn: services.settings: main/search-config-icons sync interrupted by shutdown
+console.warn: services.settings: main/urlbar-persisted-search-terms sync interrupted by shutdown
+console.warn: services.settings: main/url-classifier-skip-urls sync interrupted by shutdown
+console.warn: services.settings: main/search-default-override-allowlist sync interrupted by shutdown
+console.warn: services.settings: main/cookie-banner-rules-list sync interrupted by shutdown
+console.error: (new AbortError("IndexedDB: main/third-party-cookie-blocking-exempt-urls getLastModified() IndexedDB:  execute() A request was aborted, for example through a call to IDBTransaction.abort.", "resource://services-settings/IDBHelpers.sys.mjs", 16))
+1732801231725	geckodriver	INFO	Listening on 127.0.0.1:46357
+1732801232236	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "38385" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofileiV9nAi"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732801234965	Marionette	INFO	Marionette enabled
+1732801235746	Marionette	INFO	Listening on port 39895
+Read port: 39895
+WebDriver BiDi listening on ws://127.0.0.1:38385
+1732801236340	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+1732801271894	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:467:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:220:33
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+1732801352322	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:467:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:220:33
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732801611958	Marionette	INFO	Stopped listening on port 39895
+1732801613803	geckodriver::marionette	ERROR	Failed to close browser connection: unknown error
+1732801705513	geckodriver	INFO	Listening on 127.0.0.1:51099
+1732801706032	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "39801" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilekM9n1M"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732801708711	Marionette	INFO	Marionette enabled
+1732801709433	Marionette	INFO	Listening on port 42021
+Read port: 42021
+WebDriver BiDi listening on ws://127.0.0.1:39801
+1732801710049	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+JavaScript error: http://sn502actrcp1:8000/admin/, line 2: SyntaxError: missing ) after argument list
+1732801849577	Marionette	INFO	Stopped listening on port 42021
+1732801852494	geckodriver::marionette	ERROR	Failed to close browser connection: unknown error
+1732801934277	geckodriver	INFO	Listening on 127.0.0.1:50993
+1732801934792	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "40693" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilek2L9kk"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732801937547	Marionette	INFO	Marionette enabled
+1732801938339	Marionette	INFO	Listening on port 36055
+Read port: 36055
+WebDriver BiDi listening on ws://127.0.0.1:40693
+1732801938910	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+1732801975902	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:467:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:220:33
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+JavaScript error: http://sn502actrcp1:8000/admin/, line 2: SyntaxError: missing ) after argument list
+1732802208488	Marionette	INFO	Stopped listening on port 36055
+1732802209992	geckodriver::marionette	ERROR	Failed to close browser connection: unknown error
+1732802255300	geckodriver	INFO	Listening on 127.0.0.1:50717
+1732802255873	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/usr ... te" "--remote-debugging-port" "45457" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "/tmp/rust_mozprofilek3rFFp"
+Error: Failed to open Wayland display, fallback to X11. WAYLAND_DISPLAY='wayland-1' DISPLAY=':0'
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+[GFX1-]: glxtest: Could not connect to wayland display, WAYLAND_DISPLAY=(null)
+[GFX1-]: No GPUs detected via PCI
+
+1732802258809	Marionette	INFO	Marionette enabled
+1732802259721	Marionette	INFO	Listening on port 36821
+Read port: 36821
+WebDriver BiDi listening on ws://127.0.0.1:45457
+1732802260349	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.error: ({})
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://caf.sesisenaisp.org.br."
+1732802299254	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:203:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:467:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:220:33
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript error: resource://gre/actors/FormHandlerChild.sys.mjs, line 103: InvalidStateError: JSWindowActorChild.document getter: Cannot access property 'document' after actor 'FormHandler' has been destroyed
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+JavaScript warning: https://caf.sesisenaisp.org.br/WebResource.axd?d=bBr7cGrgveRhiuva_rBvhqT1tt03p7mW-h-lBrWakth-VwbQf34dwoyAtxD-tyJwEHzD-ITbhHmoWGgiLXZxyGh59ORdVlsjP5OFtfCDRkJdN7giMuZk3v3FUXNRGH0Q0&t=638291723740000000, line 2: Using //@ to indicate sourceMappingURL pragmas is deprecated. Use //# instead
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://sn502actrcp1:8000."
+JavaScript error: http://sn502actrcp1:8000/admin/, line 2: SyntaxError: missing ) after argument list
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+1732802410466	Marionette	INFO	Stopped listening on port 36821
+1732802413250	geckodriver::marionette	ERROR	Failed to close browser connection: unknown error

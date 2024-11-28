@@ -392,16 +392,18 @@ def logout(request):
 def executar_script_async(login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress):
     try:
         # Caminho para o interpretador Python
-        python_path = r"C:\Users\Aluno\AppData\Local\Programs\Python\Python312\python.exe"
+        python_path = r"/usr/bin/python3"
         
         # Caminho para o script Python que você quer executar
-        script_path = r"C:\Users\Aluno\Documents\Test_tcc\test_terminal.py"
+        script_path = r"/home/instrutor/Documents/repositorio/Test_tcc/test_terminal.py"
 
         # Executa o script com os argumentos necessários
-        resultado = subprocess.run([python_path, script_path, login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        resultado = subprocess.run(
+            [python_path, script_path, login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress],
+            check=True, 
+            stdout=subprocess.PIPE, 
+            stderr=subprocess.PIPE)
 
-        # print(f"Saída do script: {resultado.stdout.decode()}")
-        # print(f"Erros do script: {resultado.stderr.decode()}")
 
     except subprocess.CalledProcessError as e:
         print(f"Erro ao executar o script: {e.stderr.decode()}")
@@ -427,7 +429,9 @@ def executar_script(request):
         caminho_arquivo_inprogress = file.arquivo_inprogress.path
 
         # Inicia o script em uma thread separada com os dados do usuário, nome da turma e o caminho do arquivo
-        thread = threading.Thread(target=executar_script_async, args=(login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress))
+        thread = threading.Thread(
+            target=executar_script_async, 
+            args=(login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma, id_arquivo, caminho_arquivo_inprogress))
         thread.start()
 
         # Retorna uma resposta imediata ao usuário
