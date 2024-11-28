@@ -80,12 +80,17 @@ def NovaTurma_View(request):
     if request.method == 'POST':
         form = FormNovaTurma(request.POST, request.FILES)
         if form.is_valid():
-            print("esse aqui 2")
+            varescolha = request.POST.get('user_choice')
             var_turma = form.cleaned_data['nome_da_turma']
             var_arquivo = form.cleaned_data['arquivo']
             arquivo_in_progress = In_progress_file(turma=var_turma,arquivo_inprogress=var_arquivo)
             arquivo_in_progress.save()
-            return redirect('processo')
+            if varescolha == "não":
+                return redirect('processo')
+            else:
+                form = FormNovaTurma()
+                context['form'] = form 
+                return render(request, "novaTurma.html", context ) 
         else:
             context['error_message'] = 'Ocorreu um erro durante o processamento do formulário.'
             form = FormNovaTurma()
@@ -188,8 +193,8 @@ def Processo_View(request):
 
     return render(request, "processo.html", context)
 
-# @login_required
-# @group_required('Coordenador')
+@login_required
+@group_required('Coordenador')
 def Funcionario_View(request):
     context = {}
      # Obtenha o grupo de "Funcionário"
@@ -350,7 +355,8 @@ def Cadastro_Info_View(request):
     return render(request, "cad_info.html", context)
 
 
-
+@login_required
+@group_required('Coordenador')
 def excluir_funcionario(request):
     if request.method == 'POST':
         funcionario_id = request.POST.get('funcionario_id')
