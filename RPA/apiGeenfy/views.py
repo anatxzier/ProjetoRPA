@@ -1,7 +1,7 @@
 from rest_framework import viewsets
 from rest_framework.decorators import action
-from geenfy.models import In_progress_file, Finished_file
-from .serializers import In_progress_fileSerializer, Finished_fileSerializer
+from geenfy.models import In_progress_file, Finished_file, ErrorLog
+from .serializers import In_progress_fileSerializer, Finished_fileSerializer, ErrorLogSerializer
 from rest_framework import status
 from rest_framework.response import Response
 
@@ -24,3 +24,6 @@ class Finished_FileViewSet(viewsets.ModelViewSet):
     queryset = Finished_file.objects.all()
     serializer_class = Finished_fileSerializer
 
+class ErrorLogViewSet(viewsets.ModelViewSet):
+    queryset = ErrorLog.objects.all()
+    serializer_class = ErrorLogSerializer

@@ -78,3 +78,7 @@ class PerfilEditar(models.Model):
 class Cadastro_Info(models.Model):
     titulo = models.CharField(max_length=55)
     imgInfo = models.ImageField(upload_to="imgInfo/")
+
+class ErrorLog(models.Model):
+    mensagem = models.TextField()
+    data_criacao = models.DateTimeField(auto_now_add=True)

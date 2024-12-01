@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Homepage, Login, NovaTurma, Cadastro, Storage, Processo, User, Funcionario, Usuario, Perfil, Cadastro_Info, PerfilEditar, In_progress_file, Finished_file
+from .models import Homepage, Login, NovaTurma, Cadastro, Storage, Processo, User, Funcionario, Usuario, Perfil, Cadastro_Info, PerfilEditar, In_progress_file, Finished_file, ErrorLog
 from .forms import FormLogin, FormNovaTurma, FormCadastro, FormCadastro_Info
 from django.contrib.auth.models import User, Group
 from django.contrib.auth.decorators import user_passes_test
@@ -13,12 +13,19 @@ from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 
 
+
 def group_required(group_name):
-     def in_group(user):
-         if user.is_authenticated:
-             return user.groups.filter(name=group_name).exists()
-         return False
-     return user_passes_test(in_group)
+    def in_group(user):
+        if user.is_authenticated:
+            return user.groups.filter(name=group_name).exists()
+        return False
+    def decorator(view_func):
+        def _wrapped_view(request, *args, **kwargs):
+            if not request.user.is_authenticated or not request.user.groups.filter(name=group_name).exists():
+                return redirect('home') 
+            return view_func(request, *args, **kwargs)
+        return _wrapped_view
+    return decorator
 
 def Homepage_View (request):
     context = {}    
@@ -39,26 +46,18 @@ def Login_View(request):
         if form.is_valid():
             var_user = form.cleaned_data['user']  
             var_password = form.cleaned_data['password']
-        
             user = authenticate(request, username=var_user, password=var_password)
-
             if user is not None:
                 auth_login(request, user)
-
 #logica apara redirecionamento 
                 try:
                     usuario = Usuario.objects.get(user=user)
-                    if usuario.login_CAF and usuario.login_IHX:  # Verifica se ambos os campos estão preenchidos
+                    if usuario.login_CAF and usuario.login_IHX and usuario.senha_CAF and usuario.senha_IHX:  # Verifica se ambos os campos estão preenchidos
                         return redirect('novaturma')  # Redireciona se ambos estiverem preenchidos
                     else:
                         return redirect('cadinfo')  # Redireciona para cadinfo se algum campo estiver vazio
                 except Usuario.DoesNotExist:
                     return redirect('cadinfo')  # Redireciona se o usuário não existir na tabela Usuario
-
-#//
-
-
-
             else:
                 context['error'] = "Usuário ou senha incorretos"
                 context['form'] = form
@@ -101,6 +100,7 @@ def NovaTurma_View(request):
         context["form"] = form
     return render(request, "novaTurma.html", context )
 
+
 @login_required
 @group_required('Coordenador')
 def Cadastro_View(request):
@@ -115,42 +115,35 @@ def Cadastro_View(request):
         form = FormCadastro(request.POST)
         if form.is_valid():
             try:
-            
                 var_first_name = form.cleaned_data['first_name']
                 var_user = form.cleaned_data['user']
                 var_email = form.cleaned_data['email']
                 var_password = form.cleaned_data['password']
-                
 
-                if  User.objects.filter(username=var_user).exists():
-                    print("Esse04")
+                if User.objects.filter(username=var_user).exists():
                     context['error_message'] = 'Nome de usuário já existe, por favor tente novamente'
                     form = FormCadastro()
                     context['form'] = form
                     return render(request, "cadastro.html", context)
                 
-                else:
-                    user = User.objects.create_user(username=var_user, email=var_email, password=var_password)
-                    user.first_name = var_first_name
-                    user.save()
-                    group = Group.objects.get(name='funcionario')
-                    user.groups.add(group) 
-                    # usuario = Usuario(user=user) 
-                                
-                    messages.success(request,"Cadastro feito com sucesso!")                    
-                    return redirect('cadastro')
+                user = User.objects.create_user(username=var_user, email=var_email, password=var_password)
+                user.first_name = var_first_name
+                user.save()
+                group = Group.objects.get(name='funcionario')
+                user.groups.add(group)
+
+                messages.success(request, "Cadastro feito com sucesso!")
+                return redirect('cadastro')
                 
             except Exception as error:
                 context['error_message'] = 'Ocorreu um erro durante o processamento do formulário.'
                 form = FormCadastro()
-                context['form'] = form                
-                return redirect("cadastro")
-            
+                context['form'] = form
+                return render(request, "cadastro.html", context)
         else:
-            form = FormCadastro()
             context['form'] = form
             return render(request, "cadastro.html", context)
-        
+
     else:
         form = FormCadastro()
         context['form'] = form
@@ -190,6 +183,8 @@ def Processo_View(request):
     context["user_is_Coordenador"] = user_is_Coordenador 
     arquivo_em_progresso = In_progress_file.objects.filter(status="Em Progresso").exists()
     context["arquivo_em_progresso"] = arquivo_em_progresso
+    erro = ErrorLog.objects.first()
+    context["erro"] = erro
 
     return render(request, "processo.html", context)
 
@@ -333,6 +328,8 @@ def Cadastro_Info_View(request):
     context = {}
     dados_CadInfo = Cadastro_Info.objects.all()
     context["dados_CadInfo"] = dados_CadInfo
+    user_is_Coordenador = request.user.groups.filter(name="Coordenador").exists() if request.user.is_authenticated else False
+    context["user_is_Coordenador"] = user_is_Coordenador 
 
     #tratar erro de o msm user inserir info 2 vezes
 
@@ -368,6 +365,9 @@ def excluir_funcionario(request):
     else:
         return redirect('funcionarios')
 
+
+
+
 def excluir_file(request):
     if request.method == 'POST':
         file_status = request.POST.get('file_status')
@@ -400,8 +400,10 @@ def executar_script_async(login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma
         # Caminho para o interpretador Python
         python_path = r"/usr/bin/python3"
         
+        
         # Caminho para o script Python que você quer executar
         script_path = r"/home/instrutor/Documents/repositorio/Test_tcc/test_terminal.py"
+      
 
         # Executa o script com os argumentos necessários
         resultado = subprocess.run(
@@ -409,10 +411,24 @@ def executar_script_async(login_IHX, senha_IHX, login_CAF, senha_CAF, nome_turma
             check=True, 
             stdout=subprocess.PIPE, 
             stderr=subprocess.PIPE)
+            
+        ErrorLog.objects.all().delete()  # Deleta todos os registros de erro
 
+    except Exception as e:
+        mensagem_erro = f"Algo de errado aconteceu com a turma {nome_turma}. Verifique:\n" \
+                    "- Se as informações de login do CAF e IHX estão corretas;\n" \
+                    "- Se o Excel está no formato correto;\n" \
+                    "- Se os alunos estão corretamente cadastrados no sistema."
 
-    except subprocess.CalledProcessError as e:
-        print(f"Erro ao executar o script: {e.stderr.decode()}")
+         # Remove qualquer erro existente antes de criar um novo
+        ErrorLog.objects.all().delete()  # Deleta todos os registros de erro, mantendo apenas um
+        error = ErrorLog.objects.create(mensagem=mensagem_erro)
+        error.save()
+        # Atualiza o status do arquivo para 'Pendente' em caso de erro
+        file = In_progress_file.objects.get(id=id_arquivo)
+        file.status = 'Pendente'
+        file.save()
+
 
 def executar_script(request):
     if request.method == 'POST':

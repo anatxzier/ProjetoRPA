@@ -25,6 +25,12 @@
                 </div>
             </div>
         </div>
+        <div id="error-message">
+            {% if erro %}
+            <p style="color: red;">{{ erro.mensagem }}</p>
+            <p style="color: red;" id="erro-data" >{{ erro.data_criacao|date:"d/m/Y H:i" }}</p>
+            {% endif %}
+        </div>
         <div class="kanban">
             <div class="column">
                 {% for file in dados_progresso %}

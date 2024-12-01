@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from geenfy.models import  In_progress_file, Finished_file
+from geenfy.models import  In_progress_file, Finished_file, ErrorLog
 
 class In_progress_fileSerializer(serializers.ModelSerializer):
     class Meta:
@@ -10,3 +10,7 @@ class Finished_fileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Finished_file
         fields = ['id', 'turma', 'arquivo_fineshed', 'upload_time']
+class ErrorLogSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ErrorLog
+        fields = ['id', 'mensagem', 'data_criacao']

@@ -82,7 +82,9 @@
                     {% endif %}
 
                     {% if error_message %}
-                    <div id="alert-containerCadastro-error" class="alert alert-errorCadastro"></div>
+                    <div id="alert-containerCadastro-error" class="alert alert-errorCadastro">
+                        {{ error_message }}
+                    </div>
                     {% endif %}
             </form>
 
