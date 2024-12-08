@@ -72,6 +72,13 @@
     margin: 23vh 3vw 3vw 3vw;
     justify-content: space-between;
 }
+.info-container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .info-column {
     display: flex;
@@ -148,15 +155,16 @@
     color: #ffffff; /* Cor do texto */
     border: none; /* Remove a borda padrão */
     border-radius: 5px; /* Cantos arredondados */
-    padding: 1rem 1.5rem; /* Espaçamento interno */
+    padding: 0.6vh 1vw; /* Espaçamento interno */
     font-size: 1.2rem; /* Tamanho da fonte */
     cursor: pointer; /* Muda o cursor para mãozinha */
     transition: background-color 0.3s ease, transform 0.2s; /* Animações */
     display: flex; /* Para alinhar o texto e o ícone */
     align-items: center; /* Centraliza verticalmente */
-    width: 100%;
+    justify-content: center; /* Centraliza o conteúdo */
+    width: 100%; /* Largura do botão, ajustada para 50% */
+    margin-top: -3vh; /* Espaço entre o conteúdo e o botão */
 }
-
 .editarPerfilbutton:hover {
     background-color: #0c2d26; /* Cor de fundo ao passar o mouse */
     transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
@@ -174,7 +182,8 @@
     text-decoration: none; /* Remove o sublinhado do link */
 }
 
-@media(max-width: 960px) {
+
+@media(max-width: 1024px) {
     .contentPerfil {
         width: 65vw;
         height: 65vh;
@@ -196,7 +205,7 @@
     }
 
     .profile img {
-        width: 48%;
+        width: 30%;
     }
 
     .info-container {
@@ -215,19 +224,26 @@
     .info-column p,
     .info-column2 p {
         width: 90%;
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     .info-column label,
     .info-column2 label {
-        font-size: 1.2rem;
+        font-size: 1rem;
     }
     .div-editar a {
         color: #4C978F;
         font-size: 1.3rem;
     }
     .div-editar{
-        margin-top: 5rem;
+        margin-top: 1vh;
+    }
+
+    .editarPerfilbutton {
+        padding: 0.4vh 1vw; /* Espaçamento interno */
+        font-size: 0.8rem; /* Tamanho da fonte */
+        width: 100%; /* Largura do botão, ajustada para 50% */
+        margin: 0;
     }
 }
 
@@ -364,4 +380,6 @@
     .div-editar{
         margin-top: 6rem;
     }
+
+
 } 

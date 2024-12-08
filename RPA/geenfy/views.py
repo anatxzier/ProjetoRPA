@@ -276,7 +276,10 @@ def Editar_Perfil_View(request):
             new_password = form1.cleaned_data.get('new_password')  # Captura a nova senha
 
             # Verifica se a senha GEENFY foi fornecida e se a atual está correta
-            if senha_geenfy and not user.check_password(senha_geenfy):
+            if not senha_geenfy:  # Verifica se o campo senha_geenfy está vazio
+                context['password_error'] = "O campo da senha GEENFY não pode estar vazio."
+                context['modal_open'] = True  # Flag para manter a modal aberta
+            elif senha_geenfy and not user.check_password(senha_geenfy):
                 # Senha GEENFY incorreta, manter a modal aberta
                 context['password_error'] = "Senha GEENFY incorreta."
                 context['modal_open'] = True  # Flag para manter a modal aberta
@@ -285,6 +288,7 @@ def Editar_Perfil_View(request):
                 user.email = form1.cleaned_data['email']
                 user.username = form1.cleaned_data['user']
                 user.first_name = form1.cleaned_data['first_name']
+
 
                 # Verifica se uma nova senha foi fornecida e se é diferente da senha atual
                 if new_password and new_password == senha_geenfy:

@@ -54,64 +54,46 @@
         <button id="button1" class="btn-editar2">Confirmar Alterações</button>
     </div>
 
+    <div id="modal-open-flag" data-modal-open="{% if modal_open %}true{% else %}false{% endif %}"></div>
+
  <!-- Modal -->
- <div id="myModal2" class="modal modal1">
-    <div class="modal-content modal-content1">
-        <span class="close">&times;</span>
-        <h3>Confirmar dados alterados</h3>
-        <hr>
-        <p>Aviso: Insira a sua senha atual GEENFY para confirmar a alteração das informações</p>
-        
-        <!-- Campo para a senha GEENFY -->
-        <div class="form-group-editar">
-            <label for="{{ form1.password.id_for_label }}">Senha GEENFY:</label>
-            {{ form1.password }}
-        </div>
+  {% if modal_open %}
+    <div id="myModal2" class="modal modal1">
+        <div class="modal-content modal-content1">
+            <span class="close">&times;</span>
+            <h3>Confirmar dados alterados</h3>
+            <hr>
+            <p>Aviso: Insira a sua senha atual GEENFY para confirmar a alteração das informações</p>
+            
+            <!-- Campo para a senha GEENFY -->
+            <div class="form-group-editar">
+                <label for="{{ form1.password.id_for_label }}">Senha GEENFY:</label>
+                {{ form1.password }}
+            </div>
 
-        <!-- Exibe as mensagens de erro relacionadas à senha como alertas -->
-        {% if password_error %}
-        <div class="alert alert-danger" role="alert">
-            {{ password_error }}
-        </div>
-        {% endif %}
+            <!-- Exibe as mensagens de erro relacionadas à senha como alertas -->
+            {% if password_error %}
+            <div class="alert alert-danger" role="alert">
+                {{ password_error }}
+            </div>
+            {% endif %}
 
-        {% if new_password_error %}
-        <div class="alert alert-danger" role="alert">
-            {{ new_password_error }}
-        </div>
-        {% endif %}
+            {% if new_password_error %}
+            <div class="alert alert-danger" role="alert">
+                {{ new_password_error }}
+            </div>
+            {% endif %}
 
-        <div class="botoesModal2">
-            <button class="voltar">Voltar</button>
-            <button class="btn-editar" id="submitButton">Confirmar</button>
+            <div class="botoesModal2">
+                <button class="voltar">Voltar</button>
+                <button class="btn-editar" id="submitButton">Confirmar</button>
+            </div>
         </div>
     </div>
-</div>
+{% endif %}
 
 
 </body>
-
-
-
-<!-- <div class="lado2">
-
-        <form method="POST" class="form-containerEditar">
-            {% csrf_token %}
-            {% for field in form_info %}
-                <div class="form-group-editar">
-                    <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
-                    <div class="form-field">
-                        {{ field }} 
-                    </div>
-                </div>
-            {% endfor %}
-            
-            <button class="btn-editar" type="submit">Salvar Alterações</button>
-        </form>
-    </div>
-</div> -->
-
-
 </main>
 
 
