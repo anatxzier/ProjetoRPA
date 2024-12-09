@@ -1,22 +1,26 @@
 <nav class="navbar-custom">
   <div class="containerNav">
+    <!-- Logo da aplicação com link para a página inicial -->
     <a class="navbar-brand" href="/">
       <h2>Geenfy</h2>
     </a>
+    <!-- Grupo de ícones para o menu -->
     <div class="icn-group">
+      <!-- Checkbox para alternar o estado do menu (aberto/fechado) -->
       <input type="checkbox" id="toggle" />
       <label class="button icn" for="toggle">
         {% if user.is_authenticated %}
+        <!-- Ícone do menu visível apenas para usuários autenticados -->
         <span class="material-symbols-outlined" id="menu-icon">menu</span>
-
-
         {% endif %}
       </label>
 
+      <!-- Conteúdo do menu de navegação -->
       <div class="nav" id="nav-menu">
-        <!-- Adiciona o ícone de fechar aqui -->
+        <!-- Ícone de fechar o menu -->
         <span class="material-symbols-outlined close-icon iconeNav" id="close-icon" style="display: none;">close</span>
         {% if user.is_authenticated %}
+        <!-- Exibe links dinâmicos dependendo da rota atual -->
         {% if request.path != '/' %}
         <a class="icn" href="/"><span class="material-symbols-outlined iconeNav">home</span><span
             class="link-text">Home</span></a>
@@ -33,6 +37,8 @@
         <a class="icn" href="/storage"><span class="material-symbols-outlined iconeNav">inventory_2</span><span
             class="link-text">Armazenamento</span></a>
         {% endif %}
+
+        <!-- Links visíveis apenas para coordenadores -->
         {% if user_is_Coordenador %}
         {% if request.path != '/cadastro' %}
         <a class="icn" href="/cadastro"><span class="material-symbols-outlined iconeNav">person_add</span><span
@@ -47,13 +53,18 @@
             class="link-text">Adicionar turma</span></a>
         {% endif %}
         {% endif %}
+
+        <!-- Link de logout para usuários autenticados -->
         <a class="icn" href="/logout"><span class="material-symbols-outlined iconeNav">logout</span><span
             class="link-text">Sair</span></a>
+        
+        <!-- Ícone adicional para fechar o menu -->
         <a class="icn"><span class="material-symbols-outlined iconeCloseMenuNav" id="menu-icon">close</span></a>
         {% endif %}
       </div>
 
       {% if not user.is_authenticated %}
+      <!-- Links visíveis para usuários não autenticados -->
       {% if request.path != '/' %}
       <a class="icn" href="/"><span class="material-symbols-outlined iconeNav">home</span><span
           class="link-text">Home</span></a>
@@ -68,10 +79,13 @@
 </nav>
 
 <style>
+  
+  /* Esconde o ícone de fechar inicialmente */
   .iconeCloseMenuNav {
     display: none;
   }
-
+  
+  /* Estilo geral da barra de navegação */
   .navbar-custom {
     background-color: #8aa6a3;
     border-radius: 10px;
@@ -88,14 +102,16 @@
     padding: 0 5vh;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-
+  
+  /* Container da barra de navegação */
   .containerNav {
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
-
+  
+  /* Estilo do título da marca na navbar */
   .navbar-brand h2 {
     margin: 0;
     color: #000;
@@ -103,19 +119,21 @@
     font-size: 3.3vh;
     transition: transform 0.3s ease;
   }
-
+  
+  /* Efeito ao passar o mouse sobre o título */
   .navbar-brand h2:hover {
     transform: scale(1.2);
   }
-
+  
+  /* Grupo de ícones no navbar */
   .icn-group {
     display: flex;
     align-items: center;
     gap: 10px;
     transition: margin-left 0.3s ease;
-    /* Transição ao abrir o menu */
   }
 
+  /* Estilo para os links de ícones */
   .icn {
     text-decoration: none;
     color: black;
@@ -123,54 +141,58 @@
     align-items: center;
     position: relative;
   }
-
+  
+  /* Tamanho dos ícones */
   .icn span {
     font-size: 4vh;
   }
 
+  /* Estilo dos ícones de navegação */
   .iconeNav {
     line-height: 1;
     transition: transform 0.3s ease;
   }
 
+  /* Efeito de transformação ao passar o mouse */
   .iconeNav:hover {
     transform: scale(1.2);
   }
 
+  /* Esconde o checkbox */
   #toggle {
     display: none;
   }
-
+  
+  /* Botão para mostrar o menu */
   .button {
     cursor: pointer;
     display: flex;
-    /* Alinha verticalmente o ícone do menu com os outros ícones */
     align-items: center;
   }
 
+  /* Menu oculto por padrão */
   .nav {
     display: none;
     transition: all 0.5s ease-in-out;
   }
 
+  /* Ações ao marcar o checkbox */
   #toggle:checked~.icn-group {
     margin-left: -150px;
-    /* Ajuste a distância aqui para mover para o lado esquerdo */
   }
 
+  /* Exibe o menu e aplica animação ao abrir */
   #toggle:checked~.nav {
     display: flex;
     gap: 20px;
-    /* Espaço entre os ícones */
     animation: fadeIn 0.8s forwards;
-    /* Animação de entrada */
   }
 
+  /* Animação de entrada do menu */
   @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateX(-10px);
-      /* Mova para a esquerda */
     }
 
     to {
@@ -179,76 +201,61 @@
     }
   }
 
-
+  /* Estilo do texto dos links */
   .link-text {
     position: absolute;
     top: 100%;
-    /* Posiciona o texto à direita do ícone */
     transform: translate(-10px, 0);
-    /* Move o texto para fora do ícone */
     opacity: 0;
-    /* Inicialmente invisível */
     transition: opacity 0.3s ease, transform 0.3s ease;
-    /* Transições para suavizar a entrada */
     background: #10403B;
-    /* Fundo branco para o texto */
     padding: 5px;
     border-radius: 5px;
     white-space: nowrap;
-    /* Para evitar quebra de linha */
     color: #fff;
-    /* Cor do texto */
   }
 
+  /* Efeito ao passar o mouse sobre os ícones */
   .icn:hover .link-text {
     opacity: 1;
-    /* Torna visível ao passar o mouse */
     transform: translate(0, 0);
-    /* Move o texto para a posição original */
   }
 
+  /* Estilo do texto dentro dos ícones */
   .icn span.link-text {
     font-size: 20px;
     margin-top: 5px;
   }
 
+  /* Estilo do texto no botão */
   .menu-text {
     position: absolute;
     top: 100%;
-    /* Posiciona o texto à direita do ícone */
     transform: translate(-10px, 0);
-    /* Move o texto para fora do ícone */
     opacity: 0;
-    /* Inicialmente invisível */
     transition: opacity 0.3s ease, transform 0.3s ease;
-    /* Transições para suavizar a entrada */
     background: #10403B;
-    /* Fundo branco para o texto */
     padding: 5px;
     border-radius: 5px;
     white-space: nowrap;
-    /* Para evitar quebra de linha */
     color: #fff;
-    /* Cor do texto */
   }
 
-
+  /* Estilo do texto do ícone */
   .icn span.menu-text {
     font-size: 20px;
     margin-top: 5px;
   }
 
-
+  /* Efeito ao passar o mouse no botão */
   .button:hover .menu-text {
     opacity: 1;
-    /* Torna visível ao passar o mouse */
     transform: translateY(0);
-    /* Move o texto para a posição original */
   }
 
+  /* Ícone de fechar o menu */
   .close-icon {
     display: none;
-    /* Esconde o ícone inicialmente */
     position: absolute;
     top: 20px;
     right: 20px;
@@ -257,13 +264,16 @@
     color: #000;
   }
 
+  /* Estilos para telas menores */
   @media (max-width: 1020px) {
 
+    /* Alinha os ícones verticalmente em telas pequenas */
     .icn-group {
       display: flex;
       align-items: center;
     }
 
+    /* Menu oculto por padrão, exibido quando necessário */
     .nav {
       display: none;
       flex-direction: column;
@@ -279,7 +289,7 @@
       z-index: 1500;
       padding-top: 15%;
     }
-
+  
     #toggle {
       display: none;
     }
@@ -290,7 +300,6 @@
 
     #toggle:checked+.button+#nav-menu .close-icon {
       display: block;
-      /* Mostra o ícone de fechar quando o menu está aberto */
     }
 
     .button {
@@ -300,13 +309,13 @@
 
     #nav-menu {
       padding-top: 50px;
-      /* Espaçamento para evitar sobreposição com o ícone de fechar */
     }
 
     .logout {
       margin-left: 0;
     }
-
+    
+    /* Estilo do botão de fechar */
     .close-icon {
       display: none;
     }
@@ -378,18 +387,21 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // Referências aos elementos do DOM
     const toggleCheckbox = document.getElementById('toggle');
     const menuIcon = document.getElementById('menu-icon');
     const menuText = document.getElementById('menu-text');
     const iconeCloseMenuNav = document.querySelector('.iconeCloseMenuNav');
     const navMenu = document.getElementById('nav-menu');
 
-    // Função para atualizar o ícone e o texto do menu
+    // Função para atualizar o ícone e o texto do menu baseado no estado do checkbox
     function updateMenuIcon() {
       if (toggleCheckbox.checked) {
+        // Se o menu estiver aberto (checkbox marcado), mostra "X" e "Fechar"
         menuIcon.textContent = 'close'; // Muda para "X"
         menuText.textContent = 'Fechar'; // Muda para "Fechar"
       } else {
+        // Se o menu estiver fechado (checkbox desmarcado), mostra "menu" e "Menu"
         menuIcon.textContent = 'menu'; // Retorna para "menu"
         menuText.textContent = 'Menu'; // Retorna para "Menu"
       }
