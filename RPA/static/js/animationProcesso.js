@@ -1,3 +1,4 @@
+// Função para abrir o modal, recebendo o ID do modal a ser aberto
 function openModal(modalId) {
   var modal = document.getElementById(modalId);
   if (modal) {
@@ -5,6 +6,7 @@ function openModal(modalId) {
   }
 }
 
+// Função para fechar o modal, recebendo o ID do modal a ser fechado
 function closeModal(modalId) {
   var modal = document.getElementById(modalId);
   if (modal) {
