@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
 
+# URLs para as views do aplicativo, associando caminhos a funções específicas
 urlpatterns = [
     path ('', views.Homepage_View, name="home"),
     path('login', views.Login_View, name="login"),
