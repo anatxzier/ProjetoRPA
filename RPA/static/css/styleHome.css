@@ -1,3 +1,4 @@
+/* Estilo do container principal da home */
 .containerHome {
     display: flex;
     flex-direction: row;
@@ -9,6 +10,7 @@
     box-sizing: border-box; 
 }
 
+/* Estilo do conteúdo dentro da home */
 .contentHome {
     display: flex;
     flex-direction: column;
@@ -19,6 +21,7 @@
     max-width: 50%;
 }
 
+/* Estilo do título da home */
 .contentHome h1 {
     max-width: 60%;
     font-size: 4vw;
@@ -28,6 +31,7 @@
     text-align: justify;
 }
 
+/* Estilo do parágrafo dentro da home */
 .contentHome p {
     font-size: 2vh; 
     margin: 0;
@@ -37,11 +41,12 @@
     text-align: justify;
 }
 
+/* Estilo da imagem na home */
 .imagemHome {
     max-width: 73vh; 
 }
 
-
+/* Estilo do botão na home */
 .homebtn {
     outline: none;
     cursor: pointer;
@@ -62,16 +67,19 @@
     border-right: 0.125rem solid #5B5B5B; 
 }
 
+/* Estilo do texto dentro do botão */
 .homebtn span {
     position: relative;
     z-index: 10;
     transition: color 0.4s;
 }
 
+/* Estilo de hover no botão para mudar a cor do texto */
 .homebtn:hover span {
     color: #8AA6A3;
 }
 
+/* Estilo do pseudo-elemento antes do botão */
 .homebtn::before,
 .homebtn::after {
     position: absolute;
@@ -82,6 +90,7 @@
     z-index: 0;
 }
 
+/* Estilo do pseudo-elemento antes do botão */
 .homebtn::before {
     content: "";
     background: #8AA6A3;
@@ -90,10 +99,12 @@
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
+/* Efeito de hover no pseudo-elemento para mover ele */
 button:hover::before {
     transform: translate3d(100%, 0, 0);
 }
 
+/* Estilo para o link que envolve o conteúdo da home */
 .contentHome a {
     display: flex;
     align-items: center;
@@ -103,7 +114,7 @@ button:hover::before {
 }
 
 
-
+/* Estilização para telas de tamanhos diferentes */
 @media (max-width: 1320px) {
     .imagemHome {
         max-width: 60vh; 
