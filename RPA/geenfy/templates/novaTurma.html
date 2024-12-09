@@ -1,15 +1,16 @@
-{% extends 'index.html' %}
+{% extends 'index.html' %} <!-- Estende o layout base chamado "index.html" -->
 
-{% load static %}
+{% load static %} <!-- Carrega os arquivos estáticos -->
 
 {% block title %}
 <!-- Nova Turma -->
-{% endblock %}
+{% endblock %} <!-- Define o título da página como "Nova Turma" -->
 
 {% block body %}
 
 <main class="containerNovaTurma">
     <div>
+        <!-- Elementos decorativos em forma de triângulo -->
         <div class="triangle triangle1">
             <svg width="500" height="500" viewBox="0 0 100 100">
                 <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
@@ -37,29 +38,34 @@
         </div>
     </div>
 
-
     <div class="contentTurma">
         {% if error_message %}
+        <!-- Exibição de mensagem de erro -->
         <div id="alert-containerNovaTurma-error" class="alert alert-errorNovaTurma"></div>
         {% endif %}
+
+        <!-- Formulário para criar nova turma -->
         <form id="formNova" class="nova-turma-form" method="post" enctype="multipart/form-data">
             <div class="formulario">
                 <p>{{ dados_NovaTurma.0.titulo }}</p>
                 <div class="text-moved">
                     <p class="text-moved">{{ dados_NovaTurma.0.texto }}</p>
                 </div>
-                {% csrf_token %}
+                {% csrf_token %} <!-- Token de segurança contra CSRF -->
                 <input type="hidden" name="user_choice" id="userChoice" value="">
                 <div class="input-group">
+                    <!-- Campo para o nome da turma -->
                     {{ form.nome_da_turma }}
                 </div>
                 <div class="input-group">
                     <label id="file-upload" class="custom-file-label">
                         Escolher arquivo
+                        <!-- Campo para upload de arquivo -->
                         {{ form.arquivo }}
                         <span id="file-names">Nenhum arquivo selecionado</span>
                     </label>
                     {% if form.arquivo.errors %}
+                    <!-- Mensagem de erro no upload -->
                     <div class="error">
                         {{ form.arquivo.errors }}
                     </div>
@@ -67,13 +73,14 @@
                 </div>
             </div>
             <div class="botoesTurma">
+                <!-- Botão para adicionar turma -->
                 <button id="buttonModal" class="btnTurma">
                     <span>Adicionar</span>
                 </button>
             </div>
         </form>
 
-        <!-- Modal -->
+        <!-- Modal para confirmação -->
         <div id="myModal" class="modal modal1">
             <div class="modal-content modal-content1">
                 <span class="close">&times;</span>
@@ -84,25 +91,25 @@
                     <button class="sim">Sim</button>
                 </div>
                 {% if messages %}
+                <!-- Exibe mensagens de sucesso -->
                 {% for message in messages %}
                 <div id="alert-containerNovaTurma-success"></div>
                 {% endfor %}
                 {% endif %}
 
                 {% if error_message %}
+                <!-- Exibição de mensagem de erro -->
                 <div id="alert-containerNovaTurma-error"></div>
                 {% endif %}
             </div>
         </div>
 
         <div class="content2">
+            <!-- Texto e imagem relacionados à nova turma -->
             <p>{{ dados_NovaTurma.0.texto }}</p>
             <img src="{{ dados_NovaTurma.0.imgNovaTurma.url }}">
         </div>
     </div>
+</main>
 
-
-
-
-
-    {% endblock %}
+{% endblock %}
