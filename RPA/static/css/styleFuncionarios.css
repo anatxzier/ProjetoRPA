@@ -1,3 +1,4 @@
+/* Container principal para a página de funcionários */
 .containerFuncionarios {
     display: flex;
     flex-direction: column;
@@ -8,6 +9,7 @@
     background-color: #C4D1D0;
 }
 
+/* Coluna à esquerda com as informações */
 .colunaFuncionarios {
     display: flex;
     flex-direction: column;
@@ -20,10 +22,12 @@
     left: 0;
 }
 
+/* Imagem dos funcionários */
 .imgFuncionarios {
     width: 55%;
 }
 
+/* Estilização do título na coluna de funcionários */
 .tituloFunc {
     font-weight: 700;
     color: #0B6A60;
@@ -31,6 +35,7 @@
     font-size: 2.3rem;
 }
 
+/* Container secundário para o conteúdo principal */
 .container2 {
     width: 70vw;
     margin: 0 auto;
@@ -44,6 +49,7 @@
     padding-top: 2rem;
 }
 
+/* Ícone de funcionário fixado na tela */
 .iconeFunc {
     top: calc(15vh + 1rem);
     position: fixed;
@@ -58,12 +64,14 @@
 .icone{
     color: #0B6A60;
 }
+
 .material-symbols-outlined.iconFunc {
     font-size: 2rem;
     color: #0B6A60;
     padding-right: 0.5rem;
 }
 
+/* Wrapper para os cartões de usuário */
 .user-cards-wrapper {
     display: block;
     max-height: 70vh;
@@ -76,9 +84,9 @@
     margin-right: 0rem;
     width: 42vw;
     margin-top: 11rem;
-
 }
 
+/* Cartões de usuário */
 .user-card {
     width: 98%;
     margin-bottom: 1rem;
@@ -88,6 +96,7 @@
     padding: 0;
 }
 
+/* Personalização da barra de rolagem */
 .user-cards-wrapper::-webkit-scrollbar {
     width: 0.3rem;
 }
@@ -98,6 +107,7 @@
     border: 0.03125rem solid #4f6865;
 }
 
+/* Cabeçalho do usuário, contendo a estrutura e fundo com gradiente */
 .user-header {
     display: flex;
     justify-content: space-between;
@@ -107,50 +117,60 @@
     background: linear-gradient(to right, #CDE1DF, #0B6A60);
 }
 
+/* Informações do usuário (foto, nome, etc.) */
 .user-info {
     display: flex;
     align-items: center;
 }
 
+/* Estilização do ícone do usuário */
 .user-icon {
     width: 2.5rem;
     height: 2.5rem;
     margin-right: 0.625rem;
 }
 
+/* Estilo para o título do usuário */
 .user-details h3 {
     font-size: 1.125rem;
     margin-bottom: 0.3125rem;
     color: #0B6A60;
 }
 
+/* Estilo para a descrição do usuário (informações como e-mail, etc.) */
 .user-details p {
     font-size: 0.875rem;
     color: #0b6a6195;
 }
 
+/* Mostra o conteúdo adicional quando a classe "show" é adicionada */
 .user-details-content.show {
     display: block;
 }
 
+/* Conteúdo adicional que é escondido inicialmente */
 .user-details-content {
     display: none;
     padding: 1rem 1rem 0 1rem;
     background-color: #e6e0e0;
 }
 
+/* Estilização dos atributos do usuário (como endereço, telefone) */
 .user-attribute {
     margin-bottom: 0.625rem;
     padding-right: 1.875rem;
     gap: 1.875rem;
 }
 
+
+/* Estilo para o nome do atributo (ex: "Email", "Telefone") */
 .user-attribute strong {
     width: 30%;
     font-size: 1rem;
     color: #333;
 }
 
+/* Estilo para o valor do atributo (ex: "joao@exemplo.com") */
 .user-attribute p {
     width: 65%;
     font-size: 0.9rem;
@@ -158,6 +178,8 @@
     word-break: break-word;
 }
 
+
+/* Botão de editar com estilo específico */
 .edit-button {
     display: flex;
     align-items: center;
@@ -170,6 +192,7 @@
     font-size: 0.875rem;
 }
 
+/* Container para os botões no final da seção */
 .button-divv {
     display: flex;
     flex-direction: row;
@@ -179,11 +202,13 @@
     
 }
 
+/* Estilização do botão de acordeão (expansível) */
 .accordion {
     background-color: transparent;
     border: none;
 }
 
+/* Layout para os atributos organizados em duas colunas */
 .parAtributo {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -191,12 +216,14 @@
     margin: 0 1.25rem;
 }
 
+/* Container de busca, centraliza a caixa de busca */
 .search-container {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Caixa de busca com fundo e bordas arredondadas */
 .search-box {
     display: flex;
     align-items: center;
@@ -208,6 +235,7 @@
     margin-right: 1.2rem;
 }
 
+/* Estilo do texto na caixa de busca */
 .search-text {
     align-items: center;
     border: none;
@@ -218,10 +246,12 @@
     transition: 0.4s;
 }
 
+/* Ícone de busca, cor personalizada */
 .icon-search {
     color: #127369b3;
 }
 
+/* Estilo do botão de busca */
 .search-btn {
     width: 2rem;
     height: 1.8rem;
@@ -229,24 +259,29 @@
     align-self: center;
 }
 
+/* Efeito de hover na caixa de busca, expandindo o campo de texto */
 .search-box:hover > .search-text {
     width: 20rem;
     padding-left: 0.5rem;
 }
 
+/* Ícone da seta de voltar */
 .backarrow-icn {
     color: #127369b3;
     padding-right: 1rem;
 }
 
+/* Efeito de hover na seta de voltar, aumentando de tamanho */
 .backarrow-icn:hover {
     transform: scale(1.2);
 }
 
+/* Esconde o título de resposta */
 .tituloResp{
     display: none;
 }
 
+/* Conteúdo do modal, com fundo e bordas personalizadas */
 .modal-content2{
     background-color: #B0C2C0;
     color: #4C5958;
@@ -262,10 +297,12 @@
     text-align: center;
 }
 
+/* Estilo para os parágrafos dentro do modal */
 .modal-content2 p{
     margin-top: 0;
 }
 
+/* Modal em si, com fundo escuro e centralização */
 .modal2{
 display: none;
 position: fixed;
@@ -279,11 +316,12 @@ background-color: rgba(0, 0, 0, 0.4);
 justify-content: center;
 }
 
+/* Cabeçalho do modal, sem borda */
 .modal-header{
     border: none;
-
 }
 
+/* Estilo do botão de fechar no modal */
 .modal-content2 .close{
 align-self: end;
 background-color: transparent;
@@ -294,20 +332,25 @@ padding-bottom: 0;
 padding-top: 0.4rem;
 }
 
+/* Estilo de hover para o botão de fechar */
 .modal-content2 .close:hover{
     color: #333
 }
 
+/* Estilo do cabeçalho do modal */
 .modal-header2{
     display: flex;
     flex-direction: column;
 }
 
+/* Estilo do título dentro do cabeçalho */
 .modal-header2 h1{
     font-size: 3.2vh;
     margin-top: 0;
 }
 
+
+/* Estilo da linha horizontal (hr) no cabeçalho */
 .modal-header2 hr{
     margin: 1rem 0 0 0;
     color: inherit;
@@ -316,6 +359,7 @@ padding-top: 0.4rem;
     width: 80%;
 }
 
+/* Estilo do botão de fechar */
 .close button{
 color: #aaa;
 float: right;
@@ -323,10 +367,12 @@ font-size: 28px;
 font-weight: bold;
 }
 
+/* Estilo do fundo do modal (modal-backdrop) */
 .modal-backdrop {
     z-index: 1045 !important;
   }
 
+/* Estilo do container de botões no modal */
 .botoesModal2{
     width: 100%;
     height: 100%;
@@ -336,6 +382,8 @@ font-weight: bold;
     justify-content: space-between;
     margin-top: 1rem;
 }
+
+/* Estilo dos botões dentro do container */
 .botoesModal2 button{
     width: 60%;
     height: 40%;
@@ -347,7 +395,7 @@ font-weight: bold;
 
 }
 
-
+/* Estilização para telas de tamanhos diferentes*/
   @media (max-width: 768px) {
     .colunaFuncionarios {
         display: none;
