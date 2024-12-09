@@ -1,61 +1,73 @@
-{% extends 'index.html' %}
+{% extends 'index.html' %} <!-- Estende o layout base chamado "index.html" -->
 
 {% block title %}
 <!-- Funcionários -->
-{% endblock %}
+{% endblock %} <!-- Define o título da página como "Funcionários" -->
 
 {% block body %}
 
 <main class="containerFuncionarios">
+    <!-- Seção com título e imagem de funcionários -->
     <div class="colunaFuncionarios">
-        <h1 class="tituloFunc">{{ dados_funcionario.0.titulo }}</h1>
-        <img class="imgFuncionarios" src="{{ dados_funcionario.0.imgFuncionarios.url }}" alt="imagemFuncionarios">
+        <h1 class="tituloFunc">{{ dados_funcionario.0.titulo }}</h1> <!-- Exibe o título -->
+        <img class="imgFuncionarios" src="{{ dados_funcionario.0.imgFuncionarios.url }}" alt="imagemFuncionarios"> <!-- Imagem ilustrativa -->
     </div>
+
+    <!-- Seção de busca e cadastro -->
     <div class="container2">
-        <h1 class="tituloResp">{{ dados_funcionario.0.titulo }}</h1>
+        <h1 class="tituloResp">{{ dados_funcionario.0.titulo }}</h1> <!-- Título para dispositivos responsivos -->
         <div class="iconeFunc">
             <div class="search-container">
+                <!-- Botão para voltar -->
                 <div>
                     <a class="navbar-brand back-arrow" id="backArrow">
                         <span class="material-symbols-outlined backarrow-icn">arrow_back</span>
                     </a>
                 </div>
+                <!-- Barra de pesquisa -->
                 <div class="search-box">
                     <input type="text" class="search-text" id="searchInput" placeholder="Pesquisar funcionários">
                     <a class="search-btn" id="searchBtn">
                         <span type="submit" class="material-symbols-outlined icon-search">search</span>
                     </a>
                 </div>
+                <!-- Botão para adicionar funcionário -->
                 <div>
                     <a href="/cadastro"><span class="material-symbols-outlined icone">person_add</span></a>
                 </div>
             </div>
-            
         </div>
+
+        <!-- Lista de cartões de funcionários -->
         <div class="user-cards-wrapper">
-            {% for funcionario in dados_usuario %}
+            {% for funcionario in dados_usuario %} <!-- Itera sobre a lista de funcionários -->
             <div class="user-card">
-                {% csrf_token %}
+                {% csrf_token %} <!-- Proteção contra CSRF -->
+
+                <!-- Cabeçalho do cartão -->
                 <div class="user-header" onclick="toggleDetails('details-content-{{ forloop.counter }}', 'dropdown-arrow-{{ forloop.counter }}')">
                     <div class="user-info">
-                        <span class="material-symbols-outlined iconFunc">person</span>
+                        <span class="material-symbols-outlined iconFunc">person</span> <!-- Ícone de usuário -->
                         <div class="user-details">
-                            <h3>{{ funcionario.user.first_name }}</h3>
-                            <p>{{ funcionario.user.email }}</p>
+                            <h3>{{ funcionario.user.first_name }}</h3> <!-- Nome do funcionário -->
+                            <p>{{ funcionario.user.email }}</p> <!-- E-mail do funcionário -->
                         </div>
                     </div>
-                    <button class="accordion"><span id="dropdown-arrow-{{ forloop.counter }}" class="arrow">▼</span></button>
+                    <button class="accordion"><span id="dropdown-arrow-{{ forloop.counter }}" class="arrow">▼</span></button> <!-- Botão para expandir detalhes -->
                 </div>
+
+                <!-- Detalhes do funcionário -->
                 <div class="user-details-content" id="details-content-{{ forloop.counter }}" style="display: none;">
                     <div class="parAtributo">
-                        <div class="user-attribute"><strong>User</strong><p>{{ funcionario.user}}</p></div>
-                        <div class="user-attribute"><strong>E-mail</strong><p>{{ funcionario.user.email}}</p></div>
+                        <div class="user-attribute"><strong>User</strong><p>{{ funcionario.user }}</p></div>
+                        <div class="user-attribute"><strong>E-mail</strong><p>{{ funcionario.user.email }}</p></div>
                     </div>
                     <div class="parAtributo">
                         <div class="user-attribute"><strong>User CAF</strong><p>{{ funcionario.login_CAF }}</p></div>
                         <div class="user-attribute"><strong>User IHX</strong><p>{{ funcionario.login_IHX }}</p></div>
                     </div>
-                    <!-- Botão que aciona o modal -->
+
+                    <!-- Botão para excluir funcionário -->
                     <div class="button-divv">
                         <button class="edit-button" onclick="openModal('modalExcluir{{ forloop.counter }}')">
                             Excluir usuário 
@@ -65,23 +77,23 @@
                 </div>
             </div>
 
-            <!-- Modal -->
+            <!-- Modal para confirmação de exclusão -->
             <div class="modal modal2" id="modalExcluir{{ forloop.counter }}" style="display: none;">
                 <div class="modal-dialog">
                     <div class="modal-content modal-content2">
-                        <button type="button" class="close" onclick="closeModal('modalExcluir{{ forloop.counter }}')">&times;</button>
+                        <button type="button" class="close" onclick="closeModal('modalExcluir{{ forloop.counter }}')">&times;</button> <!-- Botão para fechar o modal -->
                         <div class="modal-header modal-header2">
-                            <h1 class="modal-title">Excluir funcionário {{ funcionario.user.first_name }}</h1>
+                            <h1 class="modal-title">Excluir funcionário {{ funcionario.user.first_name }}</h1> <!-- Título do modal -->
                             <hr>
                         </div>
                         <div class="modal-body">
                             <form id="deleteForm{{ forloop.counter }}" method="POST" action="{% url 'excluir_funcionario' %}">
-                                {% csrf_token %}
-                                <input type="hidden" name="funcionario_id" value="{{ funcionario.user.id }}">
+                                {% csrf_token %} <!-- Proteção contra CSRF -->
+                                <input type="hidden" name="funcionario_id" value="{{ funcionario.user.id }}"> <!-- ID do funcionário -->
                                 <p>Tem certeza de que deseja excluir este funcionário?</p>
                                 <div class="d-flex justify-content-end botoesModal2">
-                                    <button type="submit" class=" me-2">Confirmar</button>
-                                    <button type="button"  onclick="closeModal('modalExcluir{{ forloop.counter }}')">Cancelar</button>
+                                    <button type="submit" class="me-2">Confirmar</button> <!-- Botão para confirmar exclusão -->
+                                    <button type="button" onclick="closeModal('modalExcluir{{ forloop.counter }}')">Cancelar</button> <!-- Botão para cancelar -->
                                 </div>
                             </form>
                         </div>
@@ -92,6 +104,5 @@
         </div>
     </div>
 </main>
-
 
 {% endblock %}
