@@ -1,3 +1,4 @@
+/* Estilo para o contêiner principal .containerCadastro */
 .containerCadastro {
     margin: 0;
     height: 100vh;
@@ -10,6 +11,7 @@
     overflow: hidden;
 }
 
+/* Estilo para o retângulo de cadastro */
 .rectangleCadastro {
     width: 70vw;
     height: 75vh;
@@ -20,11 +22,14 @@
     padding-top: 2vh;
 }
 
+
+/* Estilo para a metade esquerda do retângulo */
 .halfCadastro {
     flex: 1;
     height: 100%;
 }
 
+/* Estilo para a seção da direita do cadastro */
 .rightCadastro {
     background-color: #8AA6A3;
     display: flex;
@@ -34,14 +39,17 @@
     align-self: center;
 }
 
+/* Estilo para o formulário na seção da direita */
 .rightCadastro form {
     justify-content: center;
 }
 
+/* Estilo para elementos span na seção da direita */
 .rightCadastro span {
     justify-content: center;
 }
 
+/* Estilo para a seção da esquerda do cadastro */
 .leftCadastro {
     background-color: #10403B;
     display: flex;
@@ -49,15 +57,18 @@
     align-items: center;
 }
 
+/* Estilo para a imagem dentro da seção da esquerda */
 .imagemCadastro {
     max-width: 70%;
 }
 
+/* Estilo para o ícone na seção da direita */
 .material-symbols-outlined.iconeCadastro {
     color: #10403B;
     font-size: 5rem;
 }
 
+/* Estilo para o título na seção de cadastro */
 .tituloCadastro {
     text-transform: uppercase;
     color: #10403B;
@@ -67,6 +78,7 @@
     justify-content: center;
 }
 
+/* Estilo para o formulário de cadastro */
 .cadastro-form {
     width: 35vw;
     display: flex;
@@ -78,6 +90,7 @@
     padding-top: 1vh;
 }
 
+/* Estilo para os campos de entrada dentro do formulário */
 .cadastro-form div {
     margin-bottom: 1rem;
     position: relative;
@@ -86,6 +99,7 @@
     align-items: center;
 }
 
+/* Estilo para os campos de entrada de texto, senha e email */
 .cadastro-form input[type="text"],
 .cadastro-form input[type="password"],
 .cadastro-form input[type="email"] {
@@ -101,6 +115,7 @@
     outline: none;
 }
 
+/* Estilo para campos de entrada quando o preenchimento automático (autofill) é ativado */
 .cadastro-form input:-webkit-autofill {
     background-color: transparent !important;
     color: #10403B !important;
@@ -108,11 +123,12 @@
     transition: background-color 5000s ease-in-out 0s;
 }
 
-
+/* Estilo para a primeira linha do texto autofill */
 .cadastro-form input:-webkit-autofill::first-line {
     color: #10403B !important;
 }
 
+/* Estilo para os placeholders (texto de sugestão nos campos de entrada) */
 .cadastro-form input::placeholder {
     color: #10403B;
     opacity: 1;
@@ -120,6 +136,7 @@
     font-size: 1.5vh;
 }
 
+/* Estilo para o botão de cadastro */
 .btnCadastro {
     outline: none;
     cursor: pointer;
@@ -140,6 +157,7 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* Estilo para o rótulo dentro do botão */
 .btnCadastro label {
     font-family: "Poppins";
     color: #ffffff;
@@ -150,16 +168,19 @@
     border: 0.1rem solid #D9E0DF;
 }
 
+/* Estilo para o texto dentro do botão ao passar o mouse sobre ele */
 .btnCadastro span {
     position: relative;
     z-index: 10;
     transition: color 0.4s;
 }
 
+/* Alteração de cor ao passar o mouse sobre o botão */
 .btnCadastro:hover span {
     color: #8AA6A3;
 }
 
+/* Estilo para os pseudo-elementos do botão */
 .btnCadastro::before,
 .btnCadastro::after {
     position: absolute;
@@ -170,6 +191,7 @@
     z-index: 0;
 }
 
+/* Estilo para o antes do botão (efeito de fundo animado) */
 .btnCadastro::before {
     content: "";
     background: #10403B;
@@ -178,10 +200,12 @@
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
+/* Efeito ao passar o mouse sobre o botão */
 .btnCadastro:hover::before {
     transform: translate3d(100%, 0, 0);
 }
 
+/* Estilo para o grupo de entradas da senha */
 .input-group.senha {
     position: relative;
 }
@@ -198,6 +222,8 @@
 .input-group.senha input {
     padding-right: 8%;
 }
+
+/* Estilo para telas menores, até 768 de largura */
 @media (max-width: 768px) {
     .leftCadastro {
         display: none !important; 
