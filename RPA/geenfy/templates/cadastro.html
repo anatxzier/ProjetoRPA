@@ -1,79 +1,92 @@
-{% extends 'index.html' %}
-
+{% extends 'index.html' %} <!-- Extende o layout base chamado "index.html" -->
 
 {% block title %}
 <!-- Cadastro -->
-{% endblock %}
+{% endblock %} <!-- Define o título da página como "Cadastro" -->
 
 {% block body%}
-
 <main>
     <div class="containerCadastro">
         <div>
+            <!-- Primeira figura triangular -->
             <div class="triangle triangle1">
                 <svg width="500" height="500" viewBox="0 0 100 100">
                     <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
                 </svg>
             </div>
+            <!-- Segunda figura triangular -->
             <div class="triangle triangle2">
                 <svg width="400" height="400" viewBox="0 0 100 100">
                     <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
                 </svg>
             </div>
+            <!-- Terceira figura triangular -->
             <div class="triangle triangle5">
                 <svg width="300" height="300" viewBox="0 0 100 100">
                     <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
                 </svg>
             </div>
+            <!-- Quarta figura triangular -->
             <div class="triangle triangle3">
                 <svg width="300" height="300" viewBox="0 0 100 100">
                     <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
                 </svg>
             </div>
+            <!-- Quinta figura triangular -->
             <div class="triangle triangle4">
                 <svg width="450" height="450" viewBox="0 0 100 100">
                     <polygon points="50,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2" />
                 </svg>
             </div>
         </div>
+
+        <!-- Divisão do layout em duas partes: imagem à esquerda e formulário à direita -->
         <div class="rectangleCadastro">
+            <!-- Parte esquerda contendo uma imagem -->
             <div class="halfCadastro leftCadastro">
                 <img class="imagemCadastro" src="{{ dados_cadastro.0.imgCadastro.url }}" alt="imagemCadastro">
             </div>
+            <!-- Parte direita contendo o formulário -->
             <div class="halfCadastro rightCadastro">
                 <div>
+                    <!-- Ícone e título do formulário -->
                     <span class="material-symbols-outlined iconeCadastro">
                         person_add
                     </span>
                     <h1 class="tituloCadastro">{{ dados_cadastro.0.titulo }}</h1>
                 </div>
+
+                <!-- Início do formulário -->
                 <form id="FormsCadastro" class="cadastro-form" action="cadastro" method="post">
-                    {% csrf_token %} <!-- Tag do Django para proteção contra CSRF -->
+                    {% csrf_token %} <!-- Proteção contra ataques CSRF -->
+
+                    <!-- Campo para o primeiro nome -->
+                    <div class="input-group">
+                        {{ form.first_name }} <!-- Renderiza o campo para o primeiro nome -->
+                    </div>
 
                     <!-- Campo para o usuário -->
                     <div class="input-group">
-
-                        {{ form.first_name }} <!-- Renderiza o campo de entrada do usuário -->
+                        {{ form.user }} <!-- Renderiza o campo para o nome de usuário -->
                     </div>
 
-                    <div class="input-group">
-                        {{ form.user }} <!-- Renderiza o campo de entrada do usuário -->
-                    </div>
                     <!-- Campo para o email -->
                     <div class="input-group">
-                        {{ form.email }}
+                        {{ form.email }} <!-- Renderiza o campo para o email -->
                     </div>
+
                     <!-- Campo para a senha -->
                     <div class="input-group senha">
-                        {{ form.password }} <!-- Renderiza o campo de entrada da senha -->
+                        {{ form.password }} <!-- Renderiza o campo para a senha -->
                         <span class="material-symbols-outlined" id="togglePassword" style="cursor: pointer;">
-                            visibility_off
+                            visibility_off <!-- Ícone para alternar a visibilidade da senha -->
                         </span>
                     </div>
 
-                    <!-- Botão de submissão do formulário -->
+                    <!-- Botão para enviar o formulário -->
                     <button type="submit" class="btnCadastro"><span>CADASTRAR</span></button>
 
+                    <!-- Exibição de mensagens de sucesso, se existirem -->
                     {% if messages %}
                     {% for message in messages %}
                         <div id="alert-containerCadastro-success" class="alert alert-successCadastro">
@@ -81,17 +94,15 @@
                     {% endfor %}
                     {% endif %}
 
+                    <!-- Exibição de mensagem de erro, se existir -->
                     {% if error_message %}
                     <div id="alert-containerCadastro-error" class="alert alert-errorCadastro">
-                        {{ error_message }}
+                        {{ error_message }} <!-- Exibe a mensagem de erro -->
                     </div>
                     {% endif %}
-            </form>
-
+                </form> <!-- Fim do formulário -->
+            </div>
         </div>
     </div>
-
-    </div>
 </main>
-
-{% endblock%}
+{% endblock%} <!-- Fim do bloco "body" -->
