@@ -1,3 +1,4 @@
+/* Estilo geral para o container principal */
 .containerArmazenamento {
     margin:0rem;
     height: 100vh;
@@ -13,6 +14,7 @@
     overflow-y: hidden;
 }
 
+/* Estilo para a navbar customizada */
 .navbarArmazenamento-custom {
     background-color: #10403B;
     border-radius: 10px;
@@ -32,6 +34,7 @@
     overflow-y: auto;
 }
 
+/* Estilo para a marca da navbar */
 .navbarArmazenamento-brand {
     width: 100%;
     display: flex;
@@ -39,16 +42,19 @@
     color: #bfbfbf;
 }
 
+/* Estilo para o título na navbar */
 .navbarArmazenamento-brand h2 {
     font-size: 3vh;
     margin-right: 0.2rem;
     font-family: "Poppins";
 }
 
+/* Estilo para o texto adicional na navbar */
 .navbarArmazenamento-brand span {
     font-size: 4vh;
 }
 
+/* Estilo para a sala */
 .sala{
     background-color: #8AA6A3;
     border-radius: 10px;
@@ -62,6 +68,7 @@
     margin-bottom: 2rem;
 }
 
+/* Estilo para o nome da sala */
 .nomeSala{
     font-size: 2vh;
     font-weight: 600;
@@ -70,10 +77,12 @@
     font-family: "Poppins";
 }
 
+/* Estilo para o ícone da sala */
 .iconeSala{
     color: #4C5958;
 }
 
+/* Efeito ao passar o mouse ou focar no ícone */
 .iconeSala:hover,
 .iconeSala:focus {
     color: #10403B;
@@ -81,6 +90,8 @@
     cursor: pointer;
 }
 
+
+/* Estilo para a linha separadora */
 .linha{
     width: 100%;
     margin: 0 auto;
@@ -91,6 +102,7 @@
 
 }
 
+/* Contêiner para alinhar as linhas */
 .linha-wrapper {
     display: flex;
     flex-direction: column;
@@ -98,6 +110,7 @@
     width: 70vw;
 }
 
+/* Estilo para a informação dentro de uma linha */
 .alinhamentoTexto{
     display: flex;
     flex-direction: row;
@@ -106,6 +119,7 @@
     align-items: center;
 }
 
+/* Estilo para o texto informativo */
 .info{
     font-size: 2vh;
     font-weight: 600;
@@ -114,7 +128,7 @@
     font-family: "Poppins";
 }
 
-
+/* Estilo para a modal de exclusão/recuperação */
 .modalDeleteRestore {
     display: none;
     position: fixed;
@@ -127,6 +141,7 @@
     background-color: rgba(0, 0, 0, 0.4);
 }
 
+/* Estilo para o conteúdo da modal de exclusão/recuperação */
 .modal-contentDeleteRestore {
     background-color: #B0C2C0;
     color: #4C5958;
@@ -140,7 +155,6 @@
     border-radius: 0;
     gap: 0.3rem;
     text-align: center;
-
 }
 
 .modal-contentDeleteRestore span{
@@ -160,6 +174,7 @@
     font-size: 3vh;
 }
 
+/* Efeito para o botão de fechar da modal */
 .closeDeleteRestore {
     color: #aaa;
     float: right;
@@ -167,6 +182,7 @@
     font-weight: bold;
 }
 
+/* Efeito ao passar o mouse ou focar no botão de fechar */
 .closeDeleteRestore:hover,
 .closeDeleteRestore:focus {
     color: black;
@@ -174,17 +190,16 @@
     cursor: pointer;
 }
 
+/* Estilo para os botões na modal de exclusão/recuperação */
 .botoesModaldeleterestore{
     width: 100%;
     height: 80%;
     display: flex;
     gap: 20%;
     justify-content: space-between;
-
-    
-
 }
 
+/* Estilo individual para cada botão na modal */
 .botoesModaldeleterestore button{
     width: 60%;
     height: 40%;
@@ -192,6 +207,8 @@
     border: none;
     padding: 0.4rem;
 }
+
+/* Estilos para a lista de arquivos */
 .listaFiles{
     display: block;
     max-height: 50vh;
@@ -202,14 +219,15 @@
     margin-right: 1rem;
     width: 100%;
     margin-bottom: 1rem;
-
 }
 
+/* Estilo do scrollbar personalizado */
 .listaFiles::-webkit-scrollbar {
     width: 0.3rem;
     
 }
 
+/* Estilo do polegar do scrollbar */
 .listaFiles::-webkit-scrollbar-thumb {
     background-color: #8AA6A3;
     border-radius: 0.625rem;
@@ -217,7 +235,7 @@
     
 }
 
-
+/* Estilos para o modal */
 .modal-content4{
     background-color: #B0C2C0;
     color: #4C5958;
@@ -234,10 +252,12 @@
     position: absolute;
 }
 
+/* Estilo do texto do modal */
 .modal-content4 p{
     margin-top: 0;
 }
 
+/* Estilos gerais para o modal */
 .modal4{
 display: none;
 position: fixed;
@@ -251,6 +271,7 @@ background-color: rgba(0, 0, 0, 0.4);
 justify-content: center;
 }
 
+/* Estilo do botão de fechar do modal */
 .modal-content4 .close{
 align-self: end;
 background-color: transparent;
@@ -261,20 +282,24 @@ padding-bottom: 0;
 padding-top: 0.4rem;
 }
 
+/* Estilo ao passar o mouse sobre o botão de fechar */
 .modal-content4 .close:hover{
     color: #333
 }
 
+/* Estilos do cabeçalho do modal */
 .modal-header4{
     display: flex;
     flex-direction: column;
 }
 
+/* Estilo do título do modal */
 .modal-header4 h1{
     font-size: 3.5vh;
     margin-top: 0;
 }
 
+/* Estilo da linha do modal */
 .modal-header4 hr{
     margin: 1rem 0 0 0;
     color: inherit;
@@ -282,10 +307,8 @@ padding-top: 0.4rem;
     opacity: .25;
     width: 90%;
 }
-/*  */
 
-
-
+/* Estilos dos botões dentro do modal */
 .botoesModal4{
     width: 100%;
     height: 100%;
@@ -295,6 +318,8 @@ padding-top: 0.4rem;
     justify-content: space-between;
     margin-top: 1rem;
 }
+
+/* Estilo dos botões no modal */
 .botoesModal4 button{
     width: 60%;
     height: 40%;
@@ -305,11 +330,10 @@ padding-top: 0.4rem;
     margin-bottom: 6%;
 }
 
-
+/* Media query para telas com largura máxima de 768px */
 @media (max-width: 768px) {
     .containerArmazenamento {
         padding-top: 30vh;
-
     }
 
     .navbarArmazenamento-custom {
@@ -336,6 +360,7 @@ padding-top: 0.4rem;
     }
 }
 
+/* Media query para telas com largura máxima de 500px */
 @media (max-width: 500px) {
     .containerArmazenamento {
         padding-top: 25vh; 
