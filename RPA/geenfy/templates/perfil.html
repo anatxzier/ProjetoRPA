@@ -1,17 +1,16 @@
+{% extends 'index.html' %} <!-- Estende o layout base chamado "index.html" -->
 
-{% extends 'index.html' %}
-
-{% load static %}
+{% load static %} <!-- Carrega os arquivos estáticos -->
 
 {% block title %}
     <!-- Nova Turma -->
-{% endblock %}
+{% endblock %} <!-- Define o título da página como "Nova Turma" -->
 
 {% block body %}
 
-
 <div class="containerPerfil">
     <div>
+        <!-- Elementos decorativos em forma de triângulo -->
         <div class="triangle triangle1">
             <svg width="500" height="500" viewBox="0 0 100 100">
                 <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
@@ -40,36 +39,43 @@
     </div>
     <div class="contentPerfil">
         <div class="contentPerfil2"> 
+            <!-- Informações do perfil do usuário -->
             <div class="profile">
-                <img src="{{ dados_Perfil.0.imgPerfil.url }}">
-
-                <h2>{{ dados_Perfil.0.titulo}}</h2>
+                <img src="{{ dados_Perfil.0.imgPerfil.url }}"> <!-- Imagem de perfil -->
+                <h2>{{ dados_Perfil.0.titulo}}</h2> <!-- Título do perfil -->
             </div>
-            {% csrf_token %}
+
+            {% csrf_token %} <!-- Token de segurança contra CSRF -->
+
+            <!-- Exibição de informações do usuário -->
             <div class="info-container">
                 <div class="info-column">
                     <label for="instrutor">Nome de Usuário</label>
-                    <p>{{ usuario.user }}</p>
+                    <p>{{ usuario.user }}</p> <!-- Nome de usuário -->
                     <label for="Email">Email</label>
-                    <p>{{ usuario.user.email}}</p>
+                    <p>{{ usuario.user.email }}</p> <!-- Email do usuário -->
                 </div>
                 <div class="info-column2">
                     <label for="CPF">User CAF</label>
-                    <p>{{usuario.login_CAF}}</p>
+                    <p>{{ usuario.login_CAF }}</p> <!-- Login do sistema CAF -->
                     <label for="CPF">User IHX</label>
-                    <p>{{usuario.login_IHX}}</p>
+                    <p>{{ usuario.login_IHX }}</p> <!-- Login do sistema IHX -->
                 </div>
             </div>
+
+            <!-- Botão para editar perfil -->
             <div class="div-editar">
-                <a href="/editarperfil"><button  class="editarPerfilbutton"><span>Editar perfil</span><span class="material-symbols-outlined">
-                    edit
-                    </span></button> </a>
+                <a href="/editarperfil">
+                    <button class="editarPerfilbutton">
+                        <span>Editar perfil</span>
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span>
+                    </button>
+                </a>
             </div>
         </div>
-
     </div>
-
-    
 </div>
 
 {% endblock %}
