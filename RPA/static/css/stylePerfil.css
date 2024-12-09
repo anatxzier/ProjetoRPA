@@ -1,3 +1,4 @@
+/* Estilos para o contêiner principal do perfil */
 .containerPerfil {
     display: flex;
     background-color: #C4D1D0;
@@ -10,6 +11,7 @@
     overflow: hidden;
 }
 
+/* Estilos para o conteúdo principal do perfil */
 .contentPerfil {
     display: flex;
     width: 55vw;
@@ -21,10 +23,9 @@
     justify-content: center;
     border-radius: 1rem;
     margin-top: 13vh;
-
-
 }
 
+/* Estilos para o conteúdo secundário do perfil */
 .contentPerfil2 {
     display: flex;
     flex-direction: column;
@@ -38,6 +39,7 @@
     box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
 }
 
+/* Estilos para a seção de perfil (imagem e nome) */
 .profile {
     position: absolute;
     top: -18%;
@@ -50,6 +52,7 @@
     z-index: 3;
 }
 
+/* Estilos para a imagem de perfil */
 .profile img {
     width: 45%;
     height: auto;
@@ -58,6 +61,7 @@
     box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.25);
 }
 
+/* Estilos para o nome do usuário */
 .profile h2 {
     margin: 1rem 0 0;
     font-size: 2.5vw;
@@ -65,6 +69,7 @@
     color: #127369;
 }
 
+/* Estilos para o contêiner das informações do perfil */
 .info-container {
     display: flex;
     flex-direction: row;
@@ -72,6 +77,8 @@
     margin: 23vh 3vw 3vw 3vw;
     justify-content: space-between;
 }
+
+/* Estilos para o contêiner secundário de informações (coluna) */
 .info-container2 {
     display: flex;
     flex-direction: column;
@@ -79,7 +86,7 @@
     justify-content: center;
 }
 
-
+/* Estilos para as colunas de informações (primeira coluna) */
 .info-column {
     display: flex;
     flex-direction: column;
@@ -88,6 +95,7 @@
     right: -3%;
 }
 
+/* Estilos para as colunas de informações (segunda coluna) */
 .info-column2 {
     display: flex;
     flex-direction: column;
@@ -96,6 +104,7 @@
     left: 8%;
 }
 
+/* Estilos para os parágrafos dentro das colunas de informações */
 .info-column p,
 .info-column2 p {
     width: 80%;
@@ -104,6 +113,7 @@
     color: #507974;
 }
 
+/* Estilos para os rótulos nas colunas de informações */
 .info-column label,
 .info-column2 label {
     font-weight: 600;
@@ -112,10 +122,13 @@
     color: #127369;
 }
 
+/* Estilos para o link de editar */
 .div-editar a {
     color: #4C978F;
     font-size: 1.3vw;
 }
+
+/* Estilos para os triângulos de design */
 .triangle {
     position: absolute;
 }
@@ -150,39 +163,42 @@
     transform: rotate(30deg);
 }
 
+/* Estilos para o botão de editar perfil */
 .editarPerfilbutton {
-    background-color: #10403B; /* Cor de fundo */
-    color: #ffffff; /* Cor do texto */
-    border: none; /* Remove a borda padrão */
-    border-radius: 5px; /* Cantos arredondados */
-    padding: 0.6vh 1vw; /* Espaçamento interno */
-    font-size: 1.2rem; /* Tamanho da fonte */
-    cursor: pointer; /* Muda o cursor para mãozinha */
-    transition: background-color 0.3s ease, transform 0.2s; /* Animações */
-    display: flex; /* Para alinhar o texto e o ícone */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza o conteúdo */
-    width: 100%; /* Largura do botão, ajustada para 50% */
-    margin-top: -3vh; /* Espaço entre o conteúdo e o botão */
+    background-color: #10403B; 
+    color: #ffffff; 
+    border: none; 
+    border-radius: 5px; 
+    padding: 0.6vh 1vw; 
+    font-size: 1.2rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
+    margin-top: -3vh; 
 }
+
+/* Efeito de hover no botão de editar */
 .editarPerfilbutton:hover {
-    background-color: #0c2d26; /* Cor de fundo ao passar o mouse */
-    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+    background-color: #0c2d26; 
+    transform: translateY(-2px); 
 }
 
 .editarPerfilbutton span {
-    padding: 0.5rem; /* Espaçamento entre o texto e o ícone */
+    padding: 0.5rem; 
 }
 
 .material-symbols-outlined {
-    font-size: 1rem; /* Tamanho do ícone */
+    font-size: 1rem; 
 }
 
 .div-editar a {
-    text-decoration: none; /* Remove o sublinhado do link */
+    text-decoration: none; 
 }
 
-
+/* Estilização para telas de tamanhos diferentes */
 @media(max-width: 1024px) {
     .contentPerfil {
         width: 65vw;
