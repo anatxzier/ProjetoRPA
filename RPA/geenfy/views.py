@@ -13,43 +13,45 @@ from django.contrib import messages
 from django.contrib.auth import update_session_auth_hash
 
 
-
+# Função para verificar se o usuário pertence a um grupo específico
 def group_required(group_name):
     def in_group(user):
         if user.is_authenticated:
-            return user.groups.filter(name=group_name).exists()
+            return user.groups.filter(name=group_name).exists()  # Verifica se o usuário está no grupo
         return False
     def decorator(view_func):
         def _wrapped_view(request, *args, **kwargs):
             if not request.user.is_authenticated or not request.user.groups.filter(name=group_name).exists():
-                return redirect('home') 
+                return redirect('home') # Redireciona para a página inicial se o usuário não estiver no grupo
             return view_func(request, *args, **kwargs)
         return _wrapped_view
     return decorator
 
+# Função para renderizar a página inicial
 def Homepage_View (request):
     context = {}    
-    dados_homepage = Homepage.objects.all()
+    dados_homepage = Homepage.objects.all()  # Busca todos os dados para a página inicial
     context["dados_homepage"] = dados_homepage
+    # Verifica se o usuário pertence ao grupo "Coordenador"
     user_is_Coordenador = request.user.groups.filter(name="Coordenador").exists() if request.user.is_authenticated else False
     context["user_is_Coordenador"] = user_is_Coordenador   
-    return render(request, 'homepage.html', context)
+    return render(request, 'homepage.html', context) # Renderiza o template da página inicial com o contexto
 
+# Função para tratar a funcionalidade de login
 def Login_View(request):
-
     context = {}
-    dados_login = Login.objects.all()
+    dados_login = Login.objects.all() # Busca todos os dados de login
     context["dados_login"] = dados_login
 
     if request.method == "POST":
-        form = FormLogin(request.POST)
+        form = FormLogin(request.POST) # Processa o envio do formulário
         if form.is_valid():
             var_user = form.cleaned_data['user']  
             var_password = form.cleaned_data['password']
-            user = authenticate(request, username=var_user, password=var_password)
+            user = authenticate(request, username=var_user, password=var_password) # Autentica o usuário
             if user is not None:
-                auth_login(request, user)
-#logica apara redirecionamento 
+                auth_login(request, user) # Faz o login do usuário
+                # Lógica para redirecionar para a página correta, dependendo do status do usuário
                 try:
                     usuario = Usuario.objects.get(user=user)
                     if usuario.login_CAF and usuario.login_IHX and usuario.senha_CAF and usuario.senha_IHX:  # Verifica se ambos os campos estão preenchidos
@@ -59,31 +61,35 @@ def Login_View(request):
                 except Usuario.DoesNotExist:
                     return redirect('cadinfo')  # Redireciona se o usuário não existir na tabela Usuario
             else:
-                context['error'] = "Usuário ou senha incorretos"
+                context['error'] = "Usuário ou senha incorretos"  # Se a autenticação falhar, exibe mensagem de erro
                 context['form'] = form
-                return render(request, "login.html", context)
+                return render(request, "login.html", context) # Retorna ao template de login com mensagem de erro
 
     else:
-        form = FormLogin()
+        form = FormLogin() # Caso a requisição não seja POST, cria um formulário vazio
         context['form'] = form
-        return render(request, "login.html", context)
-
+        return render(request, "login.html", context) # Retorna ao template de login com o formulário vazio
+//
 @login_required
 def NovaTurma_View(request):
     context = {}
-    dados_NovaTurma = NovaTurma.objects.all()
+    dados_NovaTurma = NovaTurma.objects.all() # Busca todos os registros da tabela NovaTurma para exibir na página
     context["dados_NovaTurma"] = dados_NovaTurma
+    # Verifica se o usuário pertence ao grupo "Coordenador"
     user_is_Coordenador = request.user.groups.filter(name="Coordenador").exists() if request.user.is_authenticated else False
     context["user_is_Coordenador"] = user_is_Coordenador 
 
-    if request.method == 'POST':
+    if request.method == 'POST': # Verifica se a requisição é do tipo POST (quando o formulário é enviado)
         form = FormNovaTurma(request.POST, request.FILES)
-        if form.is_valid():
+        if form.is_valid(): # Verifica se o formulário é válido
             varescolha = request.POST.get('user_choice')
             var_turma = form.cleaned_data['nome_da_turma']
             var_arquivo = form.cleaned_data['arquivo']
+            # Cria um objeto 'In_progress_file' e o salva no banco de dados
             arquivo_in_progress = In_progress_file(turma=var_turma,arquivo_inprogress=var_arquivo)
             arquivo_in_progress.save()
+
+            # Redireciona dependendo da escolha do usuário
             if varescolha == "não":
                 return redirect('processo')
             else:
@@ -106,29 +112,35 @@ def NovaTurma_View(request):
 def Cadastro_View(request):
     cache.clear()
     context = {}
-    dados_cadastro = Cadastro.objects.all()
+    dados_cadastro = Cadastro.objects.all() # Busca todos os registros da tabela Cadastro
     context["dados_cadastro"] = dados_cadastro
+    # Verifica se o usuário pertence ao grupo "Coordenador"
     user_is_Coordenador = request.user.groups.filter(name="Coordenador").exists() if request.user.is_authenticated else False
     context["user_is_Coordenador"] = user_is_Coordenador 
 
+    # Verifica se a requisição é do tipo POST (quando o formulário de cadastro é enviado)
     if request.method == 'POST':
         form = FormCadastro(request.POST)
         if form.is_valid():
             try:
+                # Obtém os dados preenchidos no formulário
                 var_first_name = form.cleaned_data['first_name']
                 var_user = form.cleaned_data['user']
                 var_email = form.cleaned_data['email']
                 var_password = form.cleaned_data['password']
 
+                # Verifica se o nome de usuário já existe
                 if User.objects.filter(username=var_user).exists():
                     context['error_message'] = 'Nome de usuário já existe, por favor tente novamente'
                     form = FormCadastro()
                     context['form'] = form
                     return render(request, "cadastro.html", context)
-                
+                    
+                # Cria o usuário no banco de dados
                 user = User.objects.create_user(username=var_user, email=var_email, password=var_password)
                 user.first_name = var_first_name
                 user.save()
+                # Adiciona o usuário ao grupo 'funcionario'
                 group = Group.objects.get(name='funcionario')
                 user.groups.add(group)
 
@@ -152,6 +164,7 @@ def Cadastro_View(request):
 @login_required
 def Storage_View(request):
     context = {}
+    # Busca todos os registros das tabelas necessárias para exibir os dados
     dados_storage = Storage.objects.all()
     form = FormNovaTurma()
     context["form"] = form
@@ -159,12 +172,13 @@ def Storage_View(request):
     context["dados_NovaTurma"] = dados_NovaTurma
     dados_finalizados = Finished_file.objects.order_by('-upload_time')
     context ["dados_finalizados"] = dados_finalizados
+    # Verifica se o usuário pertence ao grupo "Coordenador"
     user_is_Coordenador = request.user.groups.filter(name="Coordenador").exists() if request.user.is_authenticated else False
     context["user_is_Coordenador"] = user_is_Coordenador 
     context["dados_lixeira"] = dados_storage
 
     return render(request, "armazenamento.html", context)
-
+//
 @login_required
 def Processo_View(request):
     context = {}
@@ -238,7 +252,7 @@ def Perfil_View(request):
     return render(request, 'perfil.html', context)
 
 
-
+//
 
 @login_required
 def Editar_Perfil_View(request):
