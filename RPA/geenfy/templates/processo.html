@@ -1,14 +1,15 @@
-{% extends "index.html" %}
+{% extends "index.html" %} <!-- Estende o layout base chamado "index.html" -->
 
-{% load static %}
+{% load static %} <!-- Carrega os arquivos estáticos -->
 
 {% block title %}
 <!-- Processo -->
-{% endblock %}
+{% endblock %} <!-- Define o título da página como "Processo" -->
 
 {% block body %}
 <div class="containerProcesso">
     <div class="contentProcesso">
+        <!-- Barra de navegação com etapas do processo -->
         <div class="navProcesso">
             <div class="navProcesso-content">
                 <div class="navCampo">
@@ -25,13 +26,18 @@
                 </div>
             </div>
         </div>
+
+        <!-- Exibição de mensagens de erro -->
         <div class="erro" id="error-message">
             {% if erro %}
             <p style="color: red;">{{ erro.mensagem }}</p>
-            <p style="color: red;" id="erro-data" >{{ erro.data_criacao|date:"d/m/Y H:i" }}</p>
+            <p style="color: red;" id="erro-data">{{ erro.data_criacao|date:"d/m/Y H:i" }}</p>
             {% endif %}
         </div>
+
+        <!-- Estrutura Kanban com colunas de status -->
         <div class="kanban">
+            <!-- Coluna: Itens Pendentes -->
             <div class="column">
                 {% for file in dados_progresso %}
                 {% if file.status == "Pendente" %}
@@ -49,7 +55,8 @@
                         </button>
                     </div>
                 </div>
-                <!-- Modal Iniciar -->
+
+                <!-- Modal para iniciar um arquivo -->
                 <div class="modal modal3" id="modalIniciar{{ forloop.counter }}" style="display: none;">
                     <div class="modal-dialog">
                         <div class="modal-content modal-content3">
@@ -75,7 +82,8 @@
                         </div>
                     </div>
                 </div>
-                <!-- Modal Excluir-->
+
+                <!-- Modal para excluir um arquivo pendente -->
                 <div class="modal modal3" id="modalExcluirPendente{{ forloop.counter }}" style="display: none;">
                     <div class="modal-dialog">
                         <div class="modal-content modal-content3">
@@ -93,7 +101,7 @@
                                     <input type="hidden" name="file_id" value="{{ file.id }}">
                                     <input type="hidden" name="file_status" value="{{ file.status }}">
                                     <p>Tem certeza de que deseja excluir esta turma?</p>
-                                    <div class="d-flex  botoesModal3">
+                                    <div class="d-flex botoesModal3">
                                         <button type="submit" class="me-2">Confirmar</button>
                                         <button type="button" onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">Cancelar</button>
                                     </div>
@@ -107,6 +115,7 @@
                 <div class="btn-add"><a href="/novaturma">+ Adicionar</a></div>
             </div>
 
+            <!-- Coluna: Em Progresso -->
             <div class="column">
                 {% for file in dados_progresso %}
                 {% if file.status == "Em Progresso" %}
@@ -115,6 +124,7 @@
                 {% endfor %}
             </div>
 
+            <!-- Coluna: Finalizado -->
             <div class="column">
                 {% for arquivo in dados_finalizados %}
                 <div class="item">{{ arquivo.turma }}
@@ -127,7 +137,8 @@
                         </button>
                     </div>
                 </div>
-                <!-- Modal -->
+
+                <!-- Modal para excluir um arquivo finalizado -->
                 <div class="modal modal3" id="modalExcluirFinalizado{{ forloop.counter }}" style="display: none;">
                     <div class="modal-dialog">
                         <div class="modal-content modal-content3">
@@ -145,8 +156,8 @@
                                     <input type="hidden" name="file_id" value="{{ arquivo.id }}">
                                     <input type="hidden" name="file_status" value="{{ arquivo.status }}">
                                     <p>Tem certeza de que deseja excluir esta turma?</p>
-                                    <div class="d-flex botoesModal3" >
-                                        <button type="submit" class=" me-2">Confirmar</button>
+                                    <div class="d-flex botoesModal3">
+                                        <button type="submit" class="me-2">Confirmar</button>
                                         <button type="button"
                                             onclick="closeModal('modalExcluirFinalizado{{ forloop.counter }}')">Cancelar</button>
                                     </div>
@@ -160,7 +171,8 @@
         </div>
     </div>
 </div>
-<script src="{% static 'js/atualizacao.js' %}"></script>
+
+<script src="{% static 'js/atualizacao.js' %}"></script> <!-- Script para atualizações -->
 {% endblock %}
 
 <script src="{% static 'js/animationProcesso.js' %}"></script>
