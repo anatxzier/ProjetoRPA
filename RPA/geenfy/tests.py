@@ -1,3 +1,5 @@
+# Importa os módulos necessários do Django, como modelos de usuário, métodos de teste, URLs, autenticação e formulários
+from django.contrib.auth.models import User, Group
 from django.contrib.auth.models import User, Group
 from django.test import TestCase
 from django.urls import reverse
@@ -6,19 +8,20 @@ from geenfy.models import Cadastro, Usuario  # Certifique-se de que o modelo Cad
 from geenfy.forms import FormCadastro  # Certifique-se de que o formulário está na aplicação correta
 
 class ViewTest(TestCase):
-
+    # Configuração inicial para os testes
     def setUp(self):
         # Criar grupos e usuários conforme necessário
         self.group_coordenador = Group.objects.create(name='Coordenador')
         self.group_funcionario = Group.objects.create(name='funcionario')
 
+        # Criação de usuários com diferentes permissões e grupos
         self.coordenador = User.objects.create_user(username='coordenador_teste', password='coordenador123')
         self.coordenador.groups.add(self.group_coordenador)
 
         self.usuario_comum = User.objects.create_user(username='usuario_comum', password='comum123')
         self.usuario_comum.groups.add(self.group_funcionario)
 
-        # Criar funcionários para testes de exclusão
+        # Criação de um usuário adicional (funcionário)
         self.funcionario = User.objects.create_user(username='funcionario_teste', password='funcionario123')
         self.funcionario.groups.add(self.group_funcionario)
 
@@ -26,9 +29,10 @@ class ViewTest(TestCase):
         self.usuario = User.objects.create_user(username='usuario_teste', password='usuario123')
         self.usuario.groups.add(self.group_funcionario)
 
+        # Criação ou recuperação do objeto Usuario associado ao User
         self.usuario_info, created = Usuario.objects.get_or_create(user=self.usuario)
 
-        # Se o usuário foi criado e os campos de login e senha estão vazios, preenchê-los
+        # Preenche campos de login, caso estejam vazios
         if created or not self.usuario_info.login_CAF or not self.usuario_info.senha_CAF or not self.usuario_info.login_IHX or not self.usuario_info.senha_IHX:
             self.usuario_info.login_CAF = 'usuario_caf'
             self.usuario_info.senha_CAF = '12345_caf'
@@ -36,7 +40,7 @@ class ViewTest(TestCase):
             self.usuario_info.senha_IHX = '12345_ihx'
             self.usuario_info.save()
 
-        # URLs
+        # URLs usadas nos testes
         self.url_login = reverse('login')
         self.url_novaturma = reverse('novaturma')
         self.url_cadastro = reverse('cadastro')
@@ -47,16 +51,15 @@ class ViewTest(TestCase):
    #Login/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     def test_login_view_redirecionamento_completo(self):
         """Testa se o usuário é redirecionado corretamente após login com informações completas"""
+        # Faz o login e verifica o redirecionamento para a página 'novaturma'
         response = self.client.post(self.url_login, {'user': 'usuario_teste', 'password': 'usuario123'})
-       
-        self.assertEqual(response.status_code, 302)  # Redirecionamento após login
-        # Como o usuário tem login_CAF e login_IHX, ele deve ser redirecionado para 'novaturma'
-        self.assertRedirects(response, self.url_novaturma)
+        self.assertEqual(response.status_code, 302)  # Verifica se houve redirecionamento
+        self.assertRedirects(response, self.url_novaturma) # Verifica se o redirecionamento é para 'novaturma'
 
 
     def test_login_view_redirecionamento_incompleto(self):
         """Testa se o usuário é redirecionado para 'cadinfo' quando falta informações"""
-        # Modificando o usuário para que falte algum dado de login
+        # Modifica o usuário para faltar um dado importante (login_CAF) e testa o redirecionamento
         usuario = Usuario.objects.get(user=self.usuario)  # Acessando o modelo Usuario, não o User diretamente
         usuario.login_CAF = ""
         usuario.save()
@@ -71,7 +74,7 @@ class ViewTest(TestCase):
         """Testa o login com um usuário inválido"""
         response = self.client.post(self.url_login, {'user': 'usuario_invalido', 'password': 'senha_errada'})
         self.assertEqual(response.status_code, 200)  # Não deve redirecionar
-        self.assertContains(response, 'Usuário ou senha incorretos')  # Verifica mensagem de erro
+        self.assertContains(response, 'Usuário ou senha incorretos')  # Mensagem de erro
 
     #Exclusão//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     def test_exclusao_funcionario(self):
