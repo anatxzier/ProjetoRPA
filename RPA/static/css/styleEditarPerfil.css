@@ -1,3 +1,4 @@
+/* Estilo para o contêiner principal */
 .containerEditar {
     display: flex;
     justify-content: center;
@@ -7,6 +8,7 @@
     background-color: #a9b8b5;
 }
 
+/* Estilo para o conteúdo principal de edição */
 .contentEditar {
     display: flex;
     border-radius: 10px;
@@ -15,7 +17,7 @@
 
 }
 
-/* Lado 1 e Lado 2 */
+/* Estilo para os lados esquerdo e direito */
 .lado1,
 .lado2 {
 
@@ -28,24 +30,28 @@
 
 }
 
+
+/* Estilos específicos para o lado esquerdo */
 .lado1 {
     background-color: #ABCEC7;
     border-radius: 5% 0 0 5%;
     padding-bottom: 10%;
 }
 
+/* Estilos específicos para o lado direito */
 .lado2{
     background-color: #8AA6A3;
     border-radius: 0 5% 5% 0;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-
 /* Estilização do Formulário */
 .form-group-editar {
     margin-bottom: 20px;
 }
 
+
+/* Estilo para os rótulos dos campos de formulário */
 .form-label {
     font-weight: bold;
     margin-bottom: 2%;
@@ -54,10 +60,12 @@
     color: #507974;
 }
 
+/* Estilo específico para os rótulos no lado direito */
 .lado2 .form-label {
     color: #4C5958;
 }
 
+/* Estilo para os campos de entrada de formulário */
 .form-field input {
     width: 100%;
     padding: 3%;
@@ -66,6 +74,7 @@
     font-size: 1.5rem;
 }
 
+/* Estilo para a imagem de perfil */
 .imagem-perfil{
     display: flex;
     flex-direction: column;
@@ -75,10 +84,13 @@
 
 }
 
+/* Estilo para o título da imagem de perfil */
 .imagem-perfil h3{
     color: #507974;
     font-size: 3rem;
 }
+
+/* Estilo para a imagem de perfil */
 .imagem-perfil img{
     width: 40%;
     height: auto;
@@ -87,7 +99,7 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-
+/* Estilo para o botão de editar */
 .btn-editar {
     width: 20%;
     background-color: #839f9b;
@@ -101,10 +113,12 @@
  
 }
 
+/* Efeito de hover para o botão de edição */
 .btn-editar:hover {
     background-color: #718b87;
 }
 
+/* Botão secundário de edição */
 .btn-editar2{
     width: 20%;
     background-color: #839f9b;
@@ -116,25 +130,31 @@
     cursor: pointer;
     margin-bottom: 10%;
 }
+
+
+/* Efeito de hover para o botão secundário de edição */
 .btn-editar2:hover {
     background-color: #718b87;
 }
 
+/* Grupo de campos do formulário (para edição) */
 .form-group-editar{
     margin-top: 1rem;
 }
 
+/* Estilização para os rótulos do formulário */
 .form-group-editar label{
     margin-top: 1rem;
 }
 
+/* Botão de voltar */
 .voltar{
     border-radius: 0.5rem;
     font-size: 1.2rem;
 }
 
 
-
+/* Estilização para telas de diferentes tamanhos */
 @media (min-width: 2560px){
 
     .contentEditar {
