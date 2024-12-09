@@ -1,3 +1,4 @@
+/* Estilo da barra de navegação customizada */
 .navbar-custom {
     background-color: #8AA6A3;
     border-radius: 10px;
@@ -15,14 +16,15 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Estilo do container dentro da barra de navegação */
 .containerNav {
     width: 100%; 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
 }
 
+/* Estilo para o título dentro da barra de navegação */
 .navbar-brand h2 {
     margin: 0; 
     color: #000; 
@@ -31,26 +33,32 @@
     transition: transform 0.3s ease;
 }
 
+/* Efeito de hover no título, aumenta o tamanho */
 .navbar-brand h2:hover {
   transform: scale(1.2);
 }
 
+/* Estilo do conteúdo após a barra de navegação */
 .contentNav {
     padding-top: 80px;
 }
 
-
+/* Estilo dos spans dentro do container de navegação */
 .containerNav span{
   font-size: 4vh;
 }
 
+/* Estilo dos ícones, com transição suave */
 .icone{
   transition: transform 0.3s ease;
 }
 
+/* Efeito de hover nos ícones, aumenta o tamanho */
 .icone:hover {
   transform: scale(1.2);
 }
+
+/* Estilo do link dos ícones de navegação */
 .icn{
   text-decoration: none;
   color: black;
@@ -58,6 +66,8 @@
   align-items: center;
   margin-left: 10px;
 }
+
+/* Grupo de ícones com espaçamento */
 .icn-group {
   display: flex;
   gap: 20px; 
