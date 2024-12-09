@@ -1,100 +1,104 @@
-{% extends 'index.html' %}
+{% extends 'index.html' %} <!-- Estende o layout base chamado "index.html" -->
 
-{% load static %}
+{% load static %} <!-- Carrega arquivos estáticos (CSS, JS, etc.) -->
 
 {% block title %}
 <!-- editar perfil -->
-{% endblock %}
+{% endblock %} <!-- Define o título da página como "editar perfil" -->
 
 {% block body%}
-
 <body>
     <div class="containerEditar">
+        <!-- Seção de imagem de perfil -->
         <div class="imagem-perfil">
-            <img src="{{dados_EditarPerfil.0.imgPerfil.url}}">
-            <h3>{{ dados_EditarPerfil.0.titulo }}</h3>
+            <img src="{{dados_EditarPerfil.0.imgPerfil.url}}"> <!-- Exibe a imagem do perfil -->
+            <h3>{{ dados_EditarPerfil.0.titulo }}</h3> <!-- Exibe o título do perfil -->
         </div>
+
+        <!-- Seção de conteúdo de edição -->
         <div class="contentEditar">
             <div class="lado1">
                 <!-- Formulário da primeira coluna - form1 -->
                 <form id="formEditar" method="POST" class="form-containerEditar">
                     <div class="form-content">
-                        {% csrf_token %}
+                        {% csrf_token %} <!-- Proteção contra ataques CSRF -->
 
+                        <!-- Campos de edição do formulário 1 -->
                         <div class="form-group-editar">
                             <div class="form-field">
                                 <label class="form-label" for="{{ form1.email.id_for_label }}">E-mail:</label>
-                                {{form1.email}}
+                                {{form1.email}} <!-- Campo para e-mail -->
+
                                 <label class="form-label" for="{{ form1.user.id_for_label }}">Nome de Usuário:</label>
-                                {{form1.user}}
+                                {{form1.user}} <!-- Campo para nome de usuário -->
+
                                 <label class="form-label" for="{{ form1.first_name.id_for_label }}">Nome:</label>
-                                {{form1.first_name}}
+                                {{form1.first_name}} <!-- Campo para nome completo -->
+
                                 <label class="form-label" for="{{ form1.new_password.id_for_label }}">Senha GEENFY:</label>
-                                {{form1.new_password}}
+                                {{form1.new_password}} <!-- Campo para nova senha -->
                             </div>
                         </div>
-
                     </div>
             </div>
 
-            <!-- Lado 2 -->
+            <!-- Segunda coluna - form2 -->
             <div class="lado2">
                 <div class="form-content">
-                    {% for field in form2 %}
+                    {% for field in form2 %} <!-- Itera sobre os campos do form2 -->
                     <div class="form-group-editar">
-                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+                        <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label> <!-- Exibe o rótulo do campo -->
                         <div class="form-field">
-                            {{ field }} <!-- Renderiza o campo do form2 -->
+                            {{ field }} <!-- Renderiza o campo -->
                         </div>
                     </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
+        <!-- Botão para confirmar alterações -->
         <button id="button1" class="btn-editar2">Confirmar Alterações</button>
     </div>
 
+    <!-- Marca se o modal está aberto -->
     <div id="modal-open-flag" data-modal-open="{% if modal_open %}true{% else %}false{% endif %}"></div>
 
- <!-- Modal -->
-  {% if modal_open %}
+    <!-- Modal para confirmar alterações -->
+    {% if modal_open %}
     <div id="myModal2" class="modal modal1">
         <div class="modal-content modal-content1">
-            <span class="close">&times;</span>
+            <span class="close">&times;</span> <!-- Botão para fechar o modal -->
             <h3>Confirmar dados alterados</h3>
             <hr>
             <p>Aviso: Insira a sua senha atual GEENFY para confirmar a alteração das informações</p>
-            
-            <!-- Campo para a senha GEENFY -->
+
+            <!-- Campo para inserir a senha GEENFY -->
             <div class="form-group-editar">
                 <label for="{{ form1.password.id_for_label }}">Senha GEENFY:</label>
-                {{ form1.password }}
+                {{ form1.password }} <!-- Campo para senha atual -->
             </div>
 
-            <!-- Exibe as mensagens de erro relacionadas à senha como alertas -->
+            <!-- Exibe mensagens de erro sobre a senha -->
             {% if password_error %}
             <div class="alert alert-danger" role="alert">
-                {{ password_error }}
+                {{ password_error }} <!-- Mensagem de erro sobre a senha -->
             </div>
             {% endif %}
 
             {% if new_password_error %}
             <div class="alert alert-danger" role="alert">
-                {{ new_password_error }}
+                {{ new_password_error }} <!-- Mensagem de erro sobre a nova senha -->
             </div>
             {% endif %}
 
+            <!-- Botões no modal -->
             <div class="botoesModal2">
-                <button class="voltar">Voltar</button>
-                <button class="btn-editar" id="submitButton">Confirmar</button>
+                <button class="voltar">Voltar</button> <!-- Botão para voltar -->
+                <button class="btn-editar" id="submitButton">Confirmar</button> <!-- Botão para confirmar -->
             </div>
         </div>
     </div>
-{% endif %}
-
-
+    {% endif %}
 </body>
 </main>
-
-
 {% endblock %}
