@@ -1,3 +1,4 @@
+/* Estilo para o contêiner principal (containerCadinfo) */
 .containerCadinfo { 
     display: flex;
     flex-wrap: wrap;
@@ -11,6 +12,7 @@
     margin-bottom: 3rem;
 }
 
+/* Estilo para o conteúdo dentro do contêiner (contentCadinfo) */
 .contentCadinfo {
     display: flex;
     flex-direction: row; 
@@ -23,40 +25,48 @@
     
 }
 
+/* Estilo para os triângulos (divs) posicionados de forma absoluta */
 .triangle {
     position: absolute;
 }
 
+/* Estilo para o primeiro triângulo (triangle1) */
 .triangle1 {
     bottom: 60vh;
     left: 2vw;
     transform: rotate(30deg);
 }
 
+/* Estilo para o segundo triângulo (triangle2) */
 .triangle2 {
     bottom: 15vh;
     left: 5vw;
     transform: rotate(150deg);
 }
 
+/* Estilo para o quinto triângulo (triangle5) */
 .triangle5 {
     bottom: 5vh;
     left: 5vw;
     transform: rotate(100deg);
 }
 
+
+/* Estilo para o terceiro triângulo (triangle3) */
 .triangle3 {
     top: 20vh;
     left: 80vw;
     transform: rotate(100deg);
 }
 
+/* Estilo para o quarto triângulo (triangle4) */
 .triangle4 {
     bottom: 5vh;
     left: 72vw;
     transform: rotate(30deg);
 }
 
+/* Estilo para o formulário principal (cad-info-form) */
 .cad-info-form {
     width: 25vw;
     height: 70vh;
@@ -69,6 +79,7 @@
     margin: 0;
 }
 
+/* Estilo para o texto dentro do formulário (cad-info-form p) */
 .cad-info-form p {
     color: #ffffff;
     font-size: 2.7vh;
@@ -78,6 +89,7 @@
     margin-bottom: 2rem;
 }
 
+/* Estilo para cada div dentro do formulário */
 .cad-info-form div {
     margin-bottom: 1rem;
     width: 100%; 
@@ -87,6 +99,7 @@
     align-items: center; 
 }
 
+/* Estilo para os campos de input de texto e senha */
 .cad-info-form input[type="text"],
 .cad-info-form input[type="password"] {
     width: 20vw; 
@@ -101,6 +114,7 @@
     outline: none;
 }
 
+/* Estilo para o texto do placeholder (texto de sugestão) nos inputs */
 .cad-info-form input::placeholder {
     color: #D9E0DF; 
     opacity: 1;
@@ -109,6 +123,7 @@
     font-size: 1.5vh;
 }
 
+/* Estilo para o botão de cadastro */
 .btnCad {
     margin-top: 0px;
     outline: none;
@@ -130,15 +145,18 @@
     transition: background-color 0.3s, color 0.3s; 
 }
 
+/* Estilo para o texto dentro do botão */
 .btnCad span {
     position: relative;
     transition: color 0.4s;
 }
 
+/* Efeito de hover para o botão (quando o mouse passa por cima) */
 .btnCad:hover span {
     color: #8AA6A3;
 }
 
+/* Pseudo-elementos para criar o efeito de transição no fundo do botão */
 .btnCad::before,
 .btnCad::after {
     position: absolute;
@@ -149,6 +167,7 @@
     z-index: 0;
 }
 
+/* Estilo para o efeito de fundo quando o botão é hoverizado */
 .btnCad::before {
     content: "";
     background: #8AA6A3;
@@ -157,15 +176,18 @@
     transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 }
 
+/* Efeito de movimento do fundo do botão quando é hoverizado */
 .btnCad:hover::before {
     transform: translate3d(100%, 0, 0);
 }
 
+/* Estilo para mensagens de erro */
 .error {
     color: red;
     font-size: 0.8rem;
 }
 
+/* Estilo para o conteúdo principal da seção .contentCad2 */
 .contentCad2 {
     background-color: #8AA6A3;
     width: 50vw;
@@ -182,16 +204,20 @@
     position: relative;
 }
 
+/* Estilo para as imagens dentro do conteúdo */
 .contentCad2 img {
     width: 90%;
     max-height: 100%; 
     object-fit: contain; 
 }
+
+/* Estilo para a seção de formulários dentro do conteúdo */
 .info-forms {
     margin-top: 1rem;
     padding-top: 3rem;
 }
 
+/* Estilos de ajuste para telas com largura máxima de 768px */
 @media (max-width: 768px) {
     .triangle1, .triangle2, .triangle3, .triangle4 {
         border-width: 0 10vw 10vw 0;
