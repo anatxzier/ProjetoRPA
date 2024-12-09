@@ -1,65 +1,70 @@
-{% extends 'index.html' %}
-
+{% extends 'index.html' %} <!-- Extende o template base 'index.html' para reaproveitar sua estrutura -->
 
 {% block title %}
-<!-- Armazenamento -->
+<!-- Armazenamento --> <!-- Define o título da página como "Armazenamento" -->
 {% endblock %}
 
 {% block body%}
-<main class="containerArmazenamento">
+<main class="containerArmazenamento"> <!-- Início do corpo principal da página -->
     <div>
+        <!-- Seção da barra de navegação personalizada -->
         <div class="navbarArmazenamento-custom">
             <div class="navbarArmazenamento-brand">
-                <h2>{{ dados_lixeira.0.titulo }}</h2>
+                <h2>{{ dados_lixeira.0.titulo }}</h2> <!-- Exibe o título do primeiro item em 'dados_lixeira' -->
             </div>
         </div>
-        <div class="listaFiles">
-            {% for arquivo in dados_finalizados %}
+        <div class="listaFiles"> <!-- Container para a lista de arquivos -->
+            {% for arquivo in dados_finalizados %} <!-- Loop para iterar sobre os itens da lista 'dados_finalizados' -->
             <div class="sala">
-                <p class="nomeSala">{{arquivo.turma}}
+                <p class="nomeSala">{{arquivo.turma}} <!-- Exibe o nome da turma associado ao arquivo -->
                 <p>
+                    <!-- Link para download do arquivo -->
                     <a href="{{ arquivo.arquivo_fineshed.url }}" download>
                         <span class="material-symbols-outlined download" style="float: right;">download</span>
                     </a>
-
+                    <!-- Botão para abrir o modal de exclusão -->
                     <button class="delete-btn" onclick="openModal('modalExcluirPendente{{ forloop.counter }}')">
                         <span class="material-symbols-outlined">delete</span>
                     </button>
             </div>
 
-            <!-- Modal Excluir-->
+            <!-- Modal de confirmação para exclusão do arquivo -->
             <div class="modal modal4" id="modalExcluirPendente{{ forloop.counter }}" style="display: none;">
                 <div class="modal-dialog">
                     <div class="modal-content modal-content4">
+                        <!-- Botão para fechar o modal -->
                         <button type="button" class="close"
                             onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">&times;</button>
                         <div class="modal-header modal-header4">
-                            <h1 class="modal-title">Excluir turma {{ arquivo.turma }}</h1>
-                            <hr>
+                            <h1 class="modal-title">Excluir turma {{ arquivo.turma }}</h1> <!-- Título do modal -->
+                            <hr> <!-- Linha de separação -->
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body"> <!-- Corpo do modal -->
+                            <!-- Formulário para enviar o pedido de exclusão -->
                             <form id="deleteFormPendente{{ forloop.counter }}" method="POST"
                                 action="{% url 'excluir_file' %}">
-                                {% csrf_token %}
-                                <p>Data de upload: {{ arquivo.upload_time|date:"d/m/Y H:i" }}</p> <!-- Aqui exibe a data -->
-                                <input type="hidden" name="rota" value="storage">
-                                <input type="hidden" name="file_id" value="{{ arquivo.id }}">
-                                <input type="hidden" name="file_status" value="{{ arquivo.status }}">
-                                <p>Tem certeza de que deseja excluir esta turma?</p>
+                                {% csrf_token %} <!-- Token de segurança para proteger contra CSRF -->
+                                <!-- Exibe a data de upload do arquivo formatada -->
+                                <p>Data de upload: {{ arquivo.upload_time|date:"d/m/Y H:i" }}</p> 
+                                <input type="hidden" name="rota" value="storage"> <!-- Campo oculto com a rota -->
+                                <input type="hidden" name="file_id" value="{{ arquivo.id }}"> <!-- ID do arquivo -->
+                                <input type="hidden" name="file_status" value="{{ arquivo.status }}"> <!-- Status do arquivo -->
+                                <p>Tem certeza de que deseja excluir esta turma?</p> <!-- Mensagem de confirmação -->
                                 <div class="d-flex  botoesModal4">
-                                    <button type="submit" class="me-2">Confirmar</button>
+                                    <button type="submit" class="me-2">Confirmar</button> <!-- Botão para confirmar exclusão -->
                                     <button type="button"
                                         onclick="closeModal('modalExcluirPendente{{ forloop.counter }}')">Cancelar</button>
+                                    <!-- Botão para cancelar e fechar o modal -->
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            {% endfor %}
+            {% endfor %} <!-- Fim do loop sobre os itens de 'dados_finalizados' -->
         </div>
-        <hr class="linha">
+        <hr class="linha"> <!-- Linha horizontal de separação -->
     </div>
     </div>
-</main>
+</main> <!-- Fim do corpo principal -->
 {% endblock %}
