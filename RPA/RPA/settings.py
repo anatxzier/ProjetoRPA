@@ -12,25 +12,22 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+# Define o caminho base do projeto
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+# URL de login padrão
 LOGIN_URL = 'login'
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# Chave secreta (não deve ser exposta em produção)
 SECRET_KEY = 'django-insecure-wwer9+vtb8+5i4b%vk%xf$wud$$hj++x&!p%i_#sag4!0+y4b%'
 
-# SECURITY WARNING: don't run with debug turned on in production!
+# Configuração de depuração (desative em produção)
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
 
-# Application definition
+# Aplicativos instalados no projeto
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -44,6 +41,7 @@ INSTALLED_APPS = [
     'apiGeenfy'
 ]
 
+# Middlewares utilizados
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -54,8 +52,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Configuração principal de URLs
 ROOT_URLCONF = 'RPA.urls'
 
+# Configuração de templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -72,12 +72,11 @@ TEMPLATES = [
     },
 ]
 
+# Configuração do WSGI
 WSGI_APPLICATION = 'RPA.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
+# Configuração do banco de dados
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -86,9 +85,7 @@ DATABASES = {
 }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
-
+# Validação de senhas
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -105,9 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
-
+# Configurações de internacionalização
 LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_Paulo'
@@ -117,9 +112,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
-
+# Arquivos estáticos
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
@@ -134,8 +127,6 @@ MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
-
+# Tipo de chave primária padrão
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
