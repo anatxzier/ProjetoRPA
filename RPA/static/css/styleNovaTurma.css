@@ -1,3 +1,4 @@
+/* Container para a nova turma */
 .containerNovaTurma {
     display: flex;
     flex-wrap: wrap;
@@ -10,6 +11,7 @@
     overflow: hidden;
 }
 
+/* Container para o conteúdo do formulário da turma */
 .contentTurma {
     display: flex;
     flex-direction: row; 
@@ -20,14 +22,18 @@
     margin-bottom: 8%;
 }
 
+/* Estilo dos triângulos, que são posicionados de forma absoluta */
 .triangle {
     position: absolute;
 }
+
+/* Estilo do formulário da nova turma */
 .nova-turma-form{
     align-items:center;
     justify-content: center;
 }
 
+/* Posicionamento e rotação de cada triângulo */
 .triangle1 {
     bottom: 60%;
     left: 2%;
@@ -58,6 +64,7 @@
     transform: rotate(30deg);
 }
 
+/* Estilo da janela modal */
 .modal1 {
     display: none;
     position: fixed;
@@ -71,6 +78,7 @@
     justify-content: center;
 }
 
+/* Estilo do conteúdo da modal */
 .modal-content1 {
     background-color: #B0C2C0;
     color: #4C5958;
@@ -87,23 +95,31 @@
 
 }
 
+/* Estilo do botão de fechar dentro da modal */
 .modal-content1 span{
     align-self: end;
 }
+
+/* Linha horizontal separadora dentro da modal */
 .modal-content1 hr{
     width: 80%;
     background-color: #4C5958;
-
 }
 
+
+/* Estilo do título dentro da modal */
 .modal-content1 h3{
     margin: 0;
     padding: 0;
     font-size: 4vh;
 }
+
+/* Estilo do conteúdo dentro da modal */
 .modal-content1 div{
     width: 70%;
 }
+
+/* Estilo do botão de fechar (X) da modal */
 .close {
     color: #aaa;
     float: right;
@@ -111,6 +127,7 @@
     font-weight: bold;
 }
 
+/* Efeito de hover e foco no botão de fechar */
 .close:hover,
 .close:focus {
     color: black;
@@ -118,6 +135,7 @@
     cursor: pointer;
 }
 
+/* Estilo do container que envolve os botões dentro da modal */
 .botoesModal{
     width: 100%;
     height: 100%;
@@ -126,11 +144,9 @@
     gap:26%;
     justify-content: space-between;
     margin-top: 1rem;
-
-    
-
 }
 
+/* Estilo para os botões dentro da modal */
 .botoesModal button{
     width: 60%;
     height: 40%;
@@ -139,7 +155,7 @@
     padding: 0.4rem;
 }
 
-
+/* Estilização  para telas até 768 pixels de largura */
 @media (max-width: 768px) {
     .triangle1, .triangle2, .triangle3, .triangle4 {
         border-width: 0 100px 100px 0;
@@ -150,6 +166,7 @@
     }
 }
 
+/* Estilo para o contêiner principal do retângulo */
 .rectangle {
     width: 70vw;
     height: 70vh;
@@ -160,6 +177,7 @@
     padding-top: 20px;
 }
 
+/* Estilo para a primeira seção de conteúdo */
 .content2 {
     background-color: #8AA6A3;
     width: 30vw;
@@ -176,16 +194,19 @@
     position: relative;
 }
 
+/* Estilo para os parágrafos dentro do conteúdo */
 .content2 p {
     max-width: 90%;
 }
 
+/* Estilo para as imagens dentro do conteúdo */
 .content2 img {
     width: 90%;
     max-height: 100%; 
     object-fit: contain; 
 }
 
+/* Estilo para o formulário dentro da "nova-turma-form" */
 .nova-turma-form {
     width: 35vw;
     height: 70vh;
@@ -201,18 +222,20 @@
     overflow-x: hidden; 
 }
 
-
+/* Estilo para a barra de rolagem do formulário */
 .nova-turma-form::-webkit-scrollbar{
     width: 5px;
 
 }
 
+/* Estilo para o "polegar" da barra de rolagem */
 .nova-turma-form::-webkit-scrollbar-thumb{
     background-color: #8AA6A3;
     border-radius: 10px;
     border: 0.5px solid #4f6865;
 }
 
+/* Estilo para os parágrafos dentro do formulário */
 .nova-turma-form p {
     color: #ffffff;
     font-size: 2.7vh;
@@ -222,6 +245,7 @@
     margin-bottom: 2rem;
 }
 
+/* Estilo para os divs dentro do formulário */
 .nova-turma-form div {
     margin-bottom: 1rem;
     width: 100%; 
@@ -232,6 +256,7 @@
     justify-content: center;
 }
 
+/* Estilos para inputs de texto e senha */
 .nova-turma-form input[type="text"],
 .nova-turma-form input[type="password"] {
     width: 25vw; 
@@ -246,13 +271,12 @@
     outline: none;
 }
 
-
-
-
+/* Estilo para o input de arquivo */
 .nova-turma-form input[type="file"]{
     display: none;
 }
 
+/* Estilo personalizado para o rótulo de arquivo */
 .custom-file-label{
     background-color: #10403B; 
     color: #ffffff;
@@ -265,9 +289,8 @@
     display: flex;
     flex-direction: column;
 }
-    
 
-
+/* Estilo para o placeholder dos inputs */
 .nova-turma-form input::placeholder {
     color: #D9E0DF; 
     opacity: 1;
@@ -276,26 +299,29 @@
     font-size: 1.5vh;
 }
 
+/* Estilos gerais do formulário */
 form.nova-turma-form {
     cursor: pointer; 
     transition: background-color 0.3s; 
     text-align: center;
-
 }
 
+
+/* Estilo para o rótulo do arquivo ao passar o mouse */
 .nova-turma-form .file-label:hover {
     background-color: #ffffff; 
     color: #10403B;
 }
 
+/* Estilos para o contêiner de botões */
 .botoesTurma {
     display: flex;
     flex-direction: row;
     align-items: start;
     gap:0rem;
-    
 }
 
+/* Estilo para o rótulo do botão */
 .botoesTurma label {
     font-family: "Poppins";
     color: #ffffff; 
@@ -304,22 +330,23 @@ form.nova-turma-form {
     padding: 2vh 6vh; 
     cursor: pointer; 
     border: 1px solid #D9E0DF;
-
 }
 
+/* Esconde o campo de arquivo dentro de botoesTurma */
 .botoesTurma input[type="file"] {
     display: none; 
 }
 
+/* Estilo para o parágrafo dentro de botoesTurma */
 .botoesTurma p{
     margin-bottom: 1rem;
     margin-top: 1rem;
     font-size: 0.7rem;
     display: flex;
     justify-self: start;
-
-
 }
+
+/* Estilo para o botão da turma */
 .botoesTurma .btnTurma {
     margin-top: 0px;
     outline: none;
@@ -340,6 +367,7 @@ form.nova-turma-form {
     border-right: 2px solid #5B5B5B;
     transition: background-color 0.3s, color 0.3s; 
 }
+
 .btnTurma span {
     position: relative;
     transition: color 0.4s;
@@ -359,6 +387,7 @@ form.nova-turma-form {
     z-index: 0;
 }
 
+/* Quando o botão é hover, move o efeito de fundo para a direita */
 .btnTurma::before {
     content: "";
     background: #8AA6A3;
@@ -371,6 +400,7 @@ form.nova-turma-form {
     transform: translate3d(100%, 0, 0);
 }
 
+/* Esconde o texto temporariamente */
 .text-moved {
     display: none;
 }
@@ -402,36 +432,5 @@ form.nova-turma-form {
         margin-bottom: 0;
     }
 }
-
-/* 
-@media (max-height: 463px) {
-
-    .botoesTurma .btnTurma {
-  
-        padding: 1vh 13vh;
-
-    }
-
-    .botoesTurma{
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-
-    .nova-turma-form {
-        width: 35vw;
-        height: 90vh;
-        overflow: scroll;
-
-    }
-
-    .content2{
-        height: 90vh;
-
-    }
-
-
-     */
-
 
 
