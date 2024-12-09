@@ -1,15 +1,15 @@
-
 {% extends 'index.html' %}
 
 {% load static %}
 
 {% block title %}
-    <!-- Nova Turma -->
+    <!-- Define o título da página como "Nova Turma". -->
 {% endblock %}
 
 {% block body %}
 <main class="containerCadinfo">
     <div>
+        <!-- Desenho de triângulos SVG para efeitos visuais na página. -->
         <div class="triangle triangle1">
             <svg width="500" height="500" viewBox="0 0 100 100">
                 <polygon points="100,0 0,100 100,100" fill="none" stroke="#10403B" stroke-width="0.2"/>
@@ -37,75 +37,59 @@
         </div>
     </div>
 
-
-    <div class="contentCadinfo" >
-
+    <div class="contentCadinfo">
+        <!-- Formulário para cadastro de informações. -->
         <form class="cad-info-form" method="post">
             <div class="formularioCad">
-
+                <!-- Exibe o título da seção dinamicamente a partir de 'dados_CadInfo'. -->
                 <p>{{ dados_CadInfo.0.titulo }}</p>
                 {% csrf_token %}
                 
-                <!-- Campo LoginCAF -->
+                <!-- Campo de texto para LoginCAF. -->
                 <div class="info-forms">
                     <div>
                         <input id="userCAF" type="text" name="LoginCAF" id="{{ form.LoginCAF.id_for_label }}" placeholder="{{ form.LoginCAF.label }}">
                         {% if form.LoginCAF.errors %}
-                            <div class="error">{{ form.LoginCAF.errors }}</div>
+                            <div class="error">{{ form.LoginCAF.errors }}</div> <!-- Exibe erros de validação, se existirem. -->
                         {% endif %}
                     </div>
             
-                    <!-- Campo senhaCAF -->
+                    <!-- Campo de senha para LoginCAF. -->
                     <div>
                         <input id="passCAF" type="password" name="SenhaCAF" id="{{ form.SenhaCAF.id_for_label }}" placeholder="{{ form.SenhaCAF.label }}">
                         {% if form.SenhaCAF.errors %}
-                            <div class="error">{{ form.SenhaCAF.errors }}</div>
+                            <div class="error">{{ form.SenhaCAF.errors }}</div> <!-- Exibe erros de validação, se existirem. -->
                         {% endif %}
                     </div>
             
-                    <!-- Campo LoginIHX -->
+                    <!-- Campo de texto para LoginIHX. -->
                     <div>
                         <input type="text" name="LoginIHX" id="{{ form.LoginIHX.id_for_label }}" placeholder="{{ form.LoginIHX.label }}">
                         {% if form.LoginIHX.errors %}
-                            <div class="error">{{ form.LoginIHX.errors }}</div>
+                            <div class="error">{{ form.LoginIHX.errors }}</div> <!-- Exibe erros de validação, se existirem. -->
                         {% endif %}
                     </div>
             
-                    <!-- Campo senhaIHX -->
+                    <!-- Campo de senha para LoginIHX. -->
                     <div>
                         <input type="password" name="SenhaIHX" id="{{ form.SenhaIHX.id_for_label }}" placeholder="{{ form.SenhaIHX.label }}">
                         {% if form.SenhaIHX.errors %}
-                            <div class="error">{{ form.SenhaIHX.errors }}</div>
+                            <div class="error">{{ form.SenhaIHX.errors }}</div> <!-- Exibe erros de validação, se existirem. -->
                         {% endif %}
                     </div>
                 </div>
-
             </div>
-                <button id="btnCadInfo" class="btnCad" type="submit">
-                    <span>Registrar</span>
-                </button>
             
+            <!-- Botão para submeter o formulário. -->
+            <button id="btnCadInfo" class="btnCad" type="submit">
+                <span>Registrar</span>
+            </button>
         </form>
 
+        <!-- Exibição de imagem associada, carregada dinamicamente. -->
         <div class="contentCad2">
             <img src="{{ dados_CadInfo.0.imgInfo.url }}">
-    
         </div>
-        
-
-        
-
-        
-
-        
-
     </div>
-
-
-
 </main>
-
 {% endblock %}
-
-
-
