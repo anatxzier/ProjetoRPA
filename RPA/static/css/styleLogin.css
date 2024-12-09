@@ -1,3 +1,4 @@
+/* Estilo do container de login */
 .containerLogin {
     margin:0;
     height: 100vh;
@@ -10,41 +11,47 @@
     overflow: hidden;
 }
 
+/* Estilo dos triângulos */
 .triangle {
     position: absolute;
 }
 
-
+/* Triângulo 1 - Posicionado no canto inferior esquerdo */
 .triangle1 {
     bottom: 60%;
     left: 2%;
     transform: rotate(30deg);
 }
 
+/* Triângulo 2 - Posicionado no canto inferior esquerdo */
 .triangle2 {
     bottom: 15%;
     left: 5%;
     transform: rotate(150deg);
 }
 
+/* Triângulo 5 - Posicionado no canto inferior esquerdo */
 .triangle5 {
     bottom: 5%;
     left: 5%;
     transform: rotate(100deg);
 }
 
+/* Triângulo 3 - Posicionado no canto superior direito */
 .triangle3 {
     top: 20%;
     left: 80%;
     transform: rotate(100deg);
 }
 
+/* Triângulo 4 - Posicionado no canto inferior direito */
 .triangle4 {
     bottom: 5%;
     left: 72%;
     transform: rotate(30deg);
 }
 
+/* Estilização para telas até 768 pixels de largura */
 @media (max-width: 768px) {
     .triangle1, .triangle2, .triangle3, .triangle4 {
         border-width: 0 100px 100px 0;
@@ -55,6 +62,7 @@
     }
 }
 
+/* Estilo do container do login */
 .rectangleLogin {
     width: 70vw;
     height: 75vh;
@@ -65,11 +73,13 @@
     padding-top: 20px;
 }
 
+/* Estilo das metades do login */
 .halfLogin {
     flex: 1;
     height: 100%;
 }
 
+/* Estilo do lado esquerdo do login */
 .leftLogin {
     background-color: #10403B; 
     display: flex;
@@ -80,14 +90,17 @@
     overflow: hidden;
 }
 
+/* Formulário no lado esquerdo */
 .leftLogin form{
     justify-content: center;
 }
 
+/* Estilo dos spans dentro do lado esquerdo */
 .leftLogin span{
     justify-content: center;
 }
 
+/* Estilo do lado direito do login */
 .rightLogin {
     background-color: #8AA6A3; 
     display: flex;
@@ -95,15 +108,18 @@
     align-items: center;
 }
 
+/* Estilo da imagem no lado direito */
 .imagemLogin{
     max-width: 70%;
 }
 
+/* Estilo do ícone de login */
 .material-symbols-outlined.iconeLogin{
     color: #8AA6A3;
     font-size: 20vh;
 }
 
+/* Estilo do título de login */
 .tituloLogin{
     text-transform: uppercase;
     color: #8AA6A3;
@@ -114,6 +130,7 @@
     padding-bottom: 0.5rem;
 }
 
+/* Estilo do formulário de login */
 .login-form {
     width: 35vw;
     background-color: #10403B;
@@ -126,6 +143,7 @@
     padding-top: 1vh;
 }
 
+/* Personalização da barra de rolagem do formulário */
 .login-form::-webkit-scrollbar-track {
     display: none;
     border: none;
@@ -141,15 +159,16 @@
     border-radius: 10px;
 }
 
+/* Estilo dos campos de autofill nos inputs */
 .login-form input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0 1000px #10403B inset !important;
     -webkit-text-fill-color: #D9E0DF !important;
     transition: background-color 5000s ease-in-out 0s !important;
 }
 
+/* Foco nos campos de autofill */
 .login-form input:-webkit-autofill:focus {
     -webkit-text-fill-color: #D9E0DF !important; }
-
 
 .login-form input:-moz-autofill,
 .login-form input:-ms-autofill {
@@ -171,6 +190,7 @@
     align-items: center; 
 }
 
+/* Estilo de campos de texto e senha no formulário */
 .login-form input[type="text"],
 .login-form input[type="password"] {
     width: 25vw; 
@@ -185,7 +205,7 @@
     outline: none;
 }
 
-
+/* Estilo do placeholder nos inputs */
 .login-form input::placeholder {
     color: #D9E0DF; 
     opacity: 1;
@@ -193,6 +213,7 @@
     font-size: 1.8vh;
 }
 
+/* Estilo do botão de login */
 .btnLogin {
     outline: none;
     cursor: pointer;
@@ -213,6 +234,7 @@
     transition: background-color 0.3s, color 0.3s; 
 }
 
+/* Estilo do label dentro do botão */
 .btnLogin label {
     font-family: "Poppins";
     color: #ffffff; 
@@ -223,6 +245,7 @@
     border: 1px solid #D9E0DF;
 }
 
+/* Efeito de transição no hover do botão */
 .btnLogin span {
     position: relative;
     z-index: 10;
@@ -233,6 +256,7 @@
     color: #8AA6A3;
 }
 
+/* Estilo de antes e depois do botão */
 .btnLogin::before,
 .btnLogin::after {
     position: absolute;
@@ -243,6 +267,7 @@
     z-index: 0;
 }
 
+/* Efeito de animação de fundo no hover */
 .btnLogin::before {
     content: "";
     background: #8AA6A3;
@@ -254,15 +279,18 @@
 .btnLogin:hover::before {
     transform: translate3d(100%, 0, 0);
 }
+
+/* Estilo de mensagem de erro */
 .mensagemErro{
     color: #ffffff;
 }
 
+/* Estilo para o campo de senha */
 .input-groupLogin.senhaLogin {
     position: relative;
 }
 
-
+/* Estilo do ícone de senha */
 .input-groupLogin.senhaLogin span {
     position: absolute;
     right: 15%;
